@@ -131,7 +131,7 @@ class Dokumente(unittest.TestCase):
         self.assertTrue(self.ergebnis(f)["ergebnisklasse"].startswith("Grenzfall"))
 
     def test_gegenrechnungsfehler_gibt_keine_zahlen_aus(self):
-        with patch("app.dokument_pruefung.router._kern_mit_gegenrechnung", return_value=(None, gegenrechnung.Pruefung("abweichung", "Testabweichung"))):
+        with patch("app.dokument_pruefung.bewertung._kern_mit_gegenrechnung", return_value=(None, gegenrechnung.Pruefung("abweichung", "Testabweichung"))):
             d = auswerten(DokumentFall(**fall()))
         self.assertEqual(d["werte"], {}); self.assertEqual(d["positionen"], [])
 
