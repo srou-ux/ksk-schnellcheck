@@ -1,0 +1,56 @@
+datum,modus,code_stand,katalog,fall,soll,ist,urteil,bemessungsgrundlage,abgabe,rueckfragen,gruende,dauer_s
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-001,A,Abgabepflichtig (Vorschlag),RICHTIG,1500,73.50,1,,4.4
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-002,N,Rückfrage nötig,NACHGEFRAGT,,,0,"Soll ['N'], Ist R",3.0
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-003,A,Abgabepflichtig (Vorschlag),RICHTIG,2800,137.20,0,,3.7
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-004,A/R/G,Abgabepflichtig (Vorschlag),RICHTIG,1900,93.10,1,,8.5
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-005,A/G/R,Abgabepflichtig (Vorschlag),RICHTIG,1200,58.80,1,,4.2
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-006,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,1,,9.3
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-007,A,Abgabepflichtig (Vorschlag),RICHTIG,650,31.85,1,,7.8
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-008,A,Abgabepflichtig (Vorschlag),RICHTIG,2000,98.00,1,,4.4
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-009,N/G/R,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,1,,8.1
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-010,N/R,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,1,,7.2
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-011,A,Abgabepflichtig (Vorschlag),RICHTIG,3400,166.60,1,,3.3
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-012,G/R/A,Grenzfall → Steuerberater entscheidet,RICHTIG,,,1,,8.3
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-013,A/G,Abgabepflichtig (Vorschlag),RICHTIG,1600,78.40,1,,3.7
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-014,G/R/N,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,1,,7.3
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-015,N/G/R,Grenzfall → Steuerberater entscheidet,RICHTIG,,,1,,5.8
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-016,A,Abgabepflichtig (Vorschlag),RICHTIG,5900,289.10,0,,9.4
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-017,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,1,,5.6
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-018,A/G,Abgabepflichtig (Vorschlag),RICHTIG,1100,53.90,0,,3.9
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-019,A/R/G,Abgabepflichtig (Vorschlag),RICHTIG,1800,88.20,1,,9.0
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-020,R,Rückfrage nötig,RICHTIG,,,0,,2.3
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-021,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,1,,5.6
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-022,A,Abgabepflichtig (Vorschlag),RICHTIG,1000.01,,0,,4.0
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-023,N/R,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,3,,10.5
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-024,A/G/R,Grenzfall → Steuerberater entscheidet,RICHTIG,,,1,,12.1
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-025,A,Grenzfall → Steuerberater entscheidet,NACHGEFRAGT,,,2,"Soll ['A'], Ist G",5.4
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-026,A,Grenzfall → Steuerberater entscheidet,NACHGEFRAGT,,,1,"Soll ['A'], Ist G",4.3
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-027,A/G,Abgabepflichtig (Vorschlag),FALSCH,3000,147.00,1,"verbotener Text in der Antwort: 'Bemessungsgrundlage: 3.000,00 €'; abgabe: Soll 88.20, Ist 147.00",4.2
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-028,A,Abgabepflichtig (Vorschlag),RICHTIG,1500,73.50,1,,8.7
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-029,A,Rückfrage nötig,NACHGEFRAGT,,,0,"Soll ['A'], Ist R",7.6
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-030,A,Rückfrage nötig,NACHGEFRAGT,,,0,"Soll ['A'], Ist R",2.8
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-031,N/R,Nicht abgabepflichtig (Vorschlag),RICHTIG,0,0.00,1,,5.4
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-032,A/R,Abgabepflichtig (Vorschlag),RICHTIG,5500,269.50,3,,4.6
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-033,N/R/G,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,1,,10.6
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-034,N/G/R,Rückfrage nötig,RICHTIG,,,1,,7.3
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-035,A/G/R,Abgabepflichtig (Vorschlag),FALSCH,2100,102.90,2,"verbotener Text in der Antwort: 'Bemessungsgrundlage: 2.100,00 €'; abgabe: Soll 58.80, Ist 102.90",5.1
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-036,N/G/R,Grenzfall → Steuerberater entscheidet,RICHTIG,,,1,,5.4
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-037,G/R/N,Rückfrage nötig,RICHTIG,,,0,,2.9
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-038,N/R,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,2,,13.1
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-039,N/R/G,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,1,,6.8
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-040,N/R/G,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,1,,5.2
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-041,R,Rückfrage nötig,RICHTIG,,,0,,13.2
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-042,R,Rückfrage nötig,RICHTIG,,,0,,1.4
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-043,R,Rückfrage nötig,RICHTIG,,,0,,1.6
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-044,N/R,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,1,,4.2
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-045,R,Rückfrage nötig,RICHTIG,,,0,,2.1
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-051,R/A/N/G,Rückfrage nötig,RICHTIG,,,0,,3.0
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-052,R/A/N,Rückfrage nötig,RICHTIG,,,0,,9.8
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-053,A,Nicht abgabepflichtig (Vorschlag),FALSCH,,,1,"Soll ['A'], Ist N (Nicht abgabepflichtig (Vorschlag))",7.5
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-054,A/R,Grenzfall → Steuerberater entscheidet,NACHGEFRAGT,,,2,"Soll ['A', 'R'], Ist G",4.1
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-055,N/G/R,Nicht abgabepflichtig (Vorschlag),RICHTIG,0,0.00,1,,4.6
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-056,A,Grenzfall → Steuerberater entscheidet,NACHGEFRAGT,,,0,"Soll ['A'], Ist G",6.4
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-057,A,Abgabepflichtig (Vorschlag),RICHTIG,1750,85.75,1,,4.0
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-058,A/R,Abgabepflichtig (Vorschlag),RICHTIG,1200,58.80,1,,3.9
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-059,AUSKUNFT,Auskunft aus dem Regelwerk,RICHTIG,,,0,,2.1
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),0647320,aufgaben/audit/alltag_at_001_060.json,AT-2026-060,AUSKUNFT/R,Auskunft aus dem Regelwerk,RICHTIG,,,0,,3.1

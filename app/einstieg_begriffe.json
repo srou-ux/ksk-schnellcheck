@@ -1,0 +1,29 @@
+{
+  "_hinweis": "Test-Dialog 'Der schwierige Kunde' (13.10.2026), Schritt 1: Jemand kündigt eine Rechnung an, schickt sie aber noch nicht mit ('Ich habe eine Rechnung von einer Agentur bekommen ...'). app/zuordnung.py::rechnung_angekuendigt_ohne_inhalt erkennt das ohne Sprachmodell; app/router.py antwortet mit dem festen Baustein (Platzhalter EINSTIEG_OHNE_RECHNUNG) und bittet um die Rechnung, statt nach dem Jahr zu fragen. Gilt nur, wenn noch kein Fall läuft, kein Betrag und keine Rechtsform des Auftragnehmers im Text steht und keine Positionszeile vorkommt. Kleinschreibung, Teilwort. 'für rechnung' (Vertretung) ist bewusst KEIN Begriff.",
+  "angekuendigt": [
+    "rechnung bekommen",
+    "rechnung erhalten",
+    "rechnung gekriegt",
+    "rechnung zugeschickt",
+    "rechnung von einer",
+    "rechnung von einem",
+    "rechnung von der",
+    "rechnung von dem",
+    "rechnung liegt",
+    "rechnung vorliegen",
+    "rechnung hier",
+    "eine rechnung über",
+    "beleg bekommen",
+    "beleg erhalten",
+    "honorarrechnung bekommen",
+    "honorarrechnung erhalten"
+  ],
+  "positionszeile": [
+    "pos.",
+    "position "
+  ],
+  "jahreszahl_stellen": 4,
+  "mehrere_fragen_ab": 3,
+  "_hinweis_mehrere_fragen": "Test des Nutzers im Codespace (16.10.2026): vier Beispielfragen in EINER Nachricht (Bäckerei-Fall, Abgabesatz 2025, Urteil zu Werbeagenturen, Hundesteuer) – das Modell mischte die Fälle, der Chat fragte nach der Art des Auftraggebers, obwohl 'Werbung für unser eigenes Geschäft' dastand. Enthält eine Nachricht mindestens 'mehrere_fragen_ab' Zeilen, die je mit einem Fragezeichen enden, bittet der Chat um eine Frage nach der anderen (kein Modellaufruf). Zwei Fragen zum selben Fall in einer Zeile ('Ist das abgabepflichtig? Wie hoch ist die Abgabe?') bleiben erlaubt.",
+  "hinweis_max_woerter": 5
+}

@@ -1,0 +1,8 @@
+{
+  "_hinweis": "Härtetest-Serie HT-2026-002 bis 011 des Nutzers (14.10.2026): Zahlungen aus mehreren Kalenderjahren in EINER Nachricht wurden zu einer Summe zusammengezählt (HT-002: 1.500 € aus 2020 und 900 € aus 2026, gerechnet mit dem Satz von 2020). Die Abgabe gilt je Kalenderjahr der Zahlung (KSVG § 25 Abs. 1; Regel R-20). app/zuordnung.py::markiere_mehrere_zahlungsjahre sucht Zahlungsjahre: (1) ein Datum, vor dem (höchstens 'abstand_davor' Zeichen) ein Wort aus 'zahlwort_davor' steht oder nach dem (höchstens 'abstand_danach' Zeichen) ein Wort aus 'zahlwort_danach' steht; (2) eine Jahreszahl mit Doppelpunkt als Aufzählung ('2024: fünf Rechnungen'); (3) ein Satz mit freier Jahreszahl, einem Wort aus 'zahlverb' und einem Euro-Betrag. Rechnungsdaten ('Rechnung vom 27.12.2025') zählen nicht. Bei zwei oder mehr Zahlungsjahren fragt das System, statt zu rechnen. Klein geschrieben, Umlaute werden vereinheitlicht.",
+  "zahlwort_davor": ["abgebucht", "zahlung", "gezahlt", "bezahlt", "überweisung", "überwiesen", "ueberweisung", "ueberwiesen", "lastschrift", "zahlungseingang", "zahltag", "beglichen"],
+  "zahlwort_danach": ["abgebucht", "gezahlt", "bezahlt", "überwiesen", "ueberwiesen", "beglichen"],
+  "zahlverb": ["gezahlt", "zahlte", "zahlten", "bezahlt", "überwiesen", "ueberwiesen", "abgebucht", "beglichen"],
+  "abstand_davor": 30,
+  "abstand_danach": 15
+}

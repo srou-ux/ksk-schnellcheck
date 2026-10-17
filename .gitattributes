@@ -1,0 +1,2 @@
+# Quellen byteweise unverändert lassen (Prüfsummen!), keine Zeilenenden-Umwandlung
+quellen/** -text

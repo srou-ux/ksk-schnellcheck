@@ -1,0 +1,56 @@
+datum,modus,code_stand,katalog,fall,soll,ist,urteil,bemessungsgrundlage,abgabe,rueckfragen,gruende,dauer_s
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-001,A,Abgabepflichtig (Vorschlag),RICHTIG,1500,73.50,1,,0.9
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-002,N,Rückfrage nötig,NACHGEFRAGT,,,0,"Soll ['N'], Ist R",0.3
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-003,A,Abgabepflichtig (Vorschlag),RICHTIG,2800,137.20,0,,0.4
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-004,A/R/G,Abgabepflichtig (Vorschlag),RICHTIG,1900,93.10,2,,0.7
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-005,A/G/R,Abgabepflichtig (Vorschlag),RICHTIG,1200,58.80,1,,0.7
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-006,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,1,,0.7
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-007,A,Abgabepflichtig (Vorschlag),RICHTIG,650,31.85,1,,0.6
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-008,A,Abgabepflichtig (Vorschlag),RICHTIG,2000,98.00,1,,0.6
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-009,N/G/R,Rückfrage nötig,RICHTIG,,,1,,0.4
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-010,N/R,Rückfrage nötig,RICHTIG,,,1,,0.4
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-011,A,Abgabepflichtig (Vorschlag),RICHTIG,3400,166.60,2,,0.7
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-012,G/R/A,Grenzfall → Steuerberater entscheidet,RICHTIG,,,1,,0.5
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-013,A/G,Grenzfall → Steuerberater entscheidet,RICHTIG,,,1,,0.5
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-014,G/R/N,Grenzfall → Steuerberater entscheidet,RICHTIG,,,1,,0.6
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-015,N/G/R,Grenzfall → Steuerberater entscheidet,RICHTIG,,,1,,0.6
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-016,A,Abgabepflichtig (Vorschlag),RICHTIG,5900,289.10,0,,0.5
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-017,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,1,,0.6
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-018,A/G,Abgabepflichtig (Vorschlag),RICHTIG,1100,53.90,1,,0.6
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-019,A/R/G,Rückfrage nötig,RICHTIG,,,1,,0.4
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-020,R,Rückfrage nötig,RICHTIG,,,0,,0.3
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-021,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,1,,0.5
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-022,A,Abgabepflichtig (Vorschlag),RICHTIG,1000.01,,0,,0.4
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-023,N/R,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,3,,0.8
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-024,A/G/R,Grenzfall → Steuerberater entscheidet,RICHTIG,,,2,,0.8
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-025,A,Rückfrage nötig,NACHGEFRAGT,,,2,"Soll ['A'], Ist R",0.6
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-026,A,Abgabepflichtig (Vorschlag),FALSCH,3960,194.04,1,"abgabe: Soll 96.04, Ist 194.04",0.5
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-027,A/G,Rückfrage nötig,NACHGEFRAGT,,,1,"Soll ['A', 'G'], Ist R",0.4
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-028,A,Abgabepflichtig (Vorschlag),RICHTIG,1500,73.50,1,,0.6
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-029,A,Rückfrage nötig,NACHGEFRAGT,,,0,"Soll ['A'], Ist R",0.3
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-030,A,Abgabepflichtig (Vorschlag),FALSCH,10400,509.60,0,"abgabe: Soll 470.40, Ist 509.60",0.4
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-031,N/R,Nicht abgabepflichtig (Vorschlag),RICHTIG,0,0.00,1,,0.5
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-032,A/R,Rückfrage nötig,RICHTIG,,,1,,0.4
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-033,N/R/G,Abgabepflichtig (Vorschlag),FALSCH,4300,210.70,1,"verbotener Text in der Antwort: 'Bemessungsgrundlage: 4.300,00 €'",0.6
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-034,N/G/R,Rückfrage nötig,RICHTIG,,,1,,0.4
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-035,A/G/R,Rückfrage nötig,RICHTIG,,,2,,0.5
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-036,N/G/R,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,2,,0.6
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-037,G/R/N,Rückfrage nötig,RICHTIG,,,1,,0.4
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-038,N/R,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,2,,0.8
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-039,N/R/G,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,1,,0.5
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-040,N/R/G,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,1,,0.6
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-041,R,Rückfrage nötig,RICHTIG,,,0,,0.3
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-042,R,Rückfrage nötig,RICHTIG,,,0,,0.3
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-043,R,Rückfrage nötig,RICHTIG,,,0,,0.3
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-044,N/R,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,1,,0.6
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-045,R,Rückfrage nötig,RICHTIG,,,0,,0.3
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-051,R/A/N/G,Rückfrage nötig,RICHTIG,,,0,,0.3
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-052,R/A/N,Rückfrage nötig,RICHTIG,,,0,,0.3
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-053,A,Rückfrage nötig,NACHGEFRAGT,,,0,"Soll ['A'], Ist R",0.3
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-054,A/R,Rückfrage nötig,RICHTIG,,,1,,0.4
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-055,N/G/R,Rückfrage nötig,RICHTIG,,,1,,0.4
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-056,A,Rückfrage nötig,NACHGEFRAGT,,,0,"Soll ['A'], Ist R",0.3
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-057,A,Rückfrage nötig,NACHGEFRAGT,,,2,"Soll ['A'], Ist R",0.5
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-058,A/R,Rückfrage nötig,RICHTIG,,,0,,0.3
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-059,AUSKUNFT,Auskunft aus dem Regelwerk,RICHTIG,,,0,,0.4
+2026-10-15,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",1e97851,aufgaben/audit/alltag_at_001_060.json,AT-2026-060,AUSKUNFT/R,Auskunft aus dem Regelwerk,RICHTIG,,,0,,0.4

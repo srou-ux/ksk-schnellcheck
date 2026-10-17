@@ -1,0 +1,15 @@
+{
+  "_hinweis": "Erfundene Fragen, zu denen die Quellenbasis NICHTS enthält. Soll: Abruf leer -> 'Nicht abgedeckt (Quelle fehlt)'. Gemessen von python -m app.rag.guete (Abschnitt Gegenproben im Bericht). Nicht vom Steuerberater geprüft; nur zur Messung der Mindestabdeckung.",
+  "fragen": [
+    "Gibt es ein LSG-Urteil zu Podcast-Produktionen?",
+    "podcast produktionen",
+    "Wie hoch ist die Hundesteuer in Köln?",
+    "Muss ich für mein Elektroauto Kfz-Steuer zahlen?",
+    "Welche Kündigungsfrist gilt für meinen Mietvertrag?",
+    "Gibt es ein Urteil zu NFT-Kunstwerken auf der Blockchain?",
+    "Wie beantrage ich Kurzarbeitergeld für meine Bäckerei?",
+    "Darf mein Nachbar seine Hecke drei Meter hoch wachsen lassen?",
+    "Gibt es BSG-Rechtsprechung zu KI-generierten Bildern?",
+    "Ist Pferdewetten in Bayern umsatzsteuerpflichtig?"
+  ]
+}

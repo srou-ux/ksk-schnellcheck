@@ -1,0 +1,9 @@
+{
+  "_hinweis": "14.10.2026 (P-16, P-17; je 16 von 16 Läufen Rückfrage): nicht kommerzielle Musikvereine nach KSK-Info 12, Abschn. 4 (R-30, R-57, R-159). app/zuordnung.py::musikverein_generalklausel setzt die Art des Auftraggebers 'Generalklausel' nur, wenn der Text einen Verein ('verein') UND einen Freizeit-/Laien-Hinweis ('freizeit') nennt, keinen Begriff aus 'nicht_wenn' und keine andere Art (typischer Verwerter, Eigenwerbung, Privatperson). Ein Chor oder Orchester mit überwiegendem Aufführungszweck ist ein typischer Verwerter (R-159) -- deshalb ohne Freizeit-Hinweis keine Annahme (das System fragt nach). Die Rolle 'vereinseigene_leitung' (R-57) bekommt eine Position nur, wenn ihre Bezeichnung einen Begriff aus 'leitung' enthält und 'vereinseigen' direkt beim Betrag im Text steht. Keine Festwerte im Code.",
+  "verein": ["musikverein", "gesangverein", "gesangsverein", "chorverein", "orchesterverein", "orchester-verein", "hobbyorchester", "liebhaberorchester", "laienorchester", "laienchor", "laienmusik", "blaskapelle", "spielmannszug", "posaunenchor", "kirchenchor", "männerchor", "maennerchor", "frauenchor"],
+  "freizeit": ["hobby", "gesellig", "geselligkeit", "laien", "liebhaber", "freizeit", "nicht kommerziell", "ehrenamtlich geführt"],
+  "nicht_wenn": ["berufsorchester", "profiorchester", "staatsorchester", "verband", "landesverband", "bundesverband"],
+  "leitung": ["dirigent", "dirigentin", "chorleiter", "chorleiterin", "musikalische leitung", "vereinsdirigent"],
+  "vereinseigen": ["vereinseigen"],
+  "regeln": ["R-30", "R-57"]
+}

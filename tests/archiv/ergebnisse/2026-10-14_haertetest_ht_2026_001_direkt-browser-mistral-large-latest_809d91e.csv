@@ -1,0 +1,2 @@
+datum,modus,code_stand,katalog,fall,soll,ist,urteil,bemessungsgrundlage,abgabe,rueckfragen,gruende,dauer_s
+2026-10-14,Chatbot direkt (Browser) – Mistral (EU),809d91e,aufgaben/audit/haertetest_ht_2026_001.json,HT-2026-001,A/G,Grenzfall → Steuerberater entscheidet,RICHTIG,,,0,,7.0

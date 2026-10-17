@@ -1,0 +1,89 @@
+datum,modus,code_stand,katalog,fall,soll,ist,urteil,bemessungsgrundlage,abgabe,rueckfragen,gruende,dauer_s
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:P-01,A,Abgabepflichtig (Vorschlag),RICHTIG,1500,73.50,1,,0.8
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:P-02,A,Abgabepflichtig (Vorschlag),RICHTIG,3000,147.00,1,,0.6
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:P-03,A,Abgabepflichtig (Vorschlag),RICHTIG,5000,250.00,0,,0.5
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:P-04a,A,Nicht abgabepflichtig (Vorschlag),FALSCH,,,0,"Soll ['A'], Ist N (Nicht abgabepflichtig (Vorschlag))",0.7
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:P-04b,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,0,,0.5
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:P-05,A,Abgabepflichtig (Vorschlag),RICHTIG,900,44.10,0,,0.4
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:P-06,A,Abgabepflichtig (Vorschlag),RICHTIG,300,14.70,0,,0.4
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:P-07,A,Rückfrage nötig,NACHGEFRAGT,,,2,"Soll ['A'], Ist R",0.5
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:P-08,N,Rückfrage nötig,NACHGEFRAGT,,,3,"Soll ['N'], Ist R",0.6
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:P-09,A,Rückfrage nötig,NACHGEFRAGT,,,3,"Soll ['A'], Ist R",0.6
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:P-10,A,Abgabepflichtig (Vorschlag),RICHTIG,300,15.00,0,,0.4
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:P-11,A/G,Rückfrage nötig,NACHGEFRAGT,,,0,"Soll ['A', 'G'], Ist R",0.3
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:P-12,A,Abgabepflichtig (Vorschlag),RICHTIG,900,45.00,2,,0.7
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:P-13,A/G,Rückfrage nötig,NACHGEFRAGT,,,0,"Soll ['A', 'G'], Ist R",0.2
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:P-14,A,Rückfrage nötig,NACHGEFRAGT,,,0,"Soll ['A'], Ist R",0.3
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:P-15,A,Rückfrage nötig,NACHGEFRAGT,,,3,"Soll ['A'], Ist R",0.6
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:P-16,N/G,Rückfrage nötig,NACHGEFRAGT,,,0,"Soll ['N', 'G'], Ist R",0.3
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:P-17,N,Rückfrage nötig,NACHGEFRAGT,,,0,"Soll ['N'], Ist R",0.2
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:P-18a,N,Rückfrage nötig,NACHGEFRAGT,,,0,"Soll ['N'], Ist R",0.3
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:P-18b,R/G,Rückfrage nötig,RICHTIG,,,0,,0.2
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:P-19,A,Abgabepflichtig (Vorschlag),RICHTIG,950,47.50,1,,0.6
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:P-20a,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,0,,0,,0.5
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:P-20b,A,Abgabepflichtig (Vorschlag),RICHTIG,1100,46.20,0,,0.5
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:P-21,A,Abgabepflichtig (Vorschlag),RICHTIG,3250,162.50,1,,0.6
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:P-22,A,Abgabepflichtig (Vorschlag),RICHTIG,4000,196.00,0,,0.4
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:P-23,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,0,0.00,0,,0.4
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:P-24,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,0,0.00,0,,0.4
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:P-25,A,Abgabepflichtig (Vorschlag),RICHTIG,900,45.00,0,,0.4
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:P-26,A,Abgabepflichtig (Vorschlag),RICHTIG,1200,58.80,0,,0.4
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:P-27,A/G,Abgabepflichtig (Vorschlag),RICHTIG,2000,98.00,0,,0.4
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:P-28,A,Abgabepflichtig (Vorschlag),RICHTIG,1000,50.00,0,,0.5
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:P-29,A,Abgabepflichtig (Vorschlag),RICHTIG,2300,115.00,1,,0.5
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:P-30,A,Grenzfall → Steuerberater entscheidet,NACHGEFRAGT,,,0,"Soll ['A'], Ist G",0.4
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:P-31,A,Grenzfall → Steuerberater entscheidet,NACHGEFRAGT,,,0,"Soll ['A'], Ist G",0.5
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:P-32,A,Abgabepflichtig (Vorschlag),RICHTIG,1200,58.80,1,,0.6
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:P-33,A,Abgabepflichtig (Vorschlag),RICHTIG,1500,73.50,0,,0.4
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:P-34,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,0,0.00,0,,0.4
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:P-35,A,Abgabepflichtig (Vorschlag),RICHTIG,3000,150.00,0,,0.5
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:P-36,N,Rückfrage nötig,NACHGEFRAGT,,,0,"Soll ['N'], Ist R",0.2
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:P-37,G/N,Rückfrage nötig,NACHGEFRAGT,,,0,"Soll ['G', 'N'], Ist R",0.3
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:P-38,A,Abgabepflichtig (Vorschlag),RICHTIG,5000,245.00,1,,0.5
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:P-39,A/G,Grenzfall → Steuerberater entscheidet,RICHTIG,,,0,,0.4
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:P-40,N,Rückfrage nötig,NACHGEFRAGT,,,0,"Soll ['N'], Ist R",0.3
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:P-52,A,Grenzfall → Steuerberater entscheidet,NACHGEFRAGT,,,0,"Soll ['A'], Ist G",0.4
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:K-01,R,Rückfrage nötig,RICHTIG,,,0,,0.3
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:K-02,X/R,Nicht abgedeckt (Quelle fehlt),RICHTIG,,,0,,0.4
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:K-03,AUSKUNFT,Rückfrage nötig,NACHGEFRAGT,,,0,"Soll ['AUSKUNFT'], Ist R",0.2
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:K-04,A,Abgabepflichtig (Vorschlag),RICHTIG,900,45.00,0,,0.5
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:K-05,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,0,,0.5
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:K-06,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,0,,0.5
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:K-07,R/G,Rückfrage nötig,RICHTIG,,,0,,0.2
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,pruefkatalog:K-08,A,Abgabepflichtig (Vorschlag),RICHTIG,900,45.00,0,,0.4
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,testfall20:S-00,A/G,Grenzfall → Steuerberater entscheidet,RICHTIG,,,16,,2.7
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,testfall20:S-01,A,Abgabepflichtig (Vorschlag),RICHTIG,2500,122.50,1,,0.6
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,testfall20:S-02,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,0,0.00,1,,0.6
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,testfall20:S-03,A,Abgabepflichtig (Vorschlag),RICHTIG,600,29.40,1,,0.5
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,testfall20:S-04,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,0,0.00,1,,0.5
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,testfall20:S-05,A,Abgabepflichtig (Vorschlag),RICHTIG,1200,58.80,1,,0.6
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,testfall20:S-06,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,0,0.00,1,,0.6
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,testfall20:S-07,A,Abgabepflichtig (Vorschlag),RICHTIG,450,22.05,1,,0.5
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,testfall20:S-08,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,0,0.00,0,,0.4
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,testfall20:S-09,A,Abgabepflichtig (Vorschlag),RICHTIG,800,39.20,1,,0.5
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,testfall20:S-10,N,Grenzfall → Steuerberater entscheidet,NACHGEFRAGT,,,1,"Soll ['N'], Ist G",0.6
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,testfall20:S-11,A,Abgabepflichtig (Vorschlag),RICHTIG,750,36.75,1,,0.6
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,testfall20:S-12,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,0,0.00,0,,0.5
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,testfall20:S-13,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,0,0.00,1,,0.5
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,testfall20:S-14,A,Abgabepflichtig (Vorschlag),RICHTIG,1500,73.50,1,,0.5
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,testfall20:S-15,G,Grenzfall → Steuerberater entscheidet,RICHTIG,,,2,,0.6
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,testfall20:S-16,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,0,0.00,0,,0.5
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,testfall20:S-17,A,Abgabepflichtig (Vorschlag),RICHTIG,650,31.85,1,,0.6
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,testfall20:S-18,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,0,0.00,1,,0.6
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,testfall20:S-19,A,Abgabepflichtig (Vorschlag),RICHTIG,400,19.60,1,,0.5
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,testfall20:S-20,N,Grenzfall → Steuerberater entscheidet,NACHGEFRAGT,,,2,"Soll ['N'], Ist G",0.6
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,alltag4:F1,A,Grenzfall → Steuerberater entscheidet,NACHGEFRAGT,,,0,"Soll ['A'], Ist G",0.6
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,alltag4:F2,A,Grenzfall → Steuerberater entscheidet,NACHGEFRAGT,,,0,"Soll ['A'], Ist G",0.5
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,alltag4:F3,N,Nicht abgabepflichtig (Vorschlag),NACHGEFRAGT,,,1,"1 Rückfrage(n), nötig laut Soll höchstens 0",0.8
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,alltag4:F4,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,0,,0.5
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,alltag999:A-999,A,Nicht abgabepflichtig (Vorschlag),FALSCH,0,0.00,0,"Soll ['A'], Ist N (Nicht abgabepflichtig (Vorschlag))",1.0
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,waehrung:W-01,R,Rückfrage nötig,FALSCH,,,0,erwarteter Text fehlt: 'in fremder Währung angegeben',0.3
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,waehrung:W-02,A,Abgabepflichtig (Vorschlag),RICHTIG,1850.00,90.65,1,,0.5
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,waehrung:W-03,A,Abgabepflichtig (Vorschlag),RICHTIG,1850.00,90.65,0,,0.5
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,waehrung:W-04,R,Rückfrage nötig,FALSCH,,,0,erwarteter Text fehlt: 'in fremder Währung angegeben',0.2
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,waehrung:W-05,R,Rückfrage nötig,FALSCH,,,0,erwarteter Text fehlt: 'in fremder Währung angegeben',0.2
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,waehrung:W-06,R,Rückfrage nötig,FALSCH,,,0,erwarteter Text fehlt: 'in fremder Währung angegeben',0.2
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,waehrung:W-07,R,Abgabepflichtig (Vorschlag),FALSCH,1200.00,58.80,0,"Soll ['R'], Ist A (Abgabepflichtig (Vorschlag))",0.5
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,waehrung:W-08,R,Rückfrage nötig,FALSCH,,,0,erwarteter Text fehlt: 'in fremder Währung angegeben',0.3
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,waehrung:W-09,A,Abgabepflichtig (Vorschlag),RICHTIG,2000,98.00,0,,0.4
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",3b58f6a,tests/archiv/alle_faelle.json,waehrung:W-10,A,Abgabepflichtig (Vorschlag),RICHTIG,1500,73.50,0,,0.5

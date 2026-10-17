@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KSK-Chatbot (Entwurf)</title>
+<style>
+  :root {
+    --bg: #0f1419;
+    --flaeche: #1a222c;
+    --flaeche2: #222c38;
+    --text: #e6e9ef;
+    --muted: #9aa5b1;
+    --akzent: #5aa0ff;
+    --warnung: #e0a84d;
+    --rand: #2e3a47;
+    font-size: 16px;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0; height: 100%;
+    background: var(--bg); color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  }
+  #banner {
+    background: var(--warnung); color: #1a1403;
+    padding: 0.6rem 1rem; font-size: 0.85rem; text-align: center;
+    font-weight: 600;
+  }
+  #kopf {
+    padding: 0.75rem 1rem; border-bottom: 1px solid var(--rand);
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 0.4rem;
+  }
+  #kopf h1 { font-size: 1.05rem; margin: 0; white-space: nowrap; }
+  #modus {
+    font-size: 0.8rem; color: var(--muted); flex: 1 1 auto; min-width: 0;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: right;
+  }
+  #verlauf {
+    padding: 1rem; overflow-y: auto;
+    display: flex; flex-direction: column; gap: 0.75rem;
+    max-width: 48rem; margin: 0 auto; width: 100%;
+  }
+  .nachricht { padding: 0.7rem 0.9rem; border-radius: 0.6rem; max-width: 100%; white-space: pre-wrap; }
+  .nachricht.nutzer { background: var(--akzent); color: #06111f; align-self: flex-end; }
+  .nachricht.bot { background: var(--flaeche); border: 1px solid var(--rand); align-self: flex-start; }
+  .kennzeichnung {
+    display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.02em;
+    padding: 0.15rem 0.5rem; border-radius: 1rem; margin-bottom: 0.4rem;
+    background: var(--flaeche2); color: var(--muted); text-transform: uppercase;
+  }
+  .kennzeichnung.abgabepflichtig { background: #3a2323; color: #ff9c8a; }
+  .kennzeichnung.nicht-abgabepflichtig { background: #1f3326; color: #7fd99a; }
+  .kennzeichnung.grenzfall { background: #3a3323; color: #e0cf7f; }
+  .kennzeichnung.rueckfrage-noetig { background: #233349; color: #8ab4f0; }
+  .kennzeichnung.nicht-abgedeckt { background: #2c2c2c; color: #bdbdbd; }
+  .kennzeichnung.berechnung { background: #233349; color: #8ab4f0; }
+  .kennzeichnung.auskunft { background: #1f3326; color: #7fd99a; }
+  .kennzeichnung.hinweis-klasse { background: var(--flaeche2); color: var(--muted); }
+  .fundstellen, .rueckfragen { margin-top: 0.5rem; font-size: 0.85rem; }
+  .rueckfrage-optionen { margin: 0.3rem 0; }
+  .rueckfrage-frage { color: var(--muted); margin-bottom: 0.25rem; }
+  .fundstellen summary { cursor: pointer; color: var(--muted); }
+  .vorschlag {
+    display: inline-block; margin: 0.2rem 0.3rem 0 0; padding: 0.35rem 0.7rem;
+    background: var(--flaeche2); border: 1px solid var(--rand); border-radius: 1rem;
+    color: var(--akzent); cursor: pointer; font-size: 0.85rem;
+  }
+  .vorschlag:hover { background: var(--rand); }
+  .bestaetigung { margin-top: 0.6rem; }
+  .bestaetigung ul { margin: 0.3rem 0 0.6rem 1.1rem; padding: 0; font-size: 0.9rem; }
+  .bestaetigung-knopf {
+    display: inline-block; margin: 0.2rem 0.4rem 0 0; padding: 0.4rem 0.8rem;
+    border-radius: 0.5rem; border: 1px solid var(--rand); cursor: pointer; font-size: 0.9rem; font-weight: 600;
+  }
+  .bestaetigung-knopf.ja { background: var(--akzent); color: #06111f; border-color: var(--akzent); }
+  .bestaetigung-knopf.korrigieren { background: var(--flaeche2); color: var(--text); }
+  .bestaetigung-knopf:disabled { opacity: 0.5; cursor: default; }
+  #eingabe-leiste {
+    display: flex; gap: 0.5rem; padding: 0.75rem 1rem; border-top: 1px solid var(--rand);
+    max-width: 48rem; margin: 0 auto; width: 100%;
+  }
+  #eingabe {
+    flex: 1; padding: 0.6rem 0.8rem; border-radius: 0.5rem; border: 1px solid var(--rand);
+    background: var(--flaeche); color: var(--text); font-size: 1rem; resize: none;
+  }
+  #senden {
+    padding: 0.6rem 1.1rem; border-radius: 0.5rem; border: none;
+    background: var(--akzent); color: #06111f; font-weight: 600; cursor: pointer; font-size: 1rem;
+  }
+  #senden:disabled { opacity: 0.5; cursor: default; }
+  #neuer-fall {
+    padding: 0.6rem 0.9rem; border-radius: 0.5rem; border: 1px solid var(--rand);
+    background: var(--flaeche2); color: var(--text); cursor: pointer; font-size: 0.9rem;
+  }
+  .fallgrenze { text-align: center; color: var(--text-leise, #8b949e); font-size: 0.85rem; margin: 0.5rem 0; }
+  #seite { display: flex; flex-direction: column; height: 100vh; }
+</style>
+<style id="bereiche-stil">
+/* 17.10.2026: gemeinsames Menü „KSK-Chat“ / „Rechnungen prüfen“ (Skizze des Nutzers). */
+#bereiche{position:fixed;top:0;left:0;bottom:0;width:200px;background:#fff;border-right:1px solid #dbe5e4;padding:18px 12px;
+  font:15px/1.4 system-ui,-apple-system,sans-serif;z-index:20;display:flex;flex-direction:column;gap:6px}
+#bereiche .marke{font-weight:750;font-size:17px;color:#172e36;padding:4px 10px 14px}
+#bereiche .marke span{color:#126957}
+#bereiche a{display:block;padding:10px 12px;border-radius:8px;color:#172e36;text-decoration:none;font-weight:600}
+#bereiche a:hover{background:#eef5f1}
+#bereiche a[aria-current="page"]{background:#126957;color:#fff}
+#bereiche small{margin-top:auto;color:#61767d;font-size:11px;padding:0 10px}
+body{padding-left:200px}
+@media (max-width:900px){#bereiche{position:static;width:auto;flex-direction:row;align-items:center;border-right:0;
+  border-bottom:1px solid #dbe5e4;padding:8px 10px;flex-wrap:wrap}#bereiche .marke{padding:4px 10px}#bereiche small{display:none}
+  body{padding-left:0}}
+@media print{#bereiche{display:none}body{padding-left:0}}
+</style>
+</head>
+<body>
+<nav id="bereiche" aria-label="Bereiche"><div class="marke">KSK<span>Assistent</span></div><a href="/" aria-current="page">KSK-Chat</a><a href="/rechnungen">Rechnungen prüfen</a><small>Entwurf – vom Steuerberater zu prüfen</small></nav>
+<div id="seite">
+  <div id="banner">Entwurf – vom Steuerberater zu prüfen. Nur erfundene Daten eingeben.</div>
+  <div id="kopf">
+    <h1>KSK-Chatbot (Prototyp)</h1>
+    <span id="modus">lädt…</span>
+  </div>
+  <div id="verlauf"></div>
+  <div id="eingabe-leiste">
+    <textarea id="eingabe" rows="1" placeholder="Frage zur Künstlersozialabgabe (nur erfundene Daten)…"></textarea>
+    <button id="senden">Senden</button>
+    <button id="neuer-fall" title="Bisherigen Fall abschließen und einen neuen, unabhängigen Fall beginnen">Neuer Fall</button>
+  </div>
+</div>
+<script>
+(function () {
+  "use strict";
+  var verlaufEl = document.getElementById("verlauf");
+  var eingabeEl = document.getElementById("eingabe");
+  var sendenEl = document.getElementById("senden");
+  var modusEl = document.getElementById("modus");
+  var verlaufText = [];
+  // Seit Chatbot Teil 1d (Faktenbestaetigung): die Sitzungskennung der zuletzt gezeigten,
+  // noch nicht bestaetigten Fakten -- wird bei jeder Antwort aus daten.sitzungskennung
+  // uebernommen (null, sobald ein Endergebnis ohne offene Bestaetigung zurueckkommt).
+  var sitzungskennung = null;
+  // Test-Dialog 'Der schwierige Kunde': Sitzung des zuletzt fertig geprüften Falls (für Nachfragen).
+  var letzteSitzung = null;
+  var FAKTEN_BESTAETIGUNG_NOETIG = "Faktenbestätigung nötig";
+
+  function klassenname(ergebnisklasse) {
+    // Die Ergebnisklassen kommen seit Chatbot Teil 1b woertlich aus kern.rechnen
+    // (z. B. "Abgabepflichtig (Vorschlag)", "Grenzfall → Steuerberater entscheidet") --
+    // per Praefix auf eine CSS-Klasse abbilden statt blind zu ersetzen.
+    var text = String(ergebnisklasse || "").toLowerCase();
+    if (text.indexOf("nicht abgabepflichtig") === 0) return "nicht-abgabepflichtig";
+    if (text.indexOf("abgabepflichtig") === 0) return "abgabepflichtig";
+    if (text.indexOf("grenzfall") === 0) return "grenzfall";
+    if (text.indexOf("rückfrage") === 0) return "rueckfrage-noetig";
+    if (text.indexOf("nicht abgedeckt") === 0) return "nicht-abgedeckt";
+    if (text.indexOf("säumniszuschlag") === 0 || text.indexOf("auskunft") === 0) {
+      return text.indexOf("auskunft") === 0 ? "auskunft" : "berechnung";
+    }
+    if (text.indexOf("hinweis") === 0) return "hinweis-klasse";
+    return "sonstige";
+  }
+
+  function hinzufuegen(rolle, inhaltKnoten) {
+    var div = document.createElement("div");
+    div.className = "nachricht " + rolle;
+    div.appendChild(inhaltKnoten);
+    verlaufEl.appendChild(div);
+    verlaufEl.scrollTop = verlaufEl.scrollHeight;
+  }
+
+  function textKnoten(text) {
+    var span = document.createElement("div");
+    span.textContent = text;
+    return span;
+  }
+
+  // Seit Chatbot Teil 1f, Abschnitt J.2: **fett**/*kursiv* und Zeilenumbrueche sicher
+  // darstellen, OHNE jemals innerHTML auf Modell-/Nutzertext anzuwenden -- nur
+  // textContent/createTextNode, daher bleibt eingeschleustes HTML immer reiner Text.
+  var FETT_KURSIV_MUSTER = /(\*\*[^*]+\*\*|\*[^*]+\*)/;
+
+  function formatierterTextKnoten(text) {
+    var container = document.createElement("div");
+    container.style.whiteSpace = "pre-wrap";
+    var zeilen = String(text == null ? "" : text).split("\n");
+    zeilen.forEach(function (zeile, idx) {
+      zeile.split(FETT_KURSIV_MUSTER).forEach(function (teil) {
+        if (!teil) return;
+        if (teil.length >= 4 && teil.slice(0, 2) === "**" && teil.slice(-2) === "**") {
+          var stark = document.createElement("strong");
+          stark.textContent = teil.slice(2, -2);
+          container.appendChild(stark);
+        } else if (teil.length >= 2 && teil.slice(0, 1) === "*" && teil.slice(-1) === "*") {
+          var betont = document.createElement("em");
+          betont.textContent = teil.slice(1, -1);
+          container.appendChild(betont);
+        } else {
+          container.appendChild(document.createTextNode(teil));
+        }
+      });
+      if (idx < zeilen.length - 1) container.appendChild(document.createElement("br"));
+    });
+    return container;
+  }
+
+  function botKnoten(daten) {
+    var wrapper = document.createElement("div");
+
+    var kennzeichnung = document.createElement("span");
+    kennzeichnung.className = "kennzeichnung " + klassenname(daten.ergebnisklasse);
+    kennzeichnung.textContent = String(daten.ergebnisklasse || "").replace(/_/g, " ");
+    wrapper.appendChild(kennzeichnung);
+
+    // Livetest-Befund L5: bei der Faktenbestaetigung NICHT zusaetzlich den vollen Fliesstext
+    // zeigen -- die Liste unten (bestaetigungKnoten) nennt dieselben Fakten schon einmal,
+    // der Fliesstext war eine reine Wiederholung ("Ich habe verstanden: ...; ...; ... Stimmt
+    // das?"). Ein kurzer fester Hinweistext reicht.
+    var istFaktenbestaetigung = daten.ergebnisklasse === FAKTEN_BESTAETIGUNG_NOETIG && daten.sitzungskennung && daten.fakten_hash;
+    if (istFaktenbestaetigung) {
+      // Schritt 2 (17.10.2026): die Sätze des Systems (Teil vor der Liste), die Liste kommt einmal unten.
+      var saetze = (daten.antwort || "").split("\n\n")[0];
+      wrapper.appendChild(textKnoten(saetze || "Bitte prüfen Sie die erfassten Angaben:"));
+    } else {
+      wrapper.appendChild(formatierterTextKnoten(daten.antwort));
+    }
+
+    if (daten.rueckfragen && daten.rueckfragen.length) {
+      var rf = document.createElement("div");
+      rf.className = "rueckfragen";
+      // Seit Chatbot Teil 1f, Abschnitt E: geschlossene Fragen (z. B. Einnahmeabsicht,
+      // Rechtsform) kommen mit festen Antwortoptionen (daten.rueckfrage_optionen) -- ein
+      // Klick auf eine Option schickt sie direkt wie getippt. Offene Fragen (Jahr, Betrag)
+      // bleiben wie bisher: ein Klick setzt nur den Fragetext ins Eingabefeld.
+      var eintragNachFrage = {};
+      (daten.rueckfrage_optionen || []).forEach(function (eintrag) {
+        eintragNachFrage[eintrag.frage] = eintrag;
+      });
+      daten.rueckfragen.forEach(function (frageText) {
+        var eintrag = eintragNachFrage[frageText];
+        var optionen = eintrag && eintrag.optionen;
+        if (optionen && optionen.length) {
+          var zeile = document.createElement("div");
+          zeile.className = "rueckfrage-optionen";
+          var label = document.createElement("div");
+          label.className = "rueckfrage-frage";
+          label.textContent = frageText;
+          zeile.appendChild(label);
+          optionen.forEach(function (optionText) {
+            var btn = document.createElement("span");
+            btn.className = "vorschlag";
+            btn.textContent = optionText;
+            // Pruefkatalog-Befund M1: hat die Option eine Feld-Zuordnung UND gibt es eine
+            // Sitzung, wird sie DETERMINISTISCH ueber POST /knopf angewendet (kein erneuter
+            // Modellaufruf, app/router.py::wende_feldantwort_an) -- sonst (z. B. nach der
+            // Faktenbestaetigung, ohne Feld-Zuordnung) wie bisher als Freitext ueber /frage.
+            var wert = eintrag.feld && eintrag.werte ? eintrag.werte[optionText] : undefined;
+            if (eintrag.feld && daten.sitzungskennung && wert !== undefined) {
+              btn.onclick = function () { sendeKnopf(eintrag.feld, wert, eintrag.position, optionText); };
+            } else {
+              btn.onclick = function () { sende(optionText); };
+            }
+            zeile.appendChild(btn);
+          });
+          rf.appendChild(zeile);
+          // Fallstand (11.10.2026): auch Fragen mit Knöpfen ('Noch unbekannt / später klären')
+          // lassen sich per Texteingabe beantworten.
+          eingabeEl.placeholder = frageText;
+        } else {
+          // Teil 1f, Abschnitt J.1 (Befund): eine offene Frage (Jahr ohne Registerwerte,
+          // Betrag, Rueckstand, ...) bekommt KEINEN Knopf mehr -- ein Klick hat vorher den
+          // Fragetext selbst als "Antwort" gesendet und dieselbe Rueckfrage erneut
+          // ausgeloest (Schleife). Nur noch ein Hinweistext plus Platzhalter im Eingabefeld.
+          var hinweis = document.createElement("div");
+          hinweis.className = "rueckfrage-frage";
+          hinweis.textContent = frageText;
+          rf.appendChild(hinweis);
+          eingabeEl.placeholder = frageText;
+        }
+      });
+      wrapper.appendChild(rf);
+    }
+
+    if (istFaktenbestaetigung) {
+      wrapper.appendChild(bestaetigungKnoten(daten));
+    }
+
+    if (daten.fundstellen && daten.fundstellen.length) {
+      var details = document.createElement("details");
+      details.className = "fundstellen";
+      var summary = document.createElement("summary");
+      summary.textContent = "Fundstellen (" + daten.fundstellen.length + ")";
+      details.appendChild(summary);
+      var liste = document.createElement("ul");
+      daten.fundstellen.forEach(function (f) {
+        var li = document.createElement("li");
+        li.textContent = f;
+        liste.appendChild(li);
+      });
+      details.appendChild(liste);
+      wrapper.appendChild(details);
+    }
+
+    return wrapper;
+  }
+
+  function bestaetigungKnoten(daten) {
+    var box = document.createElement("div");
+    box.className = "bestaetigung";
+
+    if (daten.fakten_zusammenfassung && daten.fakten_zusammenfassung.length) {
+      var liste = document.createElement("ul");
+      daten.fakten_zusammenfassung.forEach(function (zeile) {
+        var li = document.createElement("li");
+        li.textContent = zeile;
+        liste.appendChild(li);
+      });
+      box.appendChild(liste);
+    }
+
+    var jaKnopf = document.createElement("button");
+    jaKnopf.className = "bestaetigung-knopf ja";
+    jaKnopf.textContent = "Ja, das stimmt";
+    jaKnopf.onclick = function () {
+      jaKnopf.disabled = true;
+      korrigierenKnopf.disabled = true;
+      sendeBestaetigung(daten.sitzungskennung, daten.fakten_hash);
+    };
+    box.appendChild(jaKnopf);
+
+    var korrigierenKnopf = document.createElement("button");
+    korrigierenKnopf.className = "bestaetigung-knopf korrigieren";
+    korrigierenKnopf.textContent = "Korrigieren";
+    korrigierenKnopf.onclick = function () {
+      eingabeEl.focus();
+    };
+    box.appendChild(korrigierenKnopf);
+
+    return box;
+  }
+
+  function nachAntwort(daten) {
+    sitzungskennung = daten.sitzungskennung || null;
+    hinzufuegen("bot", botKnoten(daten));
+    // Livetest 10.10.2026: nach einem fertigen Ergebnis ist der Fall abgeschlossen -- sonst
+    // ging der ganze alte Verlauf beim nächsten Fall wieder ans Modell (Beträge doppelt).
+    var k = String(daten.ergebnisklasse || "").toLowerCase();
+    var offen = k.indexOf("rückfrage") === 0 || k.indexOf("faktenbestätigung") === 0 || k.indexOf("faktenbestaetigung") === 0 || k.indexOf("hinweis") === 0;
+    if (!offen) {
+      verlaufText = [];
+      letzteSitzung = daten.sitzungskennung || letzteSitzung;
+      sitzungskennung = null;
+      var linie = document.createElement("div");
+      linie.className = "fallgrenze";
+      linie.textContent = "— Fall abgeschlossen. Ihre nächste Nachricht beginnt einen neuen Fall. —";
+      verlaufEl.appendChild(linie);
+      verlaufEl.scrollTop = verlaufEl.scrollHeight;
+    }
+    modusEl.textContent = (daten.demo_modus ? "Demo-Modus, Ersatzmodell" : "Mistral (EU)") + " – " + daten.modell;
+  }
+
+  function sendeBestaetigung(kennung, hash) {
+    fetch("/bestaetigen", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ sitzungskennung: kennung, fakten_hash: hash })
+    })
+      .then(function (r) { return r.json(); })
+      .then(nachAntwort)
+      .catch(function () {
+        hinzufuegen("bot", textKnoten("Fehler: Bestätigung konnte nicht gesendet werden."));
+      });
+  }
+
+  function sendeKnopf(feld, wert, position, anzeigeText) {
+    // Pruefkatalog-Befund M1: eine geschlossene Rueckfrage-Schaltflaeche (z. B.
+    // "Eigenwerbung", "natürliche Person", "ja") wird deterministisch an die Sitzung
+    // angehaengt (POST /knopf) statt als Freitext erneut durch das Sprachmodell zu laufen.
+    hinzufuegen("nutzer", textKnoten(anzeigeText));
+    verlaufText.push(anzeigeText);
+    sendenEl.disabled = true;
+    fetch("/knopf", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ sitzungskennung: sitzungskennung, feld: feld, wert: wert, position: position })
+    })
+      .then(function (r) { return r.json(); })
+      .then(nachAntwort)
+      .catch(function () {
+        hinzufuegen("bot", textKnoten("Fehler: Antwort konnte nicht gesendet werden."));
+      })
+      .finally(function () {
+        sendenEl.disabled = false;
+        eingabeEl.focus();
+      });
+  }
+
+  function sende(vorgegebenerText) {
+    var frageText = (typeof vorgegebenerText === "string" ? vorgegebenerText : eingabeEl.value).trim();
+    if (!frageText) return;
+    hinzufuegen("nutzer", textKnoten(frageText));
+    verlaufText.push(frageText);
+    eingabeEl.value = "";
+    sendenEl.disabled = true;
+
+    fetch("/frage", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ frage: frageText, verlauf: verlaufText.slice(0, -1), sitzungskennung: sitzungskennung,
+                             letzte_sitzung: sitzungskennung ? null : letzteSitzung })
+    })
+      .then(function (r) { return r.json(); })
+      .then(nachAntwort)
+      .catch(function () {
+        hinzufuegen("bot", textKnoten("Fehler: Antwort konnte nicht geladen werden."));
+      })
+      .finally(function () {
+        sendenEl.disabled = false;
+        eingabeEl.focus();
+      });
+  }
+
+  // Dialogtest Fallgrenzen: ein neuer, unabhängiger Fall darf nichts aus dem bisherigen
+  // Fall übernehmen -- weder Sitzung (gespeicherte Fakten) noch Verlaufstext.
+  document.getElementById("neuer-fall").addEventListener("click", function () {
+    verlaufText = [];
+    sitzungskennung = null;
+    letzteSitzung = null;
+    var linie = document.createElement("div");
+    linie.className = "fallgrenze";
+    linie.textContent = "— Neuer Fall: bisherige Angaben werden nicht übernommen —";
+    verlaufEl.appendChild(linie);
+    verlaufEl.scrollTop = verlaufEl.scrollHeight;
+    eingabeEl.focus();
+  });
+
+  sendenEl.addEventListener("click", sende);
+  eingabeEl.addEventListener("keydown", function (e) {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      sende();
+    }
+  });
+
+  fetch("/gesundheit").then(function (r) { return r.json(); }).then(function (d) {
+    modusEl.textContent = (d.demo_modus ? "Demo-Modus, Ersatzmodell" : "Mistral (EU)") + " – " + d.modell;
+  }).catch(function () {
+    modusEl.textContent = "Status unbekannt";
+  });
+})();
+</script>
+</body>
+</html>

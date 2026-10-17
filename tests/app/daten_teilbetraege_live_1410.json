@@ -1,0 +1,1452 @@
+{
+ "P-04a": {
+  "frage": "Ein selbständiger Grafiker (Einzelperson) hat uns 2026 fünfmal kleine Werbegrafiken für unsere eigene Werbung gestaltet, jede Rechnung 250 € netto. Sonst keine Aufträge. Abgabepflichtig?",
+  "modell": [
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2026,
+    "auftragnehmer_typ": "natuerliche_person",
+    "leistungsart": "Grafik/Design",
+    "taetigkeit_id": "T-02",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "250",
+      "bezeichnung": "kleine Werbegrafiken",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "250",
+      "bezeichnung": "kleine Werbegrafiken",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "250",
+      "bezeichnung": "kleine Werbegrafiken",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "250",
+      "bezeichnung": "kleine Werbegrafiken",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "250",
+      "bezeichnung": "kleine Werbegrafiken",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 1
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "250"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "250"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "250"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "250"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "250"
+     }
+    ],
+    "anzahl_auftraege": 5
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2026,
+    "auftragnehmer_typ": "natuerliche_person",
+    "leistungsart": "Grafik/Design",
+    "taetigkeit_id": "T-02",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "250",
+      "bezeichnung": "kleine Werbegrafiken",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "250",
+      "bezeichnung": "kleine Werbegrafiken",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "250",
+      "bezeichnung": "kleine Werbegrafiken",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "250",
+      "bezeichnung": "kleine Werbegrafiken",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "250",
+      "bezeichnung": "kleine Werbegrafiken",
+      "auftragnehmer_nr": 1
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "250"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "250"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "250"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "250"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "250"
+     }
+    ],
+    "anzahl_auftraege": 5
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2026,
+    "auftragnehmer_typ": "natuerliche_person",
+    "leistungsart": "Grafik/Design",
+    "taetigkeit_id": "T-02",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "250",
+      "bezeichnung": "kleine Werbegrafiken",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "250",
+      "bezeichnung": "kleine Werbegrafiken",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "250",
+      "bezeichnung": "kleine Werbegrafiken",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "250",
+      "bezeichnung": "kleine Werbegrafiken",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "250",
+      "bezeichnung": "kleine Werbegrafiken",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 1
+     }
+    ],
+    "anzahl_auftraege": 5
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2026,
+    "auftragnehmer_typ": "natuerliche_person",
+    "leistungsart": "Grafik/Design",
+    "taetigkeit_id": "T-02",
+    "ein_auftragnehmer": true,
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "250"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "250"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "250"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "250"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "250"
+     }
+    ],
+    "anzahl_auftraege": 5
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2026,
+    "auftragnehmer_typ": "natuerliche_person",
+    "leistungsart": "Grafik/Design",
+    "taetigkeit_id": "T-02",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "250",
+      "rolle": "honorar",
+      "bezeichnung": "kleine Werbegrafiken",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "250",
+      "rolle": "honorar",
+      "bezeichnung": "kleine Werbegrafiken",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "250",
+      "rolle": "honorar",
+      "bezeichnung": "kleine Werbegrafiken",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "250",
+      "rolle": "honorar",
+      "bezeichnung": "kleine Werbegrafiken",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "250",
+      "rolle": "honorar",
+      "bezeichnung": "kleine Werbegrafiken",
+      "auftragnehmer_nr": 1
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "250"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "250"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "250"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "250"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "250"
+     }
+    ],
+    "anzahl_auftraege": 5
+   }
+  ]
+ },
+ "P-04b": {
+  "frage": "Ein selbständiger Grafiker (Einzelperson) hat uns 2026 viermal kleine Werbegrafiken für unsere eigene Werbung gestaltet, jede Rechnung 200 € netto. Sonst keine Aufträge. Abgabepflichtig?",
+  "modell": [
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2026,
+    "auftragnehmer_typ": "natuerliche_person",
+    "leistungsart": "Grafik/Design",
+    "taetigkeit_id": "T-02",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "200",
+      "bezeichnung": "kleine Werbegrafiken",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "200",
+      "bezeichnung": "kleine Werbegrafiken",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "200",
+      "bezeichnung": "kleine Werbegrafiken",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "200",
+      "bezeichnung": "kleine Werbegrafiken",
+      "auftragnehmer_nr": 1
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "200"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "200"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "200"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "200"
+     }
+    ],
+    "anzahl_auftraege": 4
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2026,
+    "auftragnehmer_typ": "natuerliche_person",
+    "leistungsart": "Grafik/Design",
+    "taetigkeit_id": "T-02",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "200",
+      "bezeichnung": "kleine Werbegrafiken",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "200",
+      "bezeichnung": "kleine Werbegrafiken",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "200",
+      "bezeichnung": "kleine Werbegrafiken",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "200",
+      "bezeichnung": "kleine Werbegrafiken",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 1
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "200"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "200"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "200"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "200"
+     }
+    ],
+    "anzahl_auftraege": 4
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2026,
+    "auftragnehmer_typ": "natuerliche_person",
+    "leistungsart": "Grafik/Design",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "200",
+      "bezeichnung": "kleine Werbegrafiken",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "200",
+      "bezeichnung": "kleine Werbegrafiken",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "200",
+      "bezeichnung": "kleine Werbegrafiken",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "200",
+      "bezeichnung": "kleine Werbegrafiken",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 1
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "200"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "200"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "200"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "200"
+     }
+    ],
+    "anzahl_auftraege": 4
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2026,
+    "auftragnehmer_typ": "natuerliche_person",
+    "leistungsart": "Grafik/Design",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "200",
+      "bezeichnung": "kleine Werbegrafiken für eigene Werbung",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "200",
+      "bezeichnung": "kleine Werbegrafiken für eigene Werbung",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "200",
+      "bezeichnung": "kleine Werbegrafiken für eigene Werbung",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "200",
+      "bezeichnung": "kleine Werbegrafiken für eigene Werbung",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 1
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "200"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "200"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "200"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "200"
+     }
+    ],
+    "anzahl_auftraege": 4
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2026,
+    "auftragnehmer_typ": "natuerliche_person",
+    "leistungsart": "Grafik/Design",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "200",
+      "bezeichnung": "kleine Werbegrafiken",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "200",
+      "bezeichnung": "kleine Werbegrafiken",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "200",
+      "bezeichnung": "kleine Werbegrafiken",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "200",
+      "bezeichnung": "kleine Werbegrafiken",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 1
+     }
+    ],
+    "anzahl_auftraege": 4
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2026,
+    "auftragnehmer_typ": "natuerliche_person",
+    "leistungsart": "Grafik/Design",
+    "taetigkeit_id": "T-02",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "200",
+      "bezeichnung": "kleine Werbegrafiken",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "200",
+      "bezeichnung": "kleine Werbegrafiken",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "200",
+      "bezeichnung": "kleine Werbegrafiken",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "200",
+      "bezeichnung": "kleine Werbegrafiken",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 1
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "200"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "200"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "200"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "200"
+     }
+    ],
+    "anzahl_auftraege": 4,
+    "gesamtbetrag_genannt": "800"
+   }
+  ]
+ },
+ "P-28": {
+  "frage": "Unsere Werbeagentur hat 2025 einem freien Fotografen (Einzelperson) 1.190 € brutto gezahlt, darin 190 € Umsatzsteuer gesondert ausgewiesen. Wie hoch ist die Bemessungsgrundlage?",
+  "modell": [
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2025,
+    "unternehmensart": "Werbeagentur",
+    "auftragnehmer_typ": "natuerliche_person",
+    "leistungsart": "Fotografie",
+    "taetigkeit_id": "T-04",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "1190",
+      "rolle": "ust",
+      "bezeichnung": "Fotografie inkl. Umsatzsteuer",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "190",
+      "rolle": "ust",
+      "bezeichnung": "Umsatzsteuer gesondert ausgewiesen",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "0",
+      "bezeichnung": "Fotografie ohne Umsatzsteuer",
+      "auftragnehmer_nr": 1,
+      "rest": true
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "1190"
+     }
+    ]
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2025,
+    "taetigkeit_id": "T-04",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "1190",
+      "bezeichnung": "Rechnung eines freien Fotografen (Einzelperson)",
+      "auftragnehmer_typ": "natuerliche_person",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "190",
+      "rolle": "ust",
+      "bezeichnung": "Umsatzsteuer gesondert ausgewiesen",
+      "auftragnehmer_nr": 1
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "1190"
+     }
+    ]
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2025,
+    "unternehmensart": "Werbeagentur",
+    "auftragnehmer_typ": "natuerliche_person",
+    "leistungsart": "Fotografie",
+    "taetigkeit_id": "T-04",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "1190",
+      "rolle": "ust",
+      "bezeichnung": "Fotografie inkl. Umsatzsteuer",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "190",
+      "rolle": "ust",
+      "bezeichnung": "Umsatzsteuer gesondert ausgewiesen",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "0",
+      "bezeichnung": "Fotografie ohne Umsatzsteuer",
+      "auftragnehmer_nr": 1,
+      "rest": true
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "1190"
+     }
+    ],
+    "gesamtbetrag_genannt": "1190"
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2025,
+    "unternehmensart": "Werbeagentur",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "1190",
+      "bezeichnung": "Zahlung an freien Fotografen (brutto)",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-04",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "190",
+      "rolle": "ust",
+      "bezeichnung": "Umsatzsteuer gesondert ausgewiesen",
+      "auftragnehmer_nr": 1
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "1190"
+     }
+    ]
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2025,
+    "unternehmensart": "Werbeagentur",
+    "auftragnehmer_typ": "natuerliche_person",
+    "leistungsart": "Fotografie",
+    "taetigkeit_id": "T-04",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "1190",
+      "rolle": "ust",
+      "bezeichnung": "1.190 € brutto, darin 190 € Umsatzsteuer gesondert ausgewiesen",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "190",
+      "rolle": "ust",
+      "bezeichnung": "Umsatzsteuer gesondert ausgewiesen",
+      "auftragnehmer_nr": 1,
+      "rest": false
+     },
+     {
+      "betrag": "0",
+      "bezeichnung": "Fotografie-Leistung (Restbetrag)",
+      "auftragnehmer_nr": 1,
+      "rest": true
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "1190"
+     }
+    ]
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2025,
+    "leistungsart": "Fotografie",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "1190",
+      "rolle": "ust",
+      "bezeichnung": "Fotografie-Leistung inkl. Umsatzsteuer",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-04",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "190",
+      "rolle": "ust",
+      "bezeichnung": "Umsatzsteuer gesondert ausgewiesen",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "0",
+      "bezeichnung": "Fotografie-Leistung ohne Umsatzsteuer",
+      "auftragnehmer_nr": 1,
+      "rest": true
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "1190"
+     }
+    ]
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2025,
+    "leistungsart": "Fotografie",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "1190",
+      "bezeichnung": "Zahlung an freien Fotografen, brutto",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-04",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "190",
+      "rolle": "ust",
+      "bezeichnung": "Umsatzsteuer gesondert ausgewiesen",
+      "auftragnehmer_nr": 1
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "1190"
+     }
+    ]
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2025,
+    "unternehmensart": "Werbeagentur",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "1190",
+      "bezeichnung": "Honorar inkl. Umsatzsteuer",
+      "auftragnehmer_typ": "natuerliche_person",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "190",
+      "rolle": "ust",
+      "bezeichnung": "Umsatzsteuer gesondert ausgewiesen",
+      "auftragnehmer_nr": 1
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "1190"
+     }
+    ]
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2025,
+    "unternehmensart": "Werbeagentur",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "1190",
+      "bezeichnung": "Fotografie-Leistung inkl. Umsatzsteuer",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-04",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "190",
+      "rolle": "ust",
+      "bezeichnung": "Umsatzsteuer gesondert ausgewiesen",
+      "auftragnehmer_nr": 1
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "1190"
+     }
+    ]
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2025,
+    "leistungsart": "Fotografie",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "1190",
+      "rolle": "ust",
+      "bezeichnung": "Rechnung eines freien Fotografen (Einzelperson), darin 190 € Umsatzsteuer gesondert ausgewiesen",
+      "auftragnehmer_typ": "natuerliche_person",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "190",
+      "bezeichnung": "Umsatzsteuer gesondert ausgewiesen",
+      "auftragnehmer_nr": 1,
+      "rest": false
+     },
+     {
+      "betrag": "0",
+      "bezeichnung": "Fotografie-Leistung (Hauptleistung)",
+      "taetigkeit_id": "T-04",
+      "auftragnehmer_nr": 1,
+      "rest": true
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "1190"
+     }
+    ]
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2025,
+    "unternehmensart": "Werbeagentur",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "1190",
+      "bezeichnung": "Zahlung an freien Fotografen, brutto",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-04",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "190",
+      "rolle": "ust",
+      "bezeichnung": "Umsatzsteuer gesondert ausgewiesen",
+      "auftragnehmer_nr": 1
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "1190"
+     }
+    ]
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2025,
+    "leistungsart": "Fotografie",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "1190",
+      "rolle": "ust",
+      "bezeichnung": "Zahlung an freien Fotografen (brutto)",
+      "auftragnehmer_typ": "natuerliche_person",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "190",
+      "rolle": "ust",
+      "bezeichnung": "Umsatzsteuer gesondert ausgewiesen",
+      "auftragnehmer_nr": 1,
+      "rest": false
+     },
+     {
+      "betrag": "0",
+      "bezeichnung": "Fotografie-Leistung (Restbetrag)",
+      "taetigkeit_id": "T-04",
+      "auftragnehmer_nr": 1,
+      "rest": true
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "1190"
+     }
+    ]
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2025,
+    "unternehmensart": "Werbeagentur",
+    "leistungsart": "Fotografie",
+    "taetigkeit_id": "T-04",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "1190",
+      "rolle": "ust",
+      "bezeichnung": "Honorar inkl. Umsatzsteuer",
+      "auftragnehmer_typ": "natuerliche_person",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "190",
+      "bezeichnung": "Umsatzsteuer gesondert ausgewiesen",
+      "auftragnehmer_nr": 1,
+      "rest": true
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "1190"
+     }
+    ]
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2025,
+    "leistungsart": "Fotografie",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "1190",
+      "bezeichnung": "Zahlung an freien Fotografen (brutto)",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-04",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "190",
+      "rolle": "ust",
+      "bezeichnung": "Umsatzsteuer gesondert ausgewiesen",
+      "auftragnehmer_nr": 1
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "1190"
+     }
+    ]
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2025,
+    "leistungsart": "Fotografie",
+    "taetigkeit_id": "T-04",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "1190",
+      "rolle": "ust",
+      "bezeichnung": "Rechnung eines freien Fotografen (Einzelperson)",
+      "auftragnehmer_typ": "natuerliche_person",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "190",
+      "bezeichnung": "Umsatzsteuer gesondert ausgewiesen",
+      "auftragnehmer_nr": 1,
+      "rest": true
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "1190"
+     }
+    ]
+   }
+  ],
+  "modell_ohne_enthaltenen_betrag": [
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2025,
+    "leistungsart": "Fotografie",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "1190",
+      "rolle": "ust",
+      "bezeichnung": "1.190 € brutto, darin 190 € Umsatzsteuer gesondert ausgewiesen",
+      "auftragnehmer_typ": "natuerliche_person",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "0",
+      "bezeichnung": "Honorar für Fotografie",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-04",
+      "auftragnehmer_nr": 1,
+      "rest": true
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "1190"
+     }
+    ]
+   }
+  ]
+ },
+ "P-30": {
+  "frage": "Unsere Werbeagentur hat 2025 einem freien Designer (Einzelperson) 3.000 € Honorar gezahlt und zusätzlich 80 € nachgewiesene Bahnfahrtkosten erstattet. Wie hoch ist die Bemessungsgrundlage?",
+  "modell": [
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2025,
+    "unternehmensart": "Werbeagentur",
+    "auftragnehmer_typ": "natuerliche_person",
+    "leistungsart": "Grafik/Design",
+    "taetigkeit_id": "T-02",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "3000",
+      "rolle": "honorar",
+      "bezeichnung": "Honorar für Designleistungen",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "80",
+      "rolle": "fahrtkosten_nachgewiesen",
+      "bezeichnung": "nachgewiesene Bahnfahrtkosten",
+      "nachgewiesen": true,
+      "auftragnehmer_nr": 1
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "3080"
+     }
+    ]
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2025,
+    "unternehmensart": "Werbeagentur",
+    "auftragnehmer_typ": "natuerliche_person",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "3000",
+      "rolle": "honorar",
+      "bezeichnung": "Honorar",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "80",
+      "rolle": "fahrtkosten_nachgewiesen",
+      "bezeichnung": "nachgewiesene Bahnfahrtkosten",
+      "nachgewiesen": true,
+      "auftragnehmer_nr": 1
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "3080"
+     }
+    ]
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2025,
+    "unternehmensart": "Werbeagentur",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "3000",
+      "rolle": "honorar",
+      "bezeichnung": "Honorar",
+      "auftragnehmer_typ": "natuerliche_person",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "80",
+      "rolle": "fahrtkosten_nachgewiesen",
+      "bezeichnung": "nachgewiesene Bahnfahrtkosten",
+      "nachgewiesen": true,
+      "auftragnehmer_typ": "natuerliche_person",
+      "auftragnehmer_nr": 1
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "3080"
+     }
+    ]
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2025,
+    "unternehmensart": "Werbeagentur",
+    "auftragnehmer_typ": "natuerliche_person",
+    "leistungsart": "Grafik/Design",
+    "taetigkeit_id": "T-02",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "3000",
+      "bezeichnung": "Honorar",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "80",
+      "rolle": "fahrtkosten_nachgewiesen",
+      "bezeichnung": "nachgewiesene Bahnfahrtkosten",
+      "nachgewiesen": true,
+      "auftragnehmer_nr": 1
+     }
+    ]
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2025,
+    "unternehmensart": "Werbeagentur",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "3000",
+      "rolle": "honorar",
+      "bezeichnung": "Honorar",
+      "auftragnehmer_typ": "natuerliche_person",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "80",
+      "rolle": "fahrtkosten_nachgewiesen",
+      "bezeichnung": "nachgewiesene Bahnfahrtkosten",
+      "nachgewiesen": true,
+      "auftragnehmer_typ": "natuerliche_person",
+      "auftragnehmer_nr": 1
+     }
+    ]
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2025,
+    "unternehmensart": "Werbeagentur",
+    "auftragnehmer_typ": "natuerliche_person",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "3000",
+      "rolle": "honorar",
+      "bezeichnung": "Honorar",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "80",
+      "rolle": "fahrtkosten_nachgewiesen",
+      "bezeichnung": "nachgewiesene Bahnfahrtkosten",
+      "nachgewiesen": true,
+      "auftragnehmer_nr": 1
+     }
+    ]
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2025,
+    "unternehmensart": "Werbeagentur",
+    "auftragnehmer_typ": "natuerliche_person",
+    "leistungsart": "Grafik/Design",
+    "taetigkeit_id": "T-02",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "3000",
+      "rolle": "honorar",
+      "bezeichnung": "Honorar für Designleistung"
+     },
+     {
+      "betrag": "80",
+      "rolle": "fahrtkosten_nachgewiesen",
+      "bezeichnung": "nachgewiesene Bahnfahrtkosten",
+      "nachgewiesen": true
+     }
+    ]
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2025,
+    "unternehmensart": "Werbeagentur",
+    "auftragnehmer_typ": "natuerliche_person",
+    "leistungsart": "Grafik/Design",
+    "taetigkeit_id": "T-02",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "3000",
+      "rolle": "honorar",
+      "bezeichnung": "Honorar für Designleistungen",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "80",
+      "rolle": "fahrtkosten_nachgewiesen",
+      "bezeichnung": "nachgewiesene Bahnfahrtkosten",
+      "nachgewiesen": true,
+      "auftragnehmer_nr": 1
+     }
+    ]
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2025,
+    "unternehmensart": "Werbeagentur",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "3000",
+      "rolle": "honorar",
+      "bezeichnung": "Honorar",
+      "auftragnehmer_typ": "natuerliche_person",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "80",
+      "rolle": "fahrtkosten_nachgewiesen",
+      "bezeichnung": "nachgewiesene Bahnfahrtkosten",
+      "nachgewiesen": true,
+      "auftragnehmer_nr": 1
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "3080"
+     }
+    ]
+   }
+  ]
+ },
+ "P-32": {
+  "frage": "Unsere Werbeagentur hat 2026 einem freien Gestalter (Einzelperson) 1.200 € netto für die Gestaltung gezahlt und danach 800 € netto für die Vervielfältigung (Druck), getrennt abgerechnet. Wie hoch ist die Bemessungsgrundlage?",
+  "modell": [
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2026,
+    "unternehmensart": "Werbeagentur",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "1200",
+      "bezeichnung": "Gestaltung",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "800",
+      "rolle": "vervielfaeltigung_nachtraeglich",
+      "bezeichnung": "Vervielfältigung (Druck)",
+      "auftragnehmer_nr": 1
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "1200"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "800"
+     }
+    ]
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2026,
+    "unternehmensart": "Werbeagentur",
+    "auftragnehmer_typ": "natuerliche_person",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "1200",
+      "bezeichnung": "Gestaltung",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "800",
+      "rolle": "vervielfaeltigung_nachtraeglich",
+      "bezeichnung": "Vervielfältigung (Druck)",
+      "auftragnehmer_nr": 1
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "1200"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "800"
+     }
+    ]
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2026,
+    "unternehmensart": "Werbeagentur",
+    "auftragnehmer_typ": "natuerliche_person",
+    "leistungsart": "Grafik/Design",
+    "taetigkeit_id": "T-02",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "1200",
+      "bezeichnung": "Gestaltung",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "800",
+      "rolle": "vervielfaeltigung_nachtraeglich",
+      "bezeichnung": "Vervielfältigung (Druck)",
+      "auftragnehmer_nr": 1
+     }
+    ]
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2026,
+    "unternehmensart": "Werbeagentur",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "1200",
+      "bezeichnung": "Gestaltung",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "800",
+      "rolle": "vervielfaeltigung_nachtraeglich",
+      "bezeichnung": "Vervielfältigung (Druck)",
+      "auftragnehmer_typ": "natuerliche_person",
+      "auftragnehmer_nr": 1
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "1200"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "800"
+     }
+    ]
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2026,
+    "unternehmensart": "Werbeagentur",
+    "auftragnehmer_typ": "natuerliche_person",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "1200",
+      "bezeichnung": "Gestaltung",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "800",
+      "rolle": "vervielfaeltigung_nachtraeglich",
+      "bezeichnung": "Vervielfältigung (Druck)",
+      "auftragnehmer_nr": 1
+     }
+    ]
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2026,
+    "unternehmensart": "Werbeagentur",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "1200",
+      "bezeichnung": "Gestaltung",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "800",
+      "rolle": "vervielfaeltigung_nachtraeglich",
+      "bezeichnung": "Vervielfältigung (Druck)",
+      "auftragnehmer_typ": "natuerliche_person",
+      "auftragnehmer_nr": 1
+     }
+    ]
+   }
+  ]
+ },
+ "_hinweis": "Echte Antworten von mistral-large-latest (Workflow 'Modellfehler suchen', Läufe 38559463415, 38561909480 und 38563518242, 14.10.2026), erfundene Testfälle aus aufgaben/audit/pruefkatalog.json. 'modell_ohne_enthaltenen_betrag': das Modell ließ den enthaltenen Betrag weg -- Soll Rückfrage (nicht erfinden).",
+ "_hinweis_1610": "16.10.2026: Soll für 'modell_ohne_enthaltenen_betrag' geändert – steht der enthaltene Betrag wörtlich im Text ('darin 190 € Umsatzsteuer'), ergänzt das System ihn sichtbar in der Faktenbestätigung (app/zuordnung.py::fehlender_enthaltener_teil); steht er nicht im Text, bleibt es eine Rückfrage. Begründung im Test test_fehlt_der_enthaltene_betrag_wird_er_aus_dem_text_sichtbar_ergaenzt. Die Modellantworten selbst sind unverändert."
+}

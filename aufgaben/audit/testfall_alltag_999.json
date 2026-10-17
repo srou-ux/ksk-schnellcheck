@@ -1,0 +1,42 @@
+{
+ "hinweis": "Testbeleg ALLTAG-2026-999 des Nutzers (alltag999-vielkuenstler-rechnung.txt, 11.10.2026), erfundene Daten; Rechnung wörtlich (Fassung mit Nettosumme 11.686,00 €, nachgerechnet). Soll aus der Testdatei (ENTWURF): Pos. 10 Provision (R-38/R-39) und Tätigkeitsliste Pos. 03/09 sind offen.",
+ "stand": "2026-10-11",
+ "kuerzel": {
+  "A": "Abgabepflichtig (Vorschlag)",
+  "N": "Nicht abgabepflichtig (Vorschlag)",
+  "G": "Grenzfall → Steuerberater entscheidet",
+  "R": "Rückfrage nötig",
+  "X": "Nicht abgedeckt (Quelle fehlt)",
+  "AUSKUNFT": "Auskunft aus dem Regelwerk", "HINWEIS": "Hinweis"
+ },
+ "faelle": [
+  {
+   "id": "A-999",
+   "gruppe": "Viel-Künstler-Sammelrechnung an Messe-Veranstalterin",
+   "referenz": "Soll der Testdatei: einbezogen Pos. 08 (700), 09 (1.100), 10 Direktzahlung (2.720) = 4.520 € × 4,9 % = 221,48 €; keine Rückfrage; Fundstelle § 24 Abs. 1 Nr. 3, nicht Nr. 7",
+   "sicherheit": "Soll der Testdatei (Entwurf), Pos. 10 Provision offen",
+   "frage": "Mein Mandant ist der Rechnungsempfänger. Er hat diese Rechnung erhalten:\nRechnungsteller: Kulturwerk Produktions GmbH\nRechnung an: Mittelstands Messe Koblenz GmbH, Veranstalterin (3 Messetage, Juni 2026)\nNr.: KP-2026-999 | Datum: 15.06.2026 | Leistungszeitraum: 01.06.2026-30.06.2026\nZahlung: Ueberweisung am 20.06.2026 erfolgt (Kontoauszug liegt vor)\n\nPos. 01 | Fotoshooting Messe-Eroeffnung, freischaffender Fotograf Lenz Okafor, IM EIGENEN NAMEN der GmbH eingekauft | 1.200,00 EUR\nPos. 02 | Live-Konzert Messebuehne, Band \"The Blue Notes\" (3 freischaffende Musiker), IM EIGENEN NAMEN der GmbH verpflichtet | 1.600,00 EUR\nPos. 03 | Buhenengrafik und Plakatmotive, freischaffende Grafikerin Mara Vogt, IM EIGENEN NAMEN der GmbH | 800,00 EUR\nPos. 04 | Schauspieler-Auftritt Messe-Eroeffnungssketch, freischaffender Schauspieler Ruben Adler, IM EIGENEN NAMEN der GmbH | 900,00 EUR\nPos. 05 | Tanzperformance Messestand Kunde, freischaffende Taenzerin Ilayda Sen, IM EIGENEN NAMEN der GmbH | 700,00 EUR\nPos. 06 | Autorenlesung im Messeforum, freischaffender Autor David Lindqvist, IM EIGENEN NAMEN der GmbH | 950,00 EUR\nPos. 07 | Pressetexte und Messedokumentation, freischaffender Journalist Jonas Falk, IM EIGENEN NAMEN der GmbH | 620,00 EUR\nPos. 08 | Backing-Vocals Firmenvideo, freischaffende Saengerin Aylin Demir, Vertrag DIREKT Messe GmbH - Demir, Rechnung hier \"unveraendert durchgereicht\" | 700,00 EUR\nPos. 09 | Lichtkunst-Installation Messefoyer, Lichtkuenstlerin Mira Ade, Vertrag DIREKT Messe GmbH - Ade, \"unveraendert durchgereicht\" | 1.100,00 EUR\nPos. 10 | Komposition Firmensoundtrack, Komponist Adam Stern; GmbH erhaelt 480,00 EUR Vermittlungsprovision, Rest 2.720,00 EUR zahlt die Messe GmbH DIREKT an den Komponisten (darin enthalten) | 480,00 EUR\nPos. 11 | Reisekosten Okafor, pauschal lt. Vertrag, Belege \"im Anhang\" (Anhang liegt NICHT bei) | 336,00 EUR\nPos. 12 | Ton- und Lichttechnik-Anmietung (nur Equipment, kein Personal), Subunternehmen TonVermiet N.V., Rotterdam/NL | 1.400,00 EUR\nPos. 13 | Uebersetzung Messebegruessungstexte (lit. Uebersetzung), freiberufliche Uebersetzerin Petra Kahn, IM EIGENEN NAMEN der GmbH | 900,00 EUR\n\nNettosumme: 11.686,00 EUR\nUSt 19%: 2.220,34 EUR\nRechnungsbetrag: 13.906,34 EUR\nIst das für meinen Mandanten künstlersozialabgabepflichtig, und wie hoch ist die Abgabe?",
+   "soll": [
+    "A"
+   ],
+   "zahl": {
+    "bemessungsgrundlage": "4520",
+    "abgabe": "221.48"
+   },
+   "max_rueckfragen": 0,
+   "verboten_text": [
+    "Satz 1 Nr. 7",
+    "S. 1 Nr. 7"
+   ],
+   "enthaelt": [
+    [
+     "Nr. 3"
+    ]
+   ],
+   "nachtrag": "Die Mittelstands Messe Koblenz GmbH ist eine Messegesellschaft, die Eigenveranstaltungen mit Künstlern durchführt.",
+   "knoepfe": {
+    "verwerterart": "Typischer Verwerter"
+   }
+  }
+ ]
+}

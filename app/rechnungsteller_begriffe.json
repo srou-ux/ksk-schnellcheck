@@ -1,0 +1,72 @@
+{
+  "_hinweis": "Alltagsfälle 11.10.2026 (F3): app/zuordnung.py::rechnungsteller_als_zahlungsempfaenger. Bezahlt wird, wer die Rechnung stellt (R-45, R-177, R-216; Agentur im eigenen Namen: R-189, R-219). Erkannt wird nur eine ausdrücklich beschriftete Zeile ('Rechnungsteller: ...'). Steht im Text ein Hinweis auf Vertretung des Künstlers, wird bei einer Gesellschaft nichts gesetzt (R-33: das System fragt). Keine Festwerte im Code: die Listen stehen hier.",
+  "etiketten": [
+    "rechnungsteller",
+    "rechnungssteller",
+    "rechnungsstellerin",
+    "rechnungsaussteller",
+    "rechnungsausstellerin"
+  ],
+  "vertreter": [
+    "im namen und für rechnung",
+    "im namen und fuer rechnung",
+    "im namen und auf rechnung",
+    "als vertreter",
+    "als vertreterin",
+    "in vertretung",
+    "als vermittler",
+    "als vermittlerin",
+    "vermittlungsprovision"
+  ],
+  "eigene_seite": [
+    "wir",
+    "uns",
+    "unser",
+    "unsere",
+    "ich",
+    "mein",
+    "meine"
+  ],
+  "positionsbeginn": "^\\s*(?:pos(?:ition)?\\.?\\s*)?\\d{1,3}\\s*[|:.)\\-–]?\\s+\\S",
+  "abschnitt_ende": [
+    "nettosumme",
+    "bruttosumme",
+    "summe",
+    "zwischensumme",
+    "ust",
+    "mwst",
+    "umsatzsteuer",
+    "rechnungsbetrag",
+    "gesamt",
+    "belegvermerk",
+    "zahlbar",
+    "ist das",
+    "bitte"
+  ],
+  "_hinweis_je_position": "Härtetest RE-2026-777 und ALLTAG-2026-999 (11.10.2026): Je Position (genauer: je Satzteil mit dem Betrag) wird erkannt, ob die Rechnungstellerin im eigenen Namen handelt. 'vertrag_direkt': Vertrag unmittelbar zwischen Mandant und Künstler (Durchleitung, Vertretung, Direktzahlung) -> zählt beim Mandanten (KSK-Info 27 S. 1; KSK-Info 13 Abschn. II.1a; R-127, R-36, R-94). 'unklar': Provision an einen Vermittler oder vertragswidriger Zahlungsweg -> Steuerberater entscheidet (R-38/R-39). 'unklar' geht vor 'vertrag_direkt'.",
+  "vertrag_direkt": [
+    "vertrag direkt",
+    "direkt zwischen",
+    "durchgereicht",
+    "durchleitung",
+    "weiterleitung",
+    "im namen und für rechnung",
+    "im namen und fuer rechnung",
+    "im namen und auf rechnung",
+    "in vertretung",
+    "als vertreter",
+    "als vertreterin",
+    "direkt an den",
+    "direkt an die",
+    "zahlt direkt"
+  ],
+  "unklar": [
+    "provision",
+    "vertragswidrig",
+    "als vermittler",
+    "als vermittlerin",
+    "zwischenhändler",
+    "zwischenhaendler"
+  ],
+  "satzteil_trenner": ";|\\||\\n|,\\s"
+}

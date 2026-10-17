@@ -1,0 +1,1571 @@
+[
+ {
+  "id": "I-01",
+  "fn": "eigenwerbung",
+  "args": {
+   "jahr": 2026,
+   "summe": 1000
+  },
+  "soll": {
+   "klasse": "NICHT"
+  }
+ },
+ {
+  "id": "I-02",
+  "fn": "eigenwerbung",
+  "args": {
+   "jahr": 2026,
+   "summe": 1001
+  },
+  "soll": {
+   "klasse": "ABG"
+  }
+ },
+ {
+  "id": "I-03",
+  "fn": "eigenwerbung",
+  "args": {
+   "jahr": 2025,
+   "summe": 700
+  },
+  "soll": {
+   "klasse": "NICHT"
+  }
+ },
+ {
+  "id": "I-04",
+  "fn": "eigenwerbung",
+  "args": {
+   "jahr": 2025,
+   "summe": 701
+  },
+  "soll": {
+   "klasse": "ABG"
+  }
+ },
+ {
+  "id": "I-05",
+  "fn": "eigenwerbung",
+  "args": {
+   "jahr": 2024,
+   "summe": 450
+  },
+  "soll": {
+   "klasse": "NICHT"
+  }
+ },
+ {
+  "id": "I-06",
+  "fn": "eigenwerbung",
+  "args": {
+   "jahr": 2024,
+   "summe": 451
+  },
+  "soll": {
+   "klasse": "ABG"
+  }
+ },
+ {
+  "id": "I-07",
+  "fn": "eigenwerbung",
+  "args": {
+   "jahr": 2026,
+   "summe": 600
+  },
+  "soll": {
+   "klasse": "NICHT"
+  }
+ },
+ {
+  "id": "I-08",
+  "fn": "eigenwerbung",
+  "args": {
+   "jahr": 2025,
+   "summe": 900
+  },
+  "soll": {
+   "klasse": "ABG"
+  }
+ },
+ {
+  "id": "S-02",
+  "fn": "eigenwerbung",
+  "args": {
+   "jahr": 2023,
+   "summe": 800
+  },
+  "soll": {
+   "klasse": "ABG"
+  }
+ },
+ {
+  "id": "I-26",
+  "fn": "eigenwerbung",
+  "args": {
+   "jahr": 2021,
+   "summe": 400
+  },
+  "soll": {
+   "klasse": "NICHT"
+  }
+ },
+ {
+  "id": "I-25",
+  "fn": "eigenwerbung",
+  "args": {
+   "jahr": 2021,
+   "summe": 600
+  },
+  "soll": {
+   "klasse": "GRENZ"
+  }
+ },
+ {
+  "id": "D-05",
+  "fn": "eigenwerbung",
+  "args": {
+   "jahr": 2021,
+   "summe": 600
+  },
+  "soll": {
+   "klasse": "GRENZ"
+  }
+ },
+ {
+  "id": "S-01",
+  "fn": "eigenwerbung",
+  "args": {
+   "jahr": null,
+   "summe": 900
+  },
+  "soll": {
+   "klasse": "RUECK"
+  }
+ },
+ {
+  "id": "I-27",
+  "fn": "eigenwerbung",
+  "args": {
+   "jahr": null,
+   "summe": 900
+  },
+  "soll": {
+   "klasse": "RUECK"
+  }
+ },
+ {
+  "id": "D-02",
+  "fn": "positionen",
+  "args": {
+   "jahr": 2025,
+   "positionen": [
+    {
+     "betrag": 5000,
+     "art": "honorar",
+     "empfaenger": "gmbh"
+    },
+    {
+     "betrag": 600,
+     "art": "honorar",
+     "empfaenger": "natuerlich"
+    }
+   ]
+  },
+  "soll": {
+   "klasse": "NICHT"
+  }
+ },
+ {
+  "id": "C-12",
+  "fn": "positionen",
+  "args": {
+   "jahr": 2026,
+   "positionen": [
+    {
+     "betrag": 900,
+     "art": "honorar"
+    },
+    {
+     "betrag": 400,
+     "art": "seo",
+     "kuenstlerisch": false
+    }
+   ]
+  },
+  "soll": {
+   "klasse": "NICHT"
+  }
+ },
+ {
+  "id": "I-12",
+  "fn": "veranstaltungen",
+  "args": {
+   "jahr": 2025,
+   "anzahl": 3,
+   "summe": 5000
+  },
+  "soll": {
+   "klasse": "NICHT"
+  }
+ },
+ {
+  "id": "I-13",
+  "fn": "veranstaltungen",
+  "args": {
+   "jahr": 2025,
+   "anzahl": 4,
+   "summe": 5000,
+   "einnahmeabsicht": true
+  },
+  "soll": {
+   "klasse": "ABG"
+  }
+ },
+ {
+  "id": "I-14",
+  "fn": "veranstaltungen",
+  "args": {
+   "jahr": 2025,
+   "anzahl": 4,
+   "summe": 600,
+   "einnahmeabsicht": true
+  },
+  "soll": {
+   "klasse": "NICHT"
+  }
+ },
+ {
+  "id": "D-03",
+  "fn": "veranstaltungen",
+  "args": {
+   "jahr": 2025,
+   "anzahl": 3,
+   "summe": 5000
+  },
+  "soll": {
+   "klasse": "NICHT"
+  }
+ },
+ {
+  "id": "D-04",
+  "fn": "veranstaltungen",
+  "args": {
+   "jahr": 2025,
+   "anzahl": 4,
+   "summe": 5000
+  },
+  "soll": {
+   "klasse": "ABG"
+  }
+ },
+ {
+  "id": "B-09",
+  "fn": "veranstaltungen",
+  "args": {
+   "jahr": 2026,
+   "anzahl": 4,
+   "summe": 800
+  },
+  "soll": {
+   "klasse": "NICHT"
+  }
+ },
+ {
+  "id": "I-15",
+  "fn": "veranstaltungen",
+  "args": {
+   "jahr": 2025,
+   "anzahl": null,
+   "summe": 0
+  },
+  "soll": {
+   "klasse": "RUECK"
+  }
+ },
+ {
+  "id": "P-01",
+  "fn": "abgabe",
+  "args": {
+   "jahr": 2026,
+   "bg": 20000
+  },
+  "soll": {
+   "abgabe": "980.00"
+  }
+ },
+ {
+  "id": "P-02",
+  "fn": "abgabe",
+  "args": {
+   "jahr": 2025,
+   "bg": 20000
+  },
+  "soll": {
+   "abgabe": "1000.00"
+  }
+ },
+ {
+  "id": "P-03",
+  "fn": "abgabe",
+  "args": {
+   "jahr": 2021,
+   "bg": 10000
+  },
+  "soll": {
+   "abgabe": "420.00"
+  }
+ },
+ {
+  "id": "M-09",
+  "fn": "abgabe",
+  "args": {
+   "jahr": 2026,
+   "bg": 6000
+  },
+  "soll": {
+   "abgabe": "294.00"
+  }
+ },
+ {
+  "id": "P-04",
+  "fn": "vorauszahlung",
+  "args": {
+   "jahr": 2026,
+   "bg": 24000
+  },
+  "soll": {
+   "wert": "98.00"
+  }
+ },
+ {
+  "id": "P-05",
+  "fn": "vorauszahlung",
+  "args": {
+   "jahr": 2026,
+   "bg": 9000
+  },
+  "soll": {
+   "kern_klasse": "NICHT",
+   "text_enthaelt": "Keine Vorauszahlungspflicht"
+  }
+ },
+ {
+  "id": "A-08",
+  "fn": "vorauszahlung",
+  "args": {
+   "jahr": 2025,
+   "bg": 48000
+  },
+  "soll": {
+   "wert": "200.00"
+  }
+ },
+ {
+  "id": "A-09",
+  "fn": "vorauszahlung",
+  "args": {
+   "jahr": 2019,
+   "bg": 48000
+  },
+  "soll": {
+   "wert": "168.00"
+  }
+ },
+ {
+  "id": "P-06",
+  "fn": "meldefrist",
+  "args": {
+   "jahr": 2025
+  },
+  "soll": {
+   "datum": "31.03.2026"
+  }
+ },
+ {
+  "id": "P-09",
+  "fn": "aufbewahrung",
+  "args": {
+   "jahr": 2022
+  },
+  "soll": {
+   "datum": "31.12.2027"
+  }
+ },
+ {
+  "id": "P-07",
+  "fn": "saeumnis",
+  "args": {
+   "rueckstand": [
+    1234
+   ],
+   "monate": 3,
+   "jahr": 2026,
+   "gesondert": false
+  },
+  "soll": {
+   "abgabe": "36.00"
+  }
+ },
+ {
+  "id": "P-08",
+  "fn": "saeumnis",
+  "args": {
+   "rueckstand": [
+    140
+   ],
+   "monate": 1,
+   "jahr": 2026,
+   "gesondert": true
+  },
+  "soll": {
+   "kern_klasse": "NICHT",
+   "text_enthaelt": "Kein Säumniszuschlag"
+  }
+ },
+ {
+  "id": "L-10",
+  "fn": "saeumnis",
+  "args": {
+   "rueckstand": [
+    "14.94",
+    "14.94",
+    "14.94",
+    "14.94"
+   ],
+   "monate": 4,
+   "jahr": 2022,
+   "gesondert": false
+  },
+  "soll": {
+   "klasse": "GRENZ"
+  }
+ },
+ {
+  "id": "L-11",
+  "fn": "saeumnis",
+  "args": {
+   "rueckstand": [
+    "14.94",
+    "14.94"
+   ],
+   "monate": 2,
+   "jahr": 2022,
+   "gesondert": false
+  },
+  "soll": {
+   "klasse": "GRENZ"
+  }
+ },
+ {
+  "id": "L-16",
+  "fn": "saeumnis",
+  "args": {
+   "rueckstand": [
+    "14.94",
+    "14.94",
+    "14.94",
+    "14.94"
+   ],
+   "monate": 4,
+   "jahr": 2024,
+   "gesondert": false
+  },
+  "soll": {
+   "klasse": "GRENZ"
+  }
+ },
+ {
+  "id": "J-01",
+  "fn": "pauschale",
+  "args": {
+   "jahr": 2020,
+   "betrag": 3500,
+   "art": "uebungsleiter"
+  },
+  "soll": {
+   "bg": 1100,
+   "abgabe": "46.20"
+  }
+ },
+ {
+  "id": "J-02",
+  "fn": "pauschale",
+  "args": {
+   "jahr": 2022,
+   "betrag": 3500,
+   "art": "uebungsleiter"
+  },
+  "soll": {
+   "bg": 500,
+   "abgabe": "21.00"
+  }
+ },
+ {
+  "id": "J-03",
+  "fn": "pauschale",
+  "args": {
+   "jahr": 2026,
+   "betrag": 3500,
+   "art": "uebungsleiter"
+  },
+  "soll": {
+   "bg": 200,
+   "abgabe": "9.80"
+  }
+ },
+ {
+  "id": "J-04",
+  "fn": "pauschale",
+  "args": {
+   "jahr": 2025,
+   "betrag": 1000,
+   "art": "ehrenamt"
+  },
+  "soll": {
+   "bg": 160,
+   "abgabe": "8.00"
+  }
+ },
+ {
+  "id": "J-05",
+  "fn": "pauschale",
+  "args": {
+   "jahr": 2024,
+   "betrag": 1000,
+   "art": "ehrenamt"
+  },
+  "soll": {
+   "bg": 1000,
+   "abgabe": "50.00"
+  }
+ },
+ {
+  "id": "C-36",
+  "fn": "pauschale",
+  "args": {
+   "jahr": 2026,
+   "betrag": 4000,
+   "art": "uebungsleiter"
+  },
+  "soll": {
+   "bg": 700,
+   "abgabe": "34.30"
+  }
+ },
+ {
+  "id": "C-37",
+  "fn": "pauschale",
+  "args": {
+   "jahr": 2026,
+   "betrag": 2000,
+   "art": "uebungsleiter",
+   "bereits": 3300
+  },
+  "soll": {
+   "bg": 2000,
+   "abgabe": "98.00"
+  }
+ },
+ {
+  "id": "C-38",
+  "fn": "pauschale",
+  "args": {
+   "jahr": 2025,
+   "betrag": 800,
+   "art": "ehrenamt"
+  },
+  "soll": {
+   "klasse": "NICHT"
+  }
+ },
+ {
+  "id": "C-39",
+  "fn": "pauschale",
+  "args": {
+   "jahr": 2024,
+   "betrag": 800,
+   "art": "ehrenamt"
+  },
+  "soll": {
+   "klasse": "ABG"
+  }
+ },
+ {
+  "id": "B-05",
+  "fn": "pauschale",
+  "args": {
+   "jahr": 2025,
+   "betrag": 2500,
+   "art": "uebungsleiter"
+  },
+  "soll": {
+   "klasse": "NICHT"
+  }
+ },
+ {
+  "id": "B-01",
+  "fn": "netto",
+  "args": {
+   "jahr": 2025,
+   "brutto": 1190,
+   "ust": 190
+  },
+  "soll": {
+   "bg": 1000
+  }
+ },
+ {
+  "id": "M-01",
+  "fn": "netto",
+  "args": {
+   "jahr": 2025,
+   "brutto": 11900,
+   "ust": 1900
+  },
+  "soll": {
+   "bg": 10000,
+   "abgabe": "500.00"
+  }
+ },
+ {
+  "id": "B-03",
+  "fn": "bemessung",
+  "args": {
+   "jahr": 2025,
+   "positionen": [
+    {
+     "betrag": 3000,
+     "art": "honorar"
+    },
+    {
+     "betrag": 80,
+     "art": "fahrtkosten_nachgewiesen"
+    }
+   ]
+  },
+  "soll": {
+   "bg": 3000
+  }
+ },
+ {
+  "id": "B-04",
+  "fn": "bemessung",
+  "args": {
+   "jahr": 2025,
+   "positionen": [
+    {
+     "betrag": 2000,
+     "art": "honorar"
+    },
+    {
+     "betrag": 300,
+     "art": "material"
+    }
+   ]
+  },
+  "soll": {
+   "bg": 2300
+  }
+ },
+ {
+  "id": "C-04",
+  "fn": "bemessung",
+  "args": {
+   "jahr": 2026,
+   "positionen": [
+    {
+     "betrag": 1000,
+     "art": "honorar"
+    },
+    {
+     "betrag": 60,
+     "art": "fahrtkosten_nachgewiesen"
+    }
+   ]
+  },
+  "soll": {
+   "bg": 1000,
+   "abgabe": "49.00"
+  }
+ },
+ {
+  "id": "C-05",
+  "fn": "bemessung",
+  "args": {
+   "jahr": 2026,
+   "positionen": [
+    {
+     "betrag": 800,
+     "art": "honorar"
+    },
+    {
+     "betrag": 150,
+     "art": "assistent"
+    },
+    {
+     "betrag": 100,
+     "art": "equipment"
+    }
+   ]
+  },
+  "soll": {
+   "bg": 1050,
+   "abgabe": "51.45"
+  }
+ },
+ {
+  "id": "C-29",
+  "fn": "bemessung",
+  "args": {
+   "jahr": 2026,
+   "positionen": [
+    {
+     "betrag": 2600,
+     "art": "honorar"
+    }
+   ]
+  },
+  "soll": {
+   "bg": 2600,
+   "abgabe": "127.40"
+  }
+ },
+ {
+  "id": "C-34",
+  "fn": "bemessung",
+  "args": {
+   "jahr": 2026,
+   "positionen": [
+    {
+     "betrag": 60000,
+     "art": "gehalt"
+    },
+    {
+     "betrag": 20000,
+     "art": "gewinnzuweisung"
+    }
+   ]
+  },
+  "soll": {
+   "bg": 60000,
+   "abgabe": "2940.00"
+  }
+ },
+ {
+  "id": "C-35",
+  "fn": "bemessung",
+  "args": {
+   "jahr": 2026,
+   "positionen": [
+    {
+     "betrag": 60000,
+     "art": "gehalt"
+    },
+    {
+     "betrag": 10000,
+     "art": "tantieme"
+    },
+    {
+     "betrag": 20000,
+     "art": "gewinnzuweisung"
+    }
+   ]
+  },
+  "soll": {
+   "bg": 70000,
+   "abgabe": "3430.00"
+  }
+ },
+ {
+  "id": "M-08",
+  "fn": "bemessung",
+  "args": {
+   "jahr": 2021,
+   "positionen": [
+    {
+     "betrag": 1000,
+     "art": "honorar"
+    },
+    {
+     "betrag": 300,
+     "art": "pcr_tests"
+    }
+   ]
+  },
+  "soll": {
+   "bg": 1300,
+   "abgabe": "54.60"
+  }
+ },
+ {
+  "id": "K-14",
+  "fn": "bemessung",
+  "args": {
+   "jahr": 2025,
+   "positionen": [
+    {
+     "betrag": 2000,
+     "art": "honorar"
+    },
+    {
+     "betrag": 3000,
+     "art": "vervielfaeltigung_nachtraeglich"
+    }
+   ]
+  },
+  "soll": {
+   "bg": 2000
+  }
+ },
+ {
+  "id": "X-01",
+  "fn": "kommission",
+  "args": {
+   "jahr": 2025,
+   "preis": 1000,
+   "einbehalt": 500
+  },
+  "soll": {
+   "bg": 500,
+   "abgabe": "25.00"
+  }
+ },
+ {
+  "id": "X-02",
+  "fn": "kommission",
+  "args": {
+   "jahr": 2025,
+   "preis": 1000,
+   "einbehalt": 300
+  },
+  "soll": {
+   "bg": 700
+  }
+ },
+ {
+  "id": "A-15",
+  "fn": "bemessung",
+  "args": {
+   "jahr": 2026,
+   "positionen": [
+    {
+     "betrag": 1400,
+     "art": "honorar"
+    }
+   ]
+  },
+  "soll": {
+   "bg": 1400,
+   "abgabe": "68.60"
+  }
+ },
+ {
+  "id": "C-21",
+  "fn": "bemessung",
+  "args": {
+   "jahr": 2026,
+   "positionen": [
+    {
+     "betrag": 500,
+     "art": "honorar"
+    }
+   ]
+  },
+  "soll": {
+   "bg": 500,
+   "abgabe": "24.50"
+  }
+ },
+ {
+  "id": "C-10",
+  "fn": "schaetzung",
+  "args": {
+   "jahr": 2026,
+   "brutto": 40000
+  },
+  "soll": {
+   "bg": 10000,
+   "abgabe": "490.00"
+  }
+ },
+ {
+  "id": "I-22",
+  "fn": "schaetzung",
+  "args": {
+   "jahr": 2025,
+   "brutto": 100000
+  },
+  "soll": {
+   "bg": 25000
+  }
+ },
+ {
+  "id": "L-18",
+  "fn": "verpflegung_bg",
+  "args": {
+   "jahr": 2025,
+   "honorar": 1000,
+   "stunden": 8,
+   "erstattung": 14
+  },
+  "soll": {
+   "klasse": "GRENZ",
+   "bg": 1014
+  }
+ },
+ {
+  "id": "L-19",
+  "fn": "verpflegung_bg",
+  "args": {
+   "jahr": 2025,
+   "honorar": 1000,
+   "stunden": "8.5",
+   "erstattung": 14
+  },
+  "soll": {
+   "bg": 1000
+  }
+ },
+ {
+  "id": "L-20",
+  "fn": "verpflegung_bg",
+  "args": {
+   "jahr": 2025,
+   "honorar": 1000,
+   "stunden": "8.5",
+   "erstattung": 20
+  },
+  "soll": {
+   "bg": 1006
+  }
+ },
+ {
+  "id": "Q-02",
+  "fn": "eigenwerbung",
+  "args": {
+   "jahr": 2026,
+   "summe": 900
+  },
+  "soll": {
+   "klasse": "NICHT"
+  }
+ },
+ {
+  "id": "Q-11",
+  "fn": "eigenwerbung",
+  "args": {
+   "jahr": 2025,
+   "summe": "699.99"
+  },
+  "soll": {
+   "klasse": "NICHT"
+  }
+ },
+ {
+  "id": "Q-12",
+  "fn": "eigenwerbung",
+  "args": {
+   "jahr": 2025,
+   "summe": "700.00"
+  },
+  "soll": {
+   "klasse": "NICHT"
+  }
+ },
+ {
+  "id": "Q-13",
+  "fn": "eigenwerbung",
+  "args": {
+   "jahr": 2025,
+   "summe": "700.01"
+  },
+  "soll": {
+   "klasse": "ABG"
+  }
+ },
+ {
+  "id": "Q-14",
+  "fn": "eigenwerbung",
+  "args": {
+   "jahr": 2026,
+   "summe": "999.99"
+  },
+  "soll": {
+   "klasse": "NICHT"
+  }
+ },
+ {
+  "id": "Q-15",
+  "fn": "eigenwerbung",
+  "args": {
+   "jahr": 2026,
+   "summe": "1000.00"
+  },
+  "soll": {
+   "klasse": "NICHT"
+  }
+ },
+ {
+  "id": "Q-16",
+  "fn": "eigenwerbung",
+  "args": {
+   "jahr": 2026,
+   "summe": "1000.01"
+  },
+  "soll": {
+   "klasse": "ABG"
+  }
+ },
+ {
+  "id": "Q-01",
+  "fn": "eigenwerbung",
+  "args": {
+   "jahr": 2025,
+   "summe": 900
+  },
+  "soll": {
+   "klasse": "ABG",
+   "abgabe": "45.00"
+  }
+ },
+ {
+  "id": "Q-03",
+  "fn": "typisch",
+  "args": {
+   "jahr": 2026,
+   "betrag": 900
+  },
+  "soll": {
+   "klasse": "ABG",
+   "abgabe": "44.10"
+  }
+ },
+ {
+  "id": "Q-07",
+  "fn": "bemessung",
+  "args": {
+   "jahr": 2026,
+   "positionen": [
+    {
+     "betrag": 1200,
+     "art": "honorar"
+    },
+    {
+     "betrag": 800,
+     "art": "vervielfaeltigung_nachtraeglich"
+    }
+   ]
+  },
+  "soll": {
+   "bg": 1200,
+   "abgabe": "58.80"
+  }
+ },
+ {
+  "id": "Q-09",
+  "fn": "verpflegung_bg",
+  "args": {
+   "jahr": 2025,
+   "honorar": 1000,
+   "stunden": 8,
+   "erstattung": 14
+  },
+  "soll": {
+   "klasse": "GRENZ",
+   "bg": 1014
+  }
+ },
+ {
+  "id": "Q-10",
+  "fn": "verpflegung_bg",
+  "args": {
+   "jahr": 2025,
+   "honorar": 1000,
+   "stunden": "8.0167",
+   "erstattung": 14
+  },
+  "soll": {
+   "bg": 1000
+  }
+ },
+ {
+  "id": "T-01",
+  "fn": "saeumnis",
+  "args": {
+   "rueckstand": [
+    1260
+   ],
+   "monate": 2,
+   "jahr": 2026,
+   "gesondert": false
+  },
+  "soll": {
+   "abgabe": "25.00"
+  }
+ },
+ {
+  "id": "T-02",
+  "fn": "vorauszahlung",
+  "args": {
+   "jahr": 2025,
+   "bg": 9600
+  },
+  "soll": {
+   "kern_klasse": "NICHT",
+   "text_enthaelt": "Keine Vorauszahlungspflicht"
+  }
+ },
+ {
+  "id": "T-03",
+  "fn": "vorauszahlung",
+  "args": {
+   "jahr": 2025,
+   "bg": 9612
+  },
+  "soll": {
+   "wert": "40.05"
+  }
+ },
+ {
+  "id": "T-04",
+  "fn": "saeumnis",
+  "args": {
+   "rueckstand": [
+    150
+   ],
+   "monate": 1,
+   "jahr": 2026,
+   "gesondert": true
+  },
+  "soll": {
+   "abgabe": "1.50"
+  }
+ },
+ {
+  "id": "F-01",
+  "fn": "veranstaltungen",
+  "args": {
+   "jahr": 2025,
+   "anzahl": 2,
+   "summe": 300,
+   "art": "typischer_verwerter"
+  },
+  "soll": {
+   "klasse": "ABG",
+   "bg": 300,
+   "abgabe": "15.00"
+  }
+ },
+ {
+  "id": "F-02",
+  "fn": "veranstaltungen",
+  "args": {
+   "jahr": 2025,
+   "anzahl": 1,
+   "summe": 900,
+   "art": "eigenwerber"
+  },
+  "soll": {
+   "klasse": "ABG",
+   "bg": 900,
+   "abgabe": "45.00"
+  }
+ },
+ {
+  "id": "F-03",
+  "fn": "positionen",
+  "args": {
+   "jahr": 2026,
+   "positionen": [
+    {
+     "betrag": 250,
+     "art": "honorar"
+    },
+    {
+     "betrag": 250,
+     "art": "honorar"
+    },
+    {
+     "betrag": 250,
+     "art": "honorar"
+    },
+    {
+     "betrag": 250,
+     "art": "honorar"
+    },
+    {
+     "betrag": 250,
+     "art": "honorar"
+    }
+   ]
+  },
+  "soll": {
+   "klasse": "ABG",
+   "bg": 1250,
+   "abgabe": "61.25"
+  }
+ },
+ {
+  "id": "F-04",
+  "fn": "positionen",
+  "args": {
+   "jahr": 2026,
+   "positionen": [
+    {
+     "betrag": 200,
+     "art": "honorar"
+    },
+    {
+     "betrag": 200,
+     "art": "honorar"
+    },
+    {
+     "betrag": 200,
+     "art": "honorar"
+    },
+    {
+     "betrag": 200,
+     "art": "honorar"
+    }
+   ]
+  },
+  "soll": {
+   "klasse": "NICHT"
+  }
+ },
+ {
+  "id": "F-05",
+  "fn": "veranstaltungen",
+  "args": {
+   "jahr": 2025,
+   "anzahl": 4,
+   "summe": 5000,
+   "einnahmeabsicht": null
+  },
+  "soll": {
+   "klasse": "RUECK"
+  }
+ },
+ {
+  "id": "F-06",
+  "fn": "veranstaltungen",
+  "args": {
+   "jahr": 2026,
+   "anzahl": 4,
+   "summe": 900
+  },
+  "soll": {
+   "klasse": "NICHT"
+  }
+ },
+ {
+  "id": "H-01",
+  "fn": "rechnung",
+  "args": {
+   "jahr": 2026,
+   "positionen": [
+    {
+     "nr": 1,
+     "betrag": 2400,
+     "rolle": "an_kapitalgesellschaft"
+    },
+    {
+     "nr": 2,
+     "betrag": 1180,
+     "rolle": "an_kapitalgesellschaft"
+    },
+    {
+     "nr": 3,
+     "betrag": 1360,
+     "rolle": "an_kapitalgesellschaft"
+    },
+    {
+     "nr": 4,
+     "betrag": 940,
+     "rolle": "an_kapitalgesellschaft"
+    },
+    {
+     "nr": 5,
+     "betrag": 850,
+     "rolle": "vertretung_kuenstler"
+    },
+    {
+     "nr": 6,
+     "betrag": 720,
+     "rolle": "eigengeschaeft_dritter"
+    },
+    {
+     "nr": 7,
+     "betrag": 125,
+     "rolle": "an_kapitalgesellschaft"
+    },
+    {
+     "nr": 8,
+     "betrag": 380,
+     "rolle": "an_kapitalgesellschaft"
+    },
+    {
+     "nr": 9,
+     "betrag": 145,
+     "rolle": "nicht_kuenstlerisch"
+    },
+    {
+     "nr": 10,
+     "betrag": 206,
+     "rolle": "reise_kuenstler",
+     "belege": true
+    },
+    {
+     "nr": 11,
+     "betrag": 310,
+     "rolle": "an_kapitalgesellschaft"
+    },
+    {
+     "nr": 12,
+     "betrag": 340,
+     "rolle": "an_kapitalgesellschaft"
+    }
+   ],
+   "empfaenger": true,
+   "agentur": true
+  },
+  "soll": {
+   "klasse": "ABG",
+   "bg": 850,
+   "abgabe": "41.65"
+  }
+ },
+ {
+  "id": "H-02",
+  "fn": "rechnung",
+  "args": {
+   "jahr": 2026,
+   "positionen": [
+    {
+     "nr": 1,
+     "betrag": 2400,
+     "rolle": "an_kapitalgesellschaft"
+    },
+    {
+     "nr": 2,
+     "betrag": 1180,
+     "rolle": "an_kapitalgesellschaft"
+    },
+    {
+     "nr": 3,
+     "betrag": 1360,
+     "rolle": "an_kapitalgesellschaft"
+    },
+    {
+     "nr": 4,
+     "betrag": 940,
+     "rolle": "klaeren"
+    },
+    {
+     "nr": 5,
+     "betrag": 850,
+     "rolle": "vertretung_kuenstler"
+    },
+    {
+     "nr": 6,
+     "betrag": 720,
+     "rolle": "eigengeschaeft_dritter"
+    },
+    {
+     "nr": 7,
+     "betrag": 125,
+     "rolle": "an_kapitalgesellschaft"
+    },
+    {
+     "nr": 8,
+     "betrag": 380,
+     "rolle": "an_kapitalgesellschaft"
+    },
+    {
+     "nr": 9,
+     "betrag": 145,
+     "rolle": "nicht_kuenstlerisch"
+    },
+    {
+     "nr": 10,
+     "betrag": 206,
+     "rolle": "reise_kuenstler",
+     "belege": false
+    },
+    {
+     "nr": 11,
+     "betrag": 310,
+     "rolle": "an_kapitalgesellschaft"
+    },
+    {
+     "nr": 12,
+     "betrag": 340,
+     "rolle": "an_kapitalgesellschaft"
+    }
+   ],
+   "empfaenger": null,
+   "agentur": null
+  },
+  "soll": {
+   "klasse": "RUECK",
+   "bg": 850,
+   "offen": 1866
+  }
+ },
+ {
+  "id": "H-03",
+  "fn": "rechnung",
+  "args": {
+   "jahr": 2026,
+   "positionen": [
+    {
+     "nr": 1,
+     "betrag": 2400,
+     "rolle": "an_kapitalgesellschaft"
+    },
+    {
+     "nr": 2,
+     "betrag": 1180,
+     "rolle": "an_kapitalgesellschaft"
+    },
+    {
+     "nr": 3,
+     "betrag": 1360,
+     "rolle": "an_kapitalgesellschaft"
+    },
+    {
+     "nr": 4,
+     "betrag": 940,
+     "rolle": "klaeren"
+    },
+    {
+     "nr": 5,
+     "betrag": 850,
+     "rolle": "vertretung_kuenstler"
+    },
+    {
+     "nr": 6,
+     "betrag": 720,
+     "rolle": "eigengeschaeft_dritter"
+    },
+    {
+     "nr": 7,
+     "betrag": 125,
+     "rolle": "an_kapitalgesellschaft"
+    },
+    {
+     "nr": 8,
+     "betrag": 380,
+     "rolle": "an_kapitalgesellschaft"
+    },
+    {
+     "nr": 9,
+     "betrag": 145,
+     "rolle": "nicht_kuenstlerisch"
+    },
+    {
+     "nr": 10,
+     "betrag": 206,
+     "rolle": "reise_kuenstler",
+     "belege": false
+    },
+    {
+     "nr": 11,
+     "betrag": 310,
+     "rolle": "an_kapitalgesellschaft"
+    },
+    {
+     "nr": 12,
+     "betrag": 340,
+     "rolle": "an_kapitalgesellschaft"
+    }
+   ],
+   "empfaenger": true,
+   "agentur": null
+  },
+  "soll": {
+   "klasse": "RUECK",
+   "bg": 850,
+   "abgabe": "41.65",
+   "offen": 1866
+  }
+ },
+ {
+  "id": "H-04",
+  "fn": "rechnung",
+  "args": {
+   "jahr": 2026,
+   "positionen": [
+    {
+     "nr": 1,
+     "betrag": 2400,
+     "rolle": "an_kapitalgesellschaft"
+    },
+    {
+     "nr": 2,
+     "betrag": 1180,
+     "rolle": "an_kapitalgesellschaft"
+    },
+    {
+     "nr": 3,
+     "betrag": 1360,
+     "rolle": "an_kapitalgesellschaft"
+    },
+    {
+     "nr": 4,
+     "betrag": 940,
+     "rolle": "klaeren"
+    },
+    {
+     "nr": 5,
+     "betrag": 850,
+     "rolle": "vertretung_kuenstler"
+    },
+    {
+     "nr": 6,
+     "betrag": 720,
+     "rolle": "eigengeschaeft_dritter"
+    },
+    {
+     "nr": 7,
+     "betrag": 125,
+     "rolle": "an_kapitalgesellschaft"
+    },
+    {
+     "nr": 8,
+     "betrag": 380,
+     "rolle": "an_kapitalgesellschaft"
+    },
+    {
+     "nr": 9,
+     "betrag": 145,
+     "rolle": "nicht_kuenstlerisch"
+    },
+    {
+     "nr": 10,
+     "betrag": 206,
+     "rolle": "reise_kuenstler",
+     "belege": true
+    },
+    {
+     "nr": 11,
+     "betrag": 310,
+     "rolle": "an_kapitalgesellschaft"
+    },
+    {
+     "nr": 12,
+     "betrag": 340,
+     "rolle": "an_kapitalgesellschaft"
+    }
+   ],
+   "empfaenger": true,
+   "agentur": null
+  },
+  "soll": {
+   "klasse": "RUECK",
+   "bg": 850,
+   "abgabe": "41.65",
+   "offen": 1660
+  }
+ }
+]

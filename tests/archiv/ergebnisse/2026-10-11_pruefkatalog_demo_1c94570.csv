@@ -1,0 +1,53 @@
+datum,modus,bericht_stand,katalog,fall,soll,ist,urteil,dauer_s
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-01,A,Abgabepflichtig (Vorschlag),RICHTIG,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-02,A,Abgabepflichtig (Vorschlag),RICHTIG,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-03,A,Abgabepflichtig (Vorschlag),RICHTIG,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-04a,A,Nicht abgabepflichtig (Vorschlag),FALSCH,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-04b,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-05,A,Abgabepflichtig (Vorschlag),RICHTIG,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-06,A,Abgabepflichtig (Vorschlag),RICHTIG,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-07,A,Rückfrage nötig,NACHGEFRAGT,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-08,N,Rückfrage nötig,NACHGEFRAGT,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-09,A,Rückfrage nötig,NACHGEFRAGT,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-10,A,Abgabepflichtig (Vorschlag),RICHTIG,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-11,A/G,Rückfrage nötig,NACHGEFRAGT,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-12,A,Abgabepflichtig (Vorschlag),RICHTIG,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-13,A/G,Rückfrage nötig,NACHGEFRAGT,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-14,A,Rückfrage nötig,NACHGEFRAGT,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-15,A,Rückfrage nötig,NACHGEFRAGT,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-16,N/G,Rückfrage nötig,NACHGEFRAGT,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-17,N,Rückfrage nötig,NACHGEFRAGT,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-18a,N,Rückfrage nötig,NACHGEFRAGT,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-18b,R/G,Rückfrage nötig,RICHTIG,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-19,A,Abgabepflichtig (Vorschlag),RICHTIG,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-20a,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-20b,A,Abgabepflichtig (Vorschlag),RICHTIG,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-21,A,Abgabepflichtig (Vorschlag),RICHTIG,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-22,A,Abgabepflichtig (Vorschlag),RICHTIG,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-23,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-24,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-25,A,Abgabepflichtig (Vorschlag),RICHTIG,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-26,A,Abgabepflichtig (Vorschlag),RICHTIG,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-27,A/G,Abgabepflichtig (Vorschlag),RICHTIG,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-28,A,Grenzfall → Steuerberater entscheidet,NACHGEFRAGT,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-29,A,Abgabepflichtig (Vorschlag),RICHTIG,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-30,A,Grenzfall → Steuerberater entscheidet,NACHGEFRAGT,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-31,A,Grenzfall → Steuerberater entscheidet,NACHGEFRAGT,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-32,A,Abgabepflichtig (Vorschlag),RICHTIG,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-33,A,Abgabepflichtig (Vorschlag),RICHTIG,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-34,N,Rückfrage nötig,NACHGEFRAGT,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-35,A,Abgabepflichtig (Vorschlag),RICHTIG,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-36,N,Rückfrage nötig,NACHGEFRAGT,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-37,G/N,Rückfrage nötig,NACHGEFRAGT,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-38,A,Abgabepflichtig (Vorschlag),RICHTIG,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-39,A/G,Grenzfall → Steuerberater entscheidet,RICHTIG,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-40,N,Rückfrage nötig,NACHGEFRAGT,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-52,A,Grenzfall → Steuerberater entscheidet,NACHGEFRAGT,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:K-01,R,Rückfrage nötig,RICHTIG,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:K-02,X/R,Nicht abgedeckt (Quelle fehlt),RICHTIG,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:K-03,AUSKUNFT,Rückfrage nötig,NACHGEFRAGT,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:K-04,A,Abgabepflichtig (Vorschlag),RICHTIG,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:K-05,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:K-06,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:K-07,R/G,Rückfrage nötig,RICHTIG,0.0
+2026-10-11,Demo-Modus (FakeLLM),1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:K-08,A,Abgabepflichtig (Vorschlag),RICHTIG,0.0

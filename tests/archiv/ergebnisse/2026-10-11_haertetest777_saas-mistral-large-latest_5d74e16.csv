@@ -1,0 +1,2 @@
+datum,modus,code_stand,katalog,fall,soll,ist,urteil,bemessungsgrundlage,abgabe,rueckfragen,gruende,dauer_s
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,5d74e16,aufgaben/audit/testfall_haertetest_777.json,H-777,A/G,Rückfrage nötig,NACHGEFRAGT,,,2,"Soll ['A', 'G'], Ist R; 2 Rückfrage(n), nötig laut Soll höchstens 0",30.4

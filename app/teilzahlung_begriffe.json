@@ -1,0 +1,5 @@
+{
+  "_hinweis": "Alltagstest AT-2026-027 (live 15.10.2026, f6a5d1a): 'Honorar 2026 3.000 EUR an freien Komponisten; wir haben am 15.12.2026 1.800 EUR angezahlt, Rest 1.200 EUR stehen noch aus.' – das Modell legte EINE Position über 3.000 € an (147,00 € statt 88,20 €). Maßgeblich ist das gezahlte Entgelt (KSVG § 25 Abs. 1, R-20). app/zuordnung.py::teilzahlung_aus_text: steht bei einem Betrag X ein Wort aus 'gezahlt' und bei einem Betrag Y ein Wort aus 'offen' (Fenster wie _betraege_am_begriff), und gibt es eine Position über genau X + Y, wird sie in X (gezahlt) und Y (offen: noch nicht bezahlt, zählt nie still mit) geteilt.",
+  "gezahlt": ["angezahlt", "anzahlung", "bezahlt", "gezahlt", "überwiesen", "ueberwiesen", "abgebucht"],
+  "offen": ["rest", "noch aus", "stehen aus", "steht aus", "ausstehend", "noch offen", "noch nicht bezahlt", "noch nicht gezahlt", "offen"]
+}

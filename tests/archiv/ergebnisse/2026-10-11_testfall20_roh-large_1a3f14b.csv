@@ -1,0 +1,22 @@
+datum,modus,bericht_stand,katalog,fall,soll,ist,urteil,dauer_s
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1a3f14b,aufgaben/audit/testfall_20_positionen.json,testfall20:S-00,A/G,Abgabepflichtig (Vorschlag),FALSCH,10.4
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1a3f14b,aufgaben/audit/testfall_20_positionen.json,testfall20:S-01,A,Abgabepflichtig (Vorschlag),FALSCH,4.6
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1a3f14b,aufgaben/audit/testfall_20_positionen.json,testfall20:S-02,N,Abgabepflichtig (Vorschlag),FALSCH,3.0
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1a3f14b,aufgaben/audit/testfall_20_positionen.json,testfall20:S-03,A,Abgabepflichtig (Vorschlag),FALSCH,2.6
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1a3f14b,aufgaben/audit/testfall_20_positionen.json,testfall20:S-04,N,Abgabepflichtig (Vorschlag),FALSCH,3.0
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1a3f14b,aufgaben/audit/testfall_20_positionen.json,testfall20:S-05,A,Abgabepflichtig (Vorschlag),FALSCH,3.0
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1a3f14b,aufgaben/audit/testfall_20_positionen.json,testfall20:S-06,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,2.5
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1a3f14b,aufgaben/audit/testfall_20_positionen.json,testfall20:S-07,A,Abgabepflichtig (Vorschlag),FALSCH,3.0
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1a3f14b,aufgaben/audit/testfall_20_positionen.json,testfall20:S-08,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,3.0
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1a3f14b,aufgaben/audit/testfall_20_positionen.json,testfall20:S-09,A,Abgabepflichtig (Vorschlag),FALSCH,3.1
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1a3f14b,aufgaben/audit/testfall_20_positionen.json,testfall20:S-10,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,2.4
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1a3f14b,aufgaben/audit/testfall_20_positionen.json,testfall20:S-11,A,Abgabepflichtig (Vorschlag),FALSCH,4.5
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1a3f14b,aufgaben/audit/testfall_20_positionen.json,testfall20:S-12,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,4.4
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1a3f14b,aufgaben/audit/testfall_20_positionen.json,testfall20:S-13,N,Abgabepflichtig (Vorschlag),FALSCH,4.6
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1a3f14b,aufgaben/audit/testfall_20_positionen.json,testfall20:S-14,A,Abgabepflichtig (Vorschlag),FALSCH,2.6
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1a3f14b,aufgaben/audit/testfall_20_positionen.json,testfall20:S-15,G,Grenzfall → Steuerberater entscheidet,RICHTIG,3.1
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1a3f14b,aufgaben/audit/testfall_20_positionen.json,testfall20:S-16,N,Abgabepflichtig (Vorschlag),FALSCH,3.4
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1a3f14b,aufgaben/audit/testfall_20_positionen.json,testfall20:S-17,A,Abgabepflichtig (Vorschlag),FALSCH,3.6
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1a3f14b,aufgaben/audit/testfall_20_positionen.json,testfall20:S-18,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,2.7
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1a3f14b,aufgaben/audit/testfall_20_positionen.json,testfall20:S-19,A,Abgabepflichtig (Vorschlag),FALSCH,3.3
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1a3f14b,aufgaben/audit/testfall_20_positionen.json,testfall20:S-20,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,3.7

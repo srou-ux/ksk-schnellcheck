@@ -1,0 +1,77 @@
+{
+  "hinweis": "Erfundene Testbelege des Nutzers (ksk-alltagsf_lle-4-testbelege-mit-soll-bewertung.pdf, 11.10.2026). Soll-Werte aus der Testdatei, NICHT vom Steuerberater geprüft. Die Fragen geben die Belege wörtlich wieder (auch die Rechenfehler der Testdatei bei F3 und F4) und fügen nichts hinzu. Fragesteller ist jeweils der Rechnungsempfänger (Kundenebene). 'max_rueckfragen': so viele Rückfragen sind nach der Testdatei höchstens nötig.",
+  "stand": "2026-10-11",
+  "kuerzel": {
+    "A": "Abgabepflichtig (Vorschlag)",
+    "N": "Nicht abgabepflichtig (Vorschlag)",
+    "G": "Grenzfall → Steuerberater entscheidet",
+    "R": "Rückfrage nötig",
+    "X": "Nicht abgedeckt (Quelle fehlt)",
+    "AUSKUNFT": "Auskunft aus dem Regelwerk", "HINWEIS": "Hinweis"
+  },
+  "faelle": [
+    {
+      "id": "F1",
+      "gruppe": "Werbefotografie an Unternehmen (Eigenwerbung)",
+      "referenz": "Soll der Testdatei: alle 3 Positionen einbezogen (Retusche als Nebenleistung), 2.470 € × 4,9 % = 121,03 €, keine Rückfragen",
+      "sicherheit": "Soll der Testdatei, nicht vom Steuerberater geprüft",
+      "frage": "Mein Mandant ist die Steinbach Naturstein GmbH (B2B-Handel). Sie hat für ihre Image-Kampagne diese Rechnung erhalten:\nRechnungsteller: Jana Loots, Fotografin (freischaffend, Einzelunternehmerin), Rechnung F1-2026-88 vom 12.06.2026. Zahlung: „Mit Dank erhalten am 20.06.2026“ (laut Rechnung).\nPos. 01 Produktfotografie Steinbruch, halbtägiges Shooting inkl. Konzeption: 1.800,00 € netto\nPos. 02 Bildretusche und Farbkorrektur (12 Motive): 220,00 € netto\nPos. 03 Nutzungsrechte Kampagne, 24 Monate, Web + Print: 450,00 € netto\nNettosumme: 2.470,00 €, USt 19 %: 469,30 €, Rechnungsbetrag: 2.939,30 €.\nIst das künstlersozialabgabepflichtig?",
+      "soll": ["A"],
+      "zahl": {"abgabe": "121.03"},
+      "max_rueckfragen": 0,
+      "nachtrag": "Es ist Eigenwerbung für das eigene Unternehmen. Alle Positionen sind von derselben Fotografin.",
+      "knoepfe": {
+        "verwerterart": "Eigenwerbung",
+        "auftragnehmer_typ": "natürliche Person",
+        "ein_auftragnehmer": "ja, alle vom selben Auftragnehmer"
+      }
+    },
+    {
+      "id": "F2",
+      "gruppe": "Publizist an Verlag",
+      "referenz": "Soll der Testdatei: Verlag typischer Verwerter ohne Grenze; Artikel und Recherche-Pauschale einbezogen, 1.750 € × 4,9 % = 85,75 €",
+      "sicherheit": "Soll der Testdatei, nicht vom Steuerberater geprüft",
+      "frage": "Mein Mandant ist die Rheinland Verlag GmbH & Co. KG (Fachmagazin „Stein & Bau“). Er hat diese Rechnung erhalten:\nRechnungsteller: Thomas Meyer, freier Journalist, Rechnung TM-2026-41 vom 03.09.2026. Zahlung: 30 Tage Ziel.\nPos. 01 Fachartikel „Naturstein im modernen Innenausbau“, 6 Seiten, einmalige Nutzung: 1.400,00 € netto\nPos. 02 Recherche-Pauschale (Fahrt, Literatur) lt. Vertrag: 350,00 € netto\nNettosumme: 1.750,00 €, USt 19 %: 332,50 €, Rechnungsbetrag: 2.082,50 €.\nIst das künstlersozialabgabepflichtig?",
+      "soll": ["A"],
+      "zahl": {"abgabe": "85.75"},
+      "max_rueckfragen": 0,
+      "nachtrag": "Der Verlag ist typischer Verwerter. Beide Positionen sind vom selben Journalisten.",
+      "knoepfe": {
+        "verwerterart": "Typischer Verwerter",
+        "auftragnehmer_typ": "natürliche Person",
+        "ein_auftragnehmer": "ja, alle vom selben Auftragnehmer"
+      }
+    },
+    {
+      "id": "F3",
+      "gruppe": "Agentur-Mischrechnung an Werbekunden (Vertragsstufen)",
+      "referenz": "Soll der Testdatei: auf Kundenebene alle Positionen ausgeschlossen (Zahlung an GmbH, Eigengeschäft der Agentur, GEMA), Bemessungsgrundlage 0 (bedingt), Agentur-Ebene nur als Hinweis",
+      "sicherheit": "Soll der Testdatei, nicht vom Steuerberater geprüft",
+      "frage": "Mein Mandant ist die VitaWelt Krankenversicherung a.G. (Versicherungsunternehmen mit Marketing). Sie hat diese Rechnung erhalten:\nRechnungsteller: Kreativwerk Agentur Licht GmbH, Rechnung KL-2026-112 vom 28.08.2026, Auftrag erteilt am 15.07.2026, Leistungszeitraum 07.–08.2026.\nPos. 01 Kampagnen-Konzeption durch Agentur-Team (GmbH, eigene Mitarbeiter): 3.200,00 € netto\nPos. 02 Illustrationen, beauftragt bei freischaffender Illustratorin Mara Vogt, im eigenen Namen der Agentur: 1.900,00 € netto\nPos. 03 TV-Spot-Produktion (Regie, Kamera, Schnitt) durch freischaffendes Film-Team „Roter Hering GbR“ (3 Personen), im eigenen Namen der Agentur: 24.500,00 € netto\nPos. 04 Synchronsprecher-Honorar, an Sprecher GmbH-Agentur gezahlt: 750,00 € netto\nPos. 05 Musik-Lizenz über Verwertungsgesellschaft (GEMA-Sammelabrechnung): 880,00 € netto\nPos. 06 Fahrzeug- und Materialkosten der GbR (abgerechnet mit Hauptleistung, mit eigenem Beleg: Benzin 400 €): 400,00 € netto\nPos. 07 Laufende Kommunikationsdesign-Services (Retainer) durch die GmbH; Freelancer-Anteil darin nicht aufgeschlüsselt: 3.150,00 € netto\nNettosumme: 34.780,00 €, USt 19 %: 660,82 €, Rechnungsbetrag: 35.440,82 €.\nIst das für meinen Mandanten künstlersozialabgabepflichtig?",
+      "soll": ["N"],
+      "zahl": {"bemessungsgrundlage": "0"},
+      "max_rueckfragen": 0,
+      "nachtrag": "Mein Mandant betreibt Eigenwerbung. Alle Zahlungen gehen an die Agentur, die eine GmbH ist.",
+      "knoepfe": {
+        "verwerterart": "Eigenwerbung",
+        "auftragnehmer_typ": "GmbH/UG/AG",
+        "ein_auftragnehmer": "ja, alle vom selben Auftragnehmer"
+      }
+    },
+    {
+      "id": "F4",
+      "gruppe": "Hochzeitsfotografie an Privatpersonen (Anti-Alarm)",
+      "referenz": "Soll der Testdatei: Privatpersonen sind kein abgabepflichtiges Unternehmen, keine Abgabe, keine Schwellenwarnung (Regelwerk: R-40, R-133)",
+      "sicherheit": "Soll der Testdatei, nicht vom Steuerberater geprüft",
+      "frage": "Ein Brautpaar (Privatpersonen) hat für seine Hochzeit diese Rechnung erhalten:\nRechnungsteller: Pixel & Herz Fotografie GbR (2 freischaffende Fotografinnen), Rechnung PH-2026-19 vom 22.05.2026, Barzahlung bei Übergabe quittiert.\nPos. 01 Hochzeitsreportage, 10 Std., 2 Fotografinnen: 1.650,00 € netto\nPos. 02 Hochwertiges Fotobuch, 60 Seiten, Layout und Druck: 420,00 € netto\nNettosumme: 2.075,00 €, USt 19 %: 394,25 €, Rechnungsbetrag: 2.469,25 €.\nMuss das Brautpaar Künstlersozialabgabe zahlen?",
+      "soll": ["N"],
+      "max_rueckfragen": 0,
+      "verboten_text": ["Geringfügigkeitsgrenze überschritten"],
+      "nachtrag": "Die Auftraggeber sind Privatpersonen, kein Unternehmen.",
+      "knoepfe": {
+        "auftragnehmer_typ": "GbR",
+        "ein_auftragnehmer": "ja, alle vom selben Auftragnehmer"
+      }
+    }
+  ]
+}

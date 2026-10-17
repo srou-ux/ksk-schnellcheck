@@ -1,0 +1,10 @@
+{
+  "_hinweis": "Grenzen der Gegenrechnung im eigenen Prozess (Chatbot Teil 1e, app/sandbox.py, verifier/lauf.py). Technische Grenzen, keine Rechtswerte. zeitlimit_s: Wanduhr-Zeit bis zum Abbruch (auch unter Windows wirksam). cpu_s und speicher_mb: nur unter Linux/macOS (Modul resource); Windows hat dafür kein eingebautes Mittel, dort gilt das Zeitlimit als Mindestschutz. max_positionen: mehr Positionen in einem Kern-Aufruf werden VORAB abgelehnt (Prüfung fehlgeschlagen, keine Antwort), statt mitten in der Rechnung abzubrechen. max_aufrufe: höchstens so viele Kern-Aufrufe je Anfrage.",
+  "gegenrechnung": {
+    "zeitlimit_s": 5,
+    "cpu_s": 5,
+    "speicher_mb": 1024,
+    "max_positionen": 100000,
+    "max_aufrufe": 5000
+  }
+}

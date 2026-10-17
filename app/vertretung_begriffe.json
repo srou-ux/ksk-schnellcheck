@@ -1,0 +1,9 @@
+{
+  "_hinweis": "14.10.2026 (P-36, P-37; je 16 von 16 Läufen Rückfrage nach einem Betrag). app/zuordnung.py::ergaenze_vertretung. Vertretung (R-33, KSK-Info 04 Abschn. 3): eine 'formel', direkt danach (höchstens ein Artikel) ein Begriff aus 'kuenstler'; nicht, wenn ein Begriff aus 'nicht_wenn' im Text steht. Nachweismakler (R-35, KSK-Info 04 Abschn. 3b): ein Begriff aus 'nachweis' und mindestens 'mindestens_ohne_mitwirkung' Begriffe aus 'ohne_mitwirkung'. Keine Festwerte im Code; vom Steuerberater zu prüfen.",
+  "formel": ["im namen und für rechnung", "im namen und fuer rechnung", "im namen und auf rechnung"],
+  "kuenstler": ["künstler", "kuenstler", "sänger", "saenger", "musiker", "band", "solist", "schauspieler", "tänzer", "taenzer", "fotograf", "autor", "illustrator", "grafiker", "designer", "dj", "moderator", "komponist", "dirigent", "artist"],
+  "nicht_wenn": ["im eigenen namen", "auf eigene rechnung"],
+  "nachweis": ["nur den kontakt", "nur kontakt", "nur die kontaktdaten", "benenne nur", "nenne nur", "nur vermittelt", "nur die vertragsparteien"],
+  "ohne_mitwirkung": ["schließen die beiden selbst", "schliessen die beiden selbst", "schließen den vertrag selbst", "schliessen den vertrag selbst", "organisiere nichts", "keine organisation", "kassiere kein honorar", "kein honorar", "hafte für nichts", "hafte fuer nichts", "keine haftung", "unterschreibe nichts"],
+  "mindestens_ohne_mitwirkung": 2
+}

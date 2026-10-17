@@ -1,0 +1,184 @@
+datum,modus,code_stand,katalog,fall,soll,ist,urteil,bemessungsgrundlage,abgabe,rueckfragen,gruende,dauer_s
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0001,A,Abgabepflichtig (Vorschlag),RICHTIG,450.01,,0,,6.0
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0011,A,Abgabepflichtig (Vorschlag),RICHTIG,451.0,22.55,0,,4.7
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0021,A,Abgabepflichtig (Vorschlag),RICHTIG,500,25.00,0,,5.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0031,A,Abgabepflichtig (Vorschlag),RICHTIG,700,35.00,0,,9.2
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0041,A,Abgabepflichtig (Vorschlag),RICHTIG,4150,207.50,0,,5.8
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0051,A,Abgabepflichtig (Vorschlag),RICHTIG,450.01,,0,,5.7
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0061,A,Abgabepflichtig (Vorschlag),RICHTIG,451,22.55,0,,5.3
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0071,A,Abgabepflichtig (Vorschlag),RICHTIG,500,25.00,0,,5.2
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0081,A,Abgabepflichtig (Vorschlag),RICHTIG,1450,72.50,0,,4.9
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0091,A,Abgabepflichtig (Vorschlag),RICHTIG,4150,207.50,0,,9.6
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0101,A,Abgabepflichtig (Vorschlag),RICHTIG,700.01,,0,,4.8
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0111,A,Abgabepflichtig (Vorschlag),RICHTIG,701.0,35.05,0,,6.6
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0121,A,Abgabepflichtig (Vorschlag),RICHTIG,950,47.50,0,,7.3
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0131,A,Abgabepflichtig (Vorschlag),RICHTIG,1700,85.00,0,,9.7
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0141,A,Abgabepflichtig (Vorschlag),RICHTIG,4400,220.00,0,,10.0
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0151,A,Abgabepflichtig (Vorschlag),RICHTIG,1000.01,,0,,6.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0161,A,Abgabepflichtig (Vorschlag),RICHTIG,1050,51.45,0,,5.6
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0171,A,Abgabepflichtig (Vorschlag),RICHTIG,1250,61.25,0,,5.5
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0181,A,Abgabepflichtig (Vorschlag),RICHTIG,2000,98.00,0,,7.6
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0191,A,Abgabepflichtig (Vorschlag),RICHTIG,4700,230.30,0,,7.0
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0201,A,Abgabepflichtig (Vorschlag),RICHTIG,1001,50.05,0,,7.0
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0211,A,Abgabepflichtig (Vorschlag),RICHTIG,1050,52.50,0,,5.7
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0221,A,Abgabepflichtig (Vorschlag),RICHTIG,1250,62.50,0,,5.2
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0231,A,Abgabepflichtig (Vorschlag),RICHTIG,2000,100.00,0,,5.3
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0241,G,Grenzfall → Steuerberater entscheidet,RICHTIG,,,0,,6.1
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0251,G,Grenzfall → Steuerberater entscheidet,RICHTIG,,,0,,5.1
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0261,G,Grenzfall → Steuerberater entscheidet,RICHTIG,,,0,,6.3
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0271,G,Grenzfall → Steuerberater entscheidet,RICHTIG,,,0,,7.1
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0281,G,Grenzfall → Steuerberater entscheidet,RICHTIG,,,0,,4.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0291,G,Grenzfall → Steuerberater entscheidet,RICHTIG,,,0,,5.6
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0301,G,Grenzfall → Steuerberater entscheidet,RICHTIG,,,0,,10.9
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0311,G,Grenzfall → Steuerberater entscheidet,RICHTIG,,,0,,6.2
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0321,G,Grenzfall → Steuerberater entscheidet,RICHTIG,,,0,,4.2
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0331,G,Grenzfall → Steuerberater entscheidet,RICHTIG,,,0,,4.3
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0341,A,Abgabepflichtig (Vorschlag),RICHTIG,950,47.50,0,,4.3
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0351,A,Abgabepflichtig (Vorschlag),RICHTIG,1350,67.50,1,,5.1
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0361,A,Abgabepflichtig (Vorschlag),RICHTIG,450.5,,0,,8.1
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0371,A,Abgabepflichtig (Vorschlag),RICHTIG,950,47.50,0,,5.1
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0381,A,Abgabepflichtig (Vorschlag),RICHTIG,1350,67.50,0,,7.2
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0391,A,Abgabepflichtig (Vorschlag),RICHTIG,450.5,,1,,7.2
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0401,A,Abgabepflichtig (Vorschlag),RICHTIG,1200,60.00,0,,6.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0411,A,Abgabepflichtig (Vorschlag),RICHTIG,2100,105.00,0,,4.8
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0421,A,Abgabepflichtig (Vorschlag),RICHTIG,700.5,,0,,6.0
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0431,A,Abgabepflichtig (Vorschlag),RICHTIG,1500,73.50,1,,5.7
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0441,A,Abgabepflichtig (Vorschlag),RICHTIG,3000,147.00,0,,5.2
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0451,A,Abgabepflichtig (Vorschlag),RICHTIG,1000.5,,0,,5.9
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0461,A,Abgabepflichtig (Vorschlag),RICHTIG,1500,75.00,0,,8.7
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0471,A,Abgabepflichtig (Vorschlag),RICHTIG,3000,150.00,1,,7.3
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0481,A,Abgabepflichtig (Vorschlag),RICHTIG,1000.5,,0,,9.7
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0491,A,Rückfrage nötig,NACHGEFRAGT,,,0,"Soll ['A'], Ist R",6.2
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0501,A,Abgabepflichtig (Vorschlag),RICHTIG,900,45.00,0,,7.3
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0511,A,Abgabepflichtig (Vorschlag),RICHTIG,451.00,22.55,0,,7.1
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0521,A,Abgabepflichtig (Vorschlag),RICHTIG,900,45.00,0,,10.3
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0531,A,Abgabepflichtig (Vorschlag),RICHTIG,701.00,35.05,0,,7.3
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0541,A,Abgabepflichtig (Vorschlag),RICHTIG,1100,53.90,0,,8.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0551,A,Abgabepflichtig (Vorschlag),RICHTIG,1001.00,,0,,11.3
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0561,A,Rückfrage nötig,NACHGEFRAGT,,,0,"Soll ['A'], Ist R",5.0
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0571,A,Abgabepflichtig (Vorschlag),RICHTIG,2000,100.00,0,,7.2
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0581,A,Abgabepflichtig (Vorschlag),RICHTIG,100,5.00,0,,13.2
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0591,A,Abgabepflichtig (Vorschlag),RICHTIG,450,22.50,0,,5.0
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0601,A,Abgabepflichtig (Vorschlag),RICHTIG,250.5,,0,,4.5
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0611,A,Abgabepflichtig (Vorschlag),RICHTIG,100,5.00,0,,9.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0621,A,Abgabepflichtig (Vorschlag),RICHTIG,450,22.50,0,,4.8
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0631,A,Abgabepflichtig (Vorschlag),RICHTIG,250.5,,0,,5.2
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0641,A,Abgabepflichtig (Vorschlag),RICHTIG,100,5.00,0,,5.2
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0651,A,Abgabepflichtig (Vorschlag),RICHTIG,700,35.00,0,,6.0
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0661,A,Abgabepflichtig (Vorschlag),RICHTIG,250.5,,0,,7.6
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0671,A,Abgabepflichtig (Vorschlag),RICHTIG,100,4.90,0,,5.6
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0681,A,Abgabepflichtig (Vorschlag),RICHTIG,1000,49.00,0,,8.9
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0691,A,Abgabepflichtig (Vorschlag),RICHTIG,250.5,,0,,4.6
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0701,A,Abgabepflichtig (Vorschlag),RICHTIG,100,5.00,0,,10.5
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0711,A,Abgabepflichtig (Vorschlag),RICHTIG,1000,50.00,0,,5.8
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0721,A,Abgabepflichtig (Vorschlag),RICHTIG,250.5,,0,,5.7
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0731,A,Abgabepflichtig (Vorschlag),RICHTIG,950,47.50,0,,9.0
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0741,A,Abgabepflichtig (Vorschlag),RICHTIG,900,45.00,0,,5.8
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0751,A,Abgabepflichtig (Vorschlag),RICHTIG,460,23.00,0,,11.2
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0761,A,Abgabepflichtig (Vorschlag),RICHTIG,950,47.50,0,,6.7
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0771,A,Abgabepflichtig (Vorschlag),RICHTIG,900,45.00,0,,5.9
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0781,A,Abgabepflichtig (Vorschlag),RICHTIG,460,23.00,0,,7.6
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0791,A,Abgabepflichtig (Vorschlag),RICHTIG,1200,60.00,0,,4.3
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0801,A,Abgabepflichtig (Vorschlag),RICHTIG,1400,70.00,0,,3.7
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0811,A,Abgabepflichtig (Vorschlag),RICHTIG,710,35.50,0,,8.5
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0821,A,Abgabepflichtig (Vorschlag),RICHTIG,1500,73.50,0,,5.1
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0831,A,Abgabepflichtig (Vorschlag),RICHTIG,2000,98.00,0,,5.3
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0841,A,Abgabepflichtig (Vorschlag),RICHTIG,1010,49.49,0,,11.0
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0851,A,Abgabepflichtig (Vorschlag),RICHTIG,1500,75.00,0,,4.6
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0861,A,Abgabepflichtig (Vorschlag),RICHTIG,2000,100.00,0,,4.3
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0871,A,Abgabepflichtig (Vorschlag),RICHTIG,1010,50.50,0,,6.0
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0881,A,Abgabepflichtig (Vorschlag),RICHTIG,3000,150.00,0,,3.8
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0891,A,Abgabepflichtig (Vorschlag),RICHTIG,1500,75.00,0,,5.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0901,A,Abgabepflichtig (Vorschlag),RICHTIG,1500,75.00,0,,5.8
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0911,A,Abgabepflichtig (Vorschlag),RICHTIG,800,40.00,0,,3.6
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0921,A,Abgabepflichtig (Vorschlag),RICHTIG,800,39.20,0,,4.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0931,A,Abgabepflichtig (Vorschlag),RICHTIG,3000,150.00,0,,5.8
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0941,A,Abgabepflichtig (Vorschlag),RICHTIG,1450,72.50,0,,7.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0951,A,Abgabepflichtig (Vorschlag),RICHTIG,1800,90.00,0,,7.6
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0961,A,Abgabepflichtig (Vorschlag),RICHTIG,1450,72.50,0,,4.2
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0971,A,Abgabepflichtig (Vorschlag),RICHTIG,1800,90.00,0,,11.3
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0981,A,Abgabepflichtig (Vorschlag),RICHTIG,450.01,,0,,7.2
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-0991,A,Abgabepflichtig (Vorschlag),RICHTIG,1700,85.00,0,,4.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1001,A,Abgabepflichtig (Vorschlag),RICHTIG,700.01,,0,,5.7
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1011,A,Abgabepflichtig (Vorschlag),RICHTIG,2000,98.00,0,,4.7
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1021,A,Abgabepflichtig (Vorschlag),RICHTIG,4000,196.00,0,,5.8
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1031,A,Abgabepflichtig (Vorschlag),RICHTIG,1000.01,,0,,10.7
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1041,A,Abgabepflichtig (Vorschlag),RICHTIG,4000,200.00,0,,9.7
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1051,A,Abgabepflichtig (Vorschlag),RICHTIG,1000.01,,1,,6.0
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1061,A/R,Grenzfall → Steuerberater entscheidet,NACHGEFRAGT,,,0,"Soll ['A', 'R'], Ist G",4.7
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1071,A/R,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1081,A/R,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.3
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1091,A/R,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1101,A/R,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1111,A/R,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1121,A/R,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1131,A/R,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.5
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1141,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1151,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1161,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1171,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1181,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1191,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1201,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.3
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1211,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.3
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1221,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1231,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1241,AUSKUNFT,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.5
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1251,AUSKUNFT,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.3
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1261,AUSKUNFT,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1271,AUSKUNFT,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.5
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1281,AUSKUNFT,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.3
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1291,AUSKUNFT,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1301,AUSKUNFT,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1311,AUSKUNFT,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1321,AUSKUNFT,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.3
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1331,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1341,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1351,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1361,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1371,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1381,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.5
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1391,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1401,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.5
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1411,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1421,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1431,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.5
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1441,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.3
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1451,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1461,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.3
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1471,S,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.6
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1481,S,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1491,S,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1501,S,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1511,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1521,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.7
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1531,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.3
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1541,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.5
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1551,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1561,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1571,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1581,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1591,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.3
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1601,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.3
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1611,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1621,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.5
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1631,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1641,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1651,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1661,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.5
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1671,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1681,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1691,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.3
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1701,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1711,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.9
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1721,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1731,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1741,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1751,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1761,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1771,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1781,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1791,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.4
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1801,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.3
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1811,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.3
+2026-10-16,Chatbot direkt (Browser) – Mistral (EU),a274351,aufgaben/audit/korpus_beispiele.json,KB-1821,A,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,0.3

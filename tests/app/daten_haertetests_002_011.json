@@ -1,0 +1,1948 @@
+{
+ "_hinweis": "Echte Modellantworten (Mistral EU, mistral-large-latest, Stufe 'roh') aus dem Workflow 'Modellfehler suchen', Lauf 38641137620 (14.10.2026), Härtetest-Serie HT-2026-002 bis 011 des Nutzers. Unverändert übernommen; doppelte Antworten nur einmal. Fragen stehen im Katalog aufgaben/audit/haertetests_ht_2026_002_011.json (nur erfundene Testdaten). Anonymisierung: der Workflow ersetzt im Protokoll nur Namen in der Frage, die Fakten sind unverändert.",
+ "lauf": "38641137620",
+ "faelle": {
+  "HT-2026-002": [
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2020,
+    "unternehmensart": "GmbH",
+    "verwerterart": "typischer_verwerter",
+    "auftraggeber_typ": "GmbH_UG_AG",
+    "leistungsart": "Illustration",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "1500",
+      "rolle": "honorar",
+      "bezeichnung": "Vorschuss für Illustration",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-08",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "120",
+      "rolle": "fahrtkosten_nachgewiesen",
+      "bezeichnung": "Reisekosten mit Einzelbelegen",
+      "auftragnehmer_typ": "natuerliche_person",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "900",
+      "rolle": "honorar",
+      "bezeichnung": "Illustrationsserie",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-08",
+      "auftragnehmer_nr": 1
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "1500"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "120"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "900"
+     }
+    ]
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2020,
+    "unternehmensart": "GmbH",
+    "verwerterart": "typischer_verwerter",
+    "auftraggeber_typ": "GmbH_UG_AG",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "1500",
+      "bezeichnung": "Illustration (honorarfrei vorgezahlt)",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-08",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "120",
+      "rolle": "fahrtkosten_nachgewiesen",
+      "bezeichnung": "Reisekosten (mit Einzelbelegen)",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "900",
+      "bezeichnung": "Illustrationsserie",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-08",
+      "auftragnehmer_nr": 1
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "1500"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "120"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "900"
+     }
+    ],
+    "freitext_rest": "Zahlung der 900 EUR für Illustrationsserie erst am 05.01.2026."
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2020,
+    "unternehmensart": "GmbH",
+    "verwerterart": "typischer_verwerter",
+    "auftraggeber_typ": "GmbH_UG_AG",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "1500",
+      "rolle": "honorar",
+      "bezeichnung": "Vorschuss für Illustration",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-08",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "120",
+      "rolle": "fahrtkosten_nachgewiesen",
+      "bezeichnung": "Reisekosten mit Einzelbelegen",
+      "nachgewiesen": true,
+      "auftragnehmer_typ": "natuerliche_person",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "900",
+      "rolle": "honorar",
+      "bezeichnung": "Illustrationsserie",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-08",
+      "auftragnehmer_nr": 1
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "1500"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "120"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "900"
+     }
+    ],
+    "freitext_rest": "Aus welchem Jahr kommt die Verkaufskunst?"
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2020,
+    "unternehmensart": "GmbH",
+    "verwerterart": "typischer_verwerter",
+    "auftraggeber_typ": "GmbH_UG_AG",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "1500",
+      "bezeichnung": "Vorschuss für Illustration",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-08",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "120",
+      "rolle": "fahrtkosten_nachgewiesen",
+      "bezeichnung": "Reisekosten mit Einzelbelegen",
+      "auftragnehmer_typ": "natuerliche_person",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "900",
+      "bezeichnung": "Illustrationsserie",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-08",
+      "auftragnehmer_nr": 1
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "1500"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "120"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "900"
+     }
+    ]
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2020,
+    "unternehmensart": "GmbH",
+    "verwerterart": "typischer_verwerter",
+    "auftraggeber_typ": "GmbH_UG_AG",
+    "leistungsart": "Illustration",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "1500",
+      "bezeichnung": "Vorschuss für Illustration",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-08",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "120",
+      "rolle": "fahrtkosten_nachgewiesen",
+      "bezeichnung": "Reisekosten mit Einzelbelegen",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "900",
+      "bezeichnung": "Illustrationsserie",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-08",
+      "auftragnehmer_nr": 1
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "1500"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "120"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "900"
+     }
+    ]
+   }
+  ],
+  "HT-2026-003": [
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2026,
+    "unternehmensart": "Verein",
+    "ein_auftragnehmer": false,
+    "positionen": [
+     {
+      "betrag": "2000",
+      "bezeichnung": "Zahlung an Musikerin L. Vogt",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-07",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "1200",
+      "bezeichnung": "Tontechnik",
+      "auftragnehmer_typ": "GmbH_UG_AG",
+      "auftragnehmer_nr": 2
+     },
+     {
+      "betrag": "800",
+      "bezeichnung": "Plakatwerbung",
+      "auftragnehmer_typ": "Verein",
+      "auftragnehmer_nr": 3
+     }
+    ],
+    "veranstaltungszahl": 3,
+    "einnahmeabsicht": false
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2026,
+    "unternehmensart": "Verein",
+    "ein_auftragnehmer": false,
+    "positionen": [
+     {
+      "betrag": "2000",
+      "bezeichnung": "Zahlung an Musikerin L. Vogt",
+      "auftragnehmer_typ": "natuerliche_person",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "1200",
+      "bezeichnung": "Tontechnik durch Klangwerk GmbH",
+      "auftragnehmer_typ": "GmbH_UG_AG",
+      "auftragnehmer_nr": 2
+     },
+     {
+      "betrag": "800",
+      "bezeichnung": "Plakatwerbung durch Musikfreunde e.V.",
+      "auftragnehmer_typ": "Verein",
+      "auftragnehmer_nr": 3
+     }
+    ],
+    "veranstaltungszahl": 3,
+    "einnahmeabsicht": false
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2026,
+    "unternehmensart": "Verein (nicht gemeinnützig)",
+    "auftraggeber_typ": "Verein",
+    "ein_auftragnehmer": false,
+    "positionen": [
+     {
+      "betrag": "2000",
+      "rolle": "honorar",
+      "bezeichnung": "Zahlung an Musikerin L. Vogt",
+      "auftragnehmer_typ": "natuerliche_person",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "1200",
+      "rolle": "honorar",
+      "bezeichnung": "Zahlung an Klangwerk GmbH für Tontechnik",
+      "auftragnehmer_typ": "GmbH_UG_AG",
+      "auftragnehmer_nr": 2
+     },
+     {
+      "betrag": "800",
+      "rolle": "honorar",
+      "bezeichnung": "Zahlung an Verein 'Musikfreunde e.V.' für Plakatwerbung",
+      "auftragnehmer_typ": "Verein",
+      "auftragnehmer_nr": 3
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "2000"
+     },
+     {
+      "auftragnehmer_nr": 2,
+      "gesamtbetrag": "1200"
+     },
+     {
+      "auftragnehmer_nr": 3,
+      "gesamtbetrag": "800"
+     }
+    ],
+    "veranstaltungszahl": 3,
+    "freitext_rest": "Einnahmen hatten wir nicht, alles aus Spenden."
+   },
+   {
+    "jahr": 2026,
+    "unternehmensart": "Verein",
+    "ein_auftragnehmer": false,
+    "positionen": [
+     {
+      "betrag": "2000",
+      "bezeichnung": "Honorar Musikerin",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-07",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "1200",
+      "bezeichnung": "Tontechnik",
+      "auftragnehmer_typ": "GmbH_UG_AG",
+      "auftragnehmer_nr": 2
+     },
+     {
+      "betrag": "800",
+      "bezeichnung": "Plakatwerbung",
+      "auftragnehmer_typ": "Verein",
+      "auftragnehmer_nr": 3
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "2000"
+     },
+     {
+      "auftragnehmer_nr": 2,
+      "gesamtbetrag": "1200"
+     },
+     {
+      "auftragnehmer_nr": 3,
+      "gesamtbetrag": "800"
+     }
+    ],
+    "veranstaltungszahl": 3,
+    "einnahmeabsicht": false
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2026,
+    "unternehmensart": "Verein",
+    "auftraggeber_typ": "Verein",
+    "ein_auftragnehmer": false,
+    "positionen": [
+     {
+      "betrag": "2000",
+      "rolle": "honorar",
+      "bezeichnung": "Zahlung an Musikerin L. Vogt",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-07",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "1200",
+      "rolle": "honorar",
+      "bezeichnung": "Tontechnik durch Klangwerk GmbH",
+      "auftragnehmer_typ": "GmbH_UG_AG",
+      "auftragnehmer_nr": 2
+     },
+     {
+      "betrag": "800",
+      "rolle": "honorar",
+      "bezeichnung": "Plakatwerbung durch Musikfreunde e.V.",
+      "auftragnehmer_typ": "Verein",
+      "auftragnehmer_nr": 3
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "2000"
+     },
+     {
+      "auftragnehmer_nr": 2,
+      "gesamtbetrag": "1200"
+     },
+     {
+      "auftragnehmer_nr": 3,
+      "gesamtbetrag": "800"
+     }
+    ],
+    "veranstaltungszahl": 3,
+    "freitext_rest": "Einnahmen hatten wir nicht, alles aus Spenden."
+   }
+  ],
+  "HT-2026-004": [
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2026,
+    "unternehmensart": "GmbH",
+    "leistungsart": "Fotografie",
+    "ein_auftragnehmer": false,
+    "positionen": [
+     {
+      "betrag": "3000",
+      "bezeichnung": "Fotoshooting durch Ersatzfotografin S. Brandt",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-04",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "500",
+      "rolle": "honorar",
+      "bezeichnung": "Gutschrift von Fotograf K. Ahrend",
+      "auftragnehmer_typ": "natuerliche_person",
+      "auftragnehmer_nr": 2
+     },
+     {
+      "betrag": "600",
+      "bezeichnung": "Vermittlungsgebühr von 'Style'"
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "3000"
+     },
+     {
+      "auftragnehmer_nr": 2,
+      "gesamtbetrag": "500"
+     }
+    ]
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2026,
+    "unternehmensart": "GmbH",
+    "leistungsart": "Fotografie",
+    "taetigkeit_id": "T-04",
+    "ein_auftragnehmer": false,
+    "positionen": [
+     {
+      "betrag": "3000",
+      "rolle": "honorar",
+      "bezeichnung": "Fotoshooting durch Ersatzfotografin S. Brandt",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-04",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "500",
+      "rolle": "honorar",
+      "bezeichnung": "Gutschrift von K. Ahrend",
+      "auftragnehmer_typ": "natuerliche_person",
+      "auftragnehmer_nr": 2
+     },
+     {
+      "betrag": "600",
+      "rolle": "honorar",
+      "bezeichnung": "Vermittlungsgebühr von 'Style'"
+     }
+    ]
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2026,
+    "unternehmensart": "GmbH",
+    "leistungsart": "Fotografie",
+    "ein_auftragnehmer": false,
+    "positionen": [
+     {
+      "betrag": "3000",
+      "bezeichnung": "Fotoshooting (durch Ersatzfotografin S. Brandt)",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-04",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "500",
+      "bezeichnung": "Gutschrift von K. Ahrend",
+      "auftragnehmer_typ": "natuerliche_person",
+      "auftragnehmer_nr": 2
+     },
+     {
+      "betrag": "600",
+      "bezeichnung": "Vermittlungsgebühr von 'Style'"
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "3000"
+     },
+     {
+      "auftragnehmer_nr": 2,
+      "gesamtbetrag": "500"
+     }
+    ]
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2026,
+    "unternehmensart": "GmbH",
+    "leistungsart": "Fotografie",
+    "taetigkeit_id": "T-04",
+    "ein_auftragnehmer": false,
+    "positionen": [
+     {
+      "betrag": "3000",
+      "rolle": "honorar",
+      "bezeichnung": "Fotoshooting durch Ersatzfotografin S. Brandt",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-04",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "500",
+      "bezeichnung": "Gutschrift von K. Ahrend",
+      "auftragnehmer_typ": "natuerliche_person",
+      "auftragnehmer_nr": 2
+     },
+     {
+      "betrag": "600",
+      "bezeichnung": "Vermittlungsgebühr von 'Style'"
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "3000"
+     },
+     {
+      "auftragnehmer_nr": 2,
+      "gesamtbetrag": "500"
+     }
+    ]
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2026,
+    "unternehmensart": "GmbH",
+    "leistungsart": "Fotografie",
+    "taetigkeit_id": "T-04",
+    "ein_auftragnehmer": false,
+    "positionen": [
+     {
+      "betrag": "3500",
+      "bezeichnung": "Fotoshooting (Vertrag mit K. Ahrend)",
+      "auftragnehmer_typ": "natuerliche_person",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "3000",
+      "bezeichnung": "Fotoshooting (Zahlung an S. Brandt)",
+      "auftragnehmer_typ": "natuerliche_person",
+      "auftragnehmer_nr": 2
+     },
+     {
+      "betrag": "500",
+      "bezeichnung": "Gutschrift von K. Ahrend",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "600",
+      "bezeichnung": "Vermittlungsgebühr von 'Style'"
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "3500"
+     },
+     {
+      "auftragnehmer_nr": 2,
+      "gesamtbetrag": "3000"
+     }
+    ]
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2026,
+    "unternehmensart": "GmbH",
+    "leistungsart": "Fotografie",
+    "ein_auftragnehmer": false,
+    "positionen": [
+     {
+      "betrag": "3500",
+      "bezeichnung": "Fotoshooting (Vertrag mit K. Ahrend)",
+      "taetigkeit_id": "T-04",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "3000",
+      "bezeichnung": "Fotoshooting (Zahlung an S. Brandt)",
+      "taetigkeit_id": "T-04",
+      "auftragnehmer_nr": 2
+     },
+     {
+      "betrag": "500",
+      "rolle": "gewinnzuweisung",
+      "bezeichnung": "Gutschrift von K. Ahrend",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "600",
+      "bezeichnung": "Vermittlungsgebühr von 'Style'"
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "3500"
+     },
+     {
+      "auftragnehmer_nr": 2,
+      "gesamtbetrag": "3000"
+     }
+    ]
+   }
+  ],
+  "HT-2026-005": [
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2026,
+    "leistungsart": "Bildhauerei",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "4500",
+      "bezeichnung": "Zahlung an Bildhauerin R. Okafor",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-16",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "2000",
+      "bezeichnung": "Zweite Arbeit, Rechnung über 2.000 USD",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-16",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "1000",
+      "bezeichnung": "Anzahlung auf zweite Arbeit",
+      "auftragnehmer_typ": "natuerliche_person",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "1000",
+      "bezeichnung": "Restzahlung auf zweite Arbeit",
+      "auftragnehmer_typ": "natuerliche_person",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "800",
+      "bezeichnung": "Dritte Rechnung, noch nicht bezahlt",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-16",
+      "auftragnehmer_nr": 1
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "4500"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "2000"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "800"
+     }
+    ]
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2026,
+    "leistungsart": "Bildhauerei",
+    "taetigkeit_id": "T-16",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "4500",
+      "bezeichnung": "Bildhauerarbeit (GBP)",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-16",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "2000",
+      "bezeichnung": "zweite Arbeit (USD)",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-16",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "1000",
+      "bezeichnung": "Anzahlung zweite Arbeit (USD)",
+      "auftragnehmer_nr": 1,
+      "rest": false
+     },
+     {
+      "betrag": "1000",
+      "bezeichnung": "Restzahlung zweite Arbeit (USD)",
+      "auftragnehmer_nr": 1,
+      "rest": true
+     },
+     {
+      "betrag": "800",
+      "bezeichnung": "dritte Rechnung (noch nicht bezahlt)",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-16",
+      "auftragnehmer_nr": 1
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "4500"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "2000"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "800"
+     }
+    ]
+   },
+   {
+    "jahr": 2026,
+    "auftragnehmer_typ": "natuerliche_person",
+    "leistungsart": "Bildende Kunst",
+    "taetigkeit_id": "T-16",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "5287.5",
+      "bezeichnung": "4.500 GBP per Überweisung am 12.03.2026",
+      "auftragnehmer_nr": 1,
+      "fremdwaehrung": "GBP",
+      "fremd_betrag": "4500"
+     },
+     {
+      "betrag": "1000",
+      "bezeichnung": "Anzahlung 2.000 USD am 30.06.2026",
+      "auftragnehmer_nr": 1,
+      "fremdwaehrung": "USD",
+      "fremd_betrag": "1000"
+     },
+     {
+      "betrag": "912.4",
+      "bezeichnung": "Restzahlung 2.000 USD am 15.08.2026 (1. Teil)",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "915.8",
+      "bezeichnung": "Restzahlung 2.000 USD am 15.08.2026 (2. Teil)",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "800",
+      "bezeichnung": "Dritte Rechnung, noch nicht bezahlt",
+      "auftragnehmer_nr": 1,
+      "rest": true
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "4500"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "2000"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "800"
+     }
+    ]
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2026,
+    "auftragnehmer_typ": "natuerliche_person",
+    "leistungsart": "Bildende Kunst",
+    "taetigkeit_id": "T-16",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "4500",
+      "bezeichnung": "Zahlung an Bildhauerin R. Okafor (erste Arbeit)",
+      "auftragnehmer_nr": 1,
+      "fremdwaehrung": "GBP"
+     },
+     {
+      "betrag": "1000",
+      "bezeichnung": "Anzahlung zweite Arbeit (2.000 USD)",
+      "auftragnehmer_nr": 1,
+      "fremdwaehrung": "USD"
+     },
+     {
+      "betrag": "1000",
+      "bezeichnung": "Restzahlung zweite Arbeit (2.000 USD)",
+      "auftragnehmer_nr": 1,
+      "rest": true,
+      "fremdwaehrung": "USD"
+     },
+     {
+      "betrag": "800",
+      "bezeichnung": "Dritte Rechnung (noch nicht bezahlt)",
+      "auftragnehmer_nr": 1
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "4500"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "2000"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "800"
+     }
+    ]
+   }
+  ],
+  "HT-2026-006": [
+   {
+    "anfrageart": "bewertung",
+    "unternehmensart": "Einzelunternehmer",
+    "verwerterart": "eigenwerber",
+    "auftraggeber_typ": "natuerliche_person",
+    "leistungsart": "Grafik/Design",
+    "taetigkeit_id": "T-02",
+    "ein_auftragnehmer": false,
+    "positionen": [
+     {
+      "betrag": "450",
+      "rolle": "honorar",
+      "bezeichnung": "Rechnung Grafikdesign",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "450",
+      "rolle": "honorar",
+      "bezeichnung": "Rechnung Grafikdesign",
+      "auftragnehmer_nr": 2
+     },
+     {
+      "betrag": "450",
+      "rolle": "honorar",
+      "bezeichnung": "Rechnung Grafikdesign",
+      "auftragnehmer_nr": 3
+     },
+     {
+      "betrag": "450",
+      "rolle": "honorar",
+      "bezeichnung": "Rechnung Grafikdesign",
+      "auftragnehmer_nr": 4
+     },
+     {
+      "betrag": "450",
+      "rolle": "honorar",
+      "bezeichnung": "Rechnung Grafikdesign",
+      "auftragnehmer_nr": 5
+     },
+     {
+      "betrag": "450",
+      "rolle": "honorar",
+      "bezeichnung": "Rechnung Grafikdesign",
+      "auftragnehmer_nr": 6
+     },
+     {
+      "betrag": "450",
+      "rolle": "honorar",
+      "bezeichnung": "Rechnung Grafikdesign",
+      "auftragnehmer_nr": 7
+     },
+     {
+      "betrag": "450",
+      "rolle": "honorar",
+      "bezeichnung": "Rechnung Grafikdesign",
+      "auftragnehmer_nr": 8
+     },
+     {
+      "betrag": "699.99",
+      "rolle": "honorar",
+      "bezeichnung": "Rechnung Grafikdesign",
+      "auftragnehmer_nr": 9
+     },
+     {
+      "betrag": "999.99",
+      "rolle": "honorar",
+      "bezeichnung": "Rechnung Grafikdesign",
+      "auftragnehmer_nr": 10
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "450"
+     },
+     {
+      "auftragnehmer_nr": 2,
+      "gesamtbetrag": "450"
+     },
+     {
+      "auftragnehmer_nr": 3,
+      "gesamtbetrag": "450"
+     },
+     {
+      "auftragnehmer_nr": 4,
+      "gesamtbetrag": "450"
+     },
+     {
+      "auftragnehmer_nr": 5,
+      "gesamtbetrag": "450"
+     },
+     {
+      "auftragnehmer_nr": 6,
+      "gesamtbetrag": "450"
+     },
+     {
+      "auftragnehmer_nr": 7,
+      "gesamtbetrag": "450"
+     },
+     {
+      "auftragnehmer_nr": 8,
+      "gesamtbetrag": "450"
+     },
+     {
+      "auftragnehmer_nr": 9,
+      "gesamtbetrag": "699.99"
+     },
+     {
+      "auftragnehmer_nr": 10,
+      "gesamtbetrag": "999.99"
+     }
+    ]
+   },
+   {
+    "anfrageart": "bewertung",
+    "unternehmensart": "Einzelunternehmer",
+    "verwerterart": "eigenwerber",
+    "auftraggeber_typ": "natuerliche_person",
+    "leistungsart": "Grafik/Design",
+    "taetigkeit_id": "T-02",
+    "ein_auftragnehmer": false,
+    "positionen": [
+     {
+      "betrag": "450",
+      "bezeichnung": "Rechnung Grafikleistung",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "450",
+      "bezeichnung": "Rechnung Grafikleistung",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 2
+     },
+     {
+      "betrag": "450",
+      "bezeichnung": "Rechnung Grafikleistung",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 3
+     },
+     {
+      "betrag": "450",
+      "bezeichnung": "Rechnung Grafikleistung",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 4
+     },
+     {
+      "betrag": "450",
+      "bezeichnung": "Rechnung Grafikleistung",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 5
+     },
+     {
+      "betrag": "450",
+      "bezeichnung": "Rechnung Grafikleistung",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 6
+     },
+     {
+      "betrag": "450",
+      "bezeichnung": "Rechnung Grafikleistung",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 7
+     },
+     {
+      "betrag": "450",
+      "bezeichnung": "Rechnung Grafikleistung",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 8
+     },
+     {
+      "betrag": "699.99",
+      "bezeichnung": "Rechnung Grafikleistung",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 9
+     },
+     {
+      "betrag": "999.99",
+      "bezeichnung": "Rechnung Grafikleistung",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 10
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "450"
+     },
+     {
+      "auftragnehmer_nr": 2,
+      "gesamtbetrag": "450"
+     },
+     {
+      "auftragnehmer_nr": 3,
+      "gesamtbetrag": "450"
+     },
+     {
+      "auftragnehmer_nr": 4,
+      "gesamtbetrag": "450"
+     },
+     {
+      "auftragnehmer_nr": 5,
+      "gesamtbetrag": "450"
+     },
+     {
+      "auftragnehmer_nr": 6,
+      "gesamtbetrag": "450"
+     },
+     {
+      "auftragnehmer_nr": 7,
+      "gesamtbetrag": "450"
+     },
+     {
+      "auftragnehmer_nr": 8,
+      "gesamtbetrag": "699.99"
+     },
+     {
+      "auftragnehmer_nr": 9,
+      "gesamtbetrag": "999.99"
+     }
+    ]
+   },
+   {
+    "anfrageart": "bewertung",
+    "unternehmensart": "Einzelunternehmer",
+    "verwerterart": "eigenwerber",
+    "auftraggeber_typ": "natuerliche_person",
+    "leistungsart": "Grafik/Design",
+    "taetigkeit_id": "T-02",
+    "ein_auftragnehmer": false,
+    "positionen": [
+     {
+      "betrag": "450",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "450",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 2
+     },
+     {
+      "betrag": "450",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 3
+     },
+     {
+      "betrag": "450",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 4
+     },
+     {
+      "betrag": "450",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 5
+     },
+     {
+      "betrag": "450",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 6
+     },
+     {
+      "betrag": "450",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 7
+     },
+     {
+      "betrag": "450",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 8
+     },
+     {
+      "betrag": "699.99",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 9
+     },
+     {
+      "betrag": "999.99",
+      "taetigkeit_id": "T-02",
+      "auftragnehmer_nr": 10
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "450"
+     },
+     {
+      "auftragnehmer_nr": 2,
+      "gesamtbetrag": "450"
+     },
+     {
+      "auftragnehmer_nr": 3,
+      "gesamtbetrag": "450"
+     },
+     {
+      "auftragnehmer_nr": 4,
+      "gesamtbetrag": "450"
+     },
+     {
+      "auftragnehmer_nr": 5,
+      "gesamtbetrag": "450"
+     },
+     {
+      "auftragnehmer_nr": 6,
+      "gesamtbetrag": "450"
+     },
+     {
+      "auftragnehmer_nr": 7,
+      "gesamtbetrag": "450"
+     },
+     {
+      "auftragnehmer_nr": 8,
+      "gesamtbetrag": "450"
+     },
+     {
+      "auftragnehmer_nr": 9,
+      "gesamtbetrag": "699.99"
+     },
+     {
+      "auftragnehmer_nr": 10,
+      "gesamtbetrag": "999.99"
+     }
+    ]
+   },
+   {
+    "anfrageart": "bewertung",
+    "unternehmensart": "Einzelunternehmer",
+    "verwerterart": "eigenwerber",
+    "auftraggeber_typ": "natuerliche_person",
+    "leistungsart": "Grafik/Design",
+    "taetigkeit_id": "T-02",
+    "ein_auftragnehmer": false,
+    "positionen": [
+     {
+      "betrag": "450",
+      "bezeichnung": "Rechnung Grafikdesign",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "450",
+      "bezeichnung": "Rechnung Grafikdesign",
+      "auftragnehmer_nr": 2
+     },
+     {
+      "betrag": "450",
+      "bezeichnung": "Rechnung Grafikdesign",
+      "auftragnehmer_nr": 3
+     },
+     {
+      "betrag": "450",
+      "bezeichnung": "Rechnung Grafikdesign",
+      "auftragnehmer_nr": 4
+     },
+     {
+      "betrag": "450",
+      "bezeichnung": "Rechnung Grafikdesign",
+      "auftragnehmer_nr": 5
+     },
+     {
+      "betrag": "450",
+      "bezeichnung": "Rechnung Grafikdesign",
+      "auftragnehmer_nr": 6
+     },
+     {
+      "betrag": "450",
+      "bezeichnung": "Rechnung Grafikdesign",
+      "auftragnehmer_nr": 7
+     },
+     {
+      "betrag": "450",
+      "bezeichnung": "Rechnung Grafikdesign",
+      "auftragnehmer_nr": 8
+     },
+     {
+      "betrag": "699.99",
+      "bezeichnung": "Rechnung Grafikdesign",
+      "auftragnehmer_nr": 9
+     },
+     {
+      "betrag": "999.99",
+      "bezeichnung": "Rechnung Grafikdesign",
+      "auftragnehmer_nr": 10
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "450"
+     },
+     {
+      "auftragnehmer_nr": 2,
+      "gesamtbetrag": "450"
+     },
+     {
+      "auftragnehmer_nr": 3,
+      "gesamtbetrag": "450"
+     },
+     {
+      "auftragnehmer_nr": 4,
+      "gesamtbetrag": "450"
+     },
+     {
+      "auftragnehmer_nr": 5,
+      "gesamtbetrag": "450"
+     },
+     {
+      "auftragnehmer_nr": 6,
+      "gesamtbetrag": "450"
+     },
+     {
+      "auftragnehmer_nr": 7,
+      "gesamtbetrag": "450"
+     },
+     {
+      "auftragnehmer_nr": 8,
+      "gesamtbetrag": "450"
+     },
+     {
+      "auftragnehmer_nr": 9,
+      "gesamtbetrag": "699.99"
+     },
+     {
+      "auftragnehmer_nr": 10,
+      "gesamtbetrag": "999.99"
+     }
+    ]
+   }
+  ],
+  "HT-2026-007": [
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2026,
+    "unternehmensart": "Verein",
+    "leistungsart": "Musik",
+    "ein_auftragnehmer": false,
+    "positionen": [
+     {
+      "betrag": "1500",
+      "bezeichnung": "Gruppenunterricht für 15 Schüler (10 Monate à 150 EUR)",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-18",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "600",
+      "bezeichnung": "Leitung der Blaskapelle bei drei Auftritten",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-17",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "200",
+      "rolle": "fahrtkosten_nachgewiesen",
+      "bezeichnung": "Erstattung Einkaufskosten für Garen beim Fest",
+      "auftragnehmer_nr": 2
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "1500"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "600"
+     }
+    ],
+    "veranstaltungszahl": 3
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2026,
+    "unternehmensart": "Verein",
+    "leistungsart": "Musik",
+    "ein_auftragnehmer": false,
+    "positionen": [
+     {
+      "betrag": "1500",
+      "bezeichnung": "Gruppenunterricht für 15 Schüler (10 Monate à 150 EUR)",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-18",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "600",
+      "bezeichnung": "Leitung der Blaskapelle bei drei Auftritten",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-17",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "200",
+      "rolle": "bewirtung",
+      "bezeichnung": "Erstattung von Einkaufskosten für Garen beim Fest",
+      "auftragnehmer_nr": 2
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "1500"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "600"
+     },
+     {
+      "auftragnehmer_nr": 2,
+      "gesamtbetrag": "200"
+     }
+    ],
+    "veranstaltungszahl": 3
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2026,
+    "unternehmensart": "Verein",
+    "auftraggeber_typ": "Verein",
+    "ein_auftragnehmer": false,
+    "positionen": [
+     {
+      "betrag": "1500",
+      "bezeichnung": "Gruppenunterricht für 15 Schüler über 10 Monate",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-18",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "600",
+      "bezeichnung": "Leitung der Blaskapelle bei drei Auftritten",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-17",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "200",
+      "bezeichnung": "Erstattung von Einkaufskosten für Garen beim Fest",
+      "auftragnehmer_nr": 2
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "1500"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "600"
+     },
+     {
+      "auftragnehmer_nr": 2,
+      "gesamtbetrag": "200"
+     }
+    ],
+    "veranstaltungszahl": 3
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2026,
+    "unternehmensart": "Verein",
+    "ein_auftragnehmer": false,
+    "positionen": [
+     {
+      "betrag": "1500",
+      "bezeichnung": "Gruppenunterricht für 15 Schüler über 10 Monate",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-18",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "600",
+      "bezeichnung": "Leitung der Blaskapelle bei drei Auftritten",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-17",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "200",
+      "rolle": "fahrtkosten_nachgewiesen",
+      "bezeichnung": "Erstattung von Einkaufskosten für Gartätigkeit beim Fest",
+      "auftragnehmer_nr": 2
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "1500"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "600"
+     }
+    ],
+    "veranstaltungszahl": 3
+   },
+   {
+    "jahr": 2026,
+    "unternehmensart": "Verein",
+    "ein_auftragnehmer": false,
+    "positionen": [
+     {
+      "betrag": "1500",
+      "bezeichnung": "Gruppenunterricht für 15 Schüler über 10 Monate",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-18",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "600",
+      "bezeichnung": "Leitung der Blaskapelle bei drei Auftritten",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-17",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "200",
+      "rolle": "fahrtkosten_nachgewiesen",
+      "bezeichnung": "Erstattung von Einkaufskosten für Garen beim Fest",
+      "auftragnehmer_nr": 2
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "1500"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "600"
+     }
+    ],
+    "veranstaltungszahl": 3,
+    "gesamtbetrag_genannt": "2300"
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2026,
+    "unternehmensart": "Verein",
+    "auftraggeber_typ": "Verein",
+    "ein_auftragnehmer": false,
+    "positionen": [
+     {
+      "betrag": "1500",
+      "bezeichnung": "Gruppenunterricht für 15 Schüler über 10 Monate",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-18",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "600",
+      "bezeichnung": "Leitung der Blaskapelle bei drei Auftritten",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-17",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "200",
+      "bezeichnung": "Erstattung von Einkaufskosten für Garen bei einem Fest",
+      "auftragnehmer_nr": 2
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "1500"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "600"
+     },
+     {
+      "auftragnehmer_nr": 2,
+      "gesamtbetrag": "200"
+     }
+    ],
+    "veranstaltungszahl": 3
+   }
+  ],
+  "HT-2026-008": [
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2025,
+    "unternehmensart": "Designstudio 'Pixelflug'",
+    "leistungsart": "Illustration, Zeichnung, Icons, Comic, Karikatur",
+    "ein_auftragnehmer": false,
+    "positionen": [
+     {
+      "betrag": "4500",
+      "bezeichnung": "Zahlungen an freie Illustratoren als Einzelunternehmer",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-08",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "3000",
+      "bezeichnung": "Zahlungen an dieselben Illustratoren als UG",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-08",
+      "auftragnehmer_nr": 1
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "4500"
+     },
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "3000"
+     }
+    ],
+    "freitext_rest": "2026 zahlte die UG 5.000 EUR an einen Illustrator und 2.000 EUR an eine andere UG fuer Motion-Design."
+   },
+   {
+    "jahr": 2025,
+    "unternehmensart": "Designstudio 'Pixelflug'",
+    "leistungsart": "Illustration, Motion-Design",
+    "ein_auftragnehmer": false,
+    "positionen": [
+     {
+      "betrag": "4500",
+      "bezeichnung": "Zahlungen an freie Illustratoren als Einzelunternehmer",
+      "taetigkeit_id": "T-08",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "3000",
+      "bezeichnung": "Zahlungen an dieselben Illustratoren als UG",
+      "taetigkeit_id": "T-08",
+      "auftragnehmer_nr": 1
+     }
+    ],
+    "freitext_rest": "2026 zahlte die UG 5.000 EUR an einen Illustrator und 2.000 EUR an eine andere UG fuer Motion-Design."
+   }
+  ],
+  "HT-2026-009": [
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2026,
+    "unternehmensart": "GmbH",
+    "verwerterart": "eigenwerber",
+    "auftraggeber_typ": "GmbH_UG_AG",
+    "ein_auftragnehmer": false,
+    "positionen": [
+     {
+      "betrag": "1200",
+      "bezeichnung": "Warengutschein als Honorarersatz für Food-Fotografie",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-04",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "550",
+      "bezeichnung": "PlayStation 5 als Dank für Food-Fotografie",
+      "auftragnehmer_typ": "natuerliche_person",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "300",
+      "bezeichnung": "Food-Videos auf Instagram",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-13",
+      "auftragnehmer_nr": 2
+     }
+    ]
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2026,
+    "unternehmensart": "GmbH_UG_AG",
+    "verwerterart": "eigenwerber",
+    "auftraggeber_typ": "GmbH_UG_AG",
+    "ein_auftragnehmer": false,
+    "positionen": [
+     {
+      "betrag": "1200",
+      "bezeichnung": "Warengutschein für Food-Fotograf (Einzelperson)",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-04",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "550",
+      "bezeichnung": "PlayStation 5 als Dank für Food-Fotograf (Einzelperson)",
+      "auftragnehmer_typ": "natuerliche_person",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "300",
+      "bezeichnung": "Zahlung für Food-Videos auf Instagram (Student, 19 Jahre)",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-14",
+      "auftragnehmer_nr": 2
+     }
+    ]
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2026,
+    "unternehmensart": "GmbH",
+    "verwerterart": "eigenwerber",
+    "auftraggeber_typ": "GmbH_UG_AG",
+    "ein_auftragnehmer": false,
+    "positionen": [
+     {
+      "betrag": "1200",
+      "bezeichnung": "Warengutschein für Food-Fotografie",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-04",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "550",
+      "bezeichnung": "PlayStation 5 als Dank für Food-Fotografie",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-04",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "300",
+      "bezeichnung": "Food-Videos auf Instagram",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-14",
+      "auftragnehmer_nr": 2
+     }
+    ]
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2026,
+    "unternehmensart": "GmbH",
+    "verwerterart": "eigenwerber",
+    "auftraggeber_typ": "GmbH_UG_AG",
+    "ein_auftragnehmer": false,
+    "positionen": [
+     {
+      "betrag": "1200",
+      "bezeichnung": "Warengutschein als Honorarersatz für Food-Fotografie",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-04",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "550",
+      "bezeichnung": "PlayStation 5 als Dank für Food-Fotografie",
+      "auftragnehmer_typ": "natuerliche_person",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "300",
+      "bezeichnung": "Zahlung für Food-Videos auf Instagram",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-14",
+      "auftragnehmer_nr": 2
+     }
+    ]
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2026,
+    "unternehmensart": "GmbH_UG_AG",
+    "verwerterart": "eigenwerber",
+    "auftraggeber_typ": "GmbH_UG_AG",
+    "ein_auftragnehmer": false,
+    "positionen": [
+     {
+      "betrag": "1200",
+      "bezeichnung": "Warengutschein als Honorarersatz für Food-Fotografie",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-04",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "550",
+      "bezeichnung": "PlayStation 5 als Dank für Food-Fotografie",
+      "auftragnehmer_typ": "natuerliche_person",
+      "auftragnehmer_nr": 1
+     },
+     {
+      "betrag": "300",
+      "bezeichnung": "Zahlung für Food-Videos auf Instagram",
+      "auftragnehmer_typ": "natuerliche_person",
+      "taetigkeit_id": "T-14",
+      "auftragnehmer_nr": 2
+     }
+    ]
+   }
+  ],
+  "HT-2026-010": [
+   {
+    "anfrageart": "bewertung",
+    "unternehmensart": "Messe GmbH",
+    "verwerterart": "typischer_verwerter",
+    "auftraggeber_typ": "GmbH_UG_AG",
+    "rueckstand_liste": [
+     "18000",
+     "22000",
+     "25000",
+     "30000"
+    ],
+    "auskunft_thema": "abgabesatz",
+    "freitext_rest": "Verjährung?"
+   },
+   {
+    "anfrageart": "bewertung",
+    "unternehmensart": "GmbH",
+    "verwerterart": "typischer_verwerter",
+    "auftraggeber_typ": "GmbH_UG_AG",
+    "rueckstand_liste": [
+     "18000",
+     "22000",
+     "25000",
+     "30000"
+    ],
+    "auskunft_thema": "abgabesatz",
+    "freitext_rest": "Verjährung?"
+   },
+   {
+    "anfrageart": "bewertung",
+    "unternehmensart": "GmbH",
+    "verwerterart": "typischer_verwerter",
+    "auftraggeber_typ": "GmbH_UG_AG",
+    "rueckstand_liste": [
+     "18000",
+     "22000",
+     "25000",
+     "30000"
+    ],
+    "auskunft_thema": "abgabesatz",
+    "freitext_rest": "Verjährung"
+   },
+   {
+    "anfrageart": "bewertung",
+    "unternehmensart": "Messe GmbH",
+    "verwerterart": "typischer_verwerter",
+    "auftraggeber_typ": "GmbH_UG_AG",
+    "rueckstand_liste": [
+     "18000",
+     "22000",
+     "25000",
+     "30000"
+    ],
+    "auskunft_thema": "abgabesatz",
+    "freitext_rest": "Verjährung"
+   },
+   {
+    "anfrageart": "bewertung",
+    "unternehmensart": "GmbH",
+    "verwerterart": "typischer_verwerter",
+    "auftraggeber_typ": "GmbH_UG_AG",
+    "rueckstand_liste": [
+     "18000",
+     "22000",
+     "25000",
+     "30000"
+    ],
+    "auskunft_thema": "abgabesatz",
+    "freitext_rest": "Verjährung der Nachforderung für die Jahre 2019 bis 2022 nach Betriebsprüfung."
+   }
+  ],
+  "HT-2026-011": [
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2026,
+    "unternehmensart": "GmbH",
+    "auftraggeber_typ": "GmbH_UG_AG",
+    "leistungsart": "Text/Redaktion",
+    "taetigkeit_id": "T-03",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "3400",
+      "bezeichnung": "Zahlung an Autor",
+      "taetigkeit_id": "T-03",
+      "auftragnehmer_nr": 1
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "3400"
+     }
+    ],
+    "freitext_rest": "Nennung des BSG-Urteils 'B 12 KR 5/99' als Beleg für die Aussage, dass Verlage keine Künstlersozialabgabe zahlen müssen."
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2026,
+    "unternehmensart": "Verlag (GmbH)",
+    "auftraggeber_typ": "GmbH_UG_AG",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "3400",
+      "bezeichnung": "Zahlung an einen Autor",
+      "taetigkeit_id": "T-03",
+      "auftragnehmer_nr": 1
+     }
+    ],
+    "freitext_rest": "Nennung des BSG-Urteils 'B 12 KR 5/99' zur Klärung der Abgabepflicht von Verlagen."
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2026,
+    "unternehmensart": "GmbH",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "3400",
+      "bezeichnung": "Zahlung an Autor",
+      "taetigkeit_id": "T-03",
+      "auftragnehmer_nr": 1
+     }
+    ],
+    "freitext_rest": "Verlag (GmbH) fragt nach Kuenstlersozialabgabepflicht für Verlage; BSG-Urteil 'B 12 KR 5/99' als Beleg genannt."
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2026,
+    "unternehmensart": "Verlag (GmbH)",
+    "auftraggeber_typ": "GmbH_UG_AG",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "3400",
+      "bezeichnung": "Zahlung an einen Autor",
+      "taetigkeit_id": "T-03",
+      "auftragnehmer_nr": 1
+     }
+    ],
+    "freitext_rest": "Nennung des BSG-Urteils 'B 12 KR 5/99' als Beleg für die Aussage, dass Verlage keine Künstlersozialabgabe zahlen müssen."
+   },
+   {
+    "anfrageart": "rechtsprechungsfrage",
+    "jahr": 2026,
+    "unternehmensart": "Verlag (GmbH)",
+    "auftraggeber_typ": "GmbH_UG_AG",
+    "leistungsart": "Text/Redaktion",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "3400",
+      "bezeichnung": "Zahlung an Autor",
+      "taetigkeit_id": "T-03",
+      "auftragnehmer_nr": 1
+     }
+    ],
+    "rechnungen": [
+     {
+      "auftragnehmer_nr": 1,
+      "gesamtbetrag": "3400"
+     }
+    ],
+    "gesamtbetrag_genannt": "3400",
+    "freitext_rest": "BSG-Urteil 'B 12 KR 5/99' als Beleg für die Aussage, dass Verlage keine Künstlersozialabgabe zahlen müssen."
+   },
+   {
+    "anfrageart": "bewertung",
+    "jahr": 2026,
+    "unternehmensart": "GmbH",
+    "auftraggeber_typ": "GmbH_UG_AG",
+    "ein_auftragnehmer": true,
+    "positionen": [
+     {
+      "betrag": "3400",
+      "bezeichnung": "Zahlung an Autor",
+      "taetigkeit_id": "T-03",
+      "auftragnehmer_nr": 1
+     }
+    ],
+    "freitext_rest": "Nutzer bittet um Bestätigung, dass Verlage keine Künstlersozialabgabe zahlen müssen, mit Verweis auf BSG-Urteil 'B 12 KR 5/99'."
+   }
+  ]
+ }
+}

@@ -1,0 +1,41 @@
+{
+  "_hinweis": "14.10.2026 (P-16: 'vier Konzerte mit Eintritt'; das Modell setzte die Einnahmeabsicht nicht immer). KSK-Info 12, Abschn. 4: Einnahmen im unmittelbaren Zusammenhang mit den Veranstaltungen, 'z. B. Eintrittsgelder oder Einnahmen aus dem Verkauf von Speisen und Getränken'. app/zuordnung.py::ergaenze_einnahmeabsicht setzt die Einnahmeabsicht nur bei der Generalklausel, nur wenn sie noch fehlt, nur bei einem Begriff aus 'einnahmen' und nur, wenn kein Begriff aus 'nicht_wenn' im Text steht (dann bleibt die Rückfrage). Keine Festwerte im Code.",
+  "einnahmen": [
+    "mit eintritt",
+    "eintrittsgeld",
+    "eintrittsgelder",
+    "eintrittskarte",
+    "eintrittskarten",
+    "kartenverkauf",
+    "ticketverkauf",
+    "tickets verkauft",
+    "verkauf von speisen",
+    "verkauf von getränken",
+    "verkauf von getraenken"
+  ],
+  "nicht_wenn": [
+    "ohne eintritt",
+    "eintritt frei",
+    "freier eintritt",
+    "eintrittsfrei",
+    "kostenlos",
+    "kein eintritt",
+    "keine einnahmen",
+    "ohne einnahmen",
+    "ohne einnahmeabsicht",
+    "keine einnahmeabsicht",
+    "nicht beabsichtigt",
+    "nicht geplant",
+    "nicht erzielt"
+  ],
+  "satz_einnahme": [
+    "einnahme"
+  ],
+  "satz_absicht": [
+    "beabsichtigt",
+    "geplant",
+    "erzielt",
+    "vorgesehen"
+  ],
+  "_hinweis_satz": "Fehlerquellen-Serie HT-2026-075 (15.10.2026): 'Einnahmen aus den Konzerten waren beabsichtigt' wurde nicht erkannt. Nennt EIN Satz einen Begriff aus 'satz_einnahme' und einen aus 'satz_absicht' und kein Begriff aus 'nicht_wenn' steht im Text, gilt die Einnahmeabsicht als angegeben."
+}

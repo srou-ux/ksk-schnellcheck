@@ -1,0 +1,1 @@
+RAG-Index: /home/runner/work/ksk-assistent/ksk-assistent/app/_lokal/rag.sqlite -- neu 0, geändert 0, entfernt 0, unverändert 117, Regeln auf 'prüfen': 0, ohne Metadaten: 0

@@ -1,0 +1,20 @@
+{
+  "_hinweis": "Begriffe für app/zuordnung.py::ist_neuer_fall (Dialogtest Fallgrenzen, 10.10.2026). Nennt eine Nachricht einen dieser Begriffe, beginnt ein NEUER Fall: keine Fakten, keine Rückfrage-Antworten und kein Verlaufstext des bisherigen Falls werden übernommen (app/router.py::bearbeite_frage). Bewusst eng gefasst: lieber einmal zu wenig trennen und den Nutzer die Fakten in der Bestätigung prüfen lassen, als eine Korrektur fälschlich als neuen Fall zu behandeln. Klein geschrieben, Umlaute werden vor dem Vergleich vereinheitlicht.",
+  "neuer_fall": [
+    "neuer fall",
+    "neuer, unabhängiger fall",
+    "neuer unabhängiger fall",
+    "neuer sachverhalt",
+    "anderer fall",
+    "ein anderer fall",
+    "nächster fall",
+    "neue frage",
+    "neuer auftrag, unabhängig",
+    "ander fall",
+    "anderen fall",
+    "andere frage",
+    "neu fall",
+    "neues thema",
+    "anderes thema"
+  ]
+}

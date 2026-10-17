@@ -1,0 +1,5 @@
+datum,modus,bericht_stand,katalog,fall,soll,ist,urteil,dauer_s
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,cc10705,aufgaben/audit/testfall_alltag_4.json,alltag4:F1,A,Abgabepflichtig (Vorschlag),RICHTIG,16.0
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,cc10705,aufgaben/audit/testfall_alltag_4.json,alltag4:F2,A,Abgabepflichtig (Vorschlag),RICHTIG,7.8
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,cc10705,aufgaben/audit/testfall_alltag_4.json,alltag4:F3,N,Nicht abgabepflichtig (Vorschlag),NACHGEFRAGT,12.2
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,cc10705,aufgaben/audit/testfall_alltag_4.json,alltag4:F4,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,9.1

@@ -1,0 +1,2 @@
+datum,modus,code_stand,katalog,fall,soll,ist,urteil,bemessungsgrundlage,abgabe,rueckfragen,gruende,dauer_s
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",497a26c,aufgaben/audit/testfall_haertetest_777.json,H-777,A/G,Grenzfall → Steuerberater entscheidet,RICHTIG,10800,464.4,0,,4.2

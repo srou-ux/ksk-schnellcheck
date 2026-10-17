@@ -1,0 +1,129 @@
+# Testarchiv DIREKT im Chatbot: die echte App läuft, ein Browser (Playwright) tippt die Fragen,
+# klickt die Knöpfe und bestätigt die Fakten wie ein Mensch (aufgaben/audit/chatbot_direkt.py).
+# Start von Hand: Actions -> "Chatbot direkt" -> Run workflow. Erfundene Daten.
+# Schlüssel nur als GitHub-Secret MISTRAL_API_KEY. Kostet wenige Cent je Lauf.
+name: Chatbot direkt
+on:
+  workflow_dispatch:
+    inputs:
+      katalog:
+        description: "Katalogdatei (Pfad im Repo)"
+        required: true
+        default: "tests/archiv/alle_faelle.json"
+      kurzname:
+        description: "Kurzname für die Berichte"
+        required: true
+        default: "chatbot"
+      modell:
+        description: "Mistral-Modell (Standard seit 17.10.2026: mistral-small-latest)"
+        required: true
+        default: "mistral-small-latest"
+      teil:
+        description: "Teil des Katalogs, z. B. 2/6 (große Kataloge in mehreren Läufen)"
+        required: false
+        default: "1/1"
+      modi:
+        description: "beide, nur-demo oder nur-browser"
+        required: false
+        default: "beide"
+      dialoge:
+        description: "Dialoge aus dem Testarchiv mitspielen (ja/nein)"
+        required: false
+        default: "ja"
+      jeder:
+        description: "Stichprobe: nur jeden n-ten Fall (1 = alle)"
+        required: false
+        default: "1"
+permissions:
+  contents: write
+concurrency:
+  group: chatbot-direkt
+  cancel-in-progress: false
+jobs:
+  lauf:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 340
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        include:
+          - name: demo
+            schluessel: false
+          - name: browser
+            schluessel: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: app/requirements.txt
+      - run: pip install --disable-pip-version-check -r app/requirements.txt playwright
+      - run: playwright install --with-deps chromium
+      - name: Quellenindex (RAG) bauen
+        run: python -m app.rag.index
+      - name: Chatbot im Browser testen
+        if: ${{ inputs.modi == 'beide' || (inputs.modi == 'nur-demo' && matrix.name == 'demo') || (inputs.modi == 'nur-browser' && matrix.name == 'browser') }}
+        continue-on-error: true
+        env:
+          MISTRAL_API_KEY: ${{ matrix.schluessel && secrets.MISTRAL_API_KEY || '' }}
+          MISTRAL_MODELL: ${{ inputs.modell }}
+          LLM_ANBIETER: ${{ matrix.schluessel && 'mistral' || 'demo' }}
+          MAX_KNOEPFE: "25"
+          KATALOG: ${{ inputs.katalog }}
+          TEIL: ${{ inputs.teil }}
+          DIALOGE: ${{ inputs.dialoge }}
+          JEDER: ${{ inputs.jeder }}
+          NAME: ${{ inputs.kurzname }}_direkt_${{ matrix.name }}
+        run: |
+          extra=""
+          [ "$DIALOGE" = "nein" ] && extra="--ohne-dialoge"
+          python aufgaben/audit/chatbot_direkt.py --katalog "$KATALOG" --teil "$TEIL" --jeder "${JEDER:-1}" $extra --bericht "$NAME.md" --csv "$NAME.csv"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: direkt-${{ matrix.name }}
+          path: |
+            ${{ inputs.kurzname }}_direkt_${{ matrix.name }}.md
+            ${{ inputs.kurzname }}_direkt_${{ matrix.name }}.csv
+          if-no-files-found: ignore
+  ablegen:
+    needs: lauf
+    if: always()
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          path: berichte
+          merge-multiple: true
+      - name: Berichte und CSV ins Repo (CSV nur ergänzen)
+        env:
+          KURZ: ${{ inputs.kurzname }}
+          MODELL: ${{ inputs.modell }}
+        run: |
+          mkdir -p aufgaben/audit tests/archiv/ergebnisse
+          cp berichte/*.md aufgaben/audit/ 2>/dev/null || true
+          datum=$(date +%F); stand=$(git rev-parse --short HEAD)
+          for f in berichte/*.csv; do
+            [ -e "$f" ] || continue
+            lauf=$(basename "$f" .csv | sed "s/^${KURZ}_direkt_//")
+            # Modellnamen wie 'deepseek-ai/…' enthalten '/', das wäre ein Ordner im Dateinamen.
+            [ "$lauf" = "demo" ] && lauf="direkt-demo" || lauf="direkt-browser-$(printf '%s' "$MODELL" | tr '/: ' '---')"
+            ziel="tests/archiv/ergebnisse/${datum}_${KURZ}_${lauf}_${stand}.csv"
+            [ -e "$ziel" ] || cp "$f" "$ziel"
+          done
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          # Ergebnisse sichern, dann auf den neuesten Stand und darüber legen; bis zu 3 Versuche
+          # (14.10.2026: ein Ergebnis ging verloren, als zwei Workflows gleichzeitig pushten).
+          mkdir -p /tmp/erg
+          for f in aufgaben/audit/${KURZ}_direkt_*.md tests/archiv/ergebnisse/*.csv; do [ -f "$f" ] && mkdir -p "/tmp/erg/$(dirname "$f")" && cp "$f" "/tmp/erg/$f"; done
+          for versuch in 1 2 3; do
+            git fetch -q origin main && git reset -q --hard origin/main
+            (cd /tmp/erg && find . -type f) | while read -r f; do cp "/tmp/erg/$f" "$f"; git add "$f"; done
+            git diff --cached --quiet && break
+            git commit -q -m "Chatbot direkt ${KURZ} (${MODELL}): Ergebnisse" && git push -q origin HEAD:main && break
+            sleep 5
+          done

@@ -1,0 +1,10 @@
+[
+ {"text": "Wir haben einen Grafiker für Werbung bezahlt."},
+ {"knopf": ["jahr", 2026]},
+ {"knopf": ["auftragnehmer_typ", "GmbH_UG_AG"]},
+ {"text": "2000"},
+ {"knopf": ["verwerterart", "generalklausel"]},
+ {"knopf": ["einnahmeabsicht", true]},
+ {"text": "2"},
+ {"text": "ander fall"}
+]

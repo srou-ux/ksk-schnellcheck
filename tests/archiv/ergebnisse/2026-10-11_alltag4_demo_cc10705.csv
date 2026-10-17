@@ -1,0 +1,5 @@
+datum,modus,bericht_stand,katalog,fall,soll,ist,urteil,dauer_s
+2026-10-11,Demo-Modus (FakeLLM),cc10705,aufgaben/audit/testfall_alltag_4.json,alltag4:F1,A,Grenzfall → Steuerberater entscheidet,NACHGEFRAGT,0.1
+2026-10-11,Demo-Modus (FakeLLM),cc10705,aufgaben/audit/testfall_alltag_4.json,alltag4:F2,A,Grenzfall → Steuerberater entscheidet,NACHGEFRAGT,0.0
+2026-10-11,Demo-Modus (FakeLLM),cc10705,aufgaben/audit/testfall_alltag_4.json,alltag4:F3,N,Nicht abgabepflichtig (Vorschlag),NACHGEFRAGT,0.0
+2026-10-11,Demo-Modus (FakeLLM),cc10705,aufgaben/audit/testfall_alltag_4.json,alltag4:F4,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,0.0

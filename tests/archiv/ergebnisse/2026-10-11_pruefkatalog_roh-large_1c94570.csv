@@ -1,0 +1,53 @@
+datum,modus,bericht_stand,katalog,fall,soll,ist,urteil,dauer_s
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-01,A,Abgabepflichtig (Vorschlag),FALSCH,4.0
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-02,A,Abgabepflichtig (Vorschlag),FALSCH,3.5
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-03,A,Abgabepflichtig (Vorschlag),FALSCH,3.3
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-04a,A,Abgabepflichtig (Vorschlag),FALSCH,2.8
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-04b,N,Abgabepflichtig (Vorschlag),FALSCH,3.7
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-05,A,Abgabepflichtig (Vorschlag),FALSCH,4.7
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-06,A,Abgabepflichtig (Vorschlag),FALSCH,2.9
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-07,A,Abgabepflichtig (Vorschlag),FALSCH,2.5
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-08,N,Abgabepflichtig (Vorschlag),FALSCH,6.7
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-09,A,Abgabepflichtig (Vorschlag),FALSCH,3.8
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-10,A,Nicht abgabepflichtig (Vorschlag),FALSCH,4.2
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-11,A/G,Abgabepflichtig (Vorschlag),RICHTIG,3.3
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-12,A,Abgabepflichtig (Vorschlag),RICHTIG,7.2
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-13,A/G,Abgabepflichtig (Vorschlag),RICHTIG,2.6
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-14,A,Abgabepflichtig (Vorschlag),RICHTIG,3.1
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-15,A,Abgabepflichtig (Vorschlag),FALSCH,8.2
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-16,N/G,Grenzfall → Steuerberater entscheidet,RICHTIG,4.6
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-17,N,Abgabepflichtig (Vorschlag),FALSCH,4.1
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-18a,N,Rückfrage nötig,NACHGEFRAGT,2.1
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-18b,R/G,Rückfrage nötig,RICHTIG,2.3
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-19,A,Abgabepflichtig (Vorschlag),FALSCH,3.7
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-20a,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,2.3
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-20b,A,Nicht abgabepflichtig (Vorschlag),FALSCH,15.7
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-21,A,Abgabepflichtig (Vorschlag),FALSCH,3.1
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-22,A,Abgabepflichtig (Vorschlag),FALSCH,2.7
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-23,N,Rückfrage nötig,NACHGEFRAGT,5.5
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-24,N,Abgabepflichtig (Vorschlag),FALSCH,3.5
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-25,A,Abgabepflichtig (Vorschlag),FALSCH,3.7
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-26,A,Abgabepflichtig (Vorschlag),FALSCH,4.5
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-27,A/G,Nicht abgabepflichtig (Vorschlag),FALSCH,2.4
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-28,A,Abgabepflichtig (Vorschlag),RICHTIG,2.6
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-29,A,Abgabepflichtig (Vorschlag),FALSCH,3.4
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-30,A,Abgabepflichtig (Vorschlag),FALSCH,3.3
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-31,A,Abgabepflichtig (Vorschlag),FALSCH,2.8
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-32,A,Abgabepflichtig (Vorschlag),FALSCH,3.1
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-33,A,Abgabepflichtig (Vorschlag),FALSCH,2.5
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-34,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,2.7
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-35,A,Abgabepflichtig (Vorschlag),FALSCH,3.2
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-36,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,16.0
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-37,G/N,Nicht abgabepflichtig (Vorschlag),RICHTIG,3.4
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-38,A,Abgabepflichtig (Vorschlag),FALSCH,3.6
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-39,A/G,Abgabepflichtig (Vorschlag),RICHTIG,2.7
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-40,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,2.2
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-52,A,Abgabepflichtig (Vorschlag),FALSCH,3.5
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:K-01,R,Rückfrage nötig,RICHTIG,2.5
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:K-02,X/R,Abgabepflichtig (Vorschlag),FALSCH,2.6
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:K-03,AUSKUNFT,Auskunft aus dem Regelwerk,RICHTIG,2.3
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:K-04,A,Abgabepflichtig (Vorschlag),FALSCH,3.1
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:K-05,N,Abgabepflichtig (Vorschlag),FALSCH,2.8
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:K-06,N,Abgabepflichtig (Vorschlag),FALSCH,2.9
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:K-07,R/G,Abgabepflichtig (Vorschlag),FALSCH,2.9
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:K-08,A,Abgabepflichtig (Vorschlag),FALSCH,3.5

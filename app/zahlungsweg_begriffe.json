@@ -1,0 +1,127 @@
+{
+  "_hinweis": "Härtetest HT-2026-001 des Nutzers (14.10.2026): Freitext OHNE Rechnungsteller-Zeile. Die Agentur fragt selbst: 'wir haben nur vermittelt und das Geld durchgeleitet' (Band) und 'privat von seinem Konto, ob wir das erstatten müssen weiß ich noch nicht' (Zauberer) – beides zählte still mit. app/zuordnung.py::zahlungsweg_im_freitext: zu jedem Euro-Betrag gehört der Text bis zum nächsten Euro-Betrag; steht darin ein Begriff aus 'unklar', gilt die Position als 'Zahlungsweg unklar' (Steuerberater entscheidet; KSK-Info 27, R-36, R-38, R-94, R-127). Nie 'Vertrag direkt': aus Sicht der durchleitenden Agentur zählt die Zahlung beim Kunden, aus Sicht des Kunden bei ihm selbst – das entscheidet der Mensch. Keine Festwerte im Code.",
+  "unklar": [
+    "durchgeleitet",
+    "durchleitung",
+    "durchgereicht",
+    "weitergeleitet",
+    "nur vermittelt",
+    "nur weitergegeben",
+    "privat von seinem konto",
+    "privat von ihrem konto",
+    "privat von meinem konto",
+    "privat bezahlt",
+    "privat gezahlt",
+    "aus eigener tasche",
+    "erstatten müssen",
+    "erstatten muessen",
+    "ob wir das erstatten",
+    "erstattung offen",
+    "erstattung unklar",
+    "erstattung noch offen"
+  ],
+  "_hinweis_gruende": "Härtetest-Serie HT-2026-002 bis 011 (14.10.2026): Je Grund eine eigene Begriffsliste; der Grund wird in der Faktenbestätigung und im Ergebnis bei der Position angezeigt (Position.offen_grund), statt nur 'Zahlungsweg offen'. Die Position zählt nie still mit (Steuerberater entscheidet). Sachleistungen (Gutschein statt Honorar) und nebenberufliche Künstler (Studenten) sind bewusst NICHT hier: sie zählen nach R-41, R-174 und R-26 zur Bemessungsgrundlage. 'unklar' bleibt als allgemeiner Grund erhalten (HT-2026-001). Reihenfolge: der erste passende Grund gilt. Liegen mehrere Begriffe im Fenster eines Betrags, gilt der, der dem Betrag am nächsten steht. Die Liste 'unklar' ist die frühere Fassung (HT-2026-001); ihre Begriffe stehen vollständig in 'gruende'.",
+  "gruende": [
+    {
+      "grund": "Gehalt aus abhängiger Beschäftigung (zählt nicht als Entgelt an Selbständige; bitte prüfen)",
+      "nur_satz": true,
+      "begriffe": [
+        "fest angestellt",
+        "festangestellt",
+        "angestellte",
+        "angestellten",
+        "angestellter",
+        "gehalt",
+        "arbeitslohn",
+        "arbeitnehmer",
+        "sozialversicherungspflichtig"
+      ]
+    },
+    {
+      "grund": "Durchleitung (wer hat den Künstler beauftragt? bitte prüfen)",
+      "begriffe": [
+        "durchgeleitet",
+        "durchleitung",
+        "durchgereicht",
+        "weitergeleitet",
+        "nur vermittelt",
+        "nur weitergegeben"
+      ]
+    },
+    {
+      "grund": "private Zahlung, Erstattung offen",
+      "begriffe": [
+        "privat von seinem konto",
+        "privat von ihrem konto",
+        "privat von meinem konto",
+        "privat bezahlt",
+        "privat gezahlt",
+        "aus eigener tasche",
+        "erstatten müssen",
+        "erstatten muessen",
+        "ob wir das erstatten",
+        "erstattung offen",
+        "erstattung unklar",
+        "erstattung noch offen"
+      ]
+    },
+    {
+      "grund": "noch nicht bezahlt (maßgeblich ist die Zahlung; bitte prüfen)",
+      "begriffe": [
+        "noch nicht bezahlt",
+        "noch nicht gezahlt",
+        "unbezahlt",
+        "nicht bezahlt",
+        "nicht gezahlt",
+        "noch nicht überwiesen",
+        "noch nicht ueberwiesen",
+        "noch aus",
+        "stehen aus",
+        "steht aus",
+        "ausstehend"
+      ]
+    },
+    {
+      "grund": "Gutschrift (ob und was gezahlt wurde, bitte prüfen)",
+      "begriffe": [
+        "gutschrift"
+      ]
+    },
+    {
+      "grund": "keine Zahlung an den Künstler genannt (Vertrags- und Zahlungsbeziehungen prüfen)",
+      "begriffe": [
+        "nie etwas gezahlt",
+        "nichts gezahlt",
+        "direkt von",
+        "direkt bezahlt von"
+      ]
+    },
+    {
+      "grund": "Vermittlungsprovision (Vertragsrollen prüfen)",
+      "begriffe": [
+        "für die vermittlung",
+        "fuer die vermittlung",
+        "vermittlungsprovision",
+        "vermittlungsgebühr"
+      ]
+    },
+    {
+      "grund": "privater Zweck (Zahlung für eine private Leistung, bitte prüfen)",
+      "nur_satz": true,
+      "begriffe": [
+        "ließ privat",
+        "liess privat",
+        "privat filmen",
+        "privat fotografieren",
+        "seine hochzeit",
+        "ihre hochzeit",
+        "private zwecke",
+        "privaten zweck",
+        "versehentlich",
+        "(versehen)"
+      ]
+    }
+  ],
+  "_hinweis_alltag_live_0647320": "Alltags-Serie live (0647320, 15.10.2026): AT-027 'Rest 1.200 EUR stehen noch aus' – 'noch aus', 'stehen aus', 'steht aus', 'ausstehend' ergänzt (Grund 'noch nicht bezahlt'); AT-035 'Der Inhaber ließ privat … seine Hochzeit filmen: 900 EUR – vom GmbH-Konto bezahlt (Versehen)' – neuer Grund 'privater Zweck'. 'nur_satz': der Begriff zählt nur im selben Satz wie der Betrag (sonst träfe 'privat' im nächsten Satz auch die Firmenzahlung davor).",
+  "_hinweis_gehalt": "Alltagstest AT-2026-033 (live 1e97851, 15.10.2026): 'Wir beschäftigen eine Photographin fest angestellt (Gehalt 3.500 EUR/Monat)' – das Modell legte das Gehalt als Position an (4.300 € statt 800 €). Entgelt zählt nur bei selbständiger Tätigkeit ('nicht als Arbeitnehmer beschäftigt', quellen/ergaenzend/KSK-Webseite_Bemessungsgrundlage.txt; R-118). Der Betrag im selben Satz wird offen ausgewiesen (Steuerberater entscheidet), nie still mitgezählt."
+}

@@ -1,0 +1,38 @@
+datum,modus,code_stand,katalog,fall,soll,ist,urteil,bemessungsgrundlage,abgabe,rueckfragen,gruende,dauer_s
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",17010bf,aufgaben/audit/fehlerquellen_ht_062_111.json,HT-2026-062,A/G/R,Rückfrage nötig,RICHTIG,,,2,,0.6
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",17010bf,aufgaben/audit/fehlerquellen_ht_062_111.json,HT-2026-063,A,Abgabepflichtig (Vorschlag),RICHTIG,3600,176.40,4,,1.2
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",17010bf,aufgaben/audit/fehlerquellen_ht_062_111.json,HT-2026-064,A,Rückfrage nötig,NACHGEFRAGT,,,2,"Soll ['A'], Ist R",0.6
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",17010bf,aufgaben/audit/fehlerquellen_ht_062_111.json,HT-2026-065,R/A/N/G,Rückfrage nötig,RICHTIG,,,0,,0.3
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",17010bf,aufgaben/audit/fehlerquellen_ht_062_111.json,HT-2026-066,R,Rückfrage nötig,RICHTIG,,,0,,0.3
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",17010bf,aufgaben/audit/fehlerquellen_ht_062_111.json,HT-2026-067,A,Abgabepflichtig (Vorschlag),RICHTIG,4102.30,,2,,0.7
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",17010bf,aufgaben/audit/fehlerquellen_ht_062_111.json,HT-2026-068,A,Abgabepflichtig (Vorschlag),RICHTIG,2800,137.20,2,,0.7
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",17010bf,aufgaben/audit/fehlerquellen_ht_062_111.json,HT-2026-069,A,Nicht abgabepflichtig (Vorschlag),FALSCH,0,0.00,1,"Soll ['A'], Ist N (Nicht abgabepflichtig (Vorschlag))",0.6
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",17010bf,aufgaben/audit/fehlerquellen_ht_062_111.json,HT-2026-070,G/A,Abgabepflichtig (Vorschlag),RICHTIG,3200,156.80,3,,0.9
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",17010bf,aufgaben/audit/fehlerquellen_ht_062_111.json,HT-2026-071,A,Abgabepflichtig (Vorschlag),RICHTIG,2500,122.50,1,,0.6
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",17010bf,aufgaben/audit/fehlerquellen_ht_062_111.json,HT-2026-072,R,Rückfrage nötig,RICHTIG,,,0,,0.3
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",17010bf,aufgaben/audit/fehlerquellen_ht_062_111.json,HT-2026-073,A/G/R,Rückfrage nötig,RICHTIG,,,1,,0.5
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",17010bf,aufgaben/audit/fehlerquellen_ht_062_111.json,HT-2026-074,A/G/R,Nicht abgabepflichtig (Vorschlag),FALSCH,,,0,"Soll ['A', 'G', 'R'], Ist N (Nicht abgabepflichtig (Vorschlag))",0.5
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",17010bf,aufgaben/audit/fehlerquellen_ht_062_111.json,HT-2026-076,A,Abgabepflichtig (Vorschlag),RICHTIG,2000,98.00,2,,0.7
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",17010bf,aufgaben/audit/fehlerquellen_ht_062_111.json,HT-2026-077,A,Abgabepflichtig (Vorschlag),RICHTIG,2000,98.00,2,,0.7
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",17010bf,aufgaben/audit/fehlerquellen_ht_062_111.json,HT-2026-078,A,Abgabepflichtig (Vorschlag),RICHTIG,1500,73.50,0,,0.5
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",17010bf,aufgaben/audit/fehlerquellen_ht_062_111.json,HT-2026-079,R,Rückfrage nötig,RICHTIG,,,0,,0.3
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",17010bf,aufgaben/audit/fehlerquellen_ht_062_111.json,HT-2026-080,R,Rückfrage nötig,RICHTIG,,,0,,0.3
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",17010bf,aufgaben/audit/fehlerquellen_ht_062_111.json,HT-2026-081,A/AUSKUNFT/R,Rückfrage nötig,RICHTIG,,,2,,0.6
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",17010bf,aufgaben/audit/fehlerquellen_ht_062_111.json,HT-2026-082,R,Rückfrage nötig,RICHTIG,,,0,,0.3
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",17010bf,aufgaben/audit/fehlerquellen_ht_062_111.json,HT-2026-083,R,Rückfrage nötig,RICHTIG,,,0,,0.3
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",17010bf,aufgaben/audit/fehlerquellen_ht_062_111.json,HT-2026-084,AUSKUNFT/R,Rückfrage nötig,RICHTIG,,,0,,0.3
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",17010bf,aufgaben/audit/fehlerquellen_ht_062_111.json,HT-2026-085,A,Rückfrage nötig,NACHGEFRAGT,,,2,"Soll ['A'], Ist R",0.5
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",17010bf,aufgaben/audit/fehlerquellen_ht_062_111.json,HT-2026-086,A/R,Rückfrage nötig,RICHTIG,,,2,,0.6
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",17010bf,aufgaben/audit/fehlerquellen_ht_062_111.json,HT-2026-087,A/R/G,Abgabepflichtig (Vorschlag),FALSCH,3500,171.50,0,"verbotener Text in der Antwort: '171,50'; abgabe: Soll 9.80, Ist 171.50",0.4
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",17010bf,aufgaben/audit/fehlerquellen_ht_062_111.json,HT-2026-088,A,Abgabepflichtig (Vorschlag),FALSCH,2090,102.41,3,"verbotener Text in der Antwort: 'Bemessungsgrundlage: 2.090,00 €'; bemessungsgrundlage: Soll 2000, Ist 2090; abgabe: Soll 98.00, Ist 102.41",0.8
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",17010bf,aufgaben/audit/fehlerquellen_ht_062_111.json,HT-2026-089,A,Rückfrage nötig,NACHGEFRAGT,,,2,"Soll ['A'], Ist R",0.5
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",17010bf,aufgaben/audit/fehlerquellen_ht_062_111.json,HT-2026-090,A,Rückfrage nötig,NACHGEFRAGT,,,2,"Soll ['A'], Ist R",0.6
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",17010bf,aufgaben/audit/fehlerquellen_ht_062_111.json,HT-2026-092,G,Rückfrage nötig,NACHGEFRAGT,,,1,"Soll ['G'], Ist R",0.4
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",17010bf,aufgaben/audit/fehlerquellen_ht_062_111.json,HT-2026-093,R,Rückfrage nötig,RICHTIG,,,0,,0.3
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",17010bf,aufgaben/audit/fehlerquellen_ht_062_111.json,HT-2026-094,AUSKUNFT,Rückfrage nötig,NACHGEFRAGT,,,0,"Soll ['AUSKUNFT'], Ist R",0.3
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",17010bf,aufgaben/audit/fehlerquellen_ht_062_111.json,HT-2026-095,X/R/AUSKUNFT,Rückfrage nötig,RICHTIG,,,0,,0.3
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",17010bf,aufgaben/audit/fehlerquellen_ht_062_111.json,HT-2026-097,X/R/AUSKUNFT,Rückfrage nötig,RICHTIG,,,0,,0.3
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",17010bf,aufgaben/audit/fehlerquellen_ht_062_111.json,HT-2026-099,A,Nicht abgabepflichtig (Vorschlag),FALSCH,,,1,"Soll ['A'], Ist N (Nicht abgabepflichtig (Vorschlag))",0.7
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",17010bf,aufgaben/audit/fehlerquellen_ht_062_111.json,HT-2026-100,A/G,Abgabepflichtig (Vorschlag),RICHTIG,3400,166.60,1,,0.5
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",17010bf,aufgaben/audit/fehlerquellen_ht_062_111.json,HT-2026-105,A,Rückfrage nötig,NACHGEFRAGT,,,2,"Soll ['A'], Ist R",0.6
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",17010bf,aufgaben/audit/fehlerquellen_ht_062_111.json,HT-2026-106,N/G,Abgabepflichtig (Vorschlag),FALSCH,2380,116.62,0,"Soll ['N', 'G'], Ist A (Abgabepflichtig (Vorschlag))",0.6

@@ -1,0 +1,25 @@
+{
+  "hinweis": "Härtetest HT-2026-001 „Die Agentur-Februar-Rechnung“ vom Nutzer (14.10.2026), erfundene Daten. Soll: Entwurf des Nutzers, vom Steuerberater zu prüfen – NICHT im Testarchiv, bis Durchleitung (Band) und Erstattung (Zauberer) fachlich bestätigt sind. 8 Fallen: fremde Währung mit gezahltem Euro-Betrag, Jahresgrenze (Rechnung 2025, Zahlung 2026), Durchleitung, GbR, Direktzahlung des Kunden, Privatzahlung mit unbekannter Erstattung, Werbeagentur = typischer Verwerter, je Position prüfen. Zahl nachgerechnet: 2.210,00 € × 4,9 % = 108,29 €.",
+  "stand": "2026-10-14",
+  "kuerzel": {
+    "A": "Abgabepflichtig (Vorschlag)",
+    "N": "Nicht abgabepflichtig (Vorschlag)",
+    "G": "Grenzfall → Steuerberater entscheidet",
+    "R": "Rückfrage nötig",
+    "X": "Nicht abgedeckt (Quelle fehlt)",
+    "AUSKUNFT": "Auskunft aus dem Regelwerk", "HINWEIS": "Hinweis"
+  },
+  "faelle": [
+    {
+      "id": "HT-2026-001",
+      "gruppe": "Härtetest: Agentur mit USD-Rechnung, Durchleitung, Privatzahlung",
+      "referenz": "L-23; KSK-Info 27; R-127; R-218; R-07",
+      "sicherheit": "Soll-Entwurf des Nutzers; Grenzfall akzeptabel, solange Band und Zauberer nie still mitzählen",
+      "frage": "Hallo, ich brauche kurz Hilfe. Wir sind eine Werbeagentur GmbH. Unser Fotograf A. Blum (Einzelunternehmer, hat uns eine Rechnung AT-2026-0141 vom 27.12.2025 über 2.400 US-Dollar geschrieben, Werkleistung für einen Kundenauftrag, Zahlung ist am 09.01.2026 abgebucht mit 2.210,00 €. Das war die einzige Zahlung an ihn im Januar. Dann haben wir noch am 15.01.2026 für dieselbe Kampagne an die Band ‚Nachtwerk' (GbR, 3 Mitglieder) 1.150 € direkt gezahlt – aber eigentlich hat unser Kunde die Band gebucht, wir haben nur vermittelt und das Geld durchgeleitet. Der Kunde hat uns dafür vorher 1.200 € überwiesen. Und unser Managing Director hat für einen Auftritt bei einer Firmenfeier unseres Kunden noch 400 € an einen Zauberer gezahlt, privat von seinem Konto, ob wir das erstatten müssen weiß ich noch nicht. Sind wir für 2026 abgabepflichtig und für welchen Betrag?",
+      "soll": ["A", "G"],
+      "zahl": {"bemessungsgrundlage": "2210.00", "abgabe": "108.29"},
+      "verboten_text": ["117,60 €", "Bemessungsgrundlage: 2.400,00 €", "Bemessungsgrundlage: 3.360,00 €", "Bemessungsgrundlage: 2.610,00 €", "Bemessungsgrundlage: 3.760,00 €", "Bemessungsgrundlage: 3.410,00 €", "Jahr: 2025", "Konnte nicht verarbeitet"],
+      "knoepfe": {"verwerterart": "Typischer Verwerter"}
+    }
+  ]
+}

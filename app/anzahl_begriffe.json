@@ -1,0 +1,78 @@
+{
+  "_hinweis": "Fehlerquellen-Serie HT-2026-105 (Gesamtlauf 225f380, 15.10.2026): '2026: fünf Rechnungen an denselben Künstler, je 250 EUR' – das Modell legte nur EINE Position über 250 € an; die Schwelle wurde mit 250 € geprüft (nicht abgabepflichtig statt 61,25 €). app/zuordnung.py::anzahl_je_betrag: nennt der Text 'N <Wort aus einheiten> … je <Betrag>' (höchstens 'abstand' Zeichen dazwischen, kein Satzende) und hat das Modell genau EINE Position mit diesem Betrag und keine weitere, werden die fehlenden gleichen Positionen ergänzt. Die Faktenbestätigung zeigt alle; der Nutzer bestätigt. Zahlwörter: Wert = Stelle in der Liste 'zahlwoerter' + 2.",
+  "zahlwoerter": [
+    "zwei",
+    "drei",
+    "vier",
+    "fuenf",
+    "sechs",
+    "sieben",
+    "acht",
+    "neun",
+    "zehn",
+    "elf",
+    "zwoelf"
+  ],
+  "einheiten": [
+    "rechnungen",
+    "zahlungen",
+    "teilzahlungen",
+    "raten",
+    "auftraege",
+    "honorare",
+    "mal"
+  ],
+  "abstand": 60,
+  "mehrfach_davor": [
+    "je",
+    "jede",
+    "jeder",
+    "jedes",
+    "jeweils",
+    "pro",
+    "à",
+    "a",
+    "zu je",
+    "mal",
+    "x",
+    "monatlich",
+    "zweimal",
+    "dreimal",
+    "viermal",
+    "fuenfmal"
+  ],
+  "mehrfach_abstand": 30,
+  "_hinweis_doppelt": "Korpus-Lauf 15.10.2026 (gestörte Fakten: 'Position doppelt', 190 FALSCH von 3.618): ein Modell übernahm eine Position zweimal, die Summe verdoppelte sich. app/zuordnung.py::doppelte_positionen: steht ein Betrag im Text SELTENER als gleiche Positionen (gleicher Betrag, Bezeichnung, Rolle, Rechtsform, Auftragnehmer) und steht höchstens 'mehrfach_abstand' Zeichen vor keinem seiner Vorkommen ein Wort aus 'mehrfach_davor' ('je 400 €', 'zweimal 500 €') und im Text keine Mengenangabe aus 'zahlwoerter'/'einheiten' ('drei Rechnungen'), werden die überzähligen gleichen Positionen entfernt. Die Faktenbestätigung zeigt das Ergebnis; nichts wird hinzugeraten. Ergänzt (Tests test_dialog_fallgrenzen M1, P-04a): 'vier Grafiken beauftragt. Jede Rechnung beträgt 200 Euro' -- nennt der Text irgendwo genau die Anzahl der gleichen Positionen (Zahlwort aus 'zahlwoerter' oder eine Ziffer, die kein Betrag und kein Jahr ist), bleiben sie stehen; 'jede/jeder/jedes' gelten wie 'je'.",
+  "_hinweis_zeitraum": [
+    "Testarchiv mit mistral-small-latest (17.10.2026, AT-2026-029): 'Illustrator-Vertrag 2026, monatlich 500 EUR, 12 Monate' – das Modell legte nur EINE Position über 500 € an (Abgabe 24,50 € statt 294,00 €). app/zuordnung.py::anzahl_je_betrag erkennt zusätzlich '<Wort aus je_einheit> <Betrag> … <N> <Wort aus zeit_einheiten>' und umgekehrt (höchstens 'abstand' Zeichen, kein Satzende). Dann gelten dieselben Bedingungen wie oben (genau eine Position über diesen Betrag; die Faktenbestätigung zeigt alle)."
+  ],
+  "zeit_einheiten": [
+    "monate",
+    "monaten",
+    "wochen",
+    "quartale"
+  ],
+  "je_einheit": [
+    "monatlich",
+    "pro monat",
+    "je monat",
+    "im monat",
+    "woechentlich",
+    "pro woche",
+    "je woche",
+    "quartalsweise",
+    "pro quartal",
+    "je quartal"
+  ],
+  "_hinweis_mal": "Testarchiv mit Small (17.10.2026, Lauf testarchiv-small-schritt2, P-04a): 'fünfmal kleine Werbegrafiken … gestaltet, jede Rechnung 250 € netto' – das Modell legte nur EINE Position an (nicht abgabepflichtig statt abgabepflichtig). app/zuordnung.py::anzahl_je_betrag erkennt zusätzlich '<N>mal' / '<N>-mal' / '<N> mal' … '<Wort aus je_woerter> <Betrag>' (höchstens 'abstand_mal' Zeichen, kein Satzende). Gleiche Bedingungen wie oben (genau eine Position über diesen Betrag; die Faktenbestätigung zeigt alle).",
+  "je_woerter": [
+    "je",
+    "jeweils",
+    "jede rechnung",
+    "jeder auftrag",
+    "pro rechnung",
+    "pro auftrag",
+    "je rechnung"
+  ],
+  "abstand_mal": 90
+}

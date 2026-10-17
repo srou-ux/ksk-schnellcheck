@@ -1,0 +1,11 @@
+datum,modus,code_stand,katalog,fall,soll,ist,urteil,bemessungsgrundlage,abgabe,rueckfragen,gruende,dauer_s
+2026-10-14,Chatbot direkt (Browser) – Mistral (EU),6414d11,aufgaben/audit/testfall_waehrung.json,W-01,R,Rückfrage nötig,RICHTIG,,,0,,6.9
+2026-10-14,Chatbot direkt (Browser) – Mistral (EU),6414d11,aufgaben/audit/testfall_waehrung.json,W-02,A,Abgabepflichtig (Vorschlag),RICHTIG,1850.00,90.65,1,,7.9
+2026-10-14,Chatbot direkt (Browser) – Mistral (EU),6414d11,aufgaben/audit/testfall_waehrung.json,W-03,A,Abgabepflichtig (Vorschlag),RICHTIG,1850,90.65,0,,7.8
+2026-10-14,Chatbot direkt (Browser) – Mistral (EU),6414d11,aufgaben/audit/testfall_waehrung.json,W-04,R,Rückfrage nötig,RICHTIG,,,0,,2.8
+2026-10-14,Chatbot direkt (Browser) – Mistral (EU),6414d11,aufgaben/audit/testfall_waehrung.json,W-05,R,Rückfrage nötig,RICHTIG,,,0,,3.0
+2026-10-14,Chatbot direkt (Browser) – Mistral (EU),6414d11,aufgaben/audit/testfall_waehrung.json,W-06,R,Rückfrage nötig,RICHTIG,,,0,,2.8
+2026-10-14,Chatbot direkt (Browser) – Mistral (EU),6414d11,aufgaben/audit/testfall_waehrung.json,W-07,R,Rückfrage nötig,RICHTIG,,,0,,11.4
+2026-10-14,Chatbot direkt (Browser) – Mistral (EU),6414d11,aufgaben/audit/testfall_waehrung.json,W-08,R,Rückfrage nötig,RICHTIG,,,0,,3.4
+2026-10-14,Chatbot direkt (Browser) – Mistral (EU),6414d11,aufgaben/audit/testfall_waehrung.json,W-09,A,Abgabepflichtig (Vorschlag),RICHTIG,2000,98.00,0,,6.6
+2026-10-14,Chatbot direkt (Browser) – Mistral (EU),6414d11,aufgaben/audit/testfall_waehrung.json,W-10,A,Abgabepflichtig (Vorschlag),RICHTIG,1500,73.50,0,,7.5

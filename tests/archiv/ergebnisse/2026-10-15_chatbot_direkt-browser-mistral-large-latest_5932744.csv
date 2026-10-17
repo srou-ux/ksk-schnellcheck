@@ -1,0 +1,181 @@
+datum,modus,code_stand,katalog,fall,soll,ist,urteil,bemessungsgrundlage,abgabe,rueckfragen,gruende,dauer_s
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:P-01,A,Abgabepflichtig (Vorschlag),RICHTIG,1500,73.50,1,,5.1
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:P-02,A,Abgabepflichtig (Vorschlag),RICHTIG,3000,147.00,1,,3.8
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:P-03,A,Abgabepflichtig (Vorschlag),RICHTIG,5000,250.00,0,,9.0
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:P-04a,A,Abgabepflichtig (Vorschlag),RICHTIG,1250,61.25,0,,6.9
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:P-04b,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,0,,6.2
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:P-05,A,Abgabepflichtig (Vorschlag),RICHTIG,900,44.10,0,,4.5
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:P-06,A,Abgabepflichtig (Vorschlag),RICHTIG,300,14.70,0,,7.1
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:P-07,A,Abgabepflichtig (Vorschlag),RICHTIG,3000,150.00,1,,7.6
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:P-08,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,3,,8.7
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:P-09,A,Grenzfall → Steuerberater entscheidet,NACHGEFRAGT,,,3,"Soll ['A'], Ist G",9.3
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:P-10,A,Abgabepflichtig (Vorschlag),RICHTIG,300,15.00,0,,6.8
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:P-11,A/G,Rückfrage nötig,NACHGEFRAGT,,,0,"Soll ['A', 'G'], Ist R",2.8
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:P-12,A,Abgabepflichtig (Vorschlag),RICHTIG,900,45.00,1,,4.7
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:P-13,A/G,Rückfrage nötig,NACHGEFRAGT,,,0,"Soll ['A', 'G'], Ist R",3.1
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:P-14,A,Abgabepflichtig (Vorschlag),RICHTIG,4000,200.00,1,,7.0
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:P-15,A,Abgabepflichtig (Vorschlag),RICHTIG,3000,150.00,2,,4.5
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:P-16,N/G,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,0,,3.8
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:P-17,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,1,,3.6
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:P-18a,N,Rückfrage nötig,NACHGEFRAGT,,,0,"Soll ['N'], Ist R",2.3
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:P-18b,R/G,Rückfrage nötig,RICHTIG,,,0,,2.9
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:P-19,A,Abgabepflichtig (Vorschlag),RICHTIG,950,47.50,1,,5.2
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:P-20a,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,0,,0,,3.8
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:P-20b,A,Abgabepflichtig (Vorschlag),RICHTIG,1100,46.20,0,,4.4
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:P-21,A,Abgabepflichtig (Vorschlag),RICHTIG,3250,162.50,0,,7.2
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:P-22,A,Abgabepflichtig (Vorschlag),RICHTIG,4000,196.00,0,,4.6
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:P-23,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,0,0.00,0,,3.5
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:P-24,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,0,0.00,0,,3.3
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:P-25,A,Abgabepflichtig (Vorschlag),RICHTIG,900,45.00,0,,6.6
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:P-26,A,Abgabepflichtig (Vorschlag),RICHTIG,1200,58.80,0,,3.6
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:P-27,A/G,Abgabepflichtig (Vorschlag),RICHTIG,2000,98.00,0,,6.6
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:P-28,A,Rückfrage nötig,NACHGEFRAGT,,,1,"Soll ['A'], Ist R",6.7
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:P-29,A,Abgabepflichtig (Vorschlag),RICHTIG,2300,115.00,0,,7.7
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:P-30,A,Abgabepflichtig (Vorschlag),RICHTIG,3000,150.00,0,,6.9
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:P-31,A,Abgabepflichtig (Vorschlag),RICHTIG,1000,50.00,0,,3.5
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:P-32,A,Rückfrage nötig,NACHGEFRAGT,,,1,"Soll ['A'], Ist R",14.6
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:P-33,A,Abgabepflichtig (Vorschlag),RICHTIG,1500,73.50,0,,9.7
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:P-34,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,0,0.00,0,,7.8
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:P-35,A,Abgabepflichtig (Vorschlag),RICHTIG,3000,150.00,0,,6.1
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:P-36,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,0,,9.3
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:P-37,G/N,Grenzfall → Steuerberater entscheidet,RICHTIG,,,0,,3.1
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:P-38,A,Abgabepflichtig (Vorschlag),RICHTIG,5000,245.00,0,,3.7
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:P-39,A/G,Abgabepflichtig (Vorschlag),RICHTIG,2000,100.00,0,,4.9
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:P-40,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,0,,7.6
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:P-52,A,Abgabepflichtig (Vorschlag),RICHTIG,3200,156.80,0,,6.6
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:K-01,R,Rückfrage nötig,RICHTIG,,,0,,2.7
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:K-02,X/R,Nicht abgedeckt (Quelle fehlt),RICHTIG,,,0,,4.0
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:K-03,AUSKUNFT,Auskunft aus dem Regelwerk,RICHTIG,,,0,,2.7
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:K-04,A,Abgabepflichtig (Vorschlag),RICHTIG,900,45.00,0,,4.9
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:K-05,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,0,,8.2
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:K-06,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,0,,16.2
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:K-07,R/G,Rückfrage nötig,RICHTIG,,,0,,2.5
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,pruefkatalog:K-08,A,Abgabepflichtig (Vorschlag),RICHTIG,900,45.00,0,,7.5
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,testfall20:S-00,A/G,Grenzfall → Steuerberater entscheidet,RICHTIG,,,2,,21.7
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,testfall20:S-01,A,Abgabepflichtig (Vorschlag),RICHTIG,2500,122.50,0,,3.4
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,testfall20:S-02,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,0,0.00,0,,7.3
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,testfall20:S-03,A,Abgabepflichtig (Vorschlag),RICHTIG,600,29.40,0,,4.7
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,testfall20:S-04,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,0,0.00,1,,6.5
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,testfall20:S-05,A,Abgabepflichtig (Vorschlag),RICHTIG,1200,58.80,0,,3.7
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,testfall20:S-06,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,0,0.00,0,,13.7
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,testfall20:S-07,A,Abgabepflichtig (Vorschlag),RICHTIG,450,22.05,0,,3.8
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,testfall20:S-08,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,0,0.00,0,,5.5
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,testfall20:S-09,A,Abgabepflichtig (Vorschlag),RICHTIG,800,39.20,0,,6.9
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,testfall20:S-10,N,Grenzfall → Steuerberater entscheidet,NACHGEFRAGT,,,0,"Soll ['N'], Ist G",7.7
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,testfall20:S-11,A,Abgabepflichtig (Vorschlag),RICHTIG,750,36.75,0,,3.2
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,testfall20:S-12,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,0,0.00,0,,6.8
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,testfall20:S-13,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,0,0.00,0,,4.5
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,testfall20:S-14,A,Abgabepflichtig (Vorschlag),RICHTIG,1500,73.50,0,,2.9
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,testfall20:S-15,G,Grenzfall → Steuerberater entscheidet,RICHTIG,,,0,,8.5
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,testfall20:S-16,N,Grenzfall → Steuerberater entscheidet,NACHGEFRAGT,,,0,"Soll ['N'], Ist G",7.2
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,testfall20:S-17,A,Abgabepflichtig (Vorschlag),RICHTIG,650,31.85,0,,4.7
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,testfall20:S-18,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,0,0.00,0,,4.8
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,testfall20:S-19,A,Abgabepflichtig (Vorschlag),RICHTIG,400,19.60,0,,3.1
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,testfall20:S-20,N,Grenzfall → Steuerberater entscheidet,NACHGEFRAGT,,,0,"Soll ['N'], Ist G",4.5
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag4:F1,A,Abgabepflichtig (Vorschlag),RICHTIG,2470,121.03,0,,10.0
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag4:F2,A,Abgabepflichtig (Vorschlag),RICHTIG,1750,85.75,0,,6.4
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag4:F3,N,Nicht abgabepflichtig (Vorschlag),NACHGEFRAGT,,,1,"1 Rückfrage(n), nötig laut Soll höchstens 0",12.7
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag4:F4,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,0,,4.9
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag999:A-999,A,Grenzfall → Steuerberater entscheidet,NACHGEFRAGT,,,0,"Soll ['A'], Ist G",17.7
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,waehrung:W-01,R,Rückfrage nötig,RICHTIG,,,0,,2.8
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,waehrung:W-02,A,Abgabepflichtig (Vorschlag),RICHTIG,1850.00,90.65,1,,5.1
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,waehrung:W-03,A,Rückfrage nötig,NACHGEFRAGT,,,0,"Soll ['A'], Ist R",3.3
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,waehrung:W-04,R,Rückfrage nötig,RICHTIG,,,0,,2.1
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,waehrung:W-05,R,Rückfrage nötig,RICHTIG,,,0,,3.5
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,waehrung:W-06,R,Rückfrage nötig,RICHTIG,,,0,,2.8
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,waehrung:W-07,R,Rückfrage nötig,RICHTIG,,,0,,7.4
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,waehrung:W-08,R,Rückfrage nötig,RICHTIG,,,0,,2.2
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,waehrung:W-09,A,Abgabepflichtig (Vorschlag),RICHTIG,2000,98.00,0,,9.1
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,waehrung:W-10,A,Abgabepflichtig (Vorschlag),RICHTIG,1500,73.50,0,,5.2
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,fehlerquellen:HT-2026-062,A/G/R,Grenzfall → Steuerberater entscheidet,RICHTIG,,,2,,4.4
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,fehlerquellen:HT-2026-063,A,Abgabepflichtig (Vorschlag),RICHTIG,3600,176.40,2,,7.8
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,fehlerquellen:HT-2026-064,A,Abgabepflichtig (Vorschlag),RICHTIG,2000,98.00,3,,10.9
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,fehlerquellen:HT-2026-065,R/A/N/G,Rückfrage nötig,RICHTIG,,,0,,2.6
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,fehlerquellen:HT-2026-066,R,Rückfrage nötig,RICHTIG,,,0,,2.3
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,fehlerquellen:HT-2026-067,A,Grenzfall → Steuerberater entscheidet,NACHGEFRAGT,,,2,"Soll ['A'], Ist G",4.0
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,fehlerquellen:HT-2026-068,A,Abgabepflichtig (Vorschlag),RICHTIG,2800,137.20,2,,3.8
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,fehlerquellen:HT-2026-069,A,Abgabepflichtig (Vorschlag),RICHTIG,1500,73.50,2,,7.3
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,fehlerquellen:HT-2026-070,G/A,Grenzfall → Steuerberater entscheidet,RICHTIG,,,2,,5.4
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,fehlerquellen:HT-2026-071,A,Abgabepflichtig (Vorschlag),RICHTIG,2500,122.50,1,,3.7
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,fehlerquellen:HT-2026-072,R,Rückfrage nötig,RICHTIG,,,0,,5.7
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,fehlerquellen:HT-2026-073,A/G/R,Abgabepflichtig (Vorschlag),RICHTIG,3000,147.00,1,,6.2
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,fehlerquellen:HT-2026-074,A/G/R,Grenzfall → Steuerberater entscheidet,RICHTIG,,,0,,6.1
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,fehlerquellen:HT-2026-076,A,Abgabepflichtig (Vorschlag),RICHTIG,2000,98.00,2,,4.0
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,fehlerquellen:HT-2026-077,A,Abgabepflichtig (Vorschlag),RICHTIG,2000,98.00,2,,5.7
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,fehlerquellen:HT-2026-078,A,Abgabepflichtig (Vorschlag),RICHTIG,1500,73.50,0,,3.7
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,fehlerquellen:HT-2026-079,R,Rückfrage nötig,RICHTIG,,,0,,1.0
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,fehlerquellen:HT-2026-080,R,Rückfrage nötig,RICHTIG,,,0,,6.9
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,fehlerquellen:HT-2026-081,A/AUSKUNFT/R,Auskunft aus dem Regelwerk,RICHTIG,,,0,,2.5
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,fehlerquellen:HT-2026-082,R,Rückfrage nötig,RICHTIG,,,0,,3.4
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,fehlerquellen:HT-2026-083,R,Rückfrage nötig,RICHTIG,,,0,,2.4
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,fehlerquellen:HT-2026-084,AUSKUNFT/R,Nicht abgedeckt (Quelle fehlt),NACHGEFRAGT,,,0,"Soll ['AUSKUNFT', 'R'], Ist X",3.2
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,fehlerquellen:HT-2026-085,A,Abgabepflichtig (Vorschlag),RICHTIG,3000,147.00,3,,9.8
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,fehlerquellen:HT-2026-086,A/R,Rückfrage nötig,RICHTIG,,,1,,2.7
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,fehlerquellen:HT-2026-087,A/R/G,Abgabepflichtig (Vorschlag),RICHTIG,200,9.80,0,,4.6
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,fehlerquellen:HT-2026-088,A,Abgabepflichtig (Vorschlag),RICHTIG,2000,98.00,2,,4.9
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,fehlerquellen:HT-2026-089,A,Abgabepflichtig (Vorschlag),RICHTIG,1000,49.00,0,,5.4
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,fehlerquellen:HT-2026-090,A,Abgabepflichtig (Vorschlag),RICHTIG,12500.5,,3,,4.1
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,fehlerquellen:HT-2026-092,G,Rückfrage nötig,NACHGEFRAGT,,,0,"Soll ['G'], Ist R",3.3
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,fehlerquellen:HT-2026-093,R,Rückfrage nötig,RICHTIG,,,0,,1.4
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,fehlerquellen:HT-2026-094,AUSKUNFT,Auskunft aus dem Regelwerk,RICHTIG,,,0,,2.5
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,fehlerquellen:HT-2026-095,X/R/AUSKUNFT,Nicht abgedeckt (Quelle fehlt),RICHTIG,,,0,,4.5
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,fehlerquellen:HT-2026-097,X/R/AUSKUNFT/HINWEIS,Rückfrage nötig,RICHTIG,,,0,,1.6
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,fehlerquellen:HT-2026-099,A,Abgabepflichtig (Vorschlag),RICHTIG,2000,98.00,2,,8.1
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,fehlerquellen:HT-2026-100,A/G,Abgabepflichtig (Vorschlag),RICHTIG,3400,166.60,1,,7.3
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,fehlerquellen:HT-2026-105,A,Abgabepflichtig (Vorschlag),RICHTIG,1250,61.25,3,,7.5
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,fehlerquellen:HT-2026-106,N/G,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,0,,9.5
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-001,A,Abgabepflichtig (Vorschlag),RICHTIG,1500,73.50,1,,7.6
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-002,N,Rückfrage nötig,NACHGEFRAGT,,,0,"Soll ['N'], Ist R",7.8
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-003,A,Abgabepflichtig (Vorschlag),RICHTIG,2800,137.20,0,,3.7
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-004,A/R/G,Abgabepflichtig (Vorschlag),RICHTIG,1900,93.10,1,,7.9
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-005,A/G/R,Abgabepflichtig (Vorschlag),RICHTIG,1200,58.80,1,,10.1
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-006,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,0,,8.8
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-007,A,Abgabepflichtig (Vorschlag),RICHTIG,650,31.85,1,,3.7
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-008,A,Abgabepflichtig (Vorschlag),RICHTIG,2000,98.00,1,,3.7
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-009,N/G/R,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,1,,8.2
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-010,N/R,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,1,,10.0
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-011,A,Abgabepflichtig (Vorschlag),RICHTIG,3400,166.60,2,,3.8
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-012,G/R/A,Grenzfall → Steuerberater entscheidet,RICHTIG,,,1,,5.2
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-013,A/G,Abgabepflichtig (Vorschlag),RICHTIG,1600,78.40,1,,4.2
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-014,G/R/N,Rückfrage nötig,RICHTIG,,,0,,2.6
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-015,N/G/R,Grenzfall → Steuerberater entscheidet,RICHTIG,,,1,,5.0
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-016,A,Abgabepflichtig (Vorschlag),RICHTIG,5900,289.10,0,,6.8
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-017,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,0,,5.1
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-018,A/G,Abgabepflichtig (Vorschlag),RICHTIG,1100,53.90,0,,5.1
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-019,A/R/G,Abgabepflichtig (Vorschlag),RICHTIG,1800,88.20,1,,6.5
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-020,R,Rückfrage nötig,RICHTIG,,,0,,3.4
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-021,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,1,,7.5
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-022,A,Abgabepflichtig (Vorschlag),RICHTIG,1000.01,,0,,3.7
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-023,N/R,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,3,,15.4
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-024,A/G/R,Grenzfall → Steuerberater entscheidet,RICHTIG,,,1,,10.4
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-025,A,Grenzfall → Steuerberater entscheidet,NACHGEFRAGT,,,2,"Soll ['A'], Ist G",7.0
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-026,A,Abgabepflichtig (Vorschlag),RICHTIG,1960,96.04,1,,3.3
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-027,A/G,Grenzfall → Steuerberater entscheidet,RICHTIG,,,1,,5.7
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-028,A,Abgabepflichtig (Vorschlag),RICHTIG,1500,73.50,1,,11.8
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-029,A,Rückfrage nötig,NACHGEFRAGT,,,0,"Soll ['A'], Ist R",6.7
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-030,A,Rückfrage nötig,NACHGEFRAGT,,,0,"Soll ['A'], Ist R",2.9
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-031,N/R,Nicht abgabepflichtig (Vorschlag),RICHTIG,0,0.00,1,,6.1
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-032,A/R,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,12.6
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-033,N/R/G,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,1,,4.0
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-034,N/G/R,Rückfrage nötig,RICHTIG,,,1,,5.8
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-035,A/G/R,Grenzfall → Steuerberater entscheidet,RICHTIG,,,2,,4.4
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-036,N/G/R,Grenzfall → Steuerberater entscheidet,RICHTIG,,,1,,4.8
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-037,G/R/N,Rückfrage nötig,RICHTIG,,,0,,2.8
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-038,N/R,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,1,,6.6
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-039,N/R/G,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,1,,6.9
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-040,N/R/G,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,1,,4.8
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-041,R,Rückfrage nötig,RICHTIG,,,0,,7.5
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-042,R,Rückfrage nötig,RICHTIG,,,0,,1.2
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-043,R,Rückfrage nötig,RICHTIG,,,0,,6.0
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-044,N/R,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,1,,4.4
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-045,R,Rückfrage nötig,RICHTIG,,,0,,1.3
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-051,R/A/N/G,Rückfrage nötig,RICHTIG,,,0,,6.6
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-052,R/A/N,Rückfrage nötig,RICHTIG,,,0,,5.5
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-053,A,Abgabepflichtig (Vorschlag),RICHTIG,2500,122.50,1,,9.9
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-054,A/R,Grenzfall → Steuerberater entscheidet,NACHGEFRAGT,,,2,"Soll ['A', 'R'], Ist G",9.7
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-055,N/G/R,Nicht abgabepflichtig (Vorschlag),RICHTIG,0,0.00,1,,5.0
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-056,A,Abgabepflichtig (Vorschlag),RICHTIG,3000,147.00,0,,6.9
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-057,A,Abgabepflichtig (Vorschlag),RICHTIG,1750,85.75,1,,3.5
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-058,A/R,Abgabepflichtig (Vorschlag),RICHTIG,1200,58.80,1,,3.3
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-059,AUSKUNFT,Auskunft aus dem Regelwerk,RICHTIG,,,0,,2.2
+2026-10-15,Chatbot direkt (Browser) – Mistral (EU),5932744,tests/archiv/alle_faelle.json,alltag:AT-2026-060,AUSKUNFT/R,Auskunft aus dem Regelwerk,RICHTIG,,,0,,2.2

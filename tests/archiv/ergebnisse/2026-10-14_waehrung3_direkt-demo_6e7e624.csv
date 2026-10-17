@@ -1,0 +1,11 @@
+datum,modus,code_stand,katalog,fall,soll,ist,urteil,bemessungsgrundlage,abgabe,rueckfragen,gruende,dauer_s
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",6e7e624,aufgaben/audit/testfall_waehrung.json,W-01,R,Rückfrage nötig,RICHTIG,,,0,,0.4
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",6e7e624,aufgaben/audit/testfall_waehrung.json,W-02,A,Abgabepflichtig (Vorschlag),RICHTIG,1850.00,90.65,1,,0.7
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",6e7e624,aufgaben/audit/testfall_waehrung.json,W-03,A,Abgabepflichtig (Vorschlag),RICHTIG,1850.00,90.65,0,,0.5
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",6e7e624,aufgaben/audit/testfall_waehrung.json,W-04,R,Rückfrage nötig,RICHTIG,,,0,,0.3
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",6e7e624,aufgaben/audit/testfall_waehrung.json,W-05,R,Rückfrage nötig,RICHTIG,,,0,,0.3
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",6e7e624,aufgaben/audit/testfall_waehrung.json,W-06,R,Rückfrage nötig,RICHTIG,,,0,,0.3
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",6e7e624,aufgaben/audit/testfall_waehrung.json,W-07,R,Abgabepflichtig (Vorschlag),FALSCH,1200.00,58.80,0,"Soll ['R'], Ist A (Abgabepflichtig (Vorschlag))",0.5
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",6e7e624,aufgaben/audit/testfall_waehrung.json,W-08,R,Rückfrage nötig,RICHTIG,,,0,,0.3
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",6e7e624,aufgaben/audit/testfall_waehrung.json,W-09,A,Abgabepflichtig (Vorschlag),RICHTIG,2000,98.00,0,,0.5
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",6e7e624,aufgaben/audit/testfall_waehrung.json,W-10,A,Abgabepflichtig (Vorschlag),RICHTIG,1500,73.50,0,,0.5

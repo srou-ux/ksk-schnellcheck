@@ -1,0 +1,476 @@
+{
+ "hinweis": "Erzeugt aus regelwerk/Regelkatalog_24_KSVG_Entwurf.xlsx – nicht von Hand ändern. Entwurf – vom Steuerberater zu prüfen.",
+ "abgabesatz": {
+  "2015": {
+   "prozent": "5.2",
+   "fundstelle": "KSK-Info 01, Abschn. 4, S. 8 (Stand 01.2026)"
+  },
+  "2016": {
+   "prozent": "5.2",
+   "fundstelle": "KSK-Info 01, Abschn. 4, S. 8"
+  },
+  "2017": {
+   "prozent": "4.8",
+   "fundstelle": "KSK-Info 01, Abschn. 4, S. 8"
+  },
+  "2018": {
+   "prozent": "4.2",
+   "fundstelle": "KSK-Info 01, Abschn. 4, S. 8"
+  },
+  "2019": {
+   "prozent": "4.2",
+   "fundstelle": "Künstlersozialabgabe-Verordnung 2019, § 1"
+  },
+  "2020": {
+   "prozent": "4.2",
+   "fundstelle": "Künstlersozialabgabe-Verordnung 2020, § 1"
+  },
+  "2021": {
+   "prozent": "4.2",
+   "fundstelle": "Künstlersozialabgabe-Verordnung 2021, § 1"
+  },
+  "2022": {
+   "prozent": "4.2",
+   "fundstelle": "Künstlersozialabgabe-Verordnung 2022, § 1"
+  },
+  "2023": {
+   "prozent": "5",
+   "fundstelle": "Künstlersozialabgabe-Verordnung 2023, § 1"
+  },
+  "2024": {
+   "prozent": "5",
+   "fundstelle": "Künstlersozialabgabe-Verordnung 2024, § 1"
+  },
+  "2025": {
+   "prozent": "5",
+   "fundstelle": "Künstlersozialabgabe-Verordnung 2025, § 1"
+  },
+  "2026": {
+   "prozent": "4.9",
+   "fundstelle": "Künstlersozialabgabe-Verordnung 2026, § 1"
+  },
+  "2027": {
+   "prozent": "5",
+   "fundstelle": "Verordnung zur Künstlersozialabgabe 2027, Art. 1 § 1 (BGBl. 2026 I Nr. 262)"
+  }
+ },
+ "schwelle": {
+  "2019": {
+   "fassung": "A",
+   "euro": "450",
+   "text": "450 € nur als Geringfügigkeitsgrenze, zusätzlich Regelmäßigkeit (R-10)",
+   "fundstelle": "KSVG § 24 Abs. 3 a. F.; BSG B 3 KS 3/21 R Rn. 18"
+  },
+  "2020": {
+   "fassung": "A",
+   "euro": "450",
+   "text": "450 € nur als Geringfügigkeitsgrenze, zusätzlich Regelmäßigkeit (R-10)",
+   "fundstelle": "KSVG § 24 Abs. 3 a. F.; BSG B 3 KS 3/21 R Rn. 18"
+  },
+  "2021": {
+   "fassung": "A",
+   "euro": "450",
+   "text": "450 € nur als Geringfügigkeitsgrenze, zusätzlich Regelmäßigkeit (R-10)",
+   "fundstelle": "KSVG § 24 Abs. 3 a. F.; BSG B 3 KS 3/21 R Rn. 18"
+  },
+  "2022": {
+   "fassung": "A",
+   "euro": "450",
+   "text": "450 € nur als Geringfügigkeitsgrenze, zusätzlich Regelmäßigkeit (R-10)",
+   "fundstelle": "KSVG § 24 Abs. 1 Satz 2, Abs. 3 a. F.; Ende der Fassung A: Art. 34 Abs. 1 des 8. SGB IV-ÄndG (01.01.2023)"
+  },
+  "2023": {
+   "fassung": "B",
+   "euro": "450",
+   "text": "450 €",
+   "fundstelle": "KSVG § 24 Abs. 2 Satz 2 (Kopien 2023-05-13, 2024-05-21)"
+  },
+  "2024": {
+   "fassung": "B",
+   "euro": "450",
+   "text": "450 €",
+   "fundstelle": "KSVG § 24 Abs. 2 Satz 2 (Kopien 2023-05-13, 2024-05-21)"
+  },
+  "2025": {
+   "fassung": "B",
+   "euro": "700",
+   "text": "700 €",
+   "fundstelle": "KSVG § 54: 'Abweichend von § 24 Absatz 2 Satz 2 beträgt die Entgeltsumme 700 Euro im Kalenderjahr 2025'"
+  },
+  "2026": {
+   "fassung": "B",
+   "euro": "1000",
+   "text": "1.000 €",
+   "fundstelle": "KSVG § 24 Abs. 2 Satz 2 (aktuell)"
+  },
+  "2027": {
+   "fassung": "B",
+   "euro": "1000",
+   "text": "1.000 € (nach aktuellem Text)",
+   "fundstelle": "KSVG § 24 Abs. 2 Satz 2 (aktuell)"
+  }
+ },
+ "pauschale": {
+  "2013": {
+   "uebungsleiter": "2400",
+   "ehrenamt": null,
+   "ehrenamt_ausgenommen": false,
+   "fundstelle": "KSK-Info 01 (Archiv 2022-01-20), Abschn. 3; Info 10/12 (Archiv): „seit 2013 max. 2.400 €“"
+  },
+  "2014": {
+   "uebungsleiter": "2400",
+   "ehrenamt": null,
+   "ehrenamt_ausgenommen": false,
+   "fundstelle": "KSK-Info 01 (Archiv 2022-01-20), Abschn. 3; Info 10/12 (Archiv): „seit 2013 max. 2.400 €“"
+  },
+  "2015": {
+   "uebungsleiter": "2400",
+   "ehrenamt": null,
+   "ehrenamt_ausgenommen": false,
+   "fundstelle": "KSK-Info 01 (Archiv 2022-01-20), Abschn. 3; Info 10/12 (Archiv): „seit 2013 max. 2.400 €“"
+  },
+  "2016": {
+   "uebungsleiter": "2400",
+   "ehrenamt": null,
+   "ehrenamt_ausgenommen": false,
+   "fundstelle": "KSK-Info 01 (Archiv 2022-01-20), Abschn. 3; Info 10/12 (Archiv): „seit 2013 max. 2.400 €“"
+  },
+  "2017": {
+   "uebungsleiter": "2400",
+   "ehrenamt": null,
+   "ehrenamt_ausgenommen": false,
+   "fundstelle": "KSK-Info 01 (Archiv 2022-01-20), Abschn. 3; Info 10/12 (Archiv): „seit 2013 max. 2.400 €“"
+  },
+  "2018": {
+   "uebungsleiter": "2400",
+   "ehrenamt": null,
+   "ehrenamt_ausgenommen": false,
+   "fundstelle": "KSK-Info 01 (Archiv 2022-01-20), Abschn. 3; Info 10/12 (Archiv): „seit 2013 max. 2.400 €“"
+  },
+  "2019": {
+   "uebungsleiter": "2400",
+   "ehrenamt": null,
+   "ehrenamt_ausgenommen": false,
+   "fundstelle": "KSK-Info 01 (Archiv 2022-01-20), Abschn. 3; Info 10/12 (Archiv): „seit 2013 max. 2.400 €“"
+  },
+  "2020": {
+   "uebungsleiter": "2400",
+   "ehrenamt": null,
+   "ehrenamt_ausgenommen": false,
+   "fundstelle": "KSK-Info 01 (Archiv 2022-01-20), Abschn. 3; Info 10/12 (Archiv): „seit 2013 max. 2.400 €“"
+  },
+  "2021": {
+   "uebungsleiter": "3000",
+   "ehrenamt": null,
+   "ehrenamt_ausgenommen": false,
+   "fundstelle": "KSK-Info 01 (Archiv), „ab 2021 max. 3.000 €“; KSK-Info 24a, S. 3"
+  },
+  "2022": {
+   "uebungsleiter": "3000",
+   "ehrenamt": null,
+   "ehrenamt_ausgenommen": false,
+   "fundstelle": "KSK-Info 01 (Archiv), „ab 2021 max. 3.000 €“; KSK-Info 24a, S. 3"
+  },
+  "2023": {
+   "uebungsleiter": "3000",
+   "ehrenamt": null,
+   "ehrenamt_ausgenommen": false,
+   "fundstelle": "KSK-Info 01 (Archiv), „ab 2021 max. 3.000 €“; KSK-Info 24a, S. 3"
+  },
+  "2024": {
+   "uebungsleiter": "3000",
+   "ehrenamt": null,
+   "ehrenamt_ausgenommen": false,
+   "fundstelle": "KSK-Info 01 (Archiv), „ab 2021 max. 3.000 €“; KSK-Info 24a, S. 3"
+  },
+  "2025": {
+   "uebungsleiter": "3000",
+   "ehrenamt": "840",
+   "ehrenamt_ausgenommen": true,
+   "fundstelle": "KSK-Info 24, 24a (Stand 01.2026); Info 01 Abschn. 3"
+  },
+  "2026": {
+   "uebungsleiter": "3300",
+   "ehrenamt": "960",
+   "ehrenamt_ausgenommen": true,
+   "fundstelle": "KSK-Info 24, 24a (Stand 01.2026); Info 01 Abschn. 3"
+  }
+ },
+ "register": [
+  {
+   "schluessel": "schwelle.operator",
+   "wert": ">",
+   "einheit": "Vergleich",
+   "operator": ">",
+   "von": 2015,
+   "bis": null,
+   "regel": "R-11; R-24",
+   "fundstelle": "KSVG § 24 Abs. 2 S. 2 („übersteigt“)",
+   "status": "Entwurf – vom Steuerberater zu prüfen"
+  },
+  {
+   "schluessel": "verpflegung.stunden_grenze",
+   "wert": "8",
+   "einheit": "Stunden",
+   "operator": ">",
+   "von": 2014,
+   "bis": null,
+   "regel": "R-236",
+   "fundstelle": "EStG § 9 Abs. 4a S. 3 Nr. 3; KSK-Info 10 Abschn. 3 (Info schreibt „8 bis 24“, Abweichung beachten)",
+   "status": "Entwurf – vom Steuerberater zu prüfen"
+  },
+  {
+   "schluessel": "verpflegung.stunden_ganztag",
+   "wert": "24",
+   "einheit": "Stunden",
+   "operator": ">=",
+   "von": 2014,
+   "bis": null,
+   "regel": "R-236",
+   "fundstelle": "EStG § 9 Abs. 4a S. 3 Nr. 1",
+   "status": "Entwurf – vom Steuerberater zu prüfen"
+  },
+  {
+   "schluessel": "verpflegung.pauschale_klein",
+   "wert": "12",
+   "einheit": "EUR",
+   "operator": null,
+   "von": 2014,
+   "bis": 2019,
+   "regel": "R-236",
+   "fundstelle": "KSK-Info 10, Abschn. 3; EStG-Text für das Jahr nicht einzeln geprüft",
+   "status": "Entwurf – vom Steuerberater zu prüfen"
+  },
+  {
+   "schluessel": "verpflegung.pauschale_klein",
+   "wert": "14",
+   "einheit": "EUR",
+   "operator": null,
+   "von": 2020,
+   "bis": null,
+   "regel": "R-236",
+   "fundstelle": "EStG § 9 Abs. 4a S. 3 Nr. 2, 3 (Momentaufnahme); KSK-Info 10",
+   "status": "Entwurf – vom Steuerberater zu prüfen"
+  },
+  {
+   "schluessel": "verpflegung.pauschale_gross",
+   "wert": "24",
+   "einheit": "EUR",
+   "operator": null,
+   "von": 2014,
+   "bis": 2019,
+   "regel": "R-236",
+   "fundstelle": "KSK-Info 10, Abschn. 3",
+   "status": "Entwurf – vom Steuerberater zu prüfen"
+  },
+  {
+   "schluessel": "verpflegung.pauschale_gross",
+   "wert": "28",
+   "einheit": "EUR",
+   "operator": null,
+   "von": 2020,
+   "bis": null,
+   "regel": "R-236",
+   "fundstelle": "EStG § 9 Abs. 4a S. 3 Nr. 1 (Momentaufnahme); KSK-Info 10",
+   "status": "Entwurf – vom Steuerberater zu prüfen"
+  },
+  {
+   "schluessel": "vorauszahlung.untergrenze",
+   "wert": "40",
+   "einheit": "EUR",
+   "operator": "<=",
+   "von": 2015,
+   "bis": null,
+   "regel": "R-80",
+   "fundstelle": "KSVG § 27 Abs. 3 S. 3",
+   "status": "Entwurf – vom Steuerberater zu prüfen"
+  },
+  {
+   "schluessel": "vorauszahlung.monate",
+   "wert": "12",
+   "einheit": "Monate",
+   "operator": null,
+   "von": 2015,
+   "bis": null,
+   "regel": "R-80; R-164",
+   "fundstelle": "KSVG § 27 Abs. 3; KSK-Info 01 Abschn. 4",
+   "status": "Entwurf – vom Steuerberater zu prüfen"
+  },
+  {
+   "schluessel": "saeumnis.stufe",
+   "wert": "50",
+   "einheit": "EUR",
+   "operator": null,
+   "von": 2015,
+   "bis": null,
+   "regel": "R-86; R-226",
+   "fundstelle": "SGB IV § 24 Abs. 1 S. 1; KSVG § 30 Abs. 1",
+   "status": "Entwurf – vom Steuerberater zu prüfen"
+  },
+  {
+   "schluessel": "saeumnis.satz_prozent",
+   "wert": "1",
+   "einheit": "Prozent je Monat",
+   "operator": null,
+   "von": 2015,
+   "bis": null,
+   "regel": "R-86",
+   "fundstelle": "SGB IV § 24 Abs. 1 S. 1; KSVG § 30 Abs. 1",
+   "status": "Entwurf – vom Steuerberater zu prüfen"
+  },
+  {
+   "schluessel": "saeumnis.bagatell_gesondert",
+   "wert": "150",
+   "einheit": "EUR",
+   "operator": "<",
+   "von": 2015,
+   "bis": null,
+   "regel": "R-86",
+   "fundstelle": "SGB IV § 24 Abs. 1 S. 3",
+   "status": "Entwurf – vom Steuerberater zu prüfen"
+  },
+  {
+   "schluessel": "schaetzung.ausland_prozent",
+   "wert": "25",
+   "einheit": "Prozent der Bruttoeinnahmen",
+   "operator": null,
+   "von": 2025,
+   "bis": null,
+   "regel": "R-37; R-179",
+   "fundstelle": "KSK-Info 04 (Stand 08.2025), Abschn. 4b; Checkliste Veranstalter S. 2 (Auslegung der KSK, kein Gesetz)",
+   "status": "Entwurf – vom Steuerberater zu prüfen"
+  },
+  {
+   "schluessel": "meldefrist.monat",
+   "wert": "3",
+   "einheit": "Monat",
+   "operator": null,
+   "von": 2015,
+   "bis": null,
+   "regel": "R-79",
+   "fundstelle": "KSVG § 27 Abs. 1",
+   "status": "Entwurf – vom Steuerberater zu prüfen"
+  },
+  {
+   "schluessel": "meldefrist.tag",
+   "wert": "31",
+   "einheit": "Tag",
+   "operator": null,
+   "von": 2015,
+   "bis": null,
+   "regel": "R-79",
+   "fundstelle": "KSVG § 27 Abs. 1",
+   "status": "Entwurf – vom Steuerberater zu prüfen"
+  },
+  {
+   "schluessel": "aufbewahrung.jahre",
+   "wert": "5",
+   "einheit": "Jahre",
+   "operator": null,
+   "von": 2015,
+   "bis": null,
+   "regel": "R-83",
+   "fundstelle": "KSVG § 28 S. 3; KSK-Info 17 Abschn. 3",
+   "status": "Entwurf – vom Steuerberater zu prüfen"
+  },
+  {
+   "schluessel": "veranstaltungen.ausnahme_max",
+   "wert": "3",
+   "einheit": "Veranstaltungen",
+   "operator": "<=",
+   "von": 2023,
+   "bis": null,
+   "regel": "R-14; R-132",
+   "fundstelle": "KSVG § 24 Abs. 2 S. 3 Nr. 1",
+   "status": "Entwurf – vom Steuerberater zu prüfen"
+  },
+  {
+   "schluessel": "rechtsform.kein_entgelt",
+   "wert": "gmbh",
+   "einheit": "Rechtsform",
+   "operator": null,
+   "von": 2015,
+   "bis": null,
+   "regel": "R-138",
+   "fundstelle": "KSK-FAQ Unternehmen und Verwerter, Frage 12",
+   "status": "Entwurf – vom Steuerberater zu prüfen"
+  },
+  {
+   "schluessel": "rechtsform.kein_entgelt",
+   "wert": "kg",
+   "einheit": "Rechtsform",
+   "operator": null,
+   "von": 2015,
+   "bis": null,
+   "regel": "R-216",
+   "fundstelle": "BSG 12.08.2010, B 3 KS 2/09 R; BSG 02.04.2014, B 3 KS 3/12 R",
+   "status": "Entwurf – vom Steuerberater zu prüfen"
+  },
+  {
+   "schluessel": "rechtsform.kein_entgelt",
+   "wert": "ohg",
+   "einheit": "Rechtsform",
+   "operator": null,
+   "von": 2015,
+   "bis": null,
+   "regel": "R-217",
+   "fundstelle": "BSG 16.07.2014, B 3 KS 3/13 R",
+   "status": "Entwurf – vom Steuerberater zu prüfen"
+  },
+  {
+   "schluessel": "rechtsform.kein_entgelt",
+   "wert": "ug",
+   "einheit": "Rechtsform",
+   "operator": null,
+   "von": 2015,
+   "bis": null,
+   "regel": "R-138",
+   "fundstelle": "Ableitung; KSK-FAQ Frage 12 nennt nur die GmbH",
+   "status": "Entwurf – vom Steuerberater zu prüfen (Ableitung)"
+  },
+  {
+   "schluessel": "rechtsform.kein_entgelt",
+   "wert": "ag",
+   "einheit": "Rechtsform",
+   "operator": null,
+   "von": 2015,
+   "bis": null,
+   "regel": "R-138",
+   "fundstelle": "Ableitung; KSK-FAQ Frage 12 nennt nur die GmbH",
+   "status": "Entwurf – vom Steuerberater zu prüfen (Ableitung)"
+  },
+  {
+   "schluessel": "musikverein.schueler_grenze",
+   "wert": "60",
+   "einheit": "Schüler",
+   "operator": ">",
+   "von": 2015,
+   "bis": null,
+   "regel": "R-55",
+   "fundstelle": "KSK-Info 12, Abschn. 2 (Stand 08.2025)",
+   "status": "Entwurf – vom Steuerberater zu prüfen"
+  },
+  {
+   "schluessel": "saeumnis.addition_vor_abrundung",
+   "wert": "ja",
+   "einheit": "Ja/Nein",
+   "operator": null,
+   "von": 2015,
+   "bis": 2022,
+   "regel": "R-226",
+   "fundstelle": "BSG 07.07.2020, B 12 R 28/18 R; SGB IV § 24 Abs. 1 (Fassung bis 2022)",
+   "status": "Entwurf – vom Steuerberater zu prüfen"
+  },
+  {
+   "schluessel": "saeumnis.addition_vor_abrundung",
+   "wert": "nein",
+   "einheit": "Ja/Nein",
+   "operator": null,
+   "von": 2023,
+   "bis": null,
+   "regel": "R-226",
+   "fundstelle": "SGB IV § 24 Abs. 1 (Fassung ab 2023)",
+   "status": "Entwurf – vom Steuerberater zu prüfen"
+  }
+ ]
+}

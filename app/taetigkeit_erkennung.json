@@ -1,0 +1,42 @@
+{
+  "_hinweis": "Feste Tätigkeitserkennung (app/taetigkeiten.py::erkenne), Korpus-Lauf 15.10.2026. Keine Fachwerte, nur Sprachregeln. (1) zusammengesetzte Wörter: im Deutschen steht der Kern eines Worts hinten ('Werbejingle' ist ein Jingle, 'Produktfotos' sind Fotos). Ein Begriff aus dem Blatt 'Tätigkeitsabgrenzung' zählt am ENDE eines Worts aber nur, wenn er in 'wortende_begriffe' steht und danach höchstens eine der 'endungen' folgt ('Hochzeitsfotografin' = fotograf + in). Bewusst eng: allgemein angewandt machte die Regel aus 'Pressesprecher' einen Sprecher (T-05, künstlerisch) und aus 'Industriedesigner' Grafikdesign -- gegen den Entwurf des Tätigkeitskatalogs (Messung mit dem Tätigkeitskatalog 200, 15.10.2026). Neue Wörter nur mit Messung. (2) 'eigener_zweck': steht direkt nach einem Begriff (höchstens 'abstand' Zeichen) eine dieser Wendungen, beschreibt der Begriff den Zweck des Auftraggebers ('Öffentlichkeitsarbeit für sich selbst'), nicht die Leistung des Künstlers; dann zählt er nicht.",
+  "wortende_begriffe": [
+    "jingle",
+    "fotos",
+    "fotograf"
+  ],
+  "endungen": [
+    "",
+    "s",
+    "n",
+    "en",
+    "in",
+    "innen",
+    "es"
+  ],
+  "eigener_zweck": [
+    "fuer sich selbst",
+    "fuer uns selbst",
+    "fuer das eigene",
+    "fuer die eigene",
+    "fuer den eigenen",
+    "fuer unser eigenes",
+    "fuer unsere eigene",
+    "fuer unseren eigenen",
+    "fuer mein eigenes",
+    "fuer meine eigene",
+    "in eigener sache",
+    "fuer sich"
+  ],
+  "abstand": 12,
+  "kontakt_woerter": [
+    "telefon",
+    "tel",
+    "fax",
+    "mobil",
+    "handy"
+  ],
+  "_hinweis_kontakt": "Live-Lauf 15.10.2026 (korpus-j10-oa2, KB-1641): 'Unsere Firma sitzt in 10115 Berlin, Telefon 030 1234567' traf 'telefon' (Nebenkosten, T-67 unsicher) -> Grenzfall. Folgt auf ein Wort, das mit einem 'kontakt_woerter' beginnt, direkt eine Telefonnummer (mindestens sechs Ziffern, kein Euro-Betrag), ist es eine Kontaktangabe, keine Leistung.",
+  "eigene_seite_davor": "(?:\\bunser\\w*|\\bwir sind (?:ein|eine|einer)?|\\bich bin (?:ein|eine)?)\\s*(?:[\\w-]+\\s+){1,2}(?:fuer|im bereich|in der)\\s+$",
+  "_hinweis_eigene_seite": "Live-Lauf 16.10.2026 (ganzer Korpus, KB-0587): 'Unsere Agentur für Öffentlichkeitsarbeit … einem freien Sprecher' – 'Öffentlichkeitsarbeit' (T-60) beschreibt den AUFTRAGGEBER, nicht die Leistung; mit dem Sprecher (T-05) ergab es einen Widerspruch (Grenzfall). Ein Begriff direkt nach 'unser(e) <Wort> für' / 'wir sind eine <Wort> für' (Muster 'eigene_seite_davor', auf den Text in Kleinschreibung ohne Umlaute) zählt nicht als Leistung."
+}

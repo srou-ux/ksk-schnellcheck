@@ -1,0 +1,22 @@
+datum,modus,bericht_stand,katalog,fall,soll,ist,urteil,dauer_s
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1a3f14b,aufgaben/audit/testfall_20_positionen.json,testfall20:S-00,A/G,Grenzfall → Steuerberater entscheidet,RICHTIG,16.1
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1a3f14b,aufgaben/audit/testfall_20_positionen.json,testfall20:S-01,A,Abgabepflichtig (Vorschlag),RICHTIG,4.4
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1a3f14b,aufgaben/audit/testfall_20_positionen.json,testfall20:S-02,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,6.6
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1a3f14b,aufgaben/audit/testfall_20_positionen.json,testfall20:S-03,A,Abgabepflichtig (Vorschlag),RICHTIG,6.9
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1a3f14b,aufgaben/audit/testfall_20_positionen.json,testfall20:S-04,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,3.3
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1a3f14b,aufgaben/audit/testfall_20_positionen.json,testfall20:S-05,A,Abgabepflichtig (Vorschlag),RICHTIG,3.2
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1a3f14b,aufgaben/audit/testfall_20_positionen.json,testfall20:S-06,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,3.9
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1a3f14b,aufgaben/audit/testfall_20_positionen.json,testfall20:S-07,A,Abgabepflichtig (Vorschlag),RICHTIG,4.1
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1a3f14b,aufgaben/audit/testfall_20_positionen.json,testfall20:S-08,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,3.2
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1a3f14b,aufgaben/audit/testfall_20_positionen.json,testfall20:S-09,A,Abgabepflichtig (Vorschlag),RICHTIG,7.2
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1a3f14b,aufgaben/audit/testfall_20_positionen.json,testfall20:S-10,N,Grenzfall → Steuerberater entscheidet,NACHGEFRAGT,4.0
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1a3f14b,aufgaben/audit/testfall_20_positionen.json,testfall20:S-11,A,Abgabepflichtig (Vorschlag),RICHTIG,4.6
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1a3f14b,aufgaben/audit/testfall_20_positionen.json,testfall20:S-12,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,17.1
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1a3f14b,aufgaben/audit/testfall_20_positionen.json,testfall20:S-13,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,8.3
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1a3f14b,aufgaben/audit/testfall_20_positionen.json,testfall20:S-14,A,Abgabepflichtig (Vorschlag),RICHTIG,4.5
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1a3f14b,aufgaben/audit/testfall_20_positionen.json,testfall20:S-15,G,Grenzfall → Steuerberater entscheidet,RICHTIG,4.3
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1a3f14b,aufgaben/audit/testfall_20_positionen.json,testfall20:S-16,N,Grenzfall → Steuerberater entscheidet,NACHGEFRAGT,7.1
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1a3f14b,aufgaben/audit/testfall_20_positionen.json,testfall20:S-17,A,Abgabepflichtig (Vorschlag),RICHTIG,4.6
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1a3f14b,aufgaben/audit/testfall_20_positionen.json,testfall20:S-18,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,4.2
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1a3f14b,aufgaben/audit/testfall_20_positionen.json,testfall20:S-19,A,Abgabepflichtig (Vorschlag),RICHTIG,3.8
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1a3f14b,aufgaben/audit/testfall_20_positionen.json,testfall20:S-20,N,Grenzfall → Steuerberater entscheidet,NACHGEFRAGT,6.4

@@ -1,0 +1,6 @@
+{
+  "_hinweis": "Härtetest HT-2026-008 des Nutzers (14.10.2026): 'Bis 31.05.2025 war ich Einzelunternehmer, seit 01.06.2025 eine UG' – die Zahlungen beider Unternehmer wurden zusammengezählt. Einzelunternehmer und Gesellschaft sind verschiedene Unternehmer; welcher Rechtsträger welche Zahlung geleistet hat, entscheidet der Mensch. app/zuordnung.py::markiere_rechtsformwechsel: nennt der Text einen dieser Begriffe, fragt das System, statt zu rechnen. Klein geschrieben, Umlaute werden vereinheitlicht.",
+  "wechsel": ["war ich einzelunternehmer", "war ich einzelunternehmerin", "waren wir eine gbr", "rechtsformwechsel", "formwechsel",
+              "umgewandelt in", "umfirmiert", "umgegründet", "in eine gmbh umgewandelt", "in eine ug umgewandelt",
+              "seit der gründung der ug", "seit der gründung der gmbh"]
+}

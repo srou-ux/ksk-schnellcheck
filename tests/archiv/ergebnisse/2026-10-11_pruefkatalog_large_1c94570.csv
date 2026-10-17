@@ -1,0 +1,53 @@
+datum,modus,bericht_stand,katalog,fall,soll,ist,urteil,dauer_s
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-01,A,Abgabepflichtig (Vorschlag),RICHTIG,21.7
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-02,A,Grenzfall → Steuerberater entscheidet,NACHGEFRAGT,3.5
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-03,A,Abgabepflichtig (Vorschlag),RICHTIG,6.5
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-04a,A,Abgabepflichtig (Vorschlag),RICHTIG,4.3
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-04b,N,Rückfrage nötig,NACHGEFRAGT,10.4
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-05,A,Abgabepflichtig (Vorschlag),RICHTIG,4.1
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-06,A,Abgabepflichtig (Vorschlag),RICHTIG,6.7
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-07,A,Abgabepflichtig (Vorschlag),RICHTIG,8.2
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-08,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,7.4
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-09,A,Grenzfall → Steuerberater entscheidet,NACHGEFRAGT,11.7
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-10,A,Rückfrage nötig,NACHGEFRAGT,17.0
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-11,A/G,Rückfrage nötig,NACHGEFRAGT,4.1
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-12,A,Rückfrage nötig,NACHGEFRAGT,5.6
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-13,A/G,Rückfrage nötig,NACHGEFRAGT,1.7
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-14,A,Rückfrage nötig,NACHGEFRAGT,2.7
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-15,A,Abgabepflichtig (Vorschlag),RICHTIG,9.8
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-16,N/G,Rückfrage nötig,NACHGEFRAGT,6.3
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-17,N,Rückfrage nötig,NACHGEFRAGT,1.8
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-18a,N,Rückfrage nötig,NACHGEFRAGT,4.7
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-18b,R/G,Rückfrage nötig,RICHTIG,2.7
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-19,A,Abgabepflichtig (Vorschlag),RICHTIG,21.4
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-20a,N,Rückfrage nötig,NACHGEFRAGT,2.4
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-20b,A,Rückfrage nötig,NACHGEFRAGT,2.3
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-21,A,Abgabepflichtig (Vorschlag),RICHTIG,4.6
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-22,A,Abgabepflichtig (Vorschlag),RICHTIG,4.3
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-23,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,4.2
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-24,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,6.4
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-25,A,Abgabepflichtig (Vorschlag),RICHTIG,8.9
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-26,A,Abgabepflichtig (Vorschlag),RICHTIG,3.4
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-27,A/G,Abgabepflichtig (Vorschlag),RICHTIG,17.7
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-28,A,Rückfrage nötig,NACHGEFRAGT,5.9
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-29,A,Abgabepflichtig (Vorschlag),RICHTIG,7.3
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-30,A,Abgabepflichtig (Vorschlag),RICHTIG,4.6
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-31,A,Abgabepflichtig (Vorschlag),RICHTIG,5.0
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-32,A,Rückfrage nötig,NACHGEFRAGT,11.4
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-33,A,Abgabepflichtig (Vorschlag),RICHTIG,5.1
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-34,N,Rückfrage nötig,NACHGEFRAGT,5.0
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-35,A,Abgabepflichtig (Vorschlag),RICHTIG,2.8
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-36,N,Rückfrage nötig,NACHGEFRAGT,5.3
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-37,G/N,Rückfrage nötig,NACHGEFRAGT,2.6
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-38,A,Abgabepflichtig (Vorschlag),RICHTIG,5.7
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-39,A/G,Abgabepflichtig (Vorschlag),RICHTIG,8.3
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-40,N,Rückfrage nötig,NACHGEFRAGT,5.9
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:P-52,A,Abgabepflichtig (Vorschlag),RICHTIG,8.7
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:K-01,R,Rückfrage nötig,RICHTIG,4.5
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:K-02,X/R,Nicht abgedeckt (Quelle fehlt),RICHTIG,2.8
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:K-03,AUSKUNFT,Auskunft aus dem Regelwerk,RICHTIG,5.7
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:K-04,A,Abgabepflichtig (Vorschlag),RICHTIG,4.2
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:K-05,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,5.1
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:K-06,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,4.3
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:K-07,R/G,Rückfrage nötig,RICHTIG,4.7
+2026-10-11,Mistral (mistral-large-latest) – im KSK-Assistenten,1c94570,aufgaben/audit/pruefkatalog.json,pruefkatalog:K-08,A,Abgabepflichtig (Vorschlag),RICHTIG,6.6

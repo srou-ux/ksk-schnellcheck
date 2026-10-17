@@ -1,0 +1,123 @@
+{
+  "hinweis": "Erfundene Testfälle zu Rechnungen in fremder Währung (14.10.2026). Grundlage des Solls: Testfall L-23 (regelwerk/Testfaelle_BSG_Urteile.xlsx): 'Rückfrage nötig: Euro-Betrag und Umrechnungsgrundlage klären; keine erfundene Euro-Summe'. Eine Umrechnungsregel ist in der Quellenbasis nicht belegt. Nicht vom Steuerberater geprüft. Der Testlauf bestätigt die Faktenbestätigung automatisch (wie ein Nutzer, der nicht genau hinsieht).",
+  "stand": "2026-10-14",
+  "kuerzel": {
+    "A": "Abgabepflichtig (Vorschlag)",
+    "N": "Nicht abgabepflichtig (Vorschlag)",
+    "G": "Grenzfall → Steuerberater entscheidet",
+    "R": "Rückfrage nötig",
+    "X": "Nicht abgedeckt (Quelle fehlt)",
+    "AUSKUNFT": "Auskunft aus dem Regelwerk", "HINWEIS": "Hinweis"
+  },
+  "faelle": [
+    {
+      "id": "W-01",
+      "gruppe": "Währung: nur US-Dollar",
+      "referenz": "L-23",
+      "sicherheit": "Soll nach Testfall L-23",
+      "frage": "Unsere GmbH hat 2026 für eigene Werbung einem freien Fotografen (Einzelperson) in den USA 2.000 US-Dollar für Werbefotos gezahlt. Ist das abgabepflichtig?",
+      "soll": ["R"],
+      "enthaelt": ["in fremder Währung angegeben"],
+      "verboten_text": ["98,00 €", "Bemessungsgrundlage: 2.000,00 €"],
+      "knoepfe": {"verwerterart": "Eigenwerbung", "auftragnehmer_typ": "natürliche Person", "ein_auftragnehmer": "ja, alle vom selben Auftragnehmer"}
+    },
+    {
+      "id": "W-02",
+      "gruppe": "Währung: US-Dollar, Euro-Betrag als Antwort nachgereicht",
+      "referenz": "L-23",
+      "sicherheit": "Soll nach Testfall L-23; Zahl nachgerechnet: 1.850,00 € × 4,9 % = 90,65 €",
+      "frage": "Unsere GmbH hat 2026 für eigene Werbung einem freien Fotografen (Einzelperson) in den USA 2.000 US-Dollar für Werbefotos gezahlt. Ist das abgabepflichtig?",
+      "soll": ["A"],
+      "zahl": {"bemessungsgrundlage": "1850.00", "abgabe": "90.65"},
+      "nachtrag": "Laut Kontoauszug wurden dafür 1.850,00 € abgebucht.",
+      "verboten_text": ["98,00 €"],
+      "knoepfe": {"verwerterart": "Eigenwerbung", "auftragnehmer_typ": "natürliche Person", "ein_auftragnehmer": "ja, alle vom selben Auftragnehmer"}
+    },
+    {
+      "id": "W-03",
+      "gruppe": "Währung: US-Dollar mit Euro-Betrag in derselben Angabe",
+      "referenz": "L-23",
+      "sicherheit": "Zahl nachgerechnet: 1.850,00 € × 4,9 % = 90,65 €",
+      "frage": "Unsere GmbH hat 2026 für eigene Werbung einem freien Fotografen (Einzelperson) in den USA 2.000 US-Dollar für Werbefotos gezahlt, abgebucht wurden 1.850,00 €. Ist das abgabepflichtig?",
+      "soll": ["A"],
+      "zahl": {"bemessungsgrundlage": "1850.00", "abgabe": "90.65"},
+      "verboten_text": ["98,00 €"],
+      "knoepfe": {"verwerterart": "Eigenwerbung", "auftragnehmer_typ": "natürliche Person", "ein_auftragnehmer": "ja, alle vom selben Auftragnehmer"}
+    },
+    {
+      "id": "W-04",
+      "gruppe": "Währung: Schweizer Franken",
+      "referenz": "L-23",
+      "sicherheit": "Soll nach Testfall L-23",
+      "frage": "Ein Buchverlag hat 2025 einer Illustratorin (Einzelperson) aus Zürich 3.000 CHF für Buchillustrationen gezahlt. Muss der Verlag dafür Künstlersozialabgabe zahlen?",
+      "soll": ["R"],
+      "enthaelt": ["in fremder Währung angegeben"],
+      "verboten_text": ["150,00 €", "Bemessungsgrundlage: 3.000,00 €"],
+      "knoepfe": {"verwerterart": "Typischer Verwerter", "auftragnehmer_typ": "natürliche Person", "ein_auftragnehmer": "ja, alle vom selben Auftragnehmer"}
+    },
+    {
+      "id": "W-05",
+      "gruppe": "Währung: Dollarzeichen",
+      "referenz": "L-23",
+      "sicherheit": "Soll nach Testfall L-23",
+      "frage": "Wir sind eine Werbeagentur und haben 2026 einem freien Texter (Einzelperson) aus Kanada 1.500 $ für Werbetexte gezahlt. Abgabepflichtig?",
+      "soll": ["R"],
+      "enthaelt": ["in fremder Währung angegeben"],
+      "verboten_text": ["73,50 €", "Bemessungsgrundlage: 1.500,00 €"],
+      "knoepfe": {"verwerterart": "Typischer Verwerter", "auftragnehmer_typ": "natürliche Person", "ein_auftragnehmer": "ja, alle vom selben Auftragnehmer"}
+    },
+    {
+      "id": "W-06",
+      "gruppe": "Währung: Britisches Pfund",
+      "referenz": "L-23",
+      "sicherheit": "Soll nach Testfall L-23",
+      "frage": "Unser Verlag hat 2026 einem freien Journalisten (Einzelperson) aus London 1.200 GBP für einen Fachartikel gezahlt. Ist das abgabepflichtig?",
+      "soll": ["R"],
+      "enthaelt": ["in fremder Währung angegeben"],
+      "verboten_text": ["58,80 €", "Bemessungsgrundlage: 1.200,00 €"],
+      "knoepfe": {"verwerterart": "Typischer Verwerter", "auftragnehmer_typ": "natürliche Person", "ein_auftragnehmer": "ja, alle vom selben Auftragnehmer"}
+    },
+    {
+      "id": "W-07",
+      "gruppe": "Währung: gemischte Rechnung Euro und US-Dollar",
+      "referenz": "L-23",
+      "sicherheit": "Soll nach Testfall L-23: die Dollar-Position bleibt offen, kein stilles Ergebnis",
+      "frage": "Unsere GmbH (Werbung für das eigene Unternehmen) hat 2026 diese Rechnung eines freien Grafikers (Einzelperson) bezahlt:\nPos. 1 Logo-Gestaltung: 1.200,00 EUR\nPos. 2 Bildlizenz eines US-Fotografen (Einzelperson), vom Grafiker weiterberechnet: 500 USD\nIst das abgabepflichtig?",
+      "soll": ["R"],
+      "enthaelt": ["in fremder Währung angegeben"],
+      "verboten_text": ["Bemessungsgrundlage: 1.700,00 €", "83,30 €"],
+      "knoepfe": {"verwerterart": "Eigenwerbung", "auftragnehmer_typ": "natürliche Person", "ein_auftragnehmer": "ja, alle vom selben Auftragnehmer"}
+    },
+    {
+      "id": "W-08",
+      "gruppe": "Währung: japanischer Yen (große Zahl)",
+      "referenz": "L-23",
+      "sicherheit": "Soll nach Testfall L-23",
+      "frage": "Unser Unternehmen hat 2026 für eine Werbekampagne einer freien Illustratorin (Einzelperson) aus Tokio 250.000 Yen gezahlt. Abgabepflichtig?",
+      "soll": ["R"],
+      "enthaelt": ["in fremder Währung angegeben"],
+      "verboten_text": ["12.250,00 €", "Bemessungsgrundlage: 250.000,00 €"],
+      "knoepfe": {"verwerterart": "Eigenwerbung", "auftragnehmer_typ": "natürliche Person", "ein_auftragnehmer": "ja, alle vom selben Auftragnehmer"}
+    },
+    {
+      "id": "W-09",
+      "gruppe": "Gegenprobe: Euro-Rechnung",
+      "referenz": "KSVG § 24 Abs. 2, Schwelle 2026",
+      "sicherheit": "Zahl nachgerechnet: 2.000,00 € × 4,9 % = 98,00 €",
+      "frage": "Unsere GmbH hat 2026 für eigene Werbung einem freien Fotografen (Einzelperson) 2.000 € für Werbefotos gezahlt. Ist das abgabepflichtig?",
+      "soll": ["A"],
+      "zahl": {"bemessungsgrundlage": "2000.00", "abgabe": "98.00"},
+      "knoepfe": {"verwerterart": "Eigenwerbung", "auftragnehmer_typ": "natürliche Person", "ein_auftragnehmer": "ja, alle vom selben Auftragnehmer"}
+    },
+    {
+      "id": "W-10",
+      "gruppe": "Gegenprobe: Euro-Rechnung, 'Dollar' nur erwähnt",
+      "referenz": "KSVG § 24 Abs. 2, Schwelle 2026",
+      "sicherheit": "Zahl nachgerechnet: 1.500,00 € × 4,9 % = 73,50 €",
+      "frage": "Unsere GmbH hat 2026 für eigene Werbung einem freien Grafiker (Einzelperson) aus Kanada 1.500 € gezahlt. Die Rechnung lautet auf Euro, nicht auf kanadische Dollar. Ist das abgabepflichtig?",
+      "soll": ["A"],
+      "zahl": {"bemessungsgrundlage": "1500.00", "abgabe": "73.50"},
+      "knoepfe": {"verwerterart": "Eigenwerbung", "auftragnehmer_typ": "natürliche Person", "ein_auftragnehmer": "ja, alle vom selben Auftragnehmer"}
+    }
+  ]
+}

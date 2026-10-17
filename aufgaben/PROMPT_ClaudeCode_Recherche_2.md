@@ -1,0 +1,22 @@
+# Auftrag an Claude Code (lokal, C:\ksk cloud) – Recherche 2
+
+Regeln wie bei Recherche 1: nur öffentliche, frei abrufbare Quellen; keine Kundendaten; nichts außerhalb von `quellen/` ändern; vor Beginn `git pull`. Jede Datei mit Quelle (URL), Abrufdatum und SHA256 in `quellen/index.csv` eintragen (Dokumentart ehrlich: Urteil / Gesetz-Momentaufnahme / Verwaltungsvorschrift / Archivkopie). Nichts erfinden und nichts zusammenfassen: Volltext speichern. Was nicht gefunden wird, mit Datum und versuchter URL in `quellen/NICHT_GEFUNDEN.md` ergänzen (bestehende Einträge nicht löschen). Keine Umgehung von Captchas, Paywalls oder Zugangsbeschränkungen; wenn eine Seite das verlangt, als „nicht gefunden“ notieren.
+
+## A. Rechtsprechung zur Künstlersozialabgabe (Volltexte nach `quellen/ergaenzend/urteile/`, Dateiname `<Gericht>_<JJJJ-MM-TT>_<Aktenzeichen>.<pdf|txt>`)
+1. BSG-Entscheidungen des 3. Senats mit Aktenzeichen **B 3 KS** und **B 3 KR** (Künstlersozialabgabe), die **nach dem 01.06.2022** ergangen sind (z. B. zur Rechtslage ab 2023, zu § 24 Abs. 2 n. F., Schwellenwert, Veranstaltungen). Suche über bsg.bund.de (Entscheidungen ab ca. 2018 abrufbar) und rechtsprechung-im-internet.de.
+2. Landessozialgerichte und Sozialgerichte: Entscheidungen zur Künstlersozialabgabe (§§ 23–36 KSVG) ab 2018, insbesondere zu: Influencer/Social Media, Webdesign, Fotografie, Veranstalter/Generalklausel, GmbH-Gesellschafter, Verjährung/Säumniszuschläge, Schätzung, Auslandsbezug. Freie Quellen: Landesjustizportale (z. B. nrwe.justiz.nrw.de, landesrecht-bw.de, rechtsprechung.hessen.de, gesetze-bayern.de, rechtsprechung.niedersachsen.de, justiz.sachsen.de, berlin.de/sen/justiz/gerichte), sozialgerichtsbarkeit.de (nur wenn ohne JavaScript-Zwang abrufbar), rechtsprechung-im-internet.de. Pro Entscheidung nur Volltext speichern; Treffer ohne Volltext nur in einer Liste `quellen/ergaenzend/urteile/LISTE_LSG_SG.md` (Gericht, Datum, Aktenzeichen, Fundort-URL, Thema in 5 Wörtern) führen.
+3. Die in den KSK-Infos und Checklisten zitierten, bisher nicht im Repo vorhandenen Urteile, soweit frei abrufbar: BSG 07.07.2005 B 3 KR 29/04 R; BSG 12.11.2003 B 3 KR 8/03 R; BSG 12.11.2003 B 3 KR 10/03 R; BSG 04.03.2004 B 3 KR 15/03 R; BSG 31.08.2000 B 3 KR 27/99 R; BSG 24.06.1998 3 KR 10/97 R; BSG 16.04.1998 B 3 KR 7/97 R; BSG 17.06.1999 B 3 KR 1/98 R; BSG 24.07.2003 B 3 KR 37/02 R; BSG 18.09.2008 B 3 KS 4/07 R; BSG 12.08.2010 B 3 KS 2/09 R; BSG 16.07.2014 B 3 KS 3/13 R; BSG 02.04.2014 B 3 KS 3/12 R; BSG 04.06.2019 B 3 KS 2/18 R; LSG Berlin-Brandenburg 14.01.2010 L 9 KR 142/03; LSG Baden-Württemberg 27.04.2006 L 4 KR 2222/02. Zusätzlich das Aktenzeichen „B 3 KS 1/08 R“ (in der Checkliste Eigenwerber fälschlich mit Datum 18.09.2018 zitiert) suchen und das richtige Datum notieren.
+
+## B. Verfahrens- und Rechtsbehelfsrecht (Gesetzestext als Momentaufnahme mit Abrufdatum, nach `quellen/ergaenzend/`)
+4. SGG (Sozialgerichtsgesetz) von gesetze-im-internet.de (Widerspruch, Klage, Fristen: §§ 51, 54, 77–87, 90).
+5. SGB X (Verwaltungsverfahren: §§ 31–51, 78–84) von gesetze-im-internet.de.
+6. SGB I § 32 (Abwälzungsverbot) – falls nicht bereits in `ergaenzend/SGB_IV.pdf` enthalten, SGB I separat.
+7. EStG § 4 (Betriebsausgaben) und § 3 Nr. 12, 16, 26, 26a, 26b nur falls `ergaenzend/EStG.pdf` diese Paragrafen nicht enthält – vorher prüfen, nichts doppelt laden.
+
+## C. Verwaltungsvorschriften und Handreichungen
+8. Gemeinsames Rundschreiben der Spitzenverbände der Sozialversicherung vom 08.11.2017 („Statusfeststellung / Abgrenzung abhängige Beschäftigung – selbständige Tätigkeit“, in der KSK-Info zu GmbH-Gesellschaftern genannt), falls frei abrufbar (deutsche-rentenversicherung.de).
+9. Aktuelle Veröffentlichungen der Deutschen Rentenversicherung zur Prüfung der Künstlersozialabgabe (Arbeitgeberprüfung, z. B. Seiten „Künstlersozialabgabe“ und Formulare), soweit PDF/HTML frei abrufbar; Formular-Nummern im Dateinamen.
+10. KSK-Webseite: Seiten zu Abgabesätzen, Meldeverfahren, „Fragen und Antworten“ für Unternehmen, Steuerberater (Kundeninformationen) – als Text mit Abrufdatum speichern, falls nicht bereits in `ergaenzend/KSK-FAQ_*.txt` und `KSK-Webseite_*.txt` enthalten (vorher vergleichen).
+
+## D. Abschluss
+`git add quellen/ aufgaben/ && git commit -m "Recherche 2" && git pull --rebase origin main && git push origin main`. In der Antwort nur: Liste „heruntergeladen“ / „nicht gefunden“ mit Dateinamen, und bei A.2 die Anzahl der Treffer in `LISTE_LSG_SG.md`.

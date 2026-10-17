@@ -1,0 +1,5 @@
+datum,modus,bericht_stand,katalog,fall,soll,ist,urteil,dauer_s
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",cc10705,aufgaben/audit/testfall_alltag_4.json,alltag4:F1,A,Abgabepflichtig (Vorschlag),FALSCH,4.1
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",cc10705,aufgaben/audit/testfall_alltag_4.json,alltag4:F2,A,Ausnahme,FEHLER,3.3
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",cc10705,aufgaben/audit/testfall_alltag_4.json,alltag4:F3,N,Abgabepflichtig (Vorschlag),FALSCH,3.5
+2026-10-11,"Mistral (mistral-large-latest) – ROH, ohne KSK-Assistent (Vergleich)",cc10705,aufgaben/audit/testfall_alltag_4.json,alltag4:F4,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,2.1

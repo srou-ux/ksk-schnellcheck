@@ -1,0 +1,31 @@
+# Live-Test „Rechnungen prüfen“ mit KI-Unterstützung (Mistral Small, EU) – erfundene Rechnungen.
+# Start von Hand: Actions -> "Rechnungen prüfen live" -> Run workflow. Schlüssel nur als Secret MISTRAL_API_KEY.
+name: Rechnungen prüfen live
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  lauf:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: app/requirements.txt
+      - run: pip install --disable-pip-version-check -r app/requirements.txt
+      - name: Live-Test mit und ohne KI
+        env:
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+        run: python tests/app/livetest_dokumente_ki.py aufgaben/audit/rechnungen_ki_live.md
+      - name: Bericht ins Repo
+        if: always()
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add aufgaben/audit/rechnungen_ki_live.md || true
+          git diff --cached --quiet || git commit -m "Rechnungen prüfen live: Ergebnis"
+          git pull --rebase origin main && git push origin main || true

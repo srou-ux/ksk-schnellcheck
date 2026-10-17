@@ -1,0 +1,2 @@
+datum,modus,code_stand,katalog,fall,soll,ist,urteil,bemessungsgrundlage,abgabe,rueckfragen,gruende,dauer_s
+2026-10-14,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",809d91e,aufgaben/audit/haertetest_ht_2026_001.json,HT-2026-001,A/G,Rückfrage nötig,NACHGEFRAGT,,,0,"Soll ['A', 'G'], Ist R",0.4

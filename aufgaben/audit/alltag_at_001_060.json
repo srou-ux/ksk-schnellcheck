@@ -1,0 +1,1236 @@
+{
+  "hinweis": "Alltags-Serie AT-2026-001 bis 060 des Nutzers (14.10.2026), erfundene Daten. Jedes Soll vor der Aufnahme gegen Register, Regeln und das Excel-Blatt 'Tätigkeitsabgrenzung' geprüft; Abweichungen je Fall unter 'sicherheit'. Annahmen, die nicht im Text stehen, als Knöpfe bzw. 'nachtrag'. Status je Fall: Erwartungstyp / Fachstatus / Freigabe (ENTWURF). AT-046 bis 050 sind Dialoge (dialoge).",
+  "stand": "2026-10-15",
+  "kuerzel": {
+    "A": "Abgabepflichtig (Vorschlag)",
+    "N": "Nicht abgabepflichtig (Vorschlag)",
+    "G": "Grenzfall → Steuerberater entscheidet",
+    "R": "Rückfrage nötig",
+    "X": "Nicht abgedeckt (Quelle fehlt)",
+    "AUSKUNFT": "Auskunft aus dem Regelwerk",
+    "HINWEIS": "Hinweis"
+  },
+  "faelle": [
+    {
+      "id": "AT-2026-001",
+      "gruppe": "1 Eine Rechnung, ein Künstler",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "Eigenwerbung, 1.500 € > 1.000 € → 73,50 € (§ 24 Abs. 2 S. 1 Nr. 1; T-01 Webdesign, R-142/R-184).",
+      "frage": "Wir sind ein Handwerksbetrieb (Einzelperson, nutzt die Webseite fuer eigene Werbung). 2026 haben wir einem freien Webdesigner 1.500 EUR fuer unsere Firmenwebseite gezahlt.",
+      "soll": [
+        "A"
+      ],
+      "status": {
+        "erwartungstyp": "FEST",
+        "fachstatus": "BELEGT",
+        "freigabe": "ENTWURF"
+      },
+      "zahl": {
+        "abgabe": "73.50"
+      },
+      "knoepfe": {
+        "verwerterart": "Eigenwerbung",
+        "auftragnehmer_typ": "natürliche Person"
+      }
+    },
+    {
+      "id": "AT-2026-002",
+      "gruppe": "1 Eine Rechnung, ein Künstler",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "Privater Auftraggeber, kein Unternehmen (R-40, R-133).",
+      "frage": "Ich habe 2026 einem Fotografen 800 EUR fuer unsere Hochzeitsfotos bezahlt - privat, ich bin Angestellter.",
+      "soll": [
+        "N"
+      ],
+      "status": {
+        "erwartungstyp": "FEST",
+        "fachstatus": "BELEGT",
+        "freigabe": "ENTWURF"
+      }
+    },
+    {
+      "id": "AT-2026-003",
+      "gruppe": "1 Eine Rechnung, ein Künstler",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "Verlag typischer Verwerter; 2.800 × 4,9 % = 137,20 €.",
+      "frage": "Verlag (GmbH) zahlte 2026 einer freien Illustratorin 2.800 EUR fuer Bilder eines Kinderbuchs.",
+      "soll": [
+        "A"
+      ],
+      "status": {
+        "erwartungstyp": "FEST",
+        "fachstatus": "BELEGT",
+        "freigabe": "ENTWURF"
+      },
+      "zahl": {
+        "abgabe": "137.20"
+      },
+      "knoepfe": {
+        "auftragnehmer_typ": "natürliche Person"
+      }
+    },
+    {
+      "id": "AT-2026-004",
+      "gruppe": "1 Eine Rechnung, ein Künstler",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "GbR zählt (R-218). Firmenfeier: Eigenwerbung/Öffentlichkeitsarbeit (Annahme des Soll-Entwurfs) → 1.900 € > 1.000 € → 93,10 €. Die Art des Auftraggebers steht nicht eindeutig im Text: Rückfrage zulässig. Annahme Knöpfe: Eigenwerbung, GbR.",
+      "frage": "GmbH, 30-Jahr-Feier 2026, Band (4 Mitglieder, spielt als GbR) 1.900 EUR, Firmenveranstaltung.",
+      "soll": [
+        "A",
+        "R",
+        "G"
+      ],
+      "status": {
+        "erwartungstyp": "BEDINGT",
+        "fachstatus": "TATSACHEN_OFFEN",
+        "freigabe": "ENTWURF"
+      },
+      "zahl": {
+        "abgabe": "93.10"
+      },
+      "knoepfe": {
+        "verwerterart": "Eigenwerbung",
+        "auftragnehmer_typ": "GbR"
+      }
+    },
+    {
+      "id": "AT-2026-005",
+      "gruppe": "1 Eine Rechnung, ein Künstler",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "Abweichung vom Soll-Entwurf (dort 0 €): Das Excel-Blatt ordnet Werbetexte/Texter als publizistisch ein (T-03). 'keine Gestaltung' verneint keinen Begriff von T-03. Eigenwerbung 1.200 € > 1.000 € → 58,80 €. Berater-Punkt: Werbetexte (Prüfliste 1).",
+      "frage": "Onlineshop GmbH zahlte 2026 einem freien Texter 1.200 EUR fuer Newsletter-Texte (reine Dienstleistung, keine Gestaltung).",
+      "soll": [
+        "A",
+        "G",
+        "R"
+      ],
+      "status": {
+        "erwartungstyp": "BEDINGT",
+        "fachstatus": "RECHTLICH_ZU_PRÜFEN",
+        "freigabe": "ENTWURF"
+      },
+      "zahl": {
+        "abgabe": "58.80"
+      },
+      "knoepfe": {
+        "verwerterart": "Eigenwerbung",
+        "auftragnehmer_typ": "natürliche Person"
+      }
+    },
+    {
+      "id": "AT-2026-006",
+      "gruppe": "1 Eine Rechnung, ein Künstler",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "900 € ≤ 1.000 € → keine Abgabepflicht als Eigenwerber (Register-Operator '>').",
+      "frage": "Startup UG, 2026 an freien Grafiker 900 EUR fuer Logo-Design gezahlt (Eigenwerbung-Zweck, unternehmerisch).",
+      "soll": [
+        "N"
+      ],
+      "status": {
+        "erwartungstyp": "FEST",
+        "fachstatus": "BELEGT",
+        "freigabe": "ENTWURF"
+      },
+      "knoepfe": {
+        "auftragnehmer_typ": "natürliche Person"
+      },
+      "verboten_text": [
+        "44,10"
+      ]
+    },
+    {
+      "id": "AT-2026-007",
+      "gruppe": "1 Eine Rechnung, ein Künstler",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "Werbeagentur typischer Verwerter, keine Schwelle; Sprecher T-05; 650 × 4,9 % = 31,85 €.",
+      "frage": "Agentur (GmbH) zahlte 2026 einer freien Sprecherin 650 EUR fuer die Aufnahme eines Werbespots.",
+      "soll": [
+        "A"
+      ],
+      "status": {
+        "erwartungstyp": "FEST",
+        "fachstatus": "BELEGT",
+        "freigabe": "ENTWURF"
+      },
+      "zahl": {
+        "abgabe": "31.85"
+      },
+      "knoepfe": {
+        "verwerterart": "Typischer Verwerter",
+        "auftragnehmer_typ": "natürliche Person"
+      }
+    },
+    {
+      "id": "AT-2026-008",
+      "gruppe": "1 Eine Rechnung, ein Künstler",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "Journalist = Publizist (T-03). Kundenmagazin: Eigenwerbung/Öffentlichkeitsarbeit (KSK-Info 14) – Abweichung vom Soll-Entwurf ('Bank = typischer Verwerter'); 2.000 € > 1.000 € → 98,00 € in beiden Fällen.",
+      "frage": "Bank AG zahlte 2026 einem freien Journalisten 2.000 EUR fuer eine monatliche Geldanlage-Kolumne im Kundenmagazin.",
+      "soll": [
+        "A"
+      ],
+      "status": {
+        "erwartungstyp": "FEST",
+        "fachstatus": "BELEGT",
+        "freigabe": "ENTWURF"
+      },
+      "zahl": {
+        "abgabe": "98.00"
+      },
+      "knoepfe": {
+        "verwerterart": "Eigenwerbung",
+        "auftragnehmer_typ": "natürliche Person"
+      }
+    },
+    {
+      "id": "AT-2026-009",
+      "gruppe": "1 Eine Rechnung, ein Künstler",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "Floristik steht nicht im Excel-Blatt; eine Einordnung 'nicht künstlerisch' allein durch das Modell ist kein Beleg → Grenzfall zulässig (Lücke im Blatt, Berater-Punkt). Bei Eigenwerbung 500 € ≤ 1.000 € ohnehin N. Nie 24,50 €.",
+      "frage": "Hotel GmbH zahlte 2026 einer freien Floristin 500 EUR fuer regelmaessige Blumengestecke in der Lobby.",
+      "soll": [
+        "N",
+        "G",
+        "R"
+      ],
+      "status": {
+        "erwartungstyp": "BEDINGT",
+        "fachstatus": "QUELLE_FEHLT",
+        "freigabe": "ENTWURF"
+      },
+      "knoepfe": {
+        "verwerterart": "Eigenwerbung",
+        "auftragnehmer_typ": "natürliche Person"
+      },
+      "verboten_text": [
+        "24,50"
+      ]
+    },
+    {
+      "id": "AT-2026-010",
+      "gruppe": "1 Eine Rechnung, ein Künstler",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "Generalklausel, eine Veranstaltung ≤ 3 → keine Abgabe (§ 24 Abs. 2 S. 3 Nr. 1); zusätzlich 400 € ≤ 1.000 €.",
+      "frage": "Sportverein (e.V., nicht gemeinnuetzig) zahlte 2026 einem freien DJ 400 EUR fuer die Jahresparty (Eintritt wurde genommen).",
+      "soll": [
+        "N",
+        "R"
+      ],
+      "status": {
+        "erwartungstyp": "FEST",
+        "fachstatus": "BELEGT",
+        "freigabe": "ENTWURF"
+      },
+      "knoepfe": {
+        "verwerterart": "Veranstalter (Generalklausel)",
+        "auftragnehmer_typ": "natürliche Person"
+      }
+    },
+    {
+      "id": "AT-2026-011",
+      "gruppe": "1 Eine Rechnung, ein Künstler",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "Eigenwerbung (eigene Produktbilder), 3.400 € > 1.000 € → 166,60 € (Fotografie T-04).",
+      "frage": "Onlineshop GmbH, 2026: Produktfotograf (Einzelperson) 3.400 EUR fuer Produktbilder des Shops.",
+      "soll": [
+        "A"
+      ],
+      "status": {
+        "erwartungstyp": "FEST",
+        "fachstatus": "BELEGT",
+        "freigabe": "ENTWURF"
+      },
+      "zahl": {
+        "abgabe": "166.60"
+      },
+      "knoepfe": {
+        "verwerterart": "Eigenwerbung",
+        "auftragnehmer_typ": "natürliche Person"
+      }
+    },
+    {
+      "id": "AT-2026-012",
+      "gruppe": "1 Eine Rechnung, ein Künstler",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "Excel: Übersetzung (Art und Zweck unklar) = Grenzfall (T-61). Soll-Typ GRENZFALL.",
+      "frage": "Messe GmbH zahlte 2026 einer freien Uebersetzerin 1.800 EUR fuer die Uebersetzung des Ausstellungskatalogs.",
+      "soll": [
+        "G",
+        "R",
+        "A"
+      ],
+      "status": {
+        "erwartungstyp": "BEDINGT",
+        "fachstatus": "RECHTLICH_ZU_PRÜFEN",
+        "freigabe": "ENTWURF"
+      },
+      "knoepfe": {
+        "verwerterart": "Typischer Verwerter",
+        "auftragnehmer_typ": "natürliche Person"
+      }
+    },
+    {
+      "id": "AT-2026-013",
+      "gruppe": "1 Eine Rechnung, ein Künstler",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "Label typischer Verwerter, Tänzer künstlerisch (KSK-Info 06) → 78,40 €. Das Blatt trifft hier Tanz und Film/Video zugleich (Widerspruch) → Grenzfall zulässig (Lücke im Blatt: 'Tänzer' fehlt als Begriff).",
+      "frage": "Plattenlabel GmbH zahlte 2026 einem freien Taenzer 1.600 EUR fuer ein Musikvideo.",
+      "soll": [
+        "A",
+        "G"
+      ],
+      "status": {
+        "erwartungstyp": "BEDINGT",
+        "fachstatus": "QUELLE_FEHLT",
+        "freigabe": "ENTWURF"
+      },
+      "zahl": {
+        "abgabe": "78.40"
+      },
+      "knoepfe": {
+        "verwerterart": "Typischer Verwerter",
+        "auftragnehmer_typ": "natürliche Person"
+      }
+    },
+    {
+      "id": "AT-2026-014",
+      "gruppe": "1 Eine Rechnung, ein Künstler",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "Soll-Typ GRENZFALL: Gutachten nicht künstlerisch (nicht im Blatt), Layoutanteil 800 € als Nebenleistung? Nie 245,00 € still.",
+      "frage": "Unternehmensberatung GmbH zahlte 2026 einem freien Sachverstaendigen 5.000 EUR fuer ein Gutachten inkl. Layout und Diagramme (Layout 800 EUR Anteil laut Rechnung).",
+      "soll": [
+        "G",
+        "R",
+        "N"
+      ],
+      "status": {
+        "erwartungstyp": "BEDINGT",
+        "fachstatus": "RECHTLICH_ZU_PRÜFEN",
+        "freigabe": "ENTWURF"
+      },
+      "knoepfe": {
+        "verwerterart": "Eigenwerbung",
+        "auftragnehmer_typ": "natürliche Person"
+      },
+      "verboten_text": [
+        "245,00"
+      ]
+    },
+    {
+      "id": "AT-2026-015",
+      "gruppe": "1 Eine Rechnung, ein Künstler",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "Direktzahlung des Paares / nur vermittelt: nie still als eigene Zahlung zählen (KSK-Info 27). Ein Grenzfall darf den Betrag 'falls er zählt' nennen (wie HT-2026-001); verboten ist nur 'abgabepflichtig'.",
+      "frage": "Eventagentur GmbH organisiert Hochzeiten; 2026 an freien Hochzeitsfotografen 2.200 EUR - aber bezahlt hat ihn am Ende das Brautpaar direkt, wir haben nur vermittelt, unser Honorar vom Paar betraf nur die Organisation.",
+      "soll": [
+        "N",
+        "G",
+        "R"
+      ],
+      "status": {
+        "erwartungstyp": "BEDINGT",
+        "fachstatus": "TATSACHEN_OFFEN",
+        "freigabe": "ENTWURF"
+      },
+      "knoepfe": {
+        "verwerterart": "Typischer Verwerter",
+        "auftragnehmer_typ": "natürliche Person"
+      }
+    },
+    {
+      "id": "AT-2026-016",
+      "gruppe": "2 Mehrere Rechnungen / Jahr",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "5.900 × 4,9 % = 289,10 €.",
+      "frage": "Werbeagentur GmbH (typischer Verwerter) zahlte 2026: Grafikerin A 3.200 EUR, Grafiker B 1.800 EUR, Illustratorin C 900 EUR (je selbständig, Einzelpersonen, kuenstlerisch).",
+      "soll": [
+        "A"
+      ],
+      "status": {
+        "erwartungstyp": "FEST",
+        "fachstatus": "BELEGT",
+        "freigabe": "ENTWURF"
+      },
+      "zahl": {
+        "bemessungsgrundlage": "5900",
+        "abgabe": "289.10"
+      }
+    },
+    {
+      "id": "AT-2026-017",
+      "gruppe": "2 Mehrere Rechnungen / Jahr",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "Druckerei-GmbH ausgeschlossen; 400 € ≤ 1.000 € → N.",
+      "frage": "Buchhaltungsbuero (Einzelperson, Eigenwerbung), 2026: 400 EUR an Grafikerin fuer Visitenkarten, 350 EUR an Druckerei (GmbH) fuer Drucksachen.",
+      "soll": [
+        "N"
+      ],
+      "status": {
+        "erwartungstyp": "FEST",
+        "fachstatus": "BELEGT",
+        "freigabe": "ENTWURF"
+      },
+      "knoepfe": {
+        "auftragnehmer_typ": "natürliche Person"
+      },
+      "verboten_text": [
+        "Bemessungsgrundlage: 750,00 €"
+      ]
+    },
+    {
+      "id": "AT-2026-018",
+      "gruppe": "2 Mehrere Rechnungen / Jahr",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "Webdesign T-01, Texter T-03 (Blatt: publizistisch) → 1.100 € > 1.000 € → 53,90 €. (Der Entwurf nannte im Text eine Annahme zum Blatt; sie ist weggelassen, weil das Blatt selbst entscheidet.)",
+      "frage": "Steuerkanzlei (GmbH, Eigenwerbung), 2026: 650 EUR Webdesigner, 450 EUR Texter (beide Einzelpersonen).",
+      "soll": [
+        "A",
+        "G"
+      ],
+      "status": {
+        "erwartungstyp": "BEDINGT",
+        "fachstatus": "RECHTLICH_ZU_PRÜFEN",
+        "freigabe": "ENTWURF"
+      },
+      "zahl": {
+        "abgabe": "53.90"
+      },
+      "knoepfe": {
+        "auftragnehmer_typ": "natürliche Person"
+      }
+    },
+    {
+      "id": "AT-2026-019",
+      "gruppe": "2 Mehrere Rechnungen / Jahr",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "Summe im Jahr 1.800 €; Art des Auftraggebers offen (Fallgruppe 11) → Rückfrage erwünscht; mit Eigenwerbung 1.800 € > 1.000 € → 88,20 €.",
+      "frage": "Restaurant (Einzelperson), 2026 sechsmal je 300 EUR an denselben Gitarristen (1.800 EUR insgesamt) fuer Live-Musik fuer die Gaeste.",
+      "soll": [
+        "A",
+        "R",
+        "G"
+      ],
+      "status": {
+        "erwartungstyp": "RÜCKFRAGE",
+        "fachstatus": "TATSACHEN_OFFEN",
+        "freigabe": "ENTWURF"
+      },
+      "zahl": {
+        "abgabe": "88.20"
+      },
+      "knoepfe": {
+        "verwerterart": "Eigenwerbung",
+        "auftragnehmer_typ": "natürliche Person"
+      }
+    },
+    {
+      "id": "AT-2026-020",
+      "gruppe": "2 Mehrere Rechnungen / Jahr",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "Zwei Jahre in einer Nachricht → Rückfrage (je Jahr getrennt, R-20). Je Jahr richtig: 2025 125,00 €, 2026 186,20 €. Nie 6.300 € zusammen.",
+      "frage": "Zahlungen an dieselbe Illustratorin: 2025: 2.500 EUR; 2026: 3.800 EUR. Was gilt je Jahr?",
+      "soll": [
+        "R"
+      ],
+      "status": {
+        "erwartungstyp": "RÜCKFRAGE",
+        "fachstatus": "BELEGT",
+        "freigabe": "ENTWURF"
+      },
+      "verboten_text": [
+        "Bemessungsgrundlage: 6.300,00 €"
+      ]
+    },
+    {
+      "id": "AT-2026-021",
+      "gruppe": "2 Mehrere Rechnungen / Jahr",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "1.000,00 € übersteigt 1.000 € nicht → N (Register-Operator '>').",
+      "frage": "Einzelperson, Eigenwerbung, 2026: EXAKT 1.000,00 EUR an freie Kuenstlerin (eine Rechnung).",
+      "soll": [
+        "N"
+      ],
+      "status": {
+        "erwartungstyp": "FEST",
+        "fachstatus": "BELEGT",
+        "freigabe": "ENTWURF"
+      },
+      "knoepfe": {
+        "auftragnehmer_typ": "natürliche Person"
+      },
+      "verboten_text": [
+        "49,00"
+      ],
+      "nachtrag": "Es war eine Illustration."
+    },
+    {
+      "id": "AT-2026-022",
+      "gruppe": "2 Mehrere Rechnungen / Jahr",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "Abweichung vom Soll-Entwurf (49,00 €): 1.000,01 × 4,9 % = 49,000049 € – mehr als zwei Nachkommastellen, Rundung ungeklärt → keine Zahl (Grundregel 7).",
+      "frage": "Einzelperson, Eigenwerbung, 2026: 1.000,01 EUR an eine freie Illustratorin.",
+      "soll": [
+        "A"
+      ],
+      "status": {
+        "erwartungstyp": "FEST",
+        "fachstatus": "BELEGT",
+        "freigabe": "ENTWURF"
+      },
+      "zahl": {
+        "bemessungsgrundlage": "1000.01"
+      },
+      "knoepfe": {
+        "auftragnehmer_typ": "natürliche Person"
+      }
+    },
+    {
+      "id": "AT-2026-023",
+      "gruppe": "2 Mehrere Rechnungen / Jahr",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "Summe 1.000 € übersteigt 1.000 € nicht → N.",
+      "frage": "Eigenwerber, 2026: 8 Rechnungen an zwei Kuenstler: Kuenstler A 4 x 150 EUR, Kuenstler B 4 x 100 EUR.",
+      "soll": [
+        "N",
+        "R"
+      ],
+      "status": {
+        "erwartungstyp": "FEST",
+        "fachstatus": "BELEGT",
+        "freigabe": "ENTWURF"
+      },
+      "knoepfe": {
+        "auftragnehmer_typ": "natürliche Person"
+      },
+      "verboten_text": [
+        "49,00"
+      ],
+      "nachtrag": "Es waren Illustrationen."
+    },
+    {
+      "id": "AT-2026-024",
+      "gruppe": "2 Mehrere Rechnungen / Jahr",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "Design + Foto + Retusche = 7.000 € → 343,00 €; Modell (nicht im Blatt) und Lizenz (T-68 Grenzfall) offen → Grenzfall zulässig; Stock-GmbH ausgeschlossen. 15.10.2026 (live f6a5d1a): das Modell zählte das Modellhonorar als darstellende Kunst (382,20 €); seit T-76 (Fotomodell, Grenzfall) entscheidet der Steuerberater.",
+      "frage": "Werbeagentur (Verwerter), 2026, Rechnung an uns: Kampagnen-Design 4.000 EUR, Fotografie 2.500 EUR (Freelancerin laut Positionsangabe), Modellhonorar 800 EUR (Modell = Einzelperson), Retusche 500 EUR, Lizenzbilder 300 EUR (Stock-Agentur GmbH).",
+      "soll": [
+        "A",
+        "G",
+        "R"
+      ],
+      "status": {
+        "erwartungstyp": "BEDINGT",
+        "fachstatus": "RECHTLICH_ZU_PRÜFEN",
+        "freigabe": "ENTWURF"
+      },
+      "zahl": {
+        "abgabe": "343.00"
+      },
+      "knoepfe": {
+        "auftragnehmer_typ": "natürliche Person"
+      }
+    },
+    {
+      "id": "AT-2026-025",
+      "gruppe": "2 Mehrere Rechnungen / Jahr",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "Band (GbR, R-218) und Sänger je 2.000 € → 196,00 €.",
+      "frage": "Verlag zahlte 2026 EINE Ueberweisung ueber 4.000 EUR 'an die Band X und den Saenger Y' (je 2.000 EUR laut Rechnungsaufstellung beider).",
+      "soll": [
+        "A"
+      ],
+      "status": {
+        "erwartungstyp": "FEST",
+        "fachstatus": "BELEGT",
+        "freigabe": "ENTWURF"
+      },
+      "zahl": {
+        "bemessungsgrundlage": "4000",
+        "abgabe": "196.00"
+      },
+      "knoepfe": {
+        "auftragnehmer_typ": "natürliche Person"
+      }
+    },
+    {
+      "id": "AT-2026-026",
+      "gruppe": "2 Mehrere Rechnungen / Jahr",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "Gezahlt 1.960 € (Zahlung maßgeblich) → 96,04 €.",
+      "frage": "Honorar 2026: 2.000 EUR an einen freien Illustrator, 2 % Skonto bei Zahlung in 10 Tagen - wir haben in 10 Tagen gezahlt: 1.960 EUR.",
+      "soll": [
+        "A"
+      ],
+      "status": {
+        "erwartungstyp": "FEST",
+        "fachstatus": "BELEGT",
+        "freigabe": "ENTWURF"
+      },
+      "zahl": {
+        "abgabe": "96.04"
+      },
+      "knoepfe": {
+        "verwerterart": "Eigenwerbung",
+        "auftragnehmer_typ": "natürliche Person"
+      },
+      "verboten_text": [
+        "Bemessungsgrundlage: 2.000,00 €"
+      ]
+    },
+    {
+      "id": "AT-2026-027",
+      "gruppe": "2 Mehrere Rechnungen / Jahr",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "Nur Gezahltes zählt: 1.800 € → 88,20 €; 1.200 € offen ausgewiesen. Nie 3.000 €. 15.10.2026 (live f6a5d1a): das Modell legte nur 3.000 € an (147,00 €); seit teilzahlung_aus_text: 1.800 € gezahlt, 1.200 € offen.",
+      "frage": "Honorar 2026 3.000 EUR an freien Komponisten; wir haben am 15.12.2026 1.800 EUR angezahlt, Rest 1.200 EUR stehen noch aus.",
+      "soll": [
+        "A",
+        "G"
+      ],
+      "status": {
+        "erwartungstyp": "FEST",
+        "fachstatus": "TATSACHEN_OFFEN",
+        "freigabe": "ENTWURF"
+      },
+      "zahl": {
+        "abgabe": "88.20"
+      },
+      "knoepfe": {
+        "verwerterart": "Typischer Verwerter",
+        "auftragnehmer_typ": "natürliche Person"
+      },
+      "verboten_text": [
+        "Bemessungsgrundlage: 3.000,00 €"
+      ]
+    },
+    {
+      "id": "AT-2026-028",
+      "gruppe": "2 Mehrere Rechnungen / Jahr",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "Zahlungsjahr 2026 (R-20) → 1.500 € > 1.000 € → 73,50 €.",
+      "frage": "Rechnung vom 20.12.2025 (Honorar 1.500 EUR, Illustration), Zahlung am 05.01.2026. Wir sind Einzelperson, Eigenwerbung.",
+      "soll": [
+        "A"
+      ],
+      "status": {
+        "erwartungstyp": "FEST",
+        "fachstatus": "BELEGT",
+        "freigabe": "ENTWURF"
+      },
+      "zahl": {
+        "abgabe": "73.50"
+      },
+      "knoepfe": {
+        "auftragnehmer_typ": "natürliche Person"
+      },
+      "verboten_text": [
+        "Jahr: 2025"
+      ]
+    },
+    {
+      "id": "AT-2026-029",
+      "gruppe": "2 Mehrere Rechnungen / Jahr",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "12 × 500 = 6.000 € → 294,00 €.",
+      "frage": "Agentur (Verwerter): Illustrator-Vertrag 2026, monatlich 500 EUR, 12 Monate - gezahlt je Monat.",
+      "soll": [
+        "A"
+      ],
+      "status": {
+        "erwartungstyp": "FEST",
+        "fachstatus": "BELEGT",
+        "freigabe": "ENTWURF"
+      },
+      "zahl": {
+        "abgabe": "294.00"
+      },
+      "knoepfe": {
+        "auftragnehmer_typ": "natürliche Person"
+      }
+    },
+    {
+      "id": "AT-2026-030",
+      "gruppe": "2 Mehrere Rechnungen / Jahr",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "Jahressumme 9.600 € → 470,40 €; nie je Monat prüfen.",
+      "frage": "Einzelperson (Eigenwerbung): Grafikerin monatlich 800 EUR, 2026 alle 12 Monate gezahlt (9.600 EUR).",
+      "soll": [
+        "A"
+      ],
+      "status": {
+        "erwartungstyp": "FEST",
+        "fachstatus": "BELEGT",
+        "freigabe": "ENTWURF"
+      },
+      "zahl": {
+        "abgabe": "470.40"
+      },
+      "knoepfe": {
+        "auftragnehmer_typ": "natürliche Person"
+      }
+    },
+    {
+      "id": "AT-2026-031",
+      "gruppe": "3 Nicht-Künstler / ausgeschlossene Empfänger",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "Nur Kapitalgesellschaften (R-138, R-216) → N.",
+      "frage": "Zahlungen 2026: an Video-GmbH 5.000 EUR, an Marketing-GmbH 3.000 EUR, an IT-GmbH 2.000 EUR.",
+      "soll": [
+        "N",
+        "R"
+      ],
+      "status": {
+        "erwartungstyp": "FEST",
+        "fachstatus": "BELEGT",
+        "freigabe": "ENTWURF"
+      },
+      "knoepfe": {
+        "verwerterart": "Typischer Verwerter"
+      }
+    },
+    {
+      "id": "AT-2026-032",
+      "gruppe": "3 Nicht-Künstler / ausgeschlossene Empfänger",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "Art des Auftraggebers offen → Rückfrage; mit Eigenwerbung 5.500 € → 269,50 €; PR-GmbH ausgeschlossen.",
+      "frage": "2026: 4.000 EUR an freien Cartoonisten, 6.000 EUR an eine PR-GmbH, 1.500 EUR an freien Fotografen.",
+      "soll": [
+        "A",
+        "R"
+      ],
+      "status": {
+        "erwartungstyp": "RÜCKFRAGE",
+        "fachstatus": "TATSACHEN_OFFEN",
+        "freigabe": "ENTWURF"
+      },
+      "zahl": {
+        "abgabe": "269.50"
+      },
+      "knoepfe": {
+        "verwerterart": "Eigenwerbung",
+        "auftragnehmer_typ": "natürliche Person"
+      }
+    },
+    {
+      "id": "AT-2026-033",
+      "gruppe": "3 Nicht-Künstler / ausgeschlossene Empfänger",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "Gehalt nicht (abhängig beschäftigt); 800 € ≤ 1.000 € bei Eigenwerbung → N. Nie das Gehalt mitrechnen. 15.10.2026 (live 1e97851): das Modell legte das Gehalt als Position an (4.300 €); seit dem Grund 'Gehalt aus abhängiger Beschäftigung' wird es offen ausgewiesen.",
+      "frage": "Wir beschaeftigen eine Photographin fest angestellt (Gehalt 3.500 EUR/Monat). Zusaetzlich 2026: 800 EUR an einen freien Fotografen fuer einen Auftrag.",
+      "soll": [
+        "N",
+        "R",
+        "G"
+      ],
+      "status": {
+        "erwartungstyp": "BEDINGT",
+        "fachstatus": "TATSACHEN_OFFEN",
+        "freigabe": "ENTWURF"
+      },
+      "knoepfe": {
+        "verwerterart": "Eigenwerbung",
+        "auftragnehmer_typ": "natürliche Person"
+      },
+      "verboten_text": [
+        "Bemessungsgrundlage: 42.800,00 €",
+        "Bemessungsgrundlage: 4.300,00 €"
+      ]
+    },
+    {
+      "id": "AT-2026-034",
+      "gruppe": "3 Nicht-Künstler / ausgeschlossene Empfänger",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "Steuerberatung nicht künstlerisch; steht nicht im Blatt → Grenzfall zulässig (Lücke). Nie 98,00 €. 15.10.2026 (live 1e97851): ein Grenzfall darf den Betrag 'falls künstlerisch' nennen; verboten ist nur 'abgabepflichtig' (Soll ohne A).",
+      "frage": "Zahlung 2026 2.000 EUR an einen freien Steuerberater fuer die Jahresabschluss-Pruefung.",
+      "soll": [
+        "N",
+        "G",
+        "R"
+      ],
+      "status": {
+        "erwartungstyp": "BEDINGT",
+        "fachstatus": "QUELLE_FEHLT",
+        "freigabe": "ENTWURF"
+      },
+      "knoepfe": {
+        "verwerterart": "Eigenwerbung",
+        "auftragnehmer_typ": "natürliche Person"
+      }
+    },
+    {
+      "id": "AT-2026-035",
+      "gruppe": "3 Nicht-Künstler / ausgeschlossene Empfänger",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "Imagefilm 1.200 € → 58,80 € (Eigenwerbung); die 900 € privat nie still mitzählen (Grenzfall/Rückfrage).",
+      "frage": "GmbH zahlte 2026: 1.200 EUR an Videograf fuer Imagefilm (Firmenzweck). Der Inhaber liess privat von demselben Videografen seine Hochzeit filmen: 900 EUR - vom GmbH-Konto bezahlt (Versehen).",
+      "soll": [
+        "A",
+        "G",
+        "R"
+      ],
+      "status": {
+        "erwartungstyp": "RÜCKFRAGE",
+        "fachstatus": "TATSACHEN_OFFEN",
+        "freigabe": "ENTWURF"
+      },
+      "zahl": {
+        "abgabe": "58.80"
+      },
+      "knoepfe": {
+        "verwerterart": "Eigenwerbung",
+        "auftragnehmer_typ": "natürliche Person"
+      },
+      "verboten_text": [
+        "Bemessungsgrundlage: 2.100,00 €"
+      ]
+    },
+    {
+      "id": "AT-2026-036",
+      "gruppe": "3 Nicht-Künstler / ausgeschlossene Empfänger",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "Plakatieren ist keine künstlerische Leistung. Das Blatt traf früher über 'plakat' Grafikdesign; seit 15.10.2026 gilt bei verneintem Begriff derselben Zeile Grenzfall. Nie 58,80 €. 15.10.2026 (live f6a5d1a): ein Grenzfall darf den Betrag 'falls künstlerisch' nennen; verboten ist nur 'abgabepflichtig' (Soll ohne A).",
+      "frage": "Zahlung 2026 an drei Studenten (Aushilfen, Werkvertraege) je 400 EUR fuer Festival-Plakatierung (aufkleben, keine Gestaltung).",
+      "soll": [
+        "N",
+        "G",
+        "R"
+      ],
+      "status": {
+        "erwartungstyp": "BEDINGT",
+        "fachstatus": "QUELLE_FEHLT",
+        "freigabe": "ENTWURF"
+      },
+      "knoepfe": {
+        "verwerterart": "Eigenwerbung",
+        "auftragnehmer_typ": "natürliche Person"
+      }
+    },
+    {
+      "id": "AT-2026-037",
+      "gruppe": "3 Nicht-Künstler / ausgeschlossene Empfänger",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "Soll-Typ GRENZFALL: Handwerk vs. Kunsthandwerk. Nie 122,50 € still.",
+      "frage": "Zahlung 2026: 2.500 EUR an Tapezierer-Meister (Einzelunternehmer) fuer Raumgestaltung Bueroraeume; 700 EUR davon laut Rechnung 'kreative Wandgestaltung nach eigenem Entwurf'.",
+      "soll": [
+        "G",
+        "R",
+        "N"
+      ],
+      "status": {
+        "erwartungstyp": "BEDINGT",
+        "fachstatus": "RECHTLICH_ZU_PRÜFEN",
+        "freigabe": "ENTWURF"
+      },
+      "knoepfe": {
+        "verwerterart": "Eigenwerbung",
+        "auftragnehmer_typ": "natürliche Person"
+      },
+      "verboten_text": [
+        "122,50"
+      ]
+    },
+    {
+      "id": "AT-2026-038",
+      "gruppe": "3 Nicht-Künstler / ausgeschlossene Empfänger",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "Eigenwerbung 600 € ≤ 1.000 € oder eine Veranstaltung ≤ 3 → N.",
+      "frage": "Buchhandlung (Einzelperson) zahlte 2026 einer Schriftstellerin 600 EUR fuer eine Lesung im Laden (Eintritt frei, nur Verkaufserloes Buecher).",
+      "soll": [
+        "N",
+        "R"
+      ],
+      "status": {
+        "erwartungstyp": "FEST",
+        "fachstatus": "BELEGT",
+        "freigabe": "ENTWURF"
+      },
+      "knoepfe": {
+        "verwerterart": "Eigenwerbung",
+        "auftragnehmer_typ": "natürliche Person"
+      }
+    },
+    {
+      "id": "AT-2026-039",
+      "gruppe": "3 Nicht-Künstler / ausgeschlossene Empfänger",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "GEMA = Verwertungsgesellschaft (R-44) → nicht zählend. Nie 73,50 €.",
+      "frage": "Hotelier (Einzelperson), 2026: nur 1.500 EUR GEMA-Pauschale an die GEMA gezahlt, keine direkten Kuenstlerzahlungen.",
+      "soll": [
+        "N",
+        "R",
+        "G"
+      ],
+      "status": {
+        "erwartungstyp": "FEST",
+        "fachstatus": "BELEGT",
+        "freigabe": "ENTWURF"
+      },
+      "knoepfe": {
+        "verwerterart": "Eigenwerbung",
+        "auftragnehmer_typ": "natürliche Person"
+      },
+      "verboten_text": [
+        "73,50"
+      ]
+    },
+    {
+      "id": "AT-2026-040",
+      "gruppe": "3 Nicht-Künstler / ausgeschlossene Empfänger",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "GmbH ausgeschlossen → N. Nie 117,60 €.",
+      "frage": "Gastronomie GmbH: 2026 2.400 EUR an Hintergrundmusik-Streamingdienst (GmbH, Lizenzmusik).",
+      "soll": [
+        "N",
+        "R",
+        "G"
+      ],
+      "status": {
+        "erwartungstyp": "FEST",
+        "fachstatus": "BELEGT",
+        "freigabe": "ENTWURF"
+      },
+      "knoepfe": {
+        "verwerterart": "Eigenwerbung",
+        "auftragnehmer_typ": "natürliche Person"
+      },
+      "verboten_text": [
+        "117,60"
+      ]
+    },
+    {
+      "id": "AT-2026-041",
+      "gruppe": "4 Rückfragen",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "Jahr fehlt → Rückfrage (R-20).",
+      "frage": "Wir haben einem freien Fotografen 1.500 EUR fuer Bilder gezahlt.",
+      "soll": [
+        "R"
+      ],
+      "status": {
+        "erwartungstyp": "RÜCKFRAGE",
+        "fachstatus": "BELEGT",
+        "freigabe": "ENTWURF"
+      },
+      "enthaelt": [
+        [
+          "Kalenderjahr"
+        ]
+      ]
+    },
+    {
+      "id": "AT-2026-042",
+      "gruppe": "4 Rückfragen",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "Betrag fehlt → Rückfrage; nie 'nicht abgedeckt'.",
+      "frage": "2026 haben wir einem Webdesigner fuer unsere neue Seite gezahlt.",
+      "soll": [
+        "R"
+      ],
+      "status": {
+        "erwartungstyp": "RÜCKFRAGE",
+        "fachstatus": "BELEGT",
+        "freigabe": "ENTWURF"
+      }
+    },
+    {
+      "id": "AT-2026-043",
+      "gruppe": "4 Rückfragen",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "Art des Auftraggebers und Leistung fehlen → Rückfrage vor jeder Rechnung.",
+      "frage": "2026: 2.500 EUR an freie Kuenstlerin gezahlt.",
+      "soll": [
+        "R"
+      ],
+      "status": {
+        "erwartungstyp": "RÜCKFRAGE",
+        "fachstatus": "BELEGT",
+        "freigabe": "ENTWURF"
+      }
+    },
+    {
+      "id": "AT-2026-044",
+      "gruppe": "4 Rückfragen",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "Unternehmer, Eigenwerbung, 400 € ≤ 1.000 € → N.",
+      "frage": "Ich verkaufe selbstgemachten Schmuck auf Maerkten (Einzelperson) und habe 2026 400 EUR an eine freie Fotografin fuer Produktfotos gezahlt.",
+      "soll": [
+        "N",
+        "R"
+      ],
+      "status": {
+        "erwartungstyp": "FEST",
+        "fachstatus": "BELEGT",
+        "freigabe": "ENTWURF"
+      },
+      "knoepfe": {
+        "verwerterart": "Eigenwerbung",
+        "auftragnehmer_typ": "natürliche Person"
+      }
+    },
+    {
+      "id": "AT-2026-045",
+      "gruppe": "4 Rückfragen",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "Betrag unklar → Rückfrage; nie 2.250 € (Mittelwert), nie still 2.000 €.",
+      "frage": "Wir haben 2026 einem Kuenstler Geld gezahlt, glaube 2.000 EUR oder so, vielleicht auch 2.500?",
+      "soll": [
+        "R"
+      ],
+      "status": {
+        "erwartungstyp": "RÜCKFRAGE",
+        "fachstatus": "BELEGT",
+        "freigabe": "ENTWURF"
+      },
+      "verboten_text": [
+        "2.250"
+      ]
+    },
+    {
+      "id": "AT-2026-051",
+      "gruppe": "5 Format und Sprache",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "Umgangssprache: kein Absturz; Rückfragen (Rechtsform, Art des Auftraggebers, Veranstaltungen) erwünscht.",
+      "frage": "Moin, wir hatten 2026 so n Event, da ham wir nem Typen vonner Band 1500 Euronen gezahlt. Sind wir da beim KSK-Ding dabei? Wir sind ne kleine Eventfirma als GmbH.",
+      "soll": [
+        "R",
+        "A",
+        "N",
+        "G"
+      ],
+      "status": {
+        "erwartungstyp": "RÜCKFRAGE",
+        "fachstatus": "TATSACHEN_OFFEN",
+        "freigabe": "ENTWURF"
+      }
+    },
+    {
+      "id": "AT-2026-052",
+      "gruppe": "5 Format und Sprache",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "'2.00 EUR' ist mehrdeutig (2 €, 200 €, 2.000 €) → Rückfrage erwünscht; nie 0,10 € (2 € × 4,9 %) still. Hinweis: rechnet das System mit 2 € (so steht es da), ist das sichtbar in der Bestätigung.",
+      "frage": "Wir sinde ine GmbH und habn 2026 einem Garfiker 2.00 EUR gezahlt.",
+      "soll": [
+        "R",
+        "A",
+        "N"
+      ],
+      "status": {
+        "erwartungstyp": "RÜCKFRAGE",
+        "fachstatus": "TATSACHEN_OFFEN",
+        "freigabe": "ENTWURF"
+      },
+      "verboten_text": [
+        "0,10 €"
+      ]
+    },
+    {
+      "id": "AT-2026-053",
+      "gruppe": "5 Format und Sprache",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "2.500 € (englisches Komma), Eigenwerbung → 122,50 €; nie 2,50 €.",
+      "frage": "We are a German GmbH and paid a freelance photographer EUR 2,500 in 2026 for our website photos.",
+      "soll": [
+        "A"
+      ],
+      "status": {
+        "erwartungstyp": "FEST",
+        "fachstatus": "BELEGT",
+        "freigabe": "ENTWURF"
+      },
+      "zahl": {
+        "abgabe": "122.50"
+      },
+      "knoepfe": {
+        "verwerterart": "Eigenwerbung",
+        "auftragnehmer_typ": "natürliche Person"
+      },
+      "verboten_text": [
+        "Bemessungsgrundlage: 2,50 €"
+      ]
+    },
+    {
+      "id": "AT-2026-054",
+      "gruppe": "5 Format und Sprache",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "4.000 € → 196,00 €; nie 4 €. Annahme Knöpfe: Eigenwerbung.",
+      "frage": "Wir haben 2026 viertausend Euro an eine freie Malerin gezahlt, GmbH.",
+      "soll": [
+        "A",
+        "R"
+      ],
+      "status": {
+        "erwartungstyp": "FEST",
+        "fachstatus": "BELEGT",
+        "freigabe": "ENTWURF"
+      },
+      "zahl": {
+        "abgabe": "196.00"
+      },
+      "knoepfe": {
+        "verwerterart": "Eigenwerbung",
+        "auftragnehmer_typ": "natürliche Person"
+      },
+      "verboten_text": [
+        "Bemessungsgrundlage: 4,00 €"
+      ],
+      "nachtrag": "Sie hat ein Gemälde als Kunstwerk für unser Büro gemalt."
+    },
+    {
+      "id": "AT-2026-055",
+      "gruppe": "5 Format und Sprache",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "Abweichung vom Soll-Entwurf (dort 147,00 €): Rechnungsteller ist die Firma X GmbH – Zahlungen an eine GmbH zählen nicht (R-138, R-216; vgl. Archivfall F3). Nie 147,00 € oder 171,50 €. 15.10.2026 (live f6a5d1a): der Knopf 'natürliche Person' war falsch hinterlegt (die Rechnung stellt die Firma X GmbH) und entfällt; fragt das System nach der Rechtsform, ist das richtig.",
+      "frage": "Rechnung Nr. 2026-114: Firma X GmbH, An: uns (Y GmbH). Position 1: Design-Konzept 1.800 EUR. Position 2: Illustrationen 1.200 EUR. Position 3: Druckkosten 500 EUR (an Druckerei Z GmbH weitergeleitet). Gesamtnetto 3.500 EUR.",
+      "soll": [
+        "N",
+        "G",
+        "R"
+      ],
+      "status": {
+        "erwartungstyp": "BEDINGT",
+        "fachstatus": "BELEGT",
+        "freigabe": "ENTWURF"
+      },
+      "knoepfe": {
+        "verwerterart": "Typischer Verwerter"
+      },
+      "verboten_text": [
+        "147,00",
+        "171,50"
+      ]
+    },
+    {
+      "id": "AT-2026-056",
+      "gruppe": "5 Format und Sprache",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "Autor = Publizist, Verlag typischer Verwerter → 147,00 €.",
+      "frage": "KSK-Frage: Verlag, Autorenhonorar 2026: Taschenbuch-Auflage 2.400 EUR, Ebook-Umsatzbeteiligung 600 EUR, beide an denselben freien Autor, zzgl. 0 EUR Sonstiges, Gesamt 3.000.",
+      "soll": [
+        "A"
+      ],
+      "status": {
+        "erwartungstyp": "FEST",
+        "fachstatus": "BELEGT",
+        "freigabe": "ENTWURF"
+      },
+      "zahl": {
+        "abgabe": "147.00"
+      },
+      "knoepfe": {
+        "auftragnehmer_typ": "natürliche Person"
+      }
+    },
+    {
+      "id": "AT-2026-057",
+      "gruppe": "5 Format und Sprache",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "1.750 € → 85,75 €. Die Art des Auftraggebers (GmbH: Agentur oder Eigenwerbung?) steht nicht im Text – eine Rückfrage ist zulässig (L1). Annahme Knöpfe: Eigenwerbung.",
+      "frage": "GmbH zahlt 2026 an Graphiker (Selbststaend., EZ-P.) 1.750 EUR.",
+      "soll": [
+        "A"
+      ],
+      "status": {
+        "erwartungstyp": "FEST",
+        "fachstatus": "BELEGT",
+        "freigabe": "ENTWURF"
+      },
+      "zahl": {
+        "abgabe": "85.75"
+      },
+      "knoepfe": {
+        "verwerterart": "Eigenwerbung",
+        "auftragnehmer_typ": "natürliche Person"
+      }
+    },
+    {
+      "id": "AT-2026-058",
+      "gruppe": "5 Format und Sprache",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "Zahlungsjahr 2026 → 1.200 € > 1.000 € (Eigenwerbung) → 58,80 €.",
+      "frage": "Paid on Jan 5, 2026: EUR 1.200 to freelance illustrator. Invoice dated Dec 20, 2025.",
+      "soll": [
+        "A",
+        "R"
+      ],
+      "status": {
+        "erwartungstyp": "FEST",
+        "fachstatus": "BELEGT",
+        "freigabe": "ENTWURF"
+      },
+      "zahl": {
+        "abgabe": "58.80"
+      },
+      "knoepfe": {
+        "verwerterart": "Eigenwerbung",
+        "auftragnehmer_typ": "natürliche Person"
+      },
+      "verboten_text": [
+        "Jahr: 2025"
+      ]
+    },
+    {
+      "id": "AT-2026-059",
+      "gruppe": "5 Format und Sprache",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "4,9 % (KSAbgV 2026).",
+      "frage": "Wie hoch ist der KSK-Abgabesatz 2026?",
+      "soll": [
+        "AUSKUNFT"
+      ],
+      "status": {
+        "erwartungstyp": "FEST",
+        "fachstatus": "BELEGT",
+        "freigabe": "ENTWURF"
+      },
+      "enthaelt": [
+        [
+          "4,9 %",
+          "4,9 Prozent"
+        ]
+      ]
+    },
+    {
+      "id": "AT-2026-060",
+      "gruppe": "5 Format und Sprache",
+      "referenz": "Alltags-Serie des Nutzers (14.10.2026)",
+      "sicherheit": "1.000 € für Eigenwerbung/Generalklausel; typische Verwerter ohne Grenze.",
+      "frage": "Ab wann muss man 2026 KSK zahlen? Also welche Grenze?",
+      "soll": [
+        "AUSKUNFT",
+        "R"
+      ],
+      "status": {
+        "erwartungstyp": "FEST",
+        "fachstatus": "BELEGT",
+        "freigabe": "ENTWURF"
+      },
+      "enthaelt": [
+        [
+          "1.000"
+        ]
+      ]
+    }
+  ],
+  "dialoge": [
+    {
+      "id": "AT-2026-046",
+      "datei": "aufgaben/audit/dialoge_alltag/at046.json"
+    },
+    {
+      "id": "AT-2026-047",
+      "datei": "aufgaben/audit/dialoge_alltag/at047.json"
+    },
+    {
+      "id": "AT-2026-048",
+      "datei": "aufgaben/audit/dialoge_alltag/at048.json"
+    },
+    {
+      "id": "AT-2026-049",
+      "datei": "aufgaben/audit/dialoge_alltag/at049.json"
+    },
+    {
+      "id": "AT-2026-050",
+      "datei": "aufgaben/audit/dialoge_alltag/at050.json"
+    }
+  ]
+}

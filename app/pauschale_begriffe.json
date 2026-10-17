@@ -1,0 +1,46 @@
+{
+  "_hinweis": "Prüfkatalog 11.10.2026 (P-20b, mistral-large-latest): Das Modell ordnete 'Sie hat die Übungsleiterpauschale schriftlich bestätigt' als normale Bewertung ein; die Pauschale (R-50, R-51, R-202, R-203) fehlte, die Abgabe war zu hoch. app/zuordnung.py::ergaenze_pauschale setzt die Anfrageart, wenn der Text genau eine Pauschale ausdrücklich nennt (nicht verneint). 'bestaetigt' setzt die Bestätigung nur, wenn sie im Text steht. Keine Festwerte im Code: die Listen stehen hier.",
+  "uebungsleiter": [
+    "übungsleiterpauschale",
+    "uebungsleiterpauschale",
+    "übungsleiterfreibetrag",
+    "uebungsleiterfreibetrag",
+    "§ 3 nr. 26 estg"
+  ],
+  "ehrenamt": [
+    "ehrenamtspauschale",
+    "ehrenamtsfreibetrag",
+    "§ 3 nr. 26a estg"
+  ],
+  "bestaetigt": [
+    "bestätigt",
+    "bestaetigt",
+    "bestätigung",
+    "bestaetigung"
+  ],
+  "verneinung": [
+    "kein",
+    "keine",
+    "keinen",
+    "nicht",
+    "ohne"
+  ],
+  "verbraucht": [
+    "verbraucht",
+    "ausgeschöpft",
+    "ausgeschoepft",
+    "bereits",
+    "schon",
+    "in anspruch genommen",
+    "genutzt"
+  ],
+  "_hinweis_ht_087": "Fehlerquellen-Serie HT-2026-087 (live 15.10.2026, 17010bf): 'Uebungsleiterpauschale 3.300 EUR anrechenbar' – das Modell legte die 3.300 € als ZAHLUNG an und zugleich als 'schon verbraucht' (333,20 € statt 9,80 €). app/zuordnung.py::_pauschale_angaben_aus_text: (1) ein Betrag, der direkt (Fenster wie _betraege_am_begriff) bei einem Pauschalen-Begriff steht und dort keinen Zahlungs-Begriff hat, ist die Höhe der Pauschale, keine Zahlung – die Position fällt weg (die Höhe kommt aus dem Register); (2) 'bereits ausgeschöpft' gilt nur, wenn beim Betrag ein Wort aus 'verbraucht' steht.",
+  "zahlung": [
+    "gezahlt",
+    "bezahlt",
+    "überwiesen",
+    "ueberwiesen",
+    "honorar",
+    "zahlung"
+  ]
+}

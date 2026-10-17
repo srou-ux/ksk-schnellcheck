@@ -1,0 +1,30 @@
+{
+  "_hinweis": "Korpus-Lauf 15.10.2026: app/zuordnung.py::veranstaltungszahl_aus_text liest die Zahl der Veranstaltungen aus dem Text ('5 Veranstaltungen', 'vier Konzerte'). Zahlwörter: Wert = Stelle in der Liste + 1. Keine Fachwerte (die Grenze von drei Veranstaltungen steht im Regelregister).",
+  "zahlwoerter": [
+    "eine",
+    "zwei",
+    "drei",
+    "vier",
+    "fuenf",
+    "sechs",
+    "sieben",
+    "acht",
+    "neun",
+    "zehn",
+    "elf",
+    "zwoelf"
+  ],
+  "einheiten": [
+    "veranstaltungen",
+    "veranstaltung",
+    "konzerte",
+    "konzert",
+    "auftritte",
+    "auftritt",
+    "vorstellungen",
+    "vorstellung",
+    "events",
+    "lesungen",
+    "abende"
+  ]
+}

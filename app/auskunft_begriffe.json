@@ -1,0 +1,38 @@
+{
+  "_hinweis": "Begriffslisten fuer app/zuordnung.py (Teil 1f, Nachtrag, Abschnitt A). Keine Festwerte im Code: diese Listen stehen hier. Ein vom Modell geliefertes auskunft_thema zaehlt nur, wenn mindestens einer der Begriffe seines Themas in der Nutzerfrage selbst steht -- sonst wird die Anfrageart 'auskunft' verworfen und wie 'bewertung' behandelt.",
+  "abgabesatz": [
+    "abgabesatz",
+    "satz",
+    "prozent"
+  ],
+  "schwelle": [
+    "schwelle",
+    "geringfügigkeit",
+    "geringfuegigkeit",
+    "bagatellgrenze",
+    "grenze",
+    "ab wann",
+    "grenzbetrag",
+    "ab welchem betrag",
+    "ab welcher summe",
+    "ab welcher höhe",
+    "ab welcher hoehe"
+  ],
+  "meldefrist": [
+    "meldefrist",
+    "melden",
+    "frist"
+  ],
+  "aufbewahrung": [
+    "aufbewahrung",
+    "aufbewahrungsfrist"
+  ],
+  "pauschale": [
+    "pauschale",
+    "ehrenamt",
+    "übungsleiter",
+    "uebungsleiter"
+  ],
+  "_hinweis_at_060": "Alltagstest AT-2026-060 (live 15.10.2026): 'Ab wann muss man 2026 KSK zahlen? Also welche Grenze?' – das Modell machte daraus eine Bewertung, das System fragte nach dem Betrag. 'grenze' und 'ab wann' ergänzt; app/zuordnung.py::absichere_anfrageart: eine Frage OHNE Betrag, ohne Positionen und ohne Leistung, die genau EIN Thema nennt, ist eine Auskunft.",
+  "_hinweis_korpus": "Korpus-Lauf 15.10.2026 (F12): 'Ab welchem Betrag ist Eigenwerbung 2019 abgabepflichtig (Grenzbetrag)?' – auch mit perfekten Fakten fragte das System nach dem Betrag, weil 'grenze' nur am Wortanfang zählt ('Grenzbetrag' nicht). 'grenzbetrag', 'ab welchem betrag', 'ab welcher summe', 'ab welcher höhe' ergänzt."
+}

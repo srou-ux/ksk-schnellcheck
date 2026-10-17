@@ -1,0 +1,30 @@
+{
+  "_hinweis": "Plausible Spannen für die Registerprüfung (python -m verifier.pruefe_register, Teil 1e C.2). Keine Rechtswerte: nur grobe Grenzen, außerhalb derer ein Wert sehr wahrscheinlich ein Tippfehler ist (z. B. Abgabesatz 49 statt 4,9). Ein Wert außerhalb ist ein Befund für die Freigabe, keine Korrektur. Ab welchem Jahr lückenlos geprüft wird, steht unter erstes_jahr.",
+  "erstes_jahr": 2019,
+  "abgabesatz_prozent": [0, 20],
+  "schwelle_euro": [0, 10000],
+  "pauschale_uebungsleiter": [0, 10000],
+  "pauschale_ehrenamt": [0, 5000],
+  "register": {
+    "aufbewahrung.jahre": [1, 30],
+    "meldefrist.monat": [1, 12],
+    "meldefrist.tag": [1, 31],
+    "musikverein.schueler_grenze": [0, 1000],
+    "saeumnis.bagatell_gesondert": [0, 1000],
+    "saeumnis.satz_prozent": [0, 10],
+    "saeumnis.stufe": [1, 1000],
+    "schaetzung.ausland_prozent": [0, 100],
+    "veranstaltungen.ausnahme_max": [0, 50],
+    "verpflegung.pauschale_gross": [0, 200],
+    "verpflegung.pauschale_klein": [0, 200],
+    "verpflegung.stunden_ganztag": [1, 24],
+    "verpflegung.stunden_grenze": [1, 24],
+    "vorauszahlung.monate": [1, 12],
+    "vorauszahlung.untergrenze": [0, 1000]
+  },
+  "texte": {
+    "schwelle.operator": [">", ">=", "<", "<=", "="],
+    "saeumnis.addition_vor_abrundung": ["ja", "nein"],
+    "rechtsform.kein_entgelt": ["gmbh", "ug", "ag", "kg", "ohg"]
+  }
+}

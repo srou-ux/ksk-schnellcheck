@@ -1,0 +1,134 @@
+{
+  "_hinweis": "ALLTAG-2026-999 / Härtetest RE-2026-777 (11.10.2026): Bei einem typischen Verwerter nannte die Antwort immer § 24 Abs. 1 Satz 1 Nr. 7 (Werbung für Dritte, R-07), auch bei einem Veranstalter. Die Nummer richtet sich nach der Art des Unternehmens. app/zuordnung.py::verwerter_aus_auftraggeber sucht diese Begriffe NUR in den Zeilen, die den Auftraggeber beschreiben (Zeilen mit einem Begriff aus 'auftraggeber_zeile'), in dieser Reihenfolge; der erste Treffer gilt; seine 'regeln' ersetzen R-07 (Messe: R-03 für § 24 Abs. 1 Nr. 3 und R-126 aus KSK-Info 13). 'typisch': diese Treffer belegen zugleich einen typischen Verwerter (§ 24 Abs. 1), wenn die Art des Auftraggebers noch fehlt. Ohne Treffer nennt die Antwort keine Nummer (nur § 24 Abs. 1). Wortanfang, Kleinschreibung. Ergänzt 14.10.2026 (P-14, 16 von 16 Läufen Rückfrage): Bandleader, der die Band unternehmerisch führt und die Mitglieder bezahlt, ist für deren Entgelte abgabepflichtig (R-31, KSK-Info 04 Abschn. 2d; Auslegung der KSK, kein Gesetz). Als Auftraggeber-Zeile nur ausdrücklich 'Ich bin Bandleader'.",
+  "auftraggeber_zeile": [
+    "rechnung an",
+    "rechnungsempfänger",
+    "rechnungsempfaenger",
+    "mein mandant",
+    "meine mandantin",
+    "mandant ist",
+    "wir sind",
+    "auftraggeber",
+    "ich bin bandleader",
+    "ich bin bandleaderin",
+    "ich bin bandleiter",
+    "ich bin bandleiterin"
+  ],
+  "regeln": [
+    {
+      "typisch": true,
+      "begriffe": [
+        "messe",
+        "messegesellschaft",
+        "ausstellungsgesellschaft",
+        "messeveranstalter",
+        "ausstellungs- und messegesellschaft",
+        "messepark",
+        "messezentrum",
+        "messegelände",
+        "messegelaende",
+        "messeveranstalterin"
+      ],
+      "regeln": [
+        "R-03",
+        "R-126"
+      ]
+    },
+    {
+      "typisch": true,
+      "begriffe": [
+        "konzertdirektion",
+        "theaterdirektion",
+        "gastspieldirektion",
+        "tourneeveranstalter",
+        "konzertagentur",
+        "konzertveranstalter",
+        "festival"
+      ],
+      "regeln": [
+        "R-03"
+      ]
+    },
+    {
+      "typisch": true,
+      "begriffe": [
+        "verlag",
+        "presseagentur",
+        "zeitschriftenverlag",
+        "buchverlag"
+      ],
+      "regeln": [
+        "R-01"
+      ]
+    },
+    {
+      "typisch": true,
+      "begriffe": [
+        "werbeagentur",
+        "pr-agentur",
+        "werbung für dritte",
+        "werbung fuer dritte"
+      ],
+      "regeln": [
+        "R-07"
+      ]
+    },
+    {
+      "typisch": true,
+      "begriffe": [
+        "galerie",
+        "kunsthandel",
+        "kunsthändler",
+        "auktionshaus"
+      ],
+      "regeln": [
+        "R-06"
+      ]
+    },
+    {
+      "typisch": true,
+      "begriffe": [
+        "theater",
+        "orchester"
+      ],
+      "regeln": [
+        "R-02"
+      ]
+    },
+    {
+      "typisch": true,
+      "begriffe": [
+        "rundfunk",
+        "fernsehsender",
+        "radiosender"
+      ],
+      "regeln": [
+        "R-04"
+      ]
+    },
+    {
+      "typisch": true,
+      "begriffe": [
+        "zirkus",
+        "varieté",
+        "variete",
+        "museum"
+      ],
+      "regeln": [
+        "R-08"
+      ]
+    },
+    {
+      "typisch": true,
+      "begriffe": [
+        "bandleader",
+        "bandleaderin",
+        "bandleiter",
+        "bandleiterin"
+      ],
+      "regeln": [
+        "R-31"
+      ]
+    }
+  ]
+}

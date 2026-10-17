@@ -1,0 +1,22 @@
+datum,modus,bericht_stand,katalog,fall,soll,ist,urteil,dauer_s
+2026-10-10,Mistral (mistral-small-latest) – im KSK-Assistenten,e3aa8fd,aufgaben/audit/testfall_20_positionen.json,testfall20:S-00,A/G,Abgabepflichtig (Vorschlag),FALSCH,4.7
+2026-10-10,Mistral (mistral-small-latest) – im KSK-Assistenten,e3aa8fd,aufgaben/audit/testfall_20_positionen.json,testfall20:S-01,A,Abgabepflichtig (Vorschlag),RICHTIG,1.7
+2026-10-10,Mistral (mistral-small-latest) – im KSK-Assistenten,e3aa8fd,aufgaben/audit/testfall_20_positionen.json,testfall20:S-02,N,Abgabepflichtig (Vorschlag),FALSCH,1.5
+2026-10-10,Mistral (mistral-small-latest) – im KSK-Assistenten,e3aa8fd,aufgaben/audit/testfall_20_positionen.json,testfall20:S-03,A,Abgabepflichtig (Vorschlag),RICHTIG,1.8
+2026-10-10,Mistral (mistral-small-latest) – im KSK-Assistenten,e3aa8fd,aufgaben/audit/testfall_20_positionen.json,testfall20:S-04,N,Abgabepflichtig (Vorschlag),FALSCH,1.5
+2026-10-10,Mistral (mistral-small-latest) – im KSK-Assistenten,e3aa8fd,aufgaben/audit/testfall_20_positionen.json,testfall20:S-05,A,Abgabepflichtig (Vorschlag),RICHTIG,2.1
+2026-10-10,Mistral (mistral-small-latest) – im KSK-Assistenten,e3aa8fd,aufgaben/audit/testfall_20_positionen.json,testfall20:S-06,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,1.7
+2026-10-10,Mistral (mistral-small-latest) – im KSK-Assistenten,e3aa8fd,aufgaben/audit/testfall_20_positionen.json,testfall20:S-07,A,Abgabepflichtig (Vorschlag),RICHTIG,1.5
+2026-10-10,Mistral (mistral-small-latest) – im KSK-Assistenten,e3aa8fd,aufgaben/audit/testfall_20_positionen.json,testfall20:S-08,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,1.5
+2026-10-10,Mistral (mistral-small-latest) – im KSK-Assistenten,e3aa8fd,aufgaben/audit/testfall_20_positionen.json,testfall20:S-09,A,Abgabepflichtig (Vorschlag),RICHTIG,1.7
+2026-10-10,Mistral (mistral-small-latest) – im KSK-Assistenten,e3aa8fd,aufgaben/audit/testfall_20_positionen.json,testfall20:S-10,N,Abgabepflichtig (Vorschlag),FALSCH,1.6
+2026-10-10,Mistral (mistral-small-latest) – im KSK-Assistenten,e3aa8fd,aufgaben/audit/testfall_20_positionen.json,testfall20:S-11,A,Abgabepflichtig (Vorschlag),RICHTIG,1.5
+2026-10-10,Mistral (mistral-small-latest) – im KSK-Assistenten,e3aa8fd,aufgaben/audit/testfall_20_positionen.json,testfall20:S-12,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,1.4
+2026-10-10,Mistral (mistral-small-latest) – im KSK-Assistenten,e3aa8fd,aufgaben/audit/testfall_20_positionen.json,testfall20:S-13,N,Abgabepflichtig (Vorschlag),FALSCH,1.4
+2026-10-10,Mistral (mistral-small-latest) – im KSK-Assistenten,e3aa8fd,aufgaben/audit/testfall_20_positionen.json,testfall20:S-14,A,Abgabepflichtig (Vorschlag),RICHTIG,2.8
+2026-10-10,Mistral (mistral-small-latest) – im KSK-Assistenten,e3aa8fd,aufgaben/audit/testfall_20_positionen.json,testfall20:S-15,G,Abgabepflichtig (Vorschlag),FALSCH,1.5
+2026-10-10,Mistral (mistral-small-latest) – im KSK-Assistenten,e3aa8fd,aufgaben/audit/testfall_20_positionen.json,testfall20:S-16,N,Abgabepflichtig (Vorschlag),FALSCH,1.7
+2026-10-10,Mistral (mistral-small-latest) – im KSK-Assistenten,e3aa8fd,aufgaben/audit/testfall_20_positionen.json,testfall20:S-17,A,Abgabepflichtig (Vorschlag),RICHTIG,1.7
+2026-10-10,Mistral (mistral-small-latest) – im KSK-Assistenten,e3aa8fd,aufgaben/audit/testfall_20_positionen.json,testfall20:S-18,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,1.4
+2026-10-10,Mistral (mistral-small-latest) – im KSK-Assistenten,e3aa8fd,aufgaben/audit/testfall_20_positionen.json,testfall20:S-19,A,Abgabepflichtig (Vorschlag),RICHTIG,1.6
+2026-10-10,Mistral (mistral-small-latest) – im KSK-Assistenten,e3aa8fd,aufgaben/audit/testfall_20_positionen.json,testfall20:S-20,N,Abgabepflichtig (Vorschlag),FALSCH,2.5

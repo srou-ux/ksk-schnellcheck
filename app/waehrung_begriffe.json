@@ -1,0 +1,19 @@
+{
+  "_hinweis": "Rechnungen in fremder Währung (14.10.2026, Soll nach Testfall L-23: 'Rückfrage: Euro-Betrag klären; keine erfundene Euro-Summe'). app/zuordnung.py::markiere_fremdwaehrung erkennt Beträge mit diesen Bezeichnungen ohne Sprachmodell. Es wird NIE umgerechnet (keine Kursquelle in der Quellenbasis, kein Netz zur Laufzeit, Rundung ungeklärt): gezählt wird nur ein Euro-Betrag, den der Nutzer nennt. Kleinschreibung; längere Bezeichnungen zuerst. Keine Festwerte im Code: die Listen stehen hier.",
+  "fremd": {
+    "CAD": ["kanadische dollar", "kanadischen dollar", "cad"],
+    "AUD": ["australische dollar", "australischen dollar", "aud"],
+    "USD": ["us-dollar", "us dollar", "us-$", "usd", "dollar", "$"],
+    "CHF": ["schweizer franken", "franken", "chf", "sfr"],
+    "GBP": ["britische pfund", "britischen pfund", "pfund sterling", "pfund", "gbp", "£"],
+    "JPY": ["japanische yen", "yen", "jpy", "¥"],
+    "SEK": ["schwedische kronen", "schwedischen kronen", "sek"],
+    "NOK": ["norwegische kronen", "norwegischen kronen", "nok"],
+    "DKK": ["dänische kronen", "dänischen kronen", "dkk"],
+    "CZK": ["tschechische kronen", "tschechischen kronen", "czk"],
+    "PLN": ["zloty", "złoty", "pln"],
+    "CNY": ["yuan", "renminbi", "cny", "rmb"],
+    "TRY": ["türkische lira", "türkischen lira", "lira", "try"]
+  },
+  "satzgrenze": "(?<!\\d)[.!?;\\n](?!\\d)"
+}

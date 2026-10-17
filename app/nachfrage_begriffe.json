@@ -1,0 +1,97 @@
+{
+  "_hinweis": "Test-Dialog 'Der schwierige Kunde' (13.10.2026): Nachrichten NACH einem fertigen Ergebnis. app/router.py::_nachfrage_zum_letzten_fall erkennt sie ohne Sprachmodell und antwortet mit festen Bausteinen (TB-31 bis TB-34) und dem unveränderten Ergebnis. Reihenfolge = Vorrang. Kleinschreibung, Teilwort. Keine Festwerte im Code: die Listen stehen hier.",
+  "arten": [
+    {
+      "art": "vorgabe",
+      "begriffe": [
+        "ignoriere",
+        "ignorier alle",
+        "vergiss alles",
+        "vergiss alle",
+        "du bist jetzt",
+        "ohne einschränkungen",
+        "ohne einschraenkungen",
+        "behandle alle",
+        "behandel alle",
+        "als abgabepflichtig behandeln",
+        "sag mir, dass",
+        "sage mir, dass",
+        "auf nummer sicher"
+      ]
+    },
+    {
+      "art": "protokoll",
+      "begriffe": [
+        "protokoll",
+        "zusammenfassung",
+        "fasse zusammen",
+        "zusammenfassen",
+        "als pdf",
+        "schick mir das",
+        "schicke mir das"
+      ]
+    },
+    {
+      "art": "zahlung_offen",
+      "begriffe": [
+        "noch offen",
+        "noch nicht gezahlt",
+        "noch nicht bezahlt",
+        "zahlen erst",
+        "bezahlen erst",
+        "wird erst gezahlt",
+        "noch ausstehend"
+      ]
+    },
+    {
+      "art": "widerspruch",
+      "begriffe": [
+        "kann nicht stimmen",
+        "stimmt nicht",
+        "das ist falsch",
+        "warum",
+        "wieso",
+        "weshalb",
+        "verstehe nicht",
+        "versteh ich nicht",
+        "ist doch für uns",
+        "ist doch fuer uns"
+      ]
+    },
+    {
+      "art": "ergebnis",
+      "begriffe": [
+        "sind wir abgabepflichtig",
+        "sind wir jetzt abgabepflichtig",
+        "müssen wir zahlen",
+        "muessen wir zahlen",
+        "müssen wir also zahlen",
+        "wie hoch ist die abgabe",
+        "wie viel müssen wir",
+        "wie viel muessen wir",
+        "ist das abgabepflichtig",
+        "und das ergebnis",
+        "also abgabepflichtig"
+      ]
+    },
+    {
+      "art": "fundstelle",
+      "begriffe": [
+        "wo steht das",
+        "wo steht das?",
+        "welche fundstelle",
+        "fundstelle?",
+        "welche norm",
+        "welches gesetz",
+        "rechtsgrundlage",
+        "quelle dafür",
+        "quelle dafuer",
+        "beleg dafür",
+        "beleg dafuer"
+      ]
+    }
+  ],
+  "fortsetzung_wortlaenge": 5,
+  "_hinweis_ergebnis": "Fehlerquellen-Serie HT-2026-098 (15.10.2026): 'Sind wir abgabepflichtig?' nach einem fertigen Ergebnis begann einen neuen, leeren Fall (Rückfrage nach dem Jahr). Art 'ergebnis': das unveränderte Ergebnis des letzten Falls mit Zahl, ohne Modell. Steht ein neuer Betrag in der Nachricht, gilt sie wie bisher als neuer Fall.",
+  "_hinweis_fundstelle": "Alltags-Dialog AT-2026-047 (15.10.2026): 'Wo steht das?' nach einem Ergebnis begann einen neuen, leeren Fall. Art 'fundstelle': das unveränderte Ergebnis des letzten Falls mit seinen Fundstellen (aus dem System, nie vom Modell)."
+}

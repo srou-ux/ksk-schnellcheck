@@ -1,0 +1,5 @@
+datum,modus,code_stand,katalog,fall,soll,ist,urteil,bemessungsgrundlage,abgabe,rueckfragen,gruende,dauer_s
+2026-10-13,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",6b1484c,aufgaben/audit/testfall_alltag_4.json,F1,A,Grenzfall → Steuerberater entscheidet,NACHGEFRAGT,,,0,"Soll ['A'], Ist G",0.4
+2026-10-13,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",6b1484c,aufgaben/audit/testfall_alltag_4.json,F2,A,Grenzfall → Steuerberater entscheidet,NACHGEFRAGT,,,0,"Soll ['A'], Ist G",0.4
+2026-10-13,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",6b1484c,aufgaben/audit/testfall_alltag_4.json,F3,N,Nicht abgabepflichtig (Vorschlag),NACHGEFRAGT,,,1,"1 Rückfrage(n), nötig laut Soll höchstens 0",0.5
+2026-10-13,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",6b1484c,aufgaben/audit/testfall_alltag_4.json,F4,N,Nicht abgabepflichtig (Vorschlag),RICHTIG,,,0,,0.4

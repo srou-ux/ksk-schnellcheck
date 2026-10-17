@@ -1,0 +1,69 @@
+# Testfall des Nutzers: Sammelrechnung mit 20 Positionen (erfundene Daten,
+# aufgaben/audit/testfall_20_positionen.json). Demo-Modus und mistral-small-latest im SaaS und roh (seit 17.10.2026 nur Small).
+# Start von Hand: Actions -> "Testfall 20 Positionen" -> Run workflow.
+# Schlüssel nur als GitHub-Secret MISTRAL_API_KEY, nie im Repo. Kostet wenige Cent.
+name: Testfall 20 Positionen
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: testfall-20
+  cancel-in-progress: false
+jobs:
+  lauf:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: demo
+            llm: fake
+            modell: ""
+          - name: small
+            llm: mistral
+            modell: mistral-small-latest
+          - name: roh-small
+            llm: mistral-roh
+            modell: mistral-small-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: app/requirements.txt
+      - run: pip install --disable-pip-version-check -r app/requirements.txt
+      - name: Testfall laufen lassen
+        continue-on-error: true
+        env:
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+          MISTRAL_MODELL: ${{ matrix.modell }}
+          MAX_KNOEPFE: "25"
+        run: python aufgaben/audit/pruefkatalog_lauf.py --llm ${{ matrix.llm }} --katalog aufgaben/audit/testfall_20_positionen.json --details --bericht testfall20_ergebnis_${{ matrix.name }}.md
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: bericht-${{ matrix.name }}
+          path: testfall20_ergebnis_${{ matrix.name }}.md
+          if-no-files-found: ignore
+  ablegen:
+    needs: lauf
+    if: always()
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          path: berichte
+          merge-multiple: true
+      - name: Berichte ins Repo
+        run: |
+          mkdir -p aufgaben/audit
+          cp berichte/*.md aufgaben/audit/ 2>/dev/null || true
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add aufgaben/audit/testfall20_ergebnis_*.md
+          git diff --cached --quiet || git commit -m "Testfall 20 Positionen: Ergebnisse"
+          git pull --rebase origin main && git push origin main || true

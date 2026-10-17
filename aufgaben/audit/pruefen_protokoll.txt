@@ -1,0 +1,101 @@
+
+=== Regelwerk formal (IDs, Pflichtfelder, Quellen, Tests)
+$ tests/pruefe_regelwerk.py
+191 Fragen im Fragenkatalog, davon 9 sichtbare Lücken.
+236 Regeln, 329 Testfälle geprüft.
+Keine formalen Fehler.
+-> OK
+
+=== Quellenbestand (Index, Dateien)
+$ tests/pruefe_quellen.py
+122 Quelldateien, 119 verschiedene Inhalte, 3 Gruppen inhaltsgleicher Dateien, 122 Indexeinträge.
+Keine Fehler im Quellenbestand.
+-> OK
+
+=== Quellen unverändert (Prüfsummen, nur ergänzen)
+$ scripts/pruefsummen.py --pruefen
+Quellenbestand unverändert (121 Dateien geprüft).
+-> OK
+
+=== parameter.json passt zur Excel
+$ kern/erzeuge_parameter.py --pruefen
+kern/parameter.json passt zum Regelkatalog.
+-> OK
+
+=== Kern-Tests (inkl. Regelregister, Wächter gegen Festwerte)
+$ tests/test_kern.py
+Zahlen im Code nur technisch: 100 (Prozent), 0.01 (Cent), 12/31 (Kalenderjahresende). Alles andere gehört ins Regelregister. ... ok
+
+----------------------------------------------------------------------
+Ran 31 tests in 0.208s
+
+OK
+-> OK
+
+=== Testfälle gegen den Kern
+$ tests/lauf_testfaelle.py
+94 von 329 Testfällen im Kern ausgeführt, 94 bestanden, 0 mit Abweichung; 235 nur als Text (noch nicht im Kern).
+-> OK
+
+=== Testarchiv aktuell (alle Chatbot-Testfälle mit Soll, nur ergänzen)
+$ scripts/erzeuge_testarchiv.py --pruefen
+Testarchiv aktuell: 78 Fälle, 3 Dialoge, 81 Versionen.
+-> OK
+
+=== Chatbot-Tests
+$ -m unittest discover -s tests/app
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+..................................................................
+----------------------------------------------------------------------
+Ran 537 tests in 108.844s
+
+OK (skipped=1)
+-> OK
+
+============================================================
+[OK]     Regelwerk formal (IDs, Pflichtfelder, Quellen, Tests)
+[OK]     Quellenbestand (Index, Dateien)
+[OK]     Quellen unverändert (Prüfsummen, nur ergänzen)
+[OK]     parameter.json passt zur Excel
+[OK]     Kern-Tests (inkl. Regelregister, Wächter gegen Festwerte)
+[OK]     Testfälle gegen den Kern
+[OK]     Testarchiv aktuell (alle Chatbot-Testfälle mit Soll, nur ergänzen)
+[OK]     Chatbot-Tests
+
+ALLES GRÜN.
+Exitcode: 0
+a1 Vollbreite Ziffern                      ABGEWEHRT ok
+a2 Arabisch-indische Ziffern               ABGEWEHRT ok
+a3 Ziffern mit Leerzeichen                 ABGEWEHRT ok
+a4 Buchstabe O statt 0                     ABGEWEHRT ok
+a5 Emoji-Ziffern                           ABGEWEHRT ok
+a6 Römische Zahl                           ABGEWEHRT ok
+a7 Bruch/Anteil                            ABGEWEHRT ok
+a8 Eine Million                            ABGEWEHRT ok
+a9 Promille                                ABGEWEHRT ok
+b1 unterliegt der Abgabe                   ABGEWEHRT ok
+b2 zahlungspflichtig                       ABGEWEHRT ok
+b3 abgabefrei                              ABGEWEHRT ok
+b4 Meldepflicht                            ABGEWEHRT ok
+b5 entfällt                                ABGEWEHRT ok
+b6 Empfehlung                              ABGEWEHRT ok
+b7 Gewissheit                              ABGEWEHRT ok
+c1 Bundesgerichtshof                       ABGEWEHRT ok
+c2 Landessozialgericht                     ABGEWEHRT ok
+c3 Finanzamt/BFH                           ABGEWEHRT ok
+c4 Die KSK bestätigt                       ABGEWEHRT ok
+c5 geprüft/offiziell                       ABGEWEHRT ok
+c6 Section                                 ABGEWEHRT ok
+c7 Absatz in Worten                        ABGEWEHRT ok
+d1 unbekannter Platzhalter                 ABGEWEHRT ok
+d2 doppelte Klammern                       ABGEWEHRT ok
+d3 Kleinschreibung                         ABGEWEHRT ok
+d4 Link                                    ABGEWEHRT ok
+d5 HTML                                    ABGEWEHRT ok
+d6 Mailadresse                             ABGEWEHRT ok
+d7 Anweisung an Leser                      ABGEWEHRT ok
+d8 Markdown-Fälschung des Schlusssatzes    ABGEWEHRT ok
+q1 Neutraler Satz                          DURCH     ok
+q2 Gültiger Platzhalter                    DURCH     ok
+Lücken: 0
+Exitcode Gegenproben: 0

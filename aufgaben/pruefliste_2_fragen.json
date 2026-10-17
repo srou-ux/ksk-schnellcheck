@@ -1,0 +1,294 @@
+{
+  "_hinweis": "Offene Fachfragen für den Steuerberater (Prüfliste 2, Stand 14.10.2026). Gelesen von scripts/erzeuge_pruefliste_2.py. Nur ergänzen; eine beantwortete Frage nicht ändern, sondern eine neue Frage mit neuer Nummer anlegen. Herkunft: aufgaben/FUNDE_Chatbot.md.",
+  "fragen": [
+    {
+      "nr": "Q-01",
+      "thema": "Fremde Währung",
+      "frage": "Welcher Euro-Wert zählt als Entgelt nach § 25 KSVG, wenn in fremder Währung gezahlt wird: der tatsächlich abgebuchte Euro-Betrag, ein Kurs am Rechnungs- oder Zahlungstag, oder ein amtlicher Kurs (z. B. die Umsatzsteuer-Umrechnungskurse)? Zählen Bankgebühren mit?",
+      "heute": "Rechnet nie um. Fragt nach dem tatsächlich gezahlten Euro-Betrag (z. B. laut Kontoauszug); ohne Euro-Betrag kein Ergebnis. Steht der Euro-Betrag im selben Satz, wird er verwendet.",
+      "bezug": "KSVG § 25; Testfall L-23; Testkatalog aufgaben/audit/testfall_waehrung.json",
+      "herkunft": "FUNDE, Abschnitt „Fremde Währung (14.10.2026)“"
+    },
+    {
+      "nr": "Q-02",
+      "thema": "Umsatzsteuer",
+      "frage": "Zieht das System Umsatzsteuer nur ab, wenn sie in der Rechnung gesondert ausgewiesen ist (R-43)? Reicht die Angabe „1.190 € brutto, darin 190 € Umsatzsteuer“, oder muss das System ausdrücklich nach dem gesonderten Ausweis fragen?",
+      "heute": "Nennt der Text einen Umsatzsteuer-Betrag (z. B. „darin 190 € Umsatzsteuer“, „USt 19 %: 469,30 €“), wird er nicht zur Bemessungsgrundlage gezählt. Ob er gesondert ausgewiesen ist, wird nicht eigens geprüft.",
+      "bezug": "R-18; R-43; KSVG § 25 Abs. 1, 2; KSK-Info 10, Abschn. 1; Testfälle P-28, F1",
+      "herkunft": "Schritt 2 (Teilbeträge), 14.10.2026"
+    },
+    {
+      "nr": "Q-03",
+      "thema": "Übungsleiterpauschale",
+      "frage": "Fehlt die Angabe, ob die schriftliche Bestätigung der Übungsleiter-/Ehrenamtspauschale vorliegt: Soll das System zurückfragen, statt die Bestätigung als erteilt anzunehmen?",
+      "heute": "Ohne Angabe gilt die Bestätigung als erteilt (Pauschale wird abgezogen). Steht „bestätigt“ im Text, gilt sie; steht „keine Bestätigung“, nicht. Die Faktenbestätigung zeigt die Pauschale an.",
+      "bezug": "R-50; R-51; R-202; R-203; Testfall P-20b",
+      "herkunft": "FUNDE (Fund app/router.py, Zweig uebungsleiter_pauschale)"
+    },
+    {
+      "nr": "Q-04",
+      "thema": "Fundstelle typischer Verwerter",
+      "frage": "Soll die Antwort für jeden typischen Verwerter die passende Nummer des § 24 Abs. 1 Satz 1 KSVG nennen (z. B. Nr. 1 Verlag, Nr. 3 Veranstalter), statt immer Nr. 7 (Werbung für Dritte)? Wenn ja: Zuordnung Unternehmensart → Nummer bitte bestätigen (Excel).",
+      "heute": "Ist die Art des Auftraggebers erkennbar (z. B. Messegesellschaft), wird die passende Regel genannt; sonst R-07 (Nr. 7).",
+      "bezug": "R-07; R-29; R-160; app/verwerter_nummer.json",
+      "herkunft": "FUNDE (Fund kern/rechnen.py::pruefe_typischer_verwerter)"
+    },
+    {
+      "nr": "Q-05",
+      "thema": "KSVG-Fassung 2025",
+      "frage": "Gilt der KSVG-Text, Stand Oktober 2026 (mit den Änderungen 2026 durch Art. 7c), für das Jahr 2025 unverändert? Das System verwendet ihn für 2025 und 2026.",
+      "heute": "KSVG.pdf gilt in der Quellenbasis ab 2025; die Archivfassung vom 21.05.2024 für 2024.",
+      "bezug": "quellen/KSVG.pdf; quellen/ergaenzend/KSVG_Archiv_2024-05-21.pdf; app/rag/quellen_metadaten.csv",
+      "herkunft": "FUNDE, Abschnitt „Quellenabruf RAG, Teil 2“"
+    },
+    {
+      "nr": "Q-06",
+      "thema": "Musikvereine: Grenze Schüler",
+      "frage": "Regelregister „musikverein.schueler_grenze“ (Wert siehe Excel, gültig ab 2015): Belegt ist der Wert nur mit KSK-Info 12, Stand 08.2025; in der Archivfassung 2022 steht er nicht. Ab welchem Jahr gilt er?",
+      "heute": "Wird ab 2015 angewendet (Eintrag im Regelregister).",
+      "bezug": "Regelregister musikverein.schueler_grenze; KSK-Info 12; aufgaben/RAG_Abgleich.md",
+      "herkunft": "FUNDE, Abschnitt „Quellenabruf RAG, Teil 2“"
+    },
+    {
+      "nr": "Q-07",
+      "thema": "Verpflegungspauschalen alte Jahre",
+      "frage": "Regelregister „verpflegung.pauschale_*“ für 2014–2019: Fundstelle ist KSK-Info 10, Abschn. 3; für diese Jahre liegt keine Fassung der KSK-Info 10 vor (ältestes Archiv 2023). Gibt es eine Quelle für diese Jahre, oder sollen sie als „Quelle fehlt“ gelten?",
+      "heute": "Die Werte werden für diese Jahre angewendet; der Abgleich meldet „Fundstelle fehlt“.",
+      "bezug": "Regelregister verpflegung.pauschale_*; KSK-Info 10; aufgaben/RAG_Abgleich.md",
+      "herkunft": "FUNDE, Abschnitt „Quellenabruf RAG, Teil 2“"
+    },
+    {
+      "nr": "Q-08",
+      "thema": "Tätigkeit: Werbegrafik",
+      "frage": "Soll „Werbegrafik“ als Erkennungsbegriff bei T-02 (Grafikdesign) in die Excel (Blatt Tätigkeitsabgrenzung)? Ähnlich „Werbefoto“ bei T-04?",
+      "heute": "Begriffe werden nur am Wortanfang erkannt: „Grafik“ ja, „Werbegrafik“ nein. Tragen alle Positionen dieselbe Bezeichnung, gilt die genannte Leistung des Auftragnehmers.",
+      "bezug": "Blatt Tätigkeitsabgrenzung, T-02, T-04; Testfall P-04a",
+      "herkunft": "FUNDE, Abschnitt „Teilbeträge stabil lesen“"
+    },
+    {
+      "nr": "Q-09",
+      "thema": "Tätigkeit: Grenzfall-Eintrag gegen Modell",
+      "frage": "Ergibt die feste Erkennung einen Grenzfall-Eintrag der Excel (z. B. T-68 „Nutzungsrechte“, zählt beim selben Künstler mit), das Sprachmodell aber eine andere Tätigkeit (z. B. Fotografie): Soll der Excel-Eintrag gelten statt „Widerspruch → Steuerberater entscheidet“?",
+      "heute": "Widersprechen sich Modell und feste Erkennung, wird es ein Grenzfall (Steuerberater entscheidet).",
+      "bezug": "T-68; R-41; R-174; R-189; Testfall F1",
+      "herkunft": "FUNDE, Abschnitt „Teilbeträge stabil lesen“"
+    },
+    {
+      "nr": "Q-10",
+      "thema": "Rundung der Abgabe",
+      "frage": "Wie rundet die KSK die Künstlersozialabgabe (kaufmännisch auf volle Cent, je Meldung oder je Position)? Gibt es eine Fundstelle?",
+      "heute": "Keine eigene Rundung. Hat das Ergebnis mehr als zwei Nachkommastellen, nennt das System keine Zahl.",
+      "bezug": "R-89; KSVG § 26 Abs. 5",
+      "herkunft": "Grundregel 7 (CLAUDE.md): Rundung ungeklärt"
+    },
+    {
+      "nr": "Q-11",
+      "thema": "Zahlung an Dritte auf Wunsch des Künstlers",
+      "frage": "„Gage 2.000 €, davon zahlen wir auf ihren Wunsch 500 € direkt an ihren Manager“: Ist die ganze Gage (2.000 €) Bemessungsgrundlage? Das Soll des Testfalls ist „abgabepflichtig, 2.000 €“ oder Grenzfall.",
+      "heute": "Die 500 € gelten als Teil der Gage (nicht doppelt); Bemessungsgrundlage 2.000 €.",
+      "bezug": "R-38; Testfall P-39 (I-23)",
+      "herkunft": "Schritt 2, Live-Fund P-39 (14.10.2026)"
+    },
+    {
+      "nr": "Q-12",
+      "thema": "Testfall-Soll ohne Berufsträger",
+      "frage": "Die Soll-Werte der Testkataloge (aufgaben/audit/*.json) stammen aus Testfällen und Ableitungen, nicht von einem Berufsträger. Sollen sie vom Steuerberater stichprobenartig oder vollständig freigegeben werden?",
+      "heute": "Alle Soll-Werte sind „Entwurf – vom Steuerberater zu prüfen“; das Testarchiv (tests/archiv/) führt sie mit Version.",
+      "bezug": "tests/archiv/alle_faelle.json",
+      "herkunft": "Arbeitsweise"
+    },
+    {
+      "nr": "Q-13",
+      "thema": "Musikverein: Schülerzahl",
+      "frage": "Musikverein unterrichtet 15 Schüler gegen Gebühr (Testfall B-06): Der Rechenkern fragt nach (R-53/R-54: die Schülerzahl allein entscheidet nicht), der Testfall erwartet „nicht abgabepflichtig (bis 20 Schüler keine Musikschule anzunehmen)“. Was gilt?",
+      "heute": "Rückfrage (Struktur des Unterrichts und weitere Tätigkeiten).",
+      "bezug": "R-53; R-54; KSK-Info 12, Abschn. 2; Testfall P-18a / B-06",
+      "herkunft": "aufgaben/audit/nachgefragt_auswertung.md"
+    },
+    {
+      "nr": "Q-14",
+      "thema": "Tätigkeit: „Künstler“ ohne Angabe",
+      "frage": "Gilt „bezahlte selbständige Künstler“ bei Veranstaltungen ohne nähere Angabe der Leistung als künstlerische Leistung (Begriff „Künstler“ in der Excel, Blatt Tätigkeitsabgrenzung)?",
+      "heute": "Grenzfall („nicht im Regelwerk eingeordnet“) oder Rückfrage nach der Leistung.",
+      "bezug": "Testfall P-09 / D-04; R-132; R-149",
+      "herkunft": "aufgaben/audit/nachgefragt_auswertung.md"
+    },
+    {
+      "nr": "Q-15",
+      "thema": "Durchleitung aus Sicht der Agentur",
+      "frage": "Eine Werbeagentur zahlt 1.150 € an eine Band (GbR), die eigentlich ihr Kunde gebucht hat; die Agentur hat nur vermittelt und das Geld durchgeleitet (Kunde hat vorher 1.200 € überwiesen). Zählt das Entgelt beim Kunden (Vertrag Kunde–Band) und ist die Agentur dafür nie abgabepflichtig?",
+      "heute": "Position „Zahlungsweg offen“ → Grenzfall; Abgabe wird mit und ohne diesen Betrag genannt.",
+      "bezug": "KSK-Info 27; R-127; R-36; R-94; Härtetest HT-2026-001",
+      "herkunft": "aufgaben/audit/haertetest_ht_2026_001_auswertung.md"
+    },
+    {
+      "nr": "Q-16",
+      "thema": "Private Zahlung, Erstattung offen",
+      "frage": "Der Managing Director einer Agentur zahlt 400 € privat an einen Zauberer für einen Auftritt bei einer Firmenfeier eines Kunden; ob die Agentur erstattet, ist offen. Wann zählt das bei der Agentur?",
+      "heute": "Position „Zahlungsweg offen“ → Grenzfall; keine Rückfrage nach der Rechtsform.",
+      "bezug": "R-38; R-39; Härtetest HT-2026-001",
+      "herkunft": "aufgaben/audit/haertetest_ht_2026_001_auswertung.md"
+    },
+    {
+      "nr": "Q-17",
+      "thema": "Textbaustein „Zahlungsweg offen“",
+      "frage": "Der Baustein sagt „ob und in welcher Höhe diese Beträge beim Mandanten zählen“. Fragt das Unternehmen selbst (z. B. die Agentur), passt „bei Ihnen“ besser. Wortlaut anpassen?",
+      "heute": "Fester Wortlaut „beim Mandanten“.",
+      "bezug": "Regelkatalog, Blatt Textbausteine",
+      "herkunft": "aufgaben/audit/haertetest_ht_2026_001_auswertung.md"
+    },
+    {
+      "nr": "Q-18",
+      "thema": "Absage-/Storno-Pauschale",
+      "frage": "Zählt eine Absage- oder Stornopauschale ohne Auftritt als Entgelt (Art und Leistungsbezug der Zahlung)?",
+      "heute": "Register: Ausfallhonorar zählt (R-174, Checkliste Allgemeines); Stornopauschale ohne Leistungsbezug nicht eigens geregelt.",
+      "bezug": "Regelkatalog: R-174",
+      "herkunft": "Arbeitsauftrag des Nutzers 'Testfälle in Kern, Regeln und Anker überführen' (B3, dort als Q-Q-15); Härtetest-Serien HT-2026-012 bis 061 (HT-013, HT-035, HT-047, HT-052)"
+    },
+    {
+      "nr": "Q-19",
+      "thema": "Erstattung im Folgejahr / Doppelzahlung",
+      "frage": "Rückzahlung oder Doppelzahlung im Folgejahr: Wird das Jahr der Zahlung korrigiert oder im Jahr der Rückzahlung verrechnet?",
+      "heute": "Nicht geregelt; das System rechnet je Kalenderjahr der Zahlung (R-20).",
+      "bezug": "Regelkatalog: R-20",
+      "herkunft": "Arbeitsauftrag des Nutzers 'Testfälle in Kern, Regeln und Anker überführen' (B3, dort als Q-Q-16); Härtetest-Serien HT-2026-012 bis 061 (HT-050, HT-051)"
+    },
+    {
+      "nr": "Q-20",
+      "thema": "Zahlung vom Privat- oder Firmenkonto",
+      "frage": "Wem ist eine Zahlung zuzurechnen, die der Geschäftsführer einer GmbH privat leistet, und wie ist es beim Einzelunternehmer (gemischtes Vermögen)? Zweck und Erstattung?",
+      "heute": "Das System zählt solche Zahlungen nicht still mit (offen: 'private Zahlung, Erstattung offen').",
+      "bezug": "Regelkatalog: R-36, R-38",
+      "herkunft": "Arbeitsauftrag des Nutzers 'Testfälle in Kern, Regeln und Anker überführen' (B3, dort als Q-Q-17); Härtetest-Serien HT-2026-012 bis 061 (HT-001, HT-033, HT-056, HT-060)"
+    },
+    {
+      "nr": "Q-21",
+      "thema": "Abtretung / Factoring",
+      "frage": "Zahlung an einen Abtretungsempfänger (Factoring): Ist das Entgelt an den Künstler gezahlt (Erfüllungswirkung)?",
+      "heute": "Nicht geregelt.",
+      "bezug": "Regelkatalog: –",
+      "herkunft": "Arbeitsauftrag des Nutzers 'Testfälle in Kern, Regeln und Anker überführen' (B3, dort als Q-Q-18); Härtetest-Serien HT-2026-012 bis 061 (HT-021)"
+    },
+    {
+      "nr": "Q-22",
+      "thema": "Zahlung an Insolvenzverwalter",
+      "frage": "Zählt eine Zahlung an den Insolvenzverwalter des Künstlers für dessen Leistung als Entgelt?",
+      "heute": "Nicht geregelt.",
+      "bezug": "Regelkatalog: –",
+      "herkunft": "Arbeitsauftrag des Nutzers 'Testfälle in Kern, Regeln und Anker überführen' (B3, dort als Q-Q-19); Härtetest-Serien HT-2026-012 bis 061 (HT-034)"
+    },
+    {
+      "nr": "Q-23",
+      "thema": "Zahlung an Erben",
+      "frage": "Zahlung an Erben: alte Honorarforderung des Verstorbenen oder neue Nutzungsrechte – wie zu unterscheiden?",
+      "heute": "Nicht geregelt.",
+      "bezug": "Regelkatalog: –",
+      "herkunft": "Arbeitsauftrag des Nutzers 'Testfälle in Kern, Regeln und Anker überführen' (B3, dort als Q-Q-20); Härtetest-Serien HT-2026-012 bis 061 (HT-015, HT-038)"
+    },
+    {
+      "nr": "Q-24",
+      "thema": "Buy-out / Rechtekauf",
+      "frage": "Buy-out: Welcher Teil gilt als Entgelt, wenn Rechte von einem Rechteinhaber gekauft werden, der nicht der Künstler ist?",
+      "heute": "Register: Buy-Out zählt (R-174); Rechteinhaber ≠ Künstler nicht geregelt.",
+      "bezug": "Regelkatalog: R-174",
+      "herkunft": "Arbeitsauftrag des Nutzers 'Testfälle in Kern, Regeln und Anker überführen' (B3, dort als Q-Q-21); Härtetest-Serien HT-2026-012 bis 061 (HT-049)"
+    },
+    {
+      "nr": "Q-25",
+      "thema": "Konzern- und Tochterzahlung",
+      "frage": "Konzernmutter zahlt für die Tochter (Durchleitung): Wer ist abgabepflichtig, und zählt die Zahlung bei beiden?",
+      "heute": "Nicht geregelt; das System zählt Durchleitungen nicht still mit.",
+      "bezug": "Regelkatalog: R-36, R-127",
+      "herkunft": "Arbeitsauftrag des Nutzers 'Testfälle in Kern, Regeln und Anker überführen' (B3, dort als Q-Q-22); Härtetest-Serien HT-2026-012 bis 061 (HT-028)"
+    },
+    {
+      "nr": "Q-26",
+      "thema": "e. V. als Zahlungsempfänger",
+      "frage": "Gehört der eingetragene Verein (im eigenen Namen) in die Liste der Empfänger ohne Abgabe (Register 'rechtsform.kein_entgelt', 2026: OHG, KG, AG, GmbH, UG)? Die korrigierten Soll-Lösungen nehmen GmbH und e. V. 'grundsätzlich aus'.",
+      "heute": "Der e. V. steht nicht in der Liste; das System fragt nach oder zählt mit.",
+      "bezug": "Regelkatalog: R-138, R-216",
+      "herkunft": "Korrigierte Soll-Lösungen des Nutzers (PDF, Arbeitsfassung 2, 14.10.2026); aufgaben/audit/haertetests_ht_2026_002_011_auswertung.md (HT-2026-003)"
+    },
+    {
+      "nr": "Q-27",
+      "thema": "Unbezahlte Rechnung",
+      "frage": "Eine Rechnung ist im Jahr noch nicht bezahlt: zählt sie erst im Jahr der Zahlung (§ 25 Abs. 1 KSVG 'gezahlt')?",
+      "heute": "Das System zählt sie nicht still mit (offen: 'noch nicht bezahlt').",
+      "bezug": "Regelkatalog: R-20",
+      "herkunft": "Korrigierte Soll-Lösungen des Nutzers (PDF, Arbeitsfassung 2, 14.10.2026); aufgaben/audit/haertetests_ht_2026_002_011_auswertung.md (HT-2026-005)"
+    },
+    {
+      "nr": "Q-28",
+      "thema": "Gutschrift des Künstlers",
+      "frage": "Welche Wirkung hat eine Gutschrift des Künstlers an den Auftraggeber (Minderung des Entgelts, keine Zahlung)?",
+      "heute": "Das System zählt sie nicht still mit (offen: 'Gutschrift').",
+      "bezug": "Regelkatalog: R-41",
+      "herkunft": "Korrigierte Soll-Lösungen des Nutzers (PDF, Arbeitsfassung 2, 14.10.2026); aufgaben/audit/haertetests_ht_2026_002_011_auswertung.md (HT-2026-004)"
+    },
+    {
+      "nr": "Q-29",
+      "thema": "Rundung und Meldung in vollen Euro",
+      "frage": "Das Bundesportal verlangt die Entgeltsumme in vollen Euro. Wie wird gerundet (Bemessungsgrundlage für die Meldung, Abgabe im Bescheid)? Das System gibt bei mehr als zwei Nachkommastellen keine Zahl aus.",
+      "heute": "Rundung ungeklärt (Grundregel 7).",
+      "bezug": "Regelkatalog: –",
+      "herkunft": "Korrigierte Soll-Lösungen des Nutzers (PDF, Arbeitsfassung 2, 14.10.2026); aufgaben/audit/haertetests_ht_2026_002_011_auswertung.md (HT-2026-005, HT-2026-006, HT-2026-067, HT-2026-086, HT-2026-090)"
+    },
+    {
+      "nr": "Q-30",
+      "thema": "Zusatzgeschenk an einen Künstler",
+      "frage": "Zählt eine Sachzuwendung 'als Dank' (z. B. PlayStation im Wert 550 €) zusätzlich zum Honorar? Welcher Wert gilt?",
+      "heute": "Das System zählt angegebene Sachleistungen mit (R-41, R-174).",
+      "bezug": "Regelkatalog: R-41, R-174",
+      "herkunft": "Korrigierte Soll-Lösungen des Nutzers (PDF, Arbeitsfassung 2, 14.10.2026); aufgaben/audit/haertetests_ht_2026_002_011_auswertung.md (HT-2026-009)"
+    },
+    {
+      "nr": "Q-31",
+      "thema": "Provision an den Manager des Künstlers",
+      "frage": "'Rechnung über 2.000 €, davon 500 € an seinen Manager weitergeleitet': Zählen die 500 €? (R-39: Provision an einen selbst abgabepflichtigen Vertreter zählt ausnahmsweise nicht)",
+      "heute": "Das System führt die 2.000 € als Rechnung und rechnet den Rest; kein festes Soll.",
+      "bezug": "Regelkatalog: R-39",
+      "herkunft": "Korrigierte Soll-Lösungen des Nutzers (PDF, Arbeitsfassung 2, 14.10.2026); aufgaben/audit/haertetests_ht_2026_002_011_auswertung.md (HT-2026-062)"
+    },
+    {
+      "nr": "Q-32",
+      "thema": "Unterricht in Kunst",
+      "frage": "Zählt Unterricht oder Coaching in Musik, darstellender oder bildender Kunst (Schauspiel-Coach, Gesangsunterricht, Dirigenten-Workshop) als künstlerische Tätigkeit? KSVG § 2 Satz 1 nennt 'lehrt'; die Checkliste Eigenwerber (R-183) nennt Coaching als nicht künstlerisch.",
+      "heute": "Neue Zeile T-71 (Grenzfall): das System entscheidet nicht, zeigt beide Beträge. Vorher still 'nicht abgabepflichtig' über T-34.",
+      "bezug": "Regelkatalog: Tätigkeitsabgrenzung T-34, T-71; R-137, R-183",
+      "herkunft": "Tätigkeitskatalog des Nutzers (200 Fälle, 15.10.2026); aufgaben/audit/taetigkeitskatalog_auswertung.md; regelwerk/Pruefliste_Taetigkeiten_Nachtrag_1_Entwurf.xlsx"
+    },
+    {
+      "nr": "Q-33",
+      "thema": "Neue Grenzfall-Zeilen",
+      "frage": "Bitte die neuen Zeilen T-72 (technische Zeichnung), T-73 (Playlist), T-74 (Fotogrammetrie), T-75 (Sync-Agent) einordnen. Vorher trafen dort zu breite Begriffe ('zeichner', 'musik', 'foto') eine künstlerische Zeile.",
+      "heute": "Grenzfall, bis Sie entscheiden.",
+      "bezug": "Regelkatalog: Tätigkeitsabgrenzung T-72 bis T-75",
+      "herkunft": "Tätigkeitskatalog des Nutzers (200 Fälle, 15.10.2026); aufgaben/audit/taetigkeitskatalog_auswertung.md; regelwerk/Pruefliste_Taetigkeiten_Nachtrag_1_Entwurf.xlsx"
+    },
+    {
+      "nr": "Q-34",
+      "thema": "Lücken im Tätigkeitsblatt",
+      "frage": "96 der 200 Tätigkeiten stehen nicht im Blatt (z. B. Floristik, Steuerberatung, Gutachten, Friseur, Malerin, Gitarrist, Cartoonist). Welche sollen als Zeile mit Fundstelle aufgenommen werden? Ohne Zeile ordnet das Modell ein; ein Ausschluss 'nicht künstlerisch' gilt dann nur als Grenzfall.",
+      "heute": "Lücke: Modell entscheidet künstlerisch, ein Ausschluss ohne Beleg wird Grenzfall.",
+      "bezug": "Regelkatalog: Tätigkeitsabgrenzung",
+      "herkunft": "Tätigkeitskatalog des Nutzers (200 Fälle, 15.10.2026); aufgaben/audit/taetigkeitskatalog_auswertung.md; regelwerk/Pruefliste_Taetigkeiten_Nachtrag_1_Entwurf.xlsx"
+    },
+    {
+      "nr": "Q-35",
+      "thema": "Abweichungen Entwurf ↔ Blatt",
+      "frage": "40 Tätigkeiten ordnet das Blatt anders ein als der Testkatalog (meist Entwurf 'Grenzfall', Blatt 'künstlerisch', z. B. DJ, Arrangeur, Restaurator; Tänzer/Maskenbildner: Blatt 'Grenzfall', Entwurf 'künstlerisch'; SEO und Schreib-Coach: Blatt 'nicht künstlerisch'). Was gilt?",
+      "heute": "Das Blatt gilt (mit Fundstelle).",
+      "bezug": "Regelkatalog: Tätigkeitsabgrenzung",
+      "herkunft": "Tätigkeitskatalog des Nutzers (200 Fälle, 15.10.2026); aufgaben/audit/taetigkeitskatalog_auswertung.md; regelwerk/Pruefliste_Taetigkeiten_Nachtrag_1_Entwurf.xlsx"
+    },
+    {
+      "nr": "Q-36",
+      "thema": "Fotomodell",
+      "frage": "Zählt ein Modellhonorar (Fotomodell, Model, Mannequin) als künstlerische Leistung? KSK-Info 06 nennt Fotomodelle nicht.",
+      "heute": "Neue Zeile T-76 (Grenzfall); vorher zählte das Modell es als darstellende Kunst.",
+      "bezug": "Regelkatalog: Tätigkeitsabgrenzung T-76; R-137",
+      "herkunft": "Alltagstest AT-2026-024 (live 15.10.2026)"
+    }
+  ],
+  "_hinweis_nummern": "Zuordnung: Der Auftrag 'Testfälle in Kern, Regeln und Anker überführen' (B3) nannte Q-15 bis Q-22; Q-15 bis Q-17 waren schon vergeben. Daher: Auftrag Q-15 → Q-18, Q-16 → Q-19, Q-17 → Q-20, Q-18 → Q-21, Q-19 → Q-22, Q-20 → Q-23, Q-21 → Q-24, Q-22 → Q-25. Q-26 bis Q-31 aus den korrigierten Soll-Lösungen. Die übergebene Prüfliste 2 (Q-01 bis Q-12) wird nicht ersetzt; neue Fragen gehen als datierter Nachtrag hinaus."
+}

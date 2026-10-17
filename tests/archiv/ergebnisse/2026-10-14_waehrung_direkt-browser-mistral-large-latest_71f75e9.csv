@@ -1,0 +1,11 @@
+datum,modus,code_stand,katalog,fall,soll,ist,urteil,bemessungsgrundlage,abgabe,rueckfragen,gruende,dauer_s
+2026-10-14,Chatbot direkt (Browser) – Mistral (EU),71f75e9,aufgaben/audit/testfall_waehrung.json,W-01,R,Abgabepflichtig (Vorschlag),FALSCH,2000,98.00,0,"verbotener Text in der Antwort: '98,00 €'; verbotener Text in der Antwort: 'Bemessungsgrundlage: 2.000,00 €'",8.2
+2026-10-14,Chatbot direkt (Browser) – Mistral (EU),71f75e9,aufgaben/audit/testfall_waehrung.json,W-02,A,Abgabepflichtig (Vorschlag),FALSCH,2000,98.00,0,"verbotener Text in der Antwort: '98,00 €'; bemessungsgrundlage: Soll 1850.00, Ist 2000; abgabe: Soll 90.65, Ist 98.00",9.9
+2026-10-14,Chatbot direkt (Browser) – Mistral (EU),71f75e9,aufgaben/audit/testfall_waehrung.json,W-03,A,Abgabepflichtig (Vorschlag),RICHTIG,1850,90.65,0,,7.4
+2026-10-14,Chatbot direkt (Browser) – Mistral (EU),71f75e9,aufgaben/audit/testfall_waehrung.json,W-04,R,Rückfrage nötig,FEHLER,,,0,Ist: Rückfrage nötig,6.6
+2026-10-14,Chatbot direkt (Browser) – Mistral (EU),71f75e9,aufgaben/audit/testfall_waehrung.json,W-05,R,Abgabepflichtig (Vorschlag),FALSCH,1500,73.50,0,"verbotener Text in der Antwort: '73,50 €'; verbotener Text in der Antwort: 'Bemessungsgrundlage: 1.500,00 €'",6.5
+2026-10-14,Chatbot direkt (Browser) – Mistral (EU),71f75e9,aufgaben/audit/testfall_waehrung.json,W-06,R,Abgabepflichtig (Vorschlag),FALSCH,1200,58.80,0,"verbotener Text in der Antwort: '58,80 €'; verbotener Text in der Antwort: 'Bemessungsgrundlage: 1.200,00 €'",7.7
+2026-10-14,Chatbot direkt (Browser) – Mistral (EU),71f75e9,aufgaben/audit/testfall_waehrung.json,W-07,R,Abgabepflichtig (Vorschlag),FALSCH,1700,83.30,0,"verbotener Text in der Antwort: 'Bemessungsgrundlage: 1.700,00 €'; verbotener Text in der Antwort: '83,30 €'",8.6
+2026-10-14,Chatbot direkt (Browser) – Mistral (EU),71f75e9,aufgaben/audit/testfall_waehrung.json,W-08,R,Rückfrage nötig,RICHTIG,,,0,,2.5
+2026-10-14,Chatbot direkt (Browser) – Mistral (EU),71f75e9,aufgaben/audit/testfall_waehrung.json,W-09,A,Abgabepflichtig (Vorschlag),RICHTIG,2000,98.00,0,,8.1
+2026-10-14,Chatbot direkt (Browser) – Mistral (EU),71f75e9,aufgaben/audit/testfall_waehrung.json,W-10,A,Abgabepflichtig (Vorschlag),RICHTIG,1500,73.50,0,,4.6

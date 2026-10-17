@@ -1,0 +1,117 @@
+{
+  "_hinweis": "Begriffe für app/fallstand.py (Testprotokoll 11.10.2026). Klein geschrieben; Umlaute werden vor dem Vergleich vereinheitlicht. Keine fachlichen Festwerte, nur Sprache.",
+  "unbekannt": [
+    "unbekannt",
+    "nicht bekannt",
+    "ungeklärt",
+    "ungeklaert",
+    "noch offen",
+    "weiß ich nicht",
+    "weiss ich nicht",
+    "weis ich nicht",
+    "wissen wir nicht",
+    "wissen wir doch nicht",
+    "keine ahnung",
+    "kann ich nicht sagen",
+    "weder ja noch nein",
+    "später klären",
+    "noch unklar",
+    "unklar"
+  ],
+  "feld_begriffe": {
+    "jahr": [
+      "jahr",
+      "kalenderjahr"
+    ],
+    "auftragnehmer_typ": [
+      "rechtsform"
+    ],
+    "einnahmeabsicht": [
+      "einnahme",
+      "einnahmen"
+    ],
+    "verwerterart": [
+      "art des auftraggebers",
+      "verwerterart",
+      "eigenwerbung",
+      "typischer verwerter"
+    ],
+    "veranstaltungszahl": [
+      "zahl der veranstaltungen",
+      "anzahl der veranstaltungen",
+      "wie viele veranstaltungen"
+    ],
+    "gesamtbetrag_genannt": [
+      "gesamtbetrag"
+    ]
+  },
+  "uebersicht": [
+    "welche angaben",
+    "übersicht",
+    "uebersicht",
+    "was ist erfasst",
+    "bisher erfasst",
+    "was bleibt offen",
+    "welche bleiben offen",
+    "was fehlt noch",
+    "fallstand",
+    "zusammenfassung"
+  ],
+  "widerspruch": [
+    "widersprüch",
+    "widerspruech",
+    "welche angabe stimmt",
+    "ungeklärt",
+    "nicht geklärt",
+    "einerseits",
+    "steht aber",
+    "sagt aber",
+    "unklar, ob"
+  ],
+  "entfernen": [
+    "streich",
+    "entfern",
+    "lösch",
+    "loesch",
+    "doppelt",
+    "zweimal",
+    "gibt es nicht",
+    "nicht mehr",
+    "nur eine",
+    "fällt weg",
+    "faellt weg",
+    "weglassen",
+    "statt",
+    "korrektur",
+    "korrigier",
+    "sondern",
+    "nur noch",
+    "waren nur",
+    "sind nur",
+    "nur zwei",
+    "nur drei",
+    "nur vier",
+    "nur fünf",
+    "nur fuenf",
+    "nur sechs",
+    "weniger rechnungen",
+    "eine weniger"
+  ],
+  "_hinweis_feld_begriffe": "Ein Feld gilt nur als ausdrücklich unbekannt, wenn derselbe Satz keinen Wert dafür nennt (z. B. 'Jahr 2017, Historie unbekannt' -> Jahr ist bekannt). 'Betrag' allein ist zu mehrdeutig ('ob sich der Betrag auf mehrere Rechnungen verteilt, ist unbekannt').",
+  "_hinweis_entfernen_ht_102": "Fehlerquellen-Serie HT-2026-102 (15.10.2026): 'Es waren nur drei Rechnungen.' nach der Faktenbestätigung über vier Rechnungen – die kürzere Liste des Modells wurde nicht übernommen (die Bestätigung blieb bei vier). Ergänzt: 'waren nur', 'sind nur', 'nur zwei' … 'nur sechs', 'weniger rechnungen', 'eine weniger'.",
+  "ersetzen": [
+    "doch nur",
+    "waren doch",
+    "war doch",
+    "doch nicht",
+    "statt",
+    "korrektur",
+    "korrigier",
+    "sondern",
+    "nicht mehr",
+    "nur noch",
+    "falsch angegeben",
+    "vertippt"
+  ],
+  "_hinweis_ersetzen": "Alltags-Dialog AT-2026-048 (15.10.2026): 'Sorry, es waren doch nur 1.600 EUR.' – die Modellantwort führte die alte Position (2.000 €) UND die neue (1.600 €); daraus wurden 3.600 €. app/fallstand.py::uebernehme: gab es genau eine Position, nennt die Nachricht genau einen Betrag und einen Begriff aus 'ersetzen', und liefert das Modell die alte Position plus genau eine mit dem neuen Betrag, ersetzt der neue Betrag den alten."
+}

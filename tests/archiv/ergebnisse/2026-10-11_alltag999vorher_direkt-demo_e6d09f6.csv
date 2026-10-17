@@ -1,0 +1,2 @@
+datum,modus,code_stand,katalog,fall,soll,ist,urteil,bemessungsgrundlage,abgabe,rueckfragen,gruende,dauer_s
+2026-10-11,"Chatbot direkt (Browser) – FakeLLM (Demo-Modus, Ersatzmodell)",e6d09f6,aufgaben/audit/testfall_alltag_999.json,A-999,A,Nicht abgabepflichtig (Vorschlag),FALSCH,0,0.00,1,"verbotener Text in der Antwort: 'Satz 1 Nr. 7'; 1 Rückfrage(n), nötig laut Soll höchstens 0",0.7

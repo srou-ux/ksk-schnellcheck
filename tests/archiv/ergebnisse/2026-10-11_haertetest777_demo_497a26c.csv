@@ -1,0 +1,2 @@
+datum,modus,code_stand,katalog,fall,soll,ist,urteil,bemessungsgrundlage,abgabe,rueckfragen,gruende,dauer_s
+2026-10-11,Demo-Modus (FakeLLM),497a26c,aufgaben/audit/testfall_haertetest_777.json,H-777,A/G,Nicht abgabepflichtig (Vorschlag),FALSCH,0,0.00,1,"Soll ['A', 'G'], Ist N (Nicht abgabepflichtig (Vorschlag)); 1 Rückfrage(n), nötig laut Soll höchstens 0",0.1

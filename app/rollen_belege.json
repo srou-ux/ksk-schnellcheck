@@ -1,0 +1,165 @@
+{
+  "_hinweis": "Prüfkatalog 11.10.2026 (mistral-large-latest): Das Modell setzte Sonderrollen ohne Grundlage im Text ('ust' für Materialkosten, 'gewinnzuweisung' für eine Zahlung an den Manager) -- der Kern schloss diese Beträge dann aus. Eine Sonderrolle, die einen Betrag aus der Bemessungsgrundlage herausnimmt, gilt nur, wenn der Nutzertext einen dieser Begriffe enthält (app/zuordnung.py::absichere_rollen); sonst zählt der Betrag normal. Klein geschrieben; Umlaute werden vor dem Vergleich vereinheitlicht; Wortanfang.",
+  "vervielfaeltigung_nachtraeglich": [
+    "vervielfältig",
+    "nachdruck",
+    "auflage",
+    "druck"
+  ],
+  "fahrtkosten_nachgewiesen": [
+    "fahrt",
+    "reise",
+    "kilometer",
+    "km",
+    "anfahrt",
+    "bahn",
+    "flug",
+    "hotel",
+    "übernacht",
+    "anreise"
+  ],
+  "gewinnzuweisung": [
+    "gewinn"
+  ],
+  "verwertungsgesellschaft": [
+    "gema",
+    "vg wort",
+    "vg bild",
+    "verwertungsgesellschaft",
+    "gvl"
+  ],
+  "bewirtung": [
+    "bewirt",
+    "verpflegung",
+    "essen",
+    "catering",
+    "getränk",
+    "speisen"
+  ],
+  "ust": [
+    "umsatzsteuer",
+    "mehrwertsteuer",
+    "mwst",
+    "ust",
+    "vorsteuer"
+  ],
+  "_nachweis_noetig": {
+    "_hinweis": "Alltagsfälle 11.10.2026 (F2): Nur NACHGEWIESENE Reisekosten gehören nicht zur Bemessungsgrundlage (R-47, KSVEntgV § 1 Nr. 1). Eine 'Recherche-Pauschale (Fahrt, Literatur)' ist kein Nachweis. Die Rolle gilt nur, wenn die Position als nachgewiesen markiert ist oder der Text einen dieser Nachweis-Begriffe nennt, und nie, wenn die Bezeichnung einen Begriff aus 'nicht_wenn_bezeichnung' enthält.",
+    "fahrtkosten_nachgewiesen": {
+      "nachweis": [
+        "nachgewiesen",
+        "nachweis",
+        "beleg",
+        "quittung",
+        "ticket",
+        "fahrkarte",
+        "einzeln abgerechnet",
+        "fahrtenbuch",
+        "einzelbeleg",
+        "logbuch"
+      ],
+      "nicht_wenn_bezeichnung": [
+        "pauschal"
+      ],
+      "nicht_im_satz": [
+        "honorar",
+        "gage",
+        "entgelt",
+        "vergütung",
+        "verguetung",
+        "inklusive",
+        "inkl"
+      ],
+      "honorar_direkt_davor": [
+        "honorar",
+        "gage",
+        "entgelt",
+        "vergütung",
+        "verguetung"
+      ],
+      "honorar_abstand": 12,
+      "verneinung_davor": [
+        "ohne",
+        "kein",
+        "keine",
+        "keinen",
+        "nicht"
+      ],
+      "verneinung_danach": [
+        "fehlen",
+        "fehlt",
+        "liegen nicht vor",
+        "liegt nicht vor",
+        "gibt es nicht",
+        "nicht vorhanden"
+      ]
+    },
+    "_hinweis_ht_088": "Fehlerquellen-Serie HT-2026-088 (15.10.2026): 'Fahrt 300 km mit Einzelbelegen (Logbuch) erstattet: 90 EUR' – 'einzelbeleg' und 'logbuch' ergänzt (Begriffe zählen nur am Wortanfang, 'beleg' trifft 'Einzelbelegen' daher nicht). Der Satz zählt nur, wenn der Reise-Begriff VOR dem Betrag steht und der Satz kein Wort aus 'nicht_im_satz' enthält ('Honorar 2.000 EUR inklusive Fahrt mit Beleg' bleibt Honorar). Ein Betrag, vor dem höchstens 'honorar_abstand' Zeichen vorher ein Wort aus 'honorar_direkt_davor' steht ('Honorar 2.000 EUR inklusive Fahrt mit Beleg'), ist nie die Fahrtkostenposition.",
+    "_hinweis_verneint": "Korpus-Lauf 15.10.2026 (gestörte Fakten): 'für die Fahrtkosten gibt es keine Belege, es ist eine Pauschale ohne Nachweis' – das Modell markierte die Fahrtkosten als nachgewiesen; der Nachweis-Begriff stand im Text, aber verneint. Steht ein Nachweis-Begriff NUR verneint im Text (höchstens 25 Zeichen davor ein Wort aus 'verneinung_davor' oder danach eines aus 'verneinung_danach'), gilt die Rolle nicht, auch wenn das Modell 'nachgewiesen' setzt."
+  },
+  "vereinseigene_leitung": [
+    "vereinseigen"
+  ],
+  "_gesamtbetrag_als_rolle": [
+    "verwertungsgesellschaft"
+  ],
+  "_hinweis_gesamtbetrag": "Korpus-Lauf 15.10.2026 (gestörte Fakten: 'Betrag als Gesamtbetrag statt Positionen'): 'nur an die VG Wort 850 EUR Lizenzgebühren gezahlt' – ohne Position fehlte die Rolle, die 850 € zählten als Honorar. app/zuordnung.py::gesamtbetrag_mit_rolle: gibt es nur einen Gesamtbetrag, steht er im Text genau einmal und direkt bei einem Begriff GENAU EINER Rolle aus '_gesamtbetrag_als_rolle' (Empfängerrollen, kein Nachweis nötig), wird er eine Position mit dieser Rolle. Bewusst nicht für Umsatzsteuer oder Reisekosten ('1.190 € brutto, darin 190 € USt' wäre sonst ganz Umsatzsteuer).",
+  "_fehlende_nebenkosten": {
+    "_hinweis": "Korpus-Lauf 15.10.2026 (gestörte Fakten 'Positionen zusammengefasst', 8 FALSCH, z. B. KB-1061): 'Honorar von 450 EUR gezahlt und zusätzlich EUR 150,00 Fahrtkosten erstattet; … ohne Nachweis' – ließ das Modell die Fahrtkosten weg, zählten nur 450 € (Ergebnis 'nicht abgabepflichtig' statt Grenzfall/abgabepflichtig). app/zuordnung.py::fehlende_nebenkosten_position: steht ein Euro-Betrag genau einmal im Text, direkt bei einem Begriff aus 'begriffe', im selben Satz vor ihm ein Wort aus 'zusatz', und im Satz kein Wort aus 'nicht_wenn' (dann ist er im anderen Betrag enthalten), und fehlt er in den Fakten (keine Position, kein Rechnungs- oder Gesamtbetrag, nicht die Summe), wird er eine eigene Position ohne Rolle (zählt also normal; nachgewiesene Reisekosten erkennt danach ergaenze_reisekosten_rolle). Die Faktenbestätigung zeigt die Position; unabhängig vom Sprachmodell.",
+    "begriffe": [
+      "fahrtkosten",
+      "fahrkosten",
+      "reisekosten",
+      "anfahrt",
+      "anreise",
+      "kilometer",
+      "übernachtung",
+      "uebernachtung",
+      "hotelkosten",
+      "spesen",
+      "auslagen",
+      "materialkosten"
+    ],
+    "zusatz": [
+      "zusätzlich",
+      "zusaetzlich",
+      "außerdem",
+      "ausserdem",
+      "plus",
+      "zzgl",
+      "zuzüglich",
+      "zuzueglich",
+      "dazu",
+      "hinzu",
+      "extra",
+      "daneben",
+      "separat",
+      "gesondert"
+    ],
+    "nicht_wenn": [
+      "darin",
+      "enthalten",
+      "inklusive",
+      "inkl",
+      "davon",
+      "einschließlich",
+      "einschliesslich",
+      "bereits",
+      "insgesamt"
+    ]
+  },
+  "_vg_als_empfaenger": {
+    "_hinweis": "Korpus mit mistral-small-latest (17.10.2026, F16, 7 FALSCH, z. B. KB-1514 'nur an die VG Bild-Kunst 1.950 EUR Lizenzgebühren … gezahlt'): Small legte die Zahlung als Honorar an eine natürliche Person an. app/zuordnung.py::vg_als_empfaenger: steht im Text 'an die/den <Wort aus empfaenger>' und darauf höchstens 'abstand' Zeichen später ein Betrag, und hat genau eine Position diesen Betrag ohne Rolle, bekommt sie die Rolle 'verwertungsgesellschaft' (Kern: zählt nicht zur Bemessungsgrundlage, R-44). Steht eine weitere Leistung desselben Betrags im Text, bleibt alles, wie es ist.",
+    "empfaenger": [
+      "vg bild-kunst",
+      "vg bild kunst",
+      "vg wort",
+      "vg musikedition",
+      "gema",
+      "gvl",
+      "verwertungsgesellschaft"
+    ],
+    "abstand": 40,
+    "_hinweis_davor": "Testarchiv mit Small (17.10.2026, AT-2026-039 'nur 1.500 EUR GEMA-Pauschale an die GEMA gezahlt'): der Betrag steht VOR 'an die GEMA'. Gilt auch: Betrag, danach höchstens 'abstand' Zeichen ohne Satzende, dann 'an die/den <Wort aus empfaenger>'."
+  }
+}
