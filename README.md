@@ -46,15 +46,15 @@ Prinzip: **Das System macht Vorschläge, der Steuerberater entscheidet.**
 - Jede Aussage braucht eine Fundstelle; was nicht belegt ist, steht als "nicht belegt" da.
 - Das Jahr ist Pflichtangabe (Rechtslage bis 31.12.2022 = Fassung A, ab 01.01.2023 = Fassung B).
 - Alle Inhalte sind „Entwurf – vom Steuerberater zu prüfen“, bis ein Berufsträger sie bestätigt hat.
-- Chatbot-Antwortklassen: Abgabepflichtig (Vorschlag) / Nicht abgabepflichtig (Vorschlag) / Grenzfall → Steuerberater entscheidet / Rückfrage nötig / Nicht abgedeckt (Quelle fehlt).
+- Ergebnisklassen: Abgabepflichtig (Vorschlag) / Nicht abgabepflichtig (Vorschlag) / Grenzfall → Steuerberater entscheidet / Rückfrage nötig / Nicht abgedeckt (Quelle fehlt).
 - Verwaltungspraxis der KSK/DRV (Infos, Checklisten) ist als „Auslegung der KSK, kein Gesetz“ gekennzeichnet.
 
 ## Regelkern (Entwurf)
 - `kern/` – deterministischer Rechenkern v0 mit 18 Tests (`python tests/test_kern.py`); Details in `kern/README.md`.
 
-## Oberfläche: KSK-Chat und Rechnungen prüfen
+## Vollversion: Rechnungen prüfen (ohne KI)
 
-Eine Oberfläche mit zwei Bereichen (Menü links): **KSK-Chat** (Fragen in eigenen Worten) und **Rechnungen prüfen**
-(**Dokumente hochladen → Angaben prüfen → Ergebnis**). PDF, Foto, Excel und CSV werden auf dem eigenen Server gelesen; die
-Bewertung nutzt in beiden Bereichen denselben Regelkern und dieselbe Gegenrechnung. Anleitung, Grenzen und Testbefehle:
+**Dokumente hochladen → Angaben prüfen → Ergebnis.** PDF, Foto, Excel und CSV werden auf dem eigenen Server mit Python
+gelesen; bewertet wird mit demselben Regelkern und derselben Gegenrechnung wie im Schnellcheck. Kein Sprachmodell, kein
+Chat (entfernt am 17.10.2026; der frühere Stand steht im Git-Verlauf). Anleitung, Grenzen und Testbefehle:
 [app/DOKUMENTE.md](app/DOKUMENTE.md).

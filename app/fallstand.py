@@ -9,9 +9,9 @@ Fakten (app/bestaetigung.py) mit zwei zusätzlichen Zuständen:
   offen ist.
 'Noch nicht erfragt' ist ein fehlender Wert ohne diese Zustände, 'bekannt' ein gesetzter Wert.
 
-Das Sprachmodell bekommt den Fallstand und nur die neue Nachricht (app/llm/mistral.py) und
-liefert den aktualisierten Stand; `uebernehme` prüft und übernimmt ihn in Python: was das Modell
-nicht liefert, bleibt erhalten; ausdrücklich Unbekanntes wird geleert; ein Widerspruch ändert
+Früher (bis 17.10.2026) lieferte das Sprachmodell des Chats den aktualisierten Stand; seit dem Umbau
+„ohne KI“ gibt es keinen Chat mehr. `uebernehme` prüft und übernimmt einen Stand in Python: was nicht
+geliefert wird, bleibt erhalten; ausdrücklich Unbekanntes wird geleert; ein Widerspruch ändert
 den bisherigen Wert nicht. Schlüssel: Feldname oder 'positionen.<Nummer ab 1>.<Feld>'.
 """
 from __future__ import annotations

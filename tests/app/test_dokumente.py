@@ -160,8 +160,10 @@ class Dokumente(unittest.TestCase):
             self.assertEqual(self.c.post("/dokumente/lesen?endung=.csv", content=b"12345").status_code, 413)
 
     def test_kein_llm_keine_chat_route_kein_cache(self):
-        with patch("app.llm.anbieter.waehle_llm", side_effect=AssertionError("LLM darf nicht aufgerufen werden")):
-            self.assertEqual(self.ergebnis(fall())["werte"]["abgabe"], "73.50")
+        # 17.10.2026: ohne KI – die Sprachmodell-Schicht gibt es nicht mehr (tests/app/test_ohne_ki.py).
+        with self.assertRaises(ImportError):
+            __import__("app.llm")
+        self.assertEqual(self.ergebnis(fall())["werte"]["abgabe"], "73.50")
         self.assertEqual(self.c.post("/frage", json={"frage":"Hallo"}).status_code, 404)
         self.assertFalse(self.c.get("/gesundheit").json()["llm"])
         self.assertEqual(self.c.get("/").headers["cache-control"], "no-store")

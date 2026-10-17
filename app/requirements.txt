@@ -1,9 +1,8 @@
-# Laufzeit-Abhaengigkeiten des Chatbot-Prototyps. Bewusst wenige (siehe
-# aufgaben/PROMPT_ClaudeCode_Chatbot_1.md, Regeln). Python 3.11+.
+# Laufzeit-Abhängigkeiten von „Rechnungen prüfen“ (ohne KI, kein Sprachmodell, kein Netz). Python 3.11+.
+# Fotos und Scans zusätzlich: Tesseract (mit Sprachpaket deu) und Poppler als Programme (app/DOKUMENTE.md).
 fastapi>=0.110
 uvicorn>=0.29
 pydantic>=2.6
-httpx>=0.27
 openpyxl>=3.1
 pypdf>=4.0
 Pillow>=10.1

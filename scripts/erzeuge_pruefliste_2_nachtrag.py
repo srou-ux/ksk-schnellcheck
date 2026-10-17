@@ -11,19 +11,20 @@ Aufruf (Windows): python scripts/erzeuge_pruefliste_2_nachtrag.py
 from __future__ import annotations
 
 import datetime
-import importlib.util
 import json
 import pathlib
+import sys
 
 import openpyxl
 from openpyxl.styles import Alignment, Font
 
 WURZEL = pathlib.Path(__file__).resolve().parents[1]
-_spec = importlib.util.spec_from_file_location("pruefliste_2", WURZEL / "scripts" / "erzeuge_pruefliste_2.py")
-P2 = importlib.util.module_from_spec(_spec)
-_spec.loader.exec_module(P2)
+# 17.10.2026 (ohne KI): scripts/erzeuge_pruefliste_2.py brauchte den Quellenindex des Chats und ist entfernt;
+# die übermittelte Prüfliste 2 liegt unverändert im Regelwerk, die Gestaltung in scripts/pruefliste_layout.py.
+sys.path.insert(0, str(WURZEL / "scripts"))
+import pruefliste_layout as P2  # noqa: E402
 
-UEBERMITTELT = P2.ZIEL
+UEBERMITTELT = WURZEL / "regelwerk" / "Pruefliste_2_Steuerberater_Entwurf.xlsx"
 FRAGEN = WURZEL / "aufgaben" / "pruefliste_2_fragen.json"
 
 

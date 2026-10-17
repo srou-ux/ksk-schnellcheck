@@ -14,7 +14,7 @@ from decimal import ROUND_HALF_UP, Decimal
 from fractions import Fraction
 from unittest.mock import patch
 
-from app.ergebnisklassen import PRUEFUNG_FEHLGESCHLAGEN
+from app import gegenrechnung as G
 from kern import rechnen as K
 from tests.verifier.hilfe import im_prozess, pruefe_aufrufe
 from verifier import rechnung as V
@@ -177,31 +177,23 @@ class GegenrechnungsFehlerFallenAuf(unittest.TestCase):
                 self.assertEqual(p.status, "abweichung", f"nicht gefangen: {name}")
 
 
-class AntwortWirdNichtAusgegeben(unittest.TestCase):
-    """Ende zu Ende über den Router: bei einer Abweichung keine Antwort, Eintrag ins Lückenprotokoll."""
+class AbweichungWirdErkannt(unittest.TestCase):
+    """Ende zu Ende über app/bewertung.py (17.10.2026, ohne KI; früher über den Chat-Router): bei einer Abweichung
+    meldet die Gegenrechnung 'abweichung' – „Rechnungen prüfen“ zeigt dann „Prüfung fehlgeschlagen“ statt eines Ergebnisses."""
 
-    def test_falscher_abgabesatz_im_kern_ergibt_pruefung_fehlgeschlagen(self):
-        import tempfile
-        from pathlib import Path
-
-        from app.llm.fake import FakeLLM
+    def test_falscher_abgabesatz_im_kern_wird_gefangen(self):
+        from app import bewertung
         from app.schema import Fakten
-        from tests.app.hilfen import lauf_bestaetigt
 
         fakten = Fakten(anfrageart="kommission", jahr=2026, kommission_verkaufspreis=D("1000"),
                         kommission_einbehalt=D("500"))
-        with tempfile.TemporaryDirectory() as ordner:
-            pfad = Path(ordner) / "luecken.jsonl"
-            with patch.dict("os.environ", {"LUECKENPROTOKOLL_PFAD": str(pfad)}), \
-                    patch.dict(K.P, {"abgabesatz": {**K.P["abgabesatz"], "2026": {**K.P["abgabesatz"]["2026"], "prozent": "5.0"}}}):
-                a = lauf_bestaetigt(FakeLLM(), "2026 Kommission 1.000 € Verkauf, 500 € Provision", fakten)
-            eintraege = pfad.read_text(encoding="utf-8")
-        self.assertEqual(a.ergebnisklasse, PRUEFUNG_FEHLGESCHLAGEN)
-        self.assertIn("Gegenrechnung weicht ab", a.antwort)
-        self.assertIn("Kern 25.0", a.antwort)
-        self.assertIn("Gegenrechnung 24.5", a.antwort)
-        self.assertNotIn("Abgabepflichtig", a.antwort)
-        self.assertIn("Gegenrechnung abweichung (Fall ", eintraege)
+        with patch.dict(K.P, {"abgabesatz": {**K.P["abgabesatz"], "2026": {**K.P["abgabesatz"]["2026"], "prozent": "5.0"}}}):
+            _, p = bewertung._kern_mit_gegenrechnung(fakten)
+        self.assertEqual(p.status, "abweichung")
+        text = G.text_fehlgeschlagen(p)
+        self.assertIn("Gegenrechnung weicht ab", text)
+        self.assertIn("Kern 25.0", text)
+        self.assertIn("Gegenrechnung 24.5", text)
 
 
 if __name__ == "__main__":

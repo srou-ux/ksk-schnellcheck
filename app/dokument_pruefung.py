@@ -10,7 +10,7 @@ from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field
 
-from app import einordnung, gegenrechnung, pflichtangaben, quellen, router, taetigkeiten
+from app import bewertung, einordnung, gegenrechnung, pflichtangaben, quellen, taetigkeiten
 from app.dokument_lesen import KONFIG
 from app.schema import AuftragspartnerTyp, Auftragszweck, Fakten, Herkunft, Position, VERWERTERART_LESBAR
 
@@ -131,12 +131,12 @@ def auswerten(fall: DokumentFall, taetigkeit_ids: list[str] | None = None):
     fragen = offene_angaben(fall, f)
     if fragen:
         return {"ergebnisklasse": "Rückfrage nötig", "rueckfragen": fragen, "positionen": [], "werte": {}}
-    k, p = router._kern_mit_gegenrechnung(f)
+    k, p = bewertung._kern_mit_gegenrechnung(f)
     if p.status != "bestaetigt":
         return {"ergebnisklasse": "Prüfung fehlgeschlagen", "rueckfragen": [gegenrechnung.text_fehlgeschlagen(p)],
-                "positionen": [], "werte": {}, "pruefprotokoll": router._pruefprotokoll(p)}
+                "positionen": [], "werte": {}, "pruefprotokoll": bewertung._pruefprotokoll(p)}
     zeilen = []
-    for x, original in zip(router._einordnung(f), fall.positionen):
+    for x, original in zip(bewertung._einordnung(f), fall.positionen):
         if f.verwerterart == "privat":
             status = "Privater Auftrag – zählt hier nicht"
         elif not x["zaehlend"]:
@@ -157,5 +157,5 @@ def auswerten(fall: DokumentFall, taetigkeit_ids: list[str] | None = None):
     return {"ergebnisklasse": k.klasse, "begruendung": k.grund or k.protokoll.get("subsumtion", ""),
             "rueckfragen": k.rueckfragen, "positionen": zeilen, "fundstellen": fundstellen,
             "regel_ids": k.regel_ids, "werte": {key: str(v) for key, v in k.protokoll.items() if isinstance(v, Decimal)},
-            "pruefprotokoll": router._pruefprotokoll(p), "hinweis": "Entwurf – vom Steuerberater zu prüfen",
+            "pruefprotokoll": bewertung._pruefprotokoll(p), "hinweis": "Entwurf – vom Steuerberater zu prüfen",
             "positionshinweis": "Die Positionsprüfung zeigt, welche Entgelte zählen. Die Abgabepflicht ergibt sich erst aus dem gesamten bestätigten Fall."}

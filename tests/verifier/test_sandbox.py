@@ -72,7 +72,7 @@ class VerboteImKindprozess(unittest.TestCase):
                 self.assertTrue(_versuch(aktion)["gesperrt"])
 
     def test_kern_und_app_lassen_sich_nicht_nachladen(self):
-        for aktion in ("import kern.rechnen", "import app.router", "exec('1+1')"):
+        for aktion in ("import kern.rechnen", "import app.bewertung", "exec('1+1')"):
             with self.subTest(aktion=aktion):
                 self.assertTrue(_versuch(aktion)["gesperrt"])
 
@@ -193,19 +193,19 @@ class Statisch(unittest.TestCase):
                 lauf._waechter(ereignis, ())
 
 
-class Router(unittest.TestCase):
-    def test_antwort_traegt_pruefzeile_und_pruefprotokoll(self):
+class Bewertung(unittest.TestCase):
+    """17.10.2026 (ohne KI): früher über den Chat-Router, jetzt direkt über app/bewertung.py – derselbe Kernaufruf."""
+
+    def test_ergebnis_traegt_pruefprotokoll(self):
         from decimal import Decimal
 
-        from app.llm.fake import FakeLLM
+        from app import bewertung
         from app.schema import Fakten
-        from tests.app.hilfen import lauf_bestaetigt
 
         fakten = Fakten(anfrageart="kommission", jahr=2026, kommission_verkaufspreis=Decimal("1000"),
                         kommission_einbehalt=Decimal("500"))
-        a = lauf_bestaetigt(FakeLLM(), "2026 Kommission 1.000 € Verkauf, 500 € Provision", fakten)
-        self.assertIn(G.ZEILE_BESTAETIGT, a.antwort)
-        pp = a.pruefprotokoll
+        _, p = bewertung._kern_mit_gegenrechnung(fakten)
+        pp = bewertung._pruefprotokoll(p)
         self.assertEqual(pp["status"], "bestaetigt")
         self.assertEqual(pp["version"], __import__("verifier").VERSION)
         self.assertIn({"schluessel": "abgabesatz", "von": 2026, "bis": 2026, "wert": "4.9"}, pp["register"])

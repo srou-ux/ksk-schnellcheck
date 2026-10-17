@@ -1,5 +1,5 @@
 # Prüfung auf GitHub (frische Linux-Umgebung, Python wie im Entwicklungsbehälter .devcontainer).
-# Beweist: alles Nötige steht im Repo. Nur erfundene Testdaten, kein Schlüssel, kein echtes Sprachmodell.
+# Beweist: alles Nötige steht im Repo. Ohne KI: kein Sprachmodell, kein Schlüssel, nur erfundene Testdaten.
 name: Prüfen
 on:
   push:
@@ -21,58 +21,13 @@ jobs:
         with:
           python-version: "3.11"
           cache: pip
-          cache-dependency-path: app/requirements.txt
+          cache-dependency-path: app/requirements*.txt
       - name: Pakete installieren
-        run: pip install --disable-pip-version-check -r app/requirements.txt
-      - name: Alle Prüfungen (Regelwerk, Quellen, Prüfsummen, Kern, Testfälle, Chatbot-Tests)
+        run: pip install --disable-pip-version-check -r app/requirements.txt -r app/requirements-test.txt
+      - name: Alle Prüfungen (Regelwerk, Quellen, Prüfsummen, Kern, Testfälle, Schnellcheck, App, Gegenrechnung)
         run: python scripts/pruefe_alles.py
-      - name: Gegenproben Teil 1d (Ziel 0 Lücken)
-        run: python aufgaben/audit/gegenproben_teil1d_runde3.py
-  abnahme-1f:
-    # Messlatte für Teil 1f, seit dem Bau grün (0 Lücken) -- blockiert jetzt den Lauf.
-    runs-on: ubuntu-24.04
-    timeout-minutes: 15
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-          cache: pip
-          cache-dependency-path: app/requirements.txt
-      - run: pip install --disable-pip-version-check -r app/requirements.txt
-      - name: Abnahme Teil 1f (Ziel 0 Lücken)
-        run: python aufgaben/audit/abnahme_teil1f.py
-  abnahme-1f-nachtrag:
-    # Messlatte für den Nachtrag zu Teil 1f (Ziel 0 Lücken) -- blockiert den Lauf.
-    runs-on: ubuntu-24.04
-    timeout-minutes: 15
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-          cache: pip
-          cache-dependency-path: app/requirements.txt
-      - run: pip install --disable-pip-version-check -r app/requirements.txt
-      - name: Abnahme Teil 1f, Nachtrag (Ziel 0 Lücken)
-        run: python aufgaben/audit/abnahme_teil1f_nachtrag.py
-  abnahme-1g:
-    # Messlatte für Teil 1g, Mischform (Ziel 0 Lücken) -- blockiert den Lauf.
-    runs-on: ubuntu-24.04
-    timeout-minutes: 15
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-          cache: pip
-          cache-dependency-path: app/requirements.txt
-      - run: pip install --disable-pip-version-check -r app/requirements.txt
-      - name: Abnahme Teil 1g, Textbausteine (Ziel 0 Lücken)
-        run: python aufgaben/audit/abnahme_teil1g.py
   oberflaeche:
-    # Teil 1f, Abschnitt J.5: Browser-Test (Playwright) -- Begruessung ohne Modellaufruf,
-    # kein sichtbares Markdown-Sternchen (Abschnitt J.2/J.3).
+    # Echter Browser und echter HTTP-Server, Fotos/Scans mit Tesseract und Poppler (wie auf dem Server).
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
@@ -81,14 +36,11 @@ jobs:
         with:
           python-version: "3.11"
           cache: pip
-          cache-dependency-path: app/requirements.txt
-      - run: pip install --disable-pip-version-check -r app/requirements.txt playwright
+          cache-dependency-path: app/requirements*.txt
+      - run: sudo apt-get update -q && sudo apt-get install -y -q tesseract-ocr tesseract-ocr-deu poppler-utils
+      - run: pip install --disable-pip-version-check -r app/requirements.txt -r app/requirements-test.txt playwright
       - run: playwright install --with-deps chromium
-      - name: Quellenindex (RAG) bauen
-        run: python -m app.rag.index
-      - name: Browser-Test (Begrüßung, kein Markdown-Sternchen)
-        run: python tests/app/playwright_oberflaeche.py
-      - name: Dokumentenoberfläche ohne Sprachmodell
+      - name: Dokumentenoberfläche im Browser
         run: python tests/app/playwright_dokumente.py
       - name: Dokumentenprüfung über echten HTTP-Server
         run: python tests/app/livetest_dokumente.py

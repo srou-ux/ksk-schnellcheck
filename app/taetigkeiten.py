@@ -12,8 +12,8 @@ Jetzt wird jede zählende Position einer Tätigkeit aus dem Excel-Blatt
   ('widerspruch'): wie Grenzfall -- nie "Abgabepflichtig".
 
 Tätigkeiten, Gruppen, Erkennungsbegriffe, Regel-IDs und Fundstellen stehen ausschließlich in
-der Excel; hier steht nur das Verfahren. Das Sprachmodell darf nur eine T-ID aus dieser Liste
-wählen (app/llm/mistral.py); die feste Erkennung über die Begriffe ist die Gegenprobe.
+der Excel; hier steht nur das Verfahren. Seit 17.10.2026 ohne KI: die Tätigkeit kommt aus der festen
+Erkennung über die Begriffe oder aus der Auswahl des Nutzers aus dieser Liste (Schnellcheck).
 """
 from __future__ import annotations
 

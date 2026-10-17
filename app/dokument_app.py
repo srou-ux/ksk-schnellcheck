@@ -1,8 +1,8 @@
-"""Bereich „Rechnungen prüfen“ (Dokumentenmodus). Seit 17.10.2026 Teil der gemeinsamen App (app/main.py hängt `router`
-ein, Seite /rechnungen); `app` bleibt als eigenständige Variante für Tests und den Betrieb ohne Chat.
+"""Bereich „Rechnungen prüfen“: Dokumente hochladen -> mit Python lesen -> Angaben prüfen -> Ergebnis aus dem Regelkern.
+Ohne KI (17.10.2026): kein Sprachmodell, kein Netz zur Laufzeit. PDF-Text mit pypdf, Fotos/Scans mit lokalem
+Tesseract, Excel/CSV mit openpyxl/csv; Positionen erkennt die Regel-Erkennung (app/dokument_lesen.py).
 
-Start (gemeinsam): python -m uvicorn app.main:app --host 127.0.0.1 --port 8000
-Start (nur Dokumente): python -m uvicorn app.dokument_app:app --host 127.0.0.1 --port 8000
+Start: python -m uvicorn app.main:app --host 127.0.0.1 --port 8000
 Originale werden nur vorübergehend zur lokalen Extraktion gespeichert und anschließend gelöscht.
 Keine fachlichen Ergebnisse oder Dokumenttexte im Serverlog/Quellenindex speichern.
 """
@@ -32,9 +32,6 @@ from app.schema import AUFTRAGSPARTNER_LESBAR
 
 app = FastAPI(title="KSK-Dokumentenprüfung – Entwurf")
 router = APIRouter()
-# 17.10.2026: KI-Unterstützung beim Lesen. app/main.py setzt hier das Sprachmodell der gemeinsamen App (Mistral oder
-# Demo-Modus); die eigenständige Variante bleibt ohne KI (None).
-LLM_GEBER = None
 WURZEL = Path(__file__).resolve().parent.parent
 _SCHLUESSEL = (os.environ.get("DOKUMENT_TICKET_SCHLUESSEL") or secrets.token_hex()).encode()
 _PLAETZE = asyncio.Semaphore(KONFIG["max_parallel"])
@@ -118,6 +115,7 @@ def _lese_prozess(daten, endung):
 
 
 @app.get("/")
+@app.get("/rechnungen")  # frühere Adresse aus der Zeit mit Chat, bleibt gültig
 def startseite():
     return FileResponse(WURZEL / "app/static/dokumente.html")
 
@@ -127,24 +125,16 @@ def gesundheit():
     return {"modus": "dokumente", "llm": False}
 
 
-def _llm():
-    return LLM_GEBER() if (LLM_GEBER is not None and KONFIG.get("ki_verwenden")) else None
-
-
 @router.get("/dokumente/optionen")
 def optionen():
-    from app.llm.fake import FakeLLM
-
-    llm = _llm()
     return {"rechtsformen": AUFTRAGSPARTNER_LESBAR, "jahre": quellen.verfuegbare_jahre(),
-            "ki_verfuegbar": llm is not None and not isinstance(llm, FakeLLM),
             "max_bytes": KONFIG["max_bytes"], "max_positionen": KONFIG["max_positionen"],
             "katalog": [{"text": r["voraussetzung"], "vorbehalt": r["vorbehalt"], "quelle": r["fundstelle"]}
                         for r in quellen.alle_regeln() if r["gruppe"] == "Katalog"]}
 
 
 @router.post("/dokumente/lesen")
-async def dokument_lesen(request: Request, endung: str, ki: int = 1):
+async def dokument_lesen(request: Request, endung: str):
     if endung not in KONFIG["endungen"]:
         raise HTTPException(415, "Bitte PDF, PNG, JPG, XLSX oder UTF-8-CSV hochladen. Ältere XLS-Dateien bitte zuerst als XLSX speichern.")
     if _PLAETZE.locked():
@@ -152,19 +142,7 @@ async def dokument_lesen(request: Request, endung: str, ki: int = 1):
     async with _PLAETZE:
         daten = await _inhalt(request, KONFIG["max_bytes"])
         result = await run_in_threadpool(_lese_prozess, daten, endung)
-    llm = _llm() if ki else None
-    from app import dokument_ki
-
-    ordnung = await run_in_threadpool(dokument_ki.ordne, result["text"], result["positionen"], llm, KONFIG["ki_max_text"])
-    result["positionen"] = ordnung["positionen"]
-    result["pruefung"] = ordnung["pruefung"]
-    hinweise = result["hinweise"]
-    if ordnung["positionen"]:
-        # Live-Test 17.10.2026: „Keine eindeutigen Positionen erkannt“ stammt von der Regel-Erkennung und ist falsch, wenn
-        # die KI Positionen gefunden hat.
-        hinweise = [h for h in hinweise if not h.startswith("Keine eindeutigen Positionen erkannt")]
-    result["hinweise"] = [*hinweise, *ordnung["hinweise"]]
-    result["ki"] = ordnung["ki"]
+    result["pruefung"] = ["regeln"] * len(result["positionen"])
     return result
 
 

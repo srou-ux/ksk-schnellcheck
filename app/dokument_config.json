@@ -40,8 +40,6 @@
   ],
   "fremdwaehrung": "\\b(?:USD|CHF|GBP|JPY|CAD|AUD)\\b|[$£¥]",
   "summenzeile": "^(?:gesamtbetrag|gesamtsumme|rechnungssumme|endsumme|gesamt|summe|zwischensumme|nettobetrag|nettosumme|bruttobetrag|rechnungsbetrag|endbetrag|zahlbetrag|umsatzsteuer|mehrwertsteuer|mwst|ust|rabatt|skonto|anzahlung|gutschrift)\\b",
-  "ki_verwenden": true,
-  "ki_max_text": 20000,
-  "hinweis_ki": "17.10.2026: KI-Unterstützung beim Lesen (app/dokument_ki.py): nur der gelesene Text geht an Mistral (EU), nie die Datei; jeder Betrag muss im Dokument stehen; Abgleich mit der Regel-Erkennung. 'ki_verwenden': false schaltet sie für alle ab; der Nutzer kann sie je Upload abschalten. 'ki_max_text': längere Texte nur mit der Regel-Erkennung.",
-  "hinweis_summenzeile": "Live-Test 17.10.2026: 'Gesamtbetrag 1.963,50 EUR' (brutto) wurde als Position vorgeschlagen – 'gesamt\\b' trifft 'Gesamtbetrag' nicht. Zusammengesetzte Summenwörter ergänzt."
+  "hinweis_summenzeile": "Live-Test 17.10.2026: 'Gesamtbetrag 1.963,50 EUR' (brutto) wurde als Position vorgeschlagen – 'gesamt\\b' trifft 'Gesamtbetrag' nicht. Zusammengesetzte Summenwörter ergänzt.",
+  "hinweis_ohne_ki": "17.10.2026: ohne KI. Dokumente werden nur mit Python gelesen (pypdf, Tesseract, openpyxl, csv); Positionen erkennt die Regel-Erkennung in app/dokument_lesen.py."
 }

@@ -1,6 +1,6 @@
 """Führt ALLE Prüfungen des Projekts nacheinander aus und meldet am Ende klar: ALLES GRÜN oder FEHLER.
 Aufruf aus dem Projektstamm (Windows, Linux, Mac):  python scripts/pruefe_alles.py
-Optional:  python scripts/pruefe_alles.py --ohne-app   (überspringt die Chatbot-Tests, falls fastapi nicht installiert ist)
+Optional:  python scripts/pruefe_alles.py --ohne-app   (überspringt die App-Tests, falls fastapi nicht installiert ist)
 Jede KI und jeder Mensch nutzt diesen einen Befehl als Erfolgskriterium nach einer Änderung."""
 import subprocess, sys, pathlib
 
@@ -16,7 +16,7 @@ SCHRITTE = [
     ("Testarchiv aktuell (alle Chatbot-Testfälle mit Soll, nur ergänzen)", [PY, "scripts/erzeuge_testarchiv.py", "--pruefen"]),
 ]
 SCHNELLCHECK = ("Schnellcheck (ohne KI)", [PY, "-m", "unittest", "discover", "-s", "tests/schnellcheck", "-t", "."])
-APP = ("Chatbot-Tests", [PY, "-m", "unittest", "discover", "-s", "tests/app"])
+APP = ("App-Tests (Rechnungen prüfen, ohne KI)", [PY, "-m", "unittest", "discover", "-s", "tests/app"])
 OPTIONAL = [  # nur wenn vorhanden (entstehen in späteren Teilen)
     ("Gegenrechnung (verifier)", "verifier", [PY, "-m", "unittest", "discover", "-s", "tests/verifier"]),
     ("Regelregister formal (Gegenrechnung, eigener Prozess)", "verifier", [PY, "-m", "verifier.pruefe_register", "--nur-register"]),

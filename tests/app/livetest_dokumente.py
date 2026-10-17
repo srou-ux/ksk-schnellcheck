@@ -20,7 +20,7 @@ def main():
     # Gemeinsame App (17.10.2026), Demo-Modus: kein Sprachmodell, kein Schlüssel.
     server = subprocess.Popen([sys.executable, "-m", "uvicorn", "app.main:app", "--port", "8733",
                                "--log-level", "error"], cwd=W,
-                              env={**os.environ, "LLM_ANBIETER": "demo", "MISTRAL_API_KEY": "", "RAG_AUS": "1"})
+                              env=dict(os.environ))
     def post(path, data, raw=False):
         payload = data if raw else json.dumps(data).encode()
         r = urllib.request.Request(url+path, data=payload,

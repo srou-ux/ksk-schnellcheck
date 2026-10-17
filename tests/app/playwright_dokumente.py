@@ -1,5 +1,5 @@
-"""Echter Browser + laufende gemeinsame App (Bereich „Rechnungen prüfen“, /rechnungen); nur erfundene Belege, Demo-Modus
-(kein Sprachmodell). Seit 17.10.2026 mit dem gemeinsamen Menü „KSK-Chat“ / „Rechnungen prüfen“.
+"""Echter Browser + laufende App „Rechnungen prüfen“ (ohne KI); nur erfundene Belege
+(kein Sprachmodell, kein Chat).
 Aufruf: python tests/app/playwright_dokumente.py (Playwright/Chromium erforderlich).
 """
 import os
@@ -17,7 +17,7 @@ from tests.app.test_dokumente import pdf
 def hauptlauf():
     from playwright.sync_api import sync_playwright, expect
     url = "http://127.0.0.1:8732"
-    env = {**os.environ, "LLM_ANBIETER": "demo", "MISTRAL_API_KEY": "", "RAG_AUS": "1"}
+    env = dict(os.environ)
     server = subprocess.Popen([sys.executable, "-m", "uvicorn", "app.main:app", "--port", "8732"], cwd=W, env=env)
     try:
         for _ in range(100):
@@ -33,12 +33,11 @@ def hauptlauf():
             fehler = []; fremde = []
             page.on("pageerror", lambda e: fehler.append(str(e)))
             page.on("request", lambda r: fremde.append(r.url) if not r.url.startswith(url) else None)
-            # Gemeinsames Menü: vom Chat zu „Rechnungen prüfen“ und zurück.
-            page.goto(url)
-            expect(page.locator('#bereiche a[aria-current="page"]')).to_have_text("KSK-Chat")
-            page.locator("#bereiche a", has_text="Rechnungen prüfen").click()
-            expect(page).to_have_url(url + "/rechnungen")
-            expect(page.locator('#bereiche a[aria-current="page"]')).to_have_text("Rechnungen prüfen")
+            # Ohne KI (17.10.2026): kein Chat mehr; Startseite und /rechnungen zeigen „Rechnungen prüfen“.
+            for pfad in ("", "/rechnungen"):
+                page.goto(url + pfad)
+                expect(page.locator('#bereiche a[aria-current="page"]')).to_have_text("Rechnungen prüfen")
+                expect(page.locator("#bereiche a", has_text="KSK-Chat")).to_have_count(0)
             for n, (betrag, erwartung) in enumerate([(1500, "73,50"), (1600, "78,40"), (1700, "83,30"), (1800, "88,20")]):
                 page.goto(url + "/rechnungen")
                 # Keine eval-basierte Pollingfunktion: die Seite verbietet unsafe-eval ausdrücklich.

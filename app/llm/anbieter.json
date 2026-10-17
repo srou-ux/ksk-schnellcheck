@@ -1,5 +1,0 @@
-{
-  "_hinweis": "Einstellungen des Sprachmodells (app/llm/anbieter.py, app/llm/mistral.py). Keine Rechtswerte. Entscheidung des Nutzers am 17.10.2026: nur Mistral (EU), Standard Mistral Small – billig und im Vergleich mit Large gleich genau (Korpus jeder 10. Fall: Small 166/11/0 falsch, Large 168/9/0 falsch; aufgaben/audit/TESTPROTOKOLL.md). Ein anderes Mistral-Modell: hier ändern oder MISTRAL_MODELL setzen, vorher das ganze Testarchiv laufen lassen (CLAUDE.md).",
-  "mistral_modell": "mistral-small-latest",
-  "_hinweis_umstellung": "17.10.2026: Entscheidung des Nutzers – Mistral Small ist Standard, Large wird nicht mehr verwendet. Stand der Prüfung bei der Entscheidung: Testarchiv mit Small 5 FALSCH (ebea088), ganzer Korpus mit Small 30 FALSCH (52ee640); die Ursachen sind behoben (bis 30938c3, offline 0 FALSCH), die Bestätigung live mit Small läuft (aufgaben/audit/TESTPROTOKOLL.md). Ein anderes Modell nur nach Testarchiv und Korpus (CLAUDE.md)."
-}

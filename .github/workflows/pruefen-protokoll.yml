@@ -17,15 +17,13 @@ jobs:
           python-version: "3.11"
           cache: pip
           cache-dependency-path: app/requirements.txt
-      - run: pip install --disable-pip-version-check -r app/requirements.txt
+      - run: pip install --disable-pip-version-check -r app/requirements.txt -r app/requirements-test.txt
       - name: Alle Prüfungen mit Protokoll
         run: |
           mkdir -p aufgaben/audit
           set +e
           python scripts/pruefe_alles.py > aufgaben/audit/pruefen_protokoll.txt 2>&1
           echo "Exitcode: $?" >> aufgaben/audit/pruefen_protokoll.txt
-          python aufgaben/audit/gegenproben_teil1d_runde3.py >> aufgaben/audit/pruefen_protokoll.txt 2>&1
-          echo "Exitcode Gegenproben: $?" >> aufgaben/audit/pruefen_protokoll.txt
           tail -30 aufgaben/audit/pruefen_protokoll.txt
       - name: Protokoll ins Repo
         run: |

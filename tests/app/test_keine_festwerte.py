@@ -26,14 +26,6 @@ MUSTER = {
 
 # (Datei relativ zu app/, Art, Textstück) -> Begründung. Klein halten; jede Zeile begründen.
 AUSNAHMEN = {
-    ("llm/mistral.py", "Eurobetrag", "900 statt 1.200 Euro"):
-        "Beispielsatz im Extraktions-Prompt (wie ein Nutzer eine Korrektur schreibt), kein Rechtswert",
-    ("llm/mistral.py", "Eurobetrag", "zu je 200 Euro"):
-        "Beispielsatz im Extraktions-Prompt (Mengenangabe), kein Rechtswert",
-    ("llm/mistral.py", "Eurobetrag", "Rechnungen mit enthaltenen Teilbetra"):
-        "Beispielsatz im Extraktions-Prompt ('davon'), kein Rechtswert",
-    ("llm/mistral.py", "BSG", "Gerichts-/Urteilswoerter"):
-        "Verbotsliste im Prompt: das Modell darf diese Wörter NICHT schreiben",
     ("schema.py", "Jahreszahl", "1980"):
         "technische Plausibilitätsgrenze des Eingabefelds Jahr (bewusst so, aufgaben/FUNDE_Chatbot.md), kein Rechtsjahr",
 }

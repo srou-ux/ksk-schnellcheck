@@ -8,7 +8,7 @@
 #   2. installiert die Pakete aus app\requirements.txt (nur beim ersten Start oder wenn sie sich ändern),
 #   3. startet die Dokumentenprüfung und öffnet http://localhost:8000 im Browser.
 #
-# Kein Sprachmodell und kein API-Schlüssel nötig. Für Fotos/Scans: Tesseract + Poppler im PATH.
+# Ohne KI: kein Sprachmodell und kein API-Schlüssel. Für Fotos/Scans: Tesseract + Poppler im PATH.
 $ErrorActionPreference = "Stop"
 Set-Location (Split-Path -Parent $PSScriptRoot)
 
@@ -28,14 +28,7 @@ if (-not (Test-Path $merker) -or (Get-Content $merker) -ne $stand) {
     & $py -m pip install --disable-pip-version-check -q -r app\requirements.txt
     Set-Content $merker $stand
 }
-Write-Host "Baue den Quellenindex (nur Geändertes) ..."
-& $py -m app.rag.index
-if ($env:MISTRAL_API_KEY -or $env:LLM_ANBIETER) {
-    Write-Host "Sprachmodell: Mistral (EU), Modell laut app\llm\anbieter.json; LLM_ANBIETER=demo = ohne Sprachmodell."
-} else {
-    Write-Host "Kein Schlüssel gesetzt: Demo-Modus (einfache Erkennung ohne Sprachmodell)." -ForegroundColor Yellow
-}
 Write-Host "Fotos und Scans in 'Rechnungen prüfen' brauchen zusätzlich Tesseract und Poppler im PATH (app\DOKUMENTE.md)."
-Write-Host "Starte den KSK-Assistenten (Chat und Rechnungen prüfen) auf http://localhost:8000 (Beenden mit Strg+C) ..." -ForegroundColor Green
+Write-Host "Starte „Rechnungen prüfen“ (ohne KI) auf http://localhost:8000 (Beenden mit Strg+C) ..." -ForegroundColor Green
 Start-Process "http://localhost:8000/"
 & $py -m uvicorn app.main:app --host 127.0.0.1 --port 8000
