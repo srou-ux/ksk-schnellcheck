@@ -8,6 +8,7 @@
 # --- Erlaubt: Programmcode (später) ---
 !/src/
 !/app/
+!/schnellcheck/
 !/kern/
 !/verifier/
 !/scripts/

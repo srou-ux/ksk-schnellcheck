@@ -18,6 +18,13 @@ Expertenebene für Steuerberater und Agenturen, nennt Urteile mit Fundstelle (nu
 - Rechtsstand: § 24 KSVG Fassung A (bis 31.12.2022) und B (ab 01.01.2023, Schwelle 450 € bis 2024, 700 € 2025, 1.000 € ab 2026). Abgabesätze: 2019–2022 4,2 %; 2023–2025 5,0 %; 2026 4,9 %; 2027 5,0 %.
 - Archivdatum ≠ Stand der Quelle; KSK-/DRV-Hinweise sind „Auslegung, kein Gesetz“; alles „Entwurf – vom Steuerberater zu prüfen“.
 
+## KSK-Schnellcheck (17.10.2026, Repo `srou-ux/ksk-schnellcheck`)
+- Kostenlose Ersteinschätzung ohne KI als Einstieg (Lead-Magnet) in das SaaS. Kopie von `ksk-assistent` (Stand 75ab51a) plus Ordner `schnellcheck/`.
+- Besucher wählt Jahr, Zweck, Katalogfrage, Leistungen (feste Liste aus Blatt „Tätigkeitsabgrenzung“), Rechtsform, Betrag. Bewertung über `app.dokument_pruefung.auswerten` (Kern + Gegenrechnung), keine eigene Rechnung, keine Festwerte.
+- Einzige Änderung am vorhandenen Code: `fakten_aus`/`auswerten` nehmen optional `taetigkeit_ids` (gewählte T-IDs statt Freitext-Erkennung; ungültige ID = „unbekannt“). Ohne Parameter unverändert.
+- Grenzfall, Rückfrage, Nicht abgedeckt → Anzeige „Weitere Prüfung nötig“; die Kernklasse wird immer mit angezeigt.
+- Tests: `tests/schnellcheck/` (21), Teil von `scripts/pruefe_alles.py`. Start: `scripts/start_schnellcheck_windows.bat`.
+
 ## Bekannte Lücken (Bot antwortet „nicht abgedeckt“)
 - Keine neuen BSG-Urteile zur Abgabepflicht von Unternehmen nach 01.06.2022.
 - Sechs LSG/SG-Entscheidungen nur als Sekundärquelle ohne Volltext (`quellen/ergaenzend/urteile/LISTE_LSG_SG.md`); zehn ältere BSG-Urteile (1998–2008) nicht frei abrufbar; „B 3 KS 1/08 R“ hat das Datum 18.09.2008.

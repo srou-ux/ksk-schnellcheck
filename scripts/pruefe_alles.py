@@ -15,6 +15,7 @@ SCHRITTE = [
     ("Testfälle gegen den Kern", [PY, "tests/lauf_testfaelle.py"]),
     ("Testarchiv aktuell (alle Chatbot-Testfälle mit Soll, nur ergänzen)", [PY, "scripts/erzeuge_testarchiv.py", "--pruefen"]),
 ]
+SCHNELLCHECK = ("Schnellcheck (ohne KI)", [PY, "-m", "unittest", "discover", "-s", "tests/schnellcheck", "-t", "."])
 APP = ("Chatbot-Tests", [PY, "-m", "unittest", "discover", "-s", "tests/app"])
 OPTIONAL = [  # nur wenn vorhanden (entstehen in späteren Teilen)
     ("Gegenrechnung (verifier)", "verifier", [PY, "-m", "unittest", "discover", "-s", "tests/verifier"]),
@@ -32,6 +33,7 @@ def lauf(name, cmd):
 
 if __name__ == "__main__":
     ergebnisse = [(n, lauf(n, c)) for n, c in SCHRITTE]
+    ergebnisse.append((SCHNELLCHECK[0], lauf(*SCHNELLCHECK)))
     if "--ohne-app" not in sys.argv:
         ergebnisse.append((APP[0], lauf(*APP)))
     for n, pfad, c in OPTIONAL:

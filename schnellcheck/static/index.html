@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KSK-Schnellcheck – Künstlersozialabgabe kostenlos prüfen</title>
+<meta name="description" content="Muss Ihr Unternehmen Künstlersozialabgabe zahlen? Kostenlose Ersteinschätzung in wenigen Minuten – ohne Anmeldung, ohne KI, mit Quellenangabe.">
+<style>
+:root{
+  --papier:#f6f3ec; --blatt:#fffdf8; --tinte:#1d2a44; --tinte-2:#4a5672; --linie:#d9d2c3; --linie-2:#ebe5d8;
+  --akzent:#1f4fa8; --akzent-hell:#e7eefb;
+  --ja:#a2361f; --ja-hell:#fbece7; --nein:#25704a; --nein-hell:#e6f3ec; --offen:#9a6a00; --offen-hell:#fbf2dc;
+  --schatten:0 1px 2px rgba(29,42,68,.06),0 8px 24px rgba(29,42,68,.06);
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root{
+  --papier:#14171f; --blatt:#1b1f2a; --tinte:#e9e6dd; --tinte-2:#a9afc0; --linie:#343a4a; --linie-2:#272c38;
+  --akzent:#8fb0f0; --akzent-hell:#22304d;
+  --ja:#f0a08b; --ja-hell:#3a2220; --nein:#8fd3ad; --nein-hell:#1d3328; --offen:#f0c86a; --offen-hell:#3a301a;
+  --schatten:none;
+}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--papier);color:var(--tinte);font:16px/1.55 var(--sans)}
+a{color:var(--akzent)}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px}
+header.kopf{padding:48px 0 28px}
+.marke{font:600 13px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--tinte-2)}
+h1{font:600 clamp(30px,5vw,46px)/1.12 var(--serif);margin:14px 0 14px;letter-spacing:-.01em}
+.lead{font-size:18px;color:var(--tinte-2);max-width:44em;margin:0}
+.vorteile{display:flex;flex-wrap:wrap;gap:8px 22px;margin:22px 0 0;padding:0;list-style:none;font-size:14.5px;color:var(--tinte-2)}
+.vorteile li::before{content:"✓";color:var(--nein);font-weight:700;margin-right:7px}
+
+form{margin:8px 0 0}
+.abschnitt{background:var(--blatt);border:1px solid var(--linie);border-radius:6px;box-shadow:var(--schatten);margin:0 0 18px;padding:24px 24px 22px;position:relative}
+.abschnitt h2{font:600 21px/1.25 var(--serif);margin:0 0 4px;display:flex;gap:12px;align-items:baseline}
+.nr{font:600 13px/1 var(--sans);color:var(--akzent);border:1.5px solid var(--akzent);border-radius:50%;width:26px;height:26px;display:inline-grid;place-items:center;flex:none;transform:translateY(-2px)}
+.unter{color:var(--tinte-2);font-size:14.5px;margin:0 0 18px 38px}
+.feld{margin:0 0 16px}
+.feld:last-child{margin-bottom:0}
+label.titel,.frage{display:block;font-weight:600;margin:0 0 6px;font-size:15px}
+.hilfe{display:block;font-weight:400;color:var(--tinte-2);font-size:13.5px;margin-top:2px}
+input[type=text],input[type=number],input[inputmode],select{width:100%;font:inherit;color:inherit;background:var(--papier);border:1px solid var(--linie);border-radius:4px;padding:9px 11px;min-height:42px}
+input:focus,select:focus,button:focus-visible,.karte:focus-within{outline:2px solid var(--akzent);outline-offset:1px}
+.zwei{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.karten{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.karte{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--linie);border-radius:5px;padding:12px 13px;cursor:pointer;background:var(--papier);font-size:15px}
+.karte:has(input:checked){border-color:var(--akzent);background:var(--akzent-hell)}
+.karte input{margin:3px 0 0;accent-color:var(--akzent)}
+.wahl{display:flex;flex-wrap:wrap;gap:8px}
+.wahl .karte{padding:8px 13px}
+details.katalog{border-left:3px solid var(--linie);padding:2px 0 2px 14px;margin:6px 0 12px;font-size:14px;color:var(--tinte-2)}
+details.katalog summary{cursor:pointer;color:var(--akzent);font-weight:600}
+details.katalog ul{margin:8px 0 0;padding-left:18px}
+details.katalog small{display:block;opacity:.8}
+.versteckt{display:none!important}
+
+.pos{border:1px solid var(--linie-2);border-radius:5px;padding:14px;margin:0 0 12px;background:var(--papier)}
+.pos-kopf{display:flex;justify-content:space-between;align-items:center;margin:0 0 10px;font:600 14px/1 var(--sans);color:var(--tinte-2)}
+.pos-gitter{display:grid;grid-template-columns:1.1fr .9fr;gap:12px}
+.pos-gitter .breit{grid-column:1/-1}
+.pos input,.pos select{background:var(--blatt)}
+.leistungshinweis{font-size:13px;color:var(--tinte-2);margin:6px 0 0}
+.knopf{font:600 15px/1 var(--sans);border-radius:4px;padding:12px 18px;cursor:pointer;border:1px solid var(--akzent);background:var(--akzent);color:#fff}
+@media (prefers-color-scheme:dark){.knopf{color:#0f1420}}
+.knopf.leise{background:transparent;color:var(--akzent)}
+.knopf.mini{padding:6px 10px;font-size:13px;border-color:var(--linie);color:var(--tinte-2);background:transparent}
+.knopf[disabled]{opacity:.55;cursor:wait}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:15px}
+.check input{margin-top:4px;width:18px;height:18px;accent-color:var(--akzent);flex:none}
+.absenden{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin:6px 0 40px}
+.absenden .knopf{font-size:17px;padding:15px 26px}
+.fehlerbox{color:var(--ja);font-size:14.5px}
+
+/* Ergebnis */
+#ergebnis{scroll-margin-top:16px}
+.bericht{background:var(--blatt);border:1px solid var(--linie);border-radius:6px;box-shadow:var(--schatten);padding:28px 26px;margin:0 0 18px}
+.urteil{display:flex;gap:20px;align-items:center;flex-wrap:wrap;padding-bottom:20px;border-bottom:1px solid var(--linie-2)}
+.stempel{font:700 14px/1.15 var(--sans);letter-spacing:.08em;text-transform:uppercase;border:3px solid currentColor;border-radius:6px;padding:12px 14px;transform:rotate(-2.5deg);text-align:center;max-width:220px}
+.stufe-ja .stempel{color:var(--ja);background:var(--ja-hell)}
+.stufe-nein .stempel{color:var(--nein);background:var(--nein-hell)}
+.stufe-offen .stempel{color:var(--offen);background:var(--offen-hell)}
+.urteil h2{font:600 26px/1.2 var(--serif);margin:0}
+.urteil .klasse{font-size:13.5px;color:var(--tinte-2);margin:4px 0 0}
+.begruendung{font-size:16px;margin:18px 0 0}
+.zahlen{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--linie-2);border:1px solid var(--linie-2);border-radius:5px;overflow:hidden;margin:20px 0 0}
+.zahl{background:var(--blatt);padding:12px 14px}
+.zahl span{display:block;font-size:12.5px;color:var(--tinte-2);text-transform:uppercase;letter-spacing:.05em}
+.zahl b{font:600 22px/1.3 var(--serif);font-variant-numeric:tabular-nums}
+.bericht h3{font:600 17px/1.3 var(--serif);margin:24px 0 8px}
+.offen-liste{margin:0;padding-left:20px}
+.offen-liste li{margin:0 0 6px}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+th,td{text-align:left;padding:8px 8px 8px 0;border-bottom:1px solid var(--linie-2);vertical-align:top}
+th{font-size:12.5px;color:var(--tinte-2);font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+td.betrag{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums;padding-right:0}
+th.betrag{text-align:right;padding-right:0}
+.quellen{font-size:13.5px;color:var(--tinte-2);margin:0;padding-left:18px}
+.vermerk{margin:22px 0 0;padding:12px 14px;border:1px dashed var(--linie);border-radius:4px;font-size:13.5px;color:var(--tinte-2)}
+.weiter{background:var(--tinte);color:var(--papier);border-radius:6px;padding:26px;margin:0 0 40px;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center}
+.weiter h3{font:600 21px/1.25 var(--serif);margin:0 0 6px}
+.weiter p{margin:0;opacity:.85;font-size:15px}
+.weiter ul{margin:10px 0 0;padding-left:18px;font-size:14.5px;opacity:.9}
+.weiter .knopf{background:var(--papier);color:var(--tinte);border-color:var(--papier);white-space:nowrap;text-decoration:none;display:inline-block}
+footer{border-top:1px solid var(--linie);padding:22px 0 40px;font-size:13px;color:var(--tinte-2)}
+@media (max-width:640px){
+  .zwei,.karten,.pos-gitter{grid-template-columns:1fr}
+  .unter{margin-left:0}
+  .abschnitt,.bericht{padding:18px 16px}
+  .weiter{grid-template-columns:1fr}
+  .tabelle-rolle thead{display:none}
+  .tabelle-rolle tr{display:block;border-bottom:1px solid var(--linie-2);padding:8px 0}
+  .tabelle-rolle td{display:block;border:0;padding:2px 0;text-align:left}
+}
+@media print{.absenden,.weiter,form,header .vorteile{display:none}body{background:#fff}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="kopf">
+  <div class="marke">KSK-Schnellcheck · Künstlersozialabgabe</div>
+  <h1>Muss Ihr Unternehmen Künstlersozialabgabe zahlen?</h1>
+  <p class="lead">Beantworten Sie ein paar Fragen zu Ihren Aufträgen an Designer, Fotografen, Texter oder Musiker. Sie erhalten sofort eine Ersteinschätzung mit Berechnung und Quelle.</p>
+  <ul class="vorteile"><li>kostenlos, ohne Anmeldung</li><li>ohne KI – feste, geprüfte Regeln</li><li>Werte und Quellen je Jahr</li><li>keine Speicherung Ihrer Angaben</li></ul>
+</header>
+
+<form id="formular" novalidate>
+  <section class="abschnitt">
+    <h2><span class="nr">1</span>Jahr und Unternehmen</h2>
+    <p class="unter">Maßgeblich ist das Jahr, in dem Sie bezahlt haben – nicht das Rechnungsdatum.</p>
+    <div class="zwei">
+      <div class="feld"><label class="titel" for="jahr">Zahlungsjahr</label><select id="jahr" required></select></div>
+      <div class="feld"><label class="titel" for="branche">Was macht Ihr Unternehmen?<span class="hilfe">z. B. Bäckerei, Steuerkanzlei, Online-Shop</span></label><input type="text" id="branche" maxlength="120" autocomplete="organization-title"></div>
+    </div>
+  </section>
+
+  <section class="abschnitt">
+    <h2><span class="nr">2</span>Wofür waren die Aufträge?</h2>
+    <p class="unter">Wählen Sie, was am besten passt.</p>
+    <div class="feld karten" id="zwecke" role="radiogroup" aria-label="Zweck der Aufträge"></div>
+    <div id="veranstaltung" class="versteckt">
+      <div class="zwei">
+        <div class="feld"><label class="titel" for="veranstaltungen">Wie viele Veranstaltungen im Jahr?</label><input id="veranstaltungen" type="number" min="0" step="1" inputmode="numeric"></div>
+        <div class="feld"><span class="frage">Sollen damit Einnahmen erzielt werden?<span class="hilfe">z. B. Eintritt, Verkauf, Werbung für Umsatz</span></span>
+          <div class="wahl" id="einnahmeabsicht"></div></div>
+      </div>
+    </div>
+    <div class="feld">
+      <span class="frage">Gehört eine dieser Tätigkeiten zu Ihrem Unternehmen?</span>
+      <details class="katalog"><summary>Liste anzeigen</summary><ul id="katalog"></ul></details>
+      <div class="wahl" id="katalogwahl"></div>
+    </div>
+  </section>
+
+  <section class="abschnitt">
+    <h2><span class="nr">3</span>Aufträge an Kreative</h2>
+    <p class="unter">Eine Zeile je Leistung, mit dem tatsächlich gezahlten Betrag ohne Umsatzsteuer. Namen bleiben in Ihrem Browser und werden nicht übertragen.</p>
+    <div id="positionen"></div>
+    <button type="button" class="knopf leise" id="neu">+ Weitere Leistung</button>
+  </section>
+
+  <section class="abschnitt">
+    <h2><span class="nr">4</span>Vollständigkeit</h2>
+    <p class="unter">Die Grenze gilt für die Summe aller Aufträge im Jahr. Eine einzelne Rechnung reicht dafür nicht.</p>
+    <div class="feld"><span class="frage">Haben Sie alle Aufträge dieses Jahres an Kreative eingetragen?</span><div class="wahl" id="vollstaendig"></div></div>
+    <div class="feld"><label class="check"><input type="checkbox" id="bestaetigt"> <span>Die Beträge sind tatsächlich bezahlt, ohne gesondert ausgewiesene Umsatzsteuer, stimmen mit meinen Rechnungen überein und sind nicht doppelt eingetragen.</span></label></div>
+  </section>
+
+  <div class="absenden"><button class="knopf" type="submit" id="pruefen">Jetzt prüfen</button><span id="meldung" class="fehlerbox" role="alert"></span></div>
+</form>
+
+<div id="ergebnis" aria-live="polite"></div>
+
+<footer>
+  <p>Ersteinschätzung auf Grundlage des Künstlersozialversicherungsgesetzes (KSVG), der jährlichen Abgabesatz-Verordnungen und der veröffentlichten Informationen der Künstlersozialkasse. Hinweise der KSK sind als „Auslegung der KSK (kein Gesetz)“ gekennzeichnet. Der Schnellcheck ist keine Rechts- oder Steuerberatung und ersetzt nicht die Prüfung durch einen Steuerberater.</p>
+  <p>Datenschutz: keine Anmeldung, keine Cookies, keine externen Dienste. Ihre Angaben werden nur für die Prüfung verarbeitet und nicht gespeichert.</p>
+</footer>
+</div>
+
+<template id="vorlage-position">
+  <div class="pos">
+    <div class="pos-kopf"><span class="pos-titel">Leistung</span><button type="button" class="knopf mini entfernen">Entfernen</button></div>
+    <div class="pos-gitter">
+      <div class="breit"><label class="titel">Leistung<select data-feld="leistung"><option value="">Bitte auswählen …</option></select></label><p class="leistungshinweis"></p></div>
+      <div><label class="titel">Auftragnehmer (Name oder Kürzel)<span class="hilfe">gleicher Name = dieselbe Person</span><input type="text" data-feld="name" maxlength="80" autocomplete="off"></label></div>
+      <div><label class="titel">Rechtsform des Auftragnehmers<select data-feld="rechtsform"><option value="">Bitte auswählen …</option></select></label></div>
+      <div><label class="titel">Gezahlt (netto, €)<input type="text" inputmode="decimal" data-feld="betrag" placeholder="z. B. 1.250,00"></label></div>
+      <div><label class="titel">Direkt an diese Person/Firma gezahlt?<select data-feld="direkt"><option value="ja">Ja</option><option value="unklar">Nein / über Agentur / unklar</option></select></label></div>
+    </div>
+  </div>
+</template>
+
+<script>
+"use strict";
+const $=id=>document.getElementById(id);
+let OPT=null;
+
+function el(tag,attrs,...kinder){const e=document.createElement(tag);for(const[k,v]of Object.entries(attrs||{})){if(k==="text")e.textContent=v;else if(k==="class")e.className=v;else e.setAttribute(k,v)}for(const k of kinder)if(k!=null)e.append(k);return e}
+
+function radios(container,name,optionen){
+  container.replaceChildren(...optionen.map(([wert,text])=>el("label",{class:"karte"},el("input",{type:"radio",name,value:wert}),el("span",{text}))));
+}
+function radioWert(name){const r=document.querySelector(`input[name="${name}"]:checked`);return r?r.value:null}
+function janein(v){return v==="ja"?true:v==="nein"?false:null}
+
+// Betrag „1.250,00“ / „1250.5“ -> „1250.00“-Zeichenkette (nur Umformen, kein Rechnen)
+function betragText(s){
+  s=(s||"").replace(/\s|€/g,"");
+  if(!s)return null;
+  if(/,\d{1,2}$/.test(s))s=s.replace(/\./g,"").replace(",",".");
+  else if(/^\d{1,3}(\.\d{3})+$/.test(s))s=s.replace(/\./g,"");
+  else s=s.replace(/,/g,"");
+  return /^\d+(\.\d{1,2})?$/.test(s)?s:"ungueltig";
+}
+// „2400“ -> „2.400,00 €“ (nur Darstellung)
+function euro(s){
+  if(s==null)return "–";
+  let[g,n=""]=String(s).split(".");n=(n+"00").slice(0,Math.max(2,n.length));
+  return g.replace(/\B(?=(\d{3})+(?!\d))/g,".")+","+n+" €";
+}
+function prozent(s){return String(s).replace(".",",")+" %"}
+
+function neuePosition(){
+  const t=$("vorlage-position").content.firstElementChild.cloneNode(true);
+  const sel=t.querySelector('[data-feld="leistung"]');
+  for(const l of OPT.leistungen)sel.append(new Option(l.name,l.id));
+  const rf=t.querySelector('[data-feld="rechtsform"]');
+  for(const[k,v]of Object.entries(OPT.rechtsformen))rf.append(new Option(v,k));
+  sel.addEventListener("change",()=>{const l=OPT.leistungen.find(x=>x.id===sel.value);t.querySelector(".leistungshinweis").textContent=l&&l.hinweis?"Hinweis: "+l.hinweis:""});
+  t.querySelector(".entfernen").addEventListener("click",()=>{t.remove();nummern()});
+  $("positionen").append(t);nummern();
+  if($("positionen").children.length>=OPT.max_positionen)$("neu").disabled=true;
+}
+function nummern(){
+  [...$("positionen").children].forEach((p,i,a)=>{p.querySelector(".pos-titel").textContent="Leistung "+(i+1);p.querySelector(".entfernen").hidden=a.length===1});
+  $("neu").disabled=$("positionen").children.length>=OPT.max_positionen;
+}
+
+function sammeln(){
+  const fehler=[];const namen=new Map();
+  const positionen=[...$("positionen").children].map((p,i)=>{
+    const v=f=>p.querySelector(`[data-feld="${f}"]`).value.trim();
+    const betrag=betragText(v("betrag"));
+    if(!v("leistung"))fehler.push(`Leistung ${i+1}: bitte die Leistung auswählen.`);
+    if(!betrag||betrag==="ungueltig")fehler.push(`Leistung ${i+1}: bitte einen gültigen Betrag eintragen.`);
+    if(!v("rechtsform"))fehler.push(`Leistung ${i+1}: bitte die Rechtsform auswählen.`);
+    const name=(v("name")||`Auftragnehmer ${i+1}`).toLowerCase();
+    if(!namen.has(name))namen.set(name,namen.size+1);
+    return {leistung:v("leistung")||"unbekannt",betrag:betrag&&betrag!=="ungueltig"?betrag:"0",rechtsform:v("rechtsform")||null,auftragnehmer:namen.get(name),direkt_bezahlt:v("direkt")==="ja"};
+  });
+  if(!$("jahr").value)fehler.push("Bitte das Zahlungsjahr wählen.");
+  if(!$("branche").value.trim())fehler.push("Bitte kurz angeben, was Ihr Unternehmen macht.");
+  const zweck=radioWert("zweck");if(!zweck)fehler.push("Bitte angeben, wofür die Aufträge waren.");
+  if(!radioWert("katalog"))fehler.push("Bitte die Frage zu den Tätigkeiten Ihres Unternehmens beantworten.");
+  if(!radioWert("vollstaendig"))fehler.push("Bitte angeben, ob alle Aufträge des Jahres eingetragen sind.");
+  if(!$("bestaetigt").checked)fehler.push("Bitte die Angaben unter Punkt 4 bestätigen.");
+  const fall={jahr:Number($("jahr").value)||null,branche:$("branche").value.trim(),zweck,
+    katalog:janein(radioWert("katalog")),alle_auftraege_erfasst:janein(radioWert("vollstaendig")),
+    angaben_bestaetigt:$("bestaetigt").checked,positionen,
+    veranstaltungen:zweck==="veranstaltung"&&$("veranstaltungen").value!==""?Number($("veranstaltungen").value):null,
+    einnahmeabsicht:zweck==="veranstaltung"?janein(radioWert("einnahme")):null};
+  return {fall,fehler};
+}
+
+const WERTE=[["bemessungsgrundlage","Zählende Entgelte",euro],["abgabesatz_prozent","Abgabesatz",prozent],["abgabe","Abgabe (Vorschlag)",euro],["abgabe_falls_kuenstlerisch","Abgabe, falls künstlerisch",euro],["schwelle","Jahresgrenze",euro]];
+
+function zeigen(r){
+  const stufe=r.anzeige.stufe;
+  const offenOhnePos=r.ergebnisklasse==="Rückfrage nötig"&&!(r.positionen||[]).length;
+  const titel=offenOhnePos?"Es fehlen noch Angaben":r.anzeige.titel;
+  const b=el("article",{class:"bericht stufe-"+stufe});
+  b.append(el("div",{class:"urteil"},el("div",{class:"stempel",text:titel}),
+    el("div",{},el("h2",{text:titel}),el("p",{class:"klasse",text:"Ergebnis des Regelkerns: "+r.ergebnisklasse}))));
+  if(r.begruendung)b.append(el("p",{class:"begruendung",text:r.begruendung}));
+  const w=r.werte||{};const zahlen=WERTE.filter(([k])=>w[k]!=null);
+  if(zahlen.length)b.append(el("div",{class:"zahlen"},...zahlen.map(([k,t,f])=>el("div",{class:"zahl"},el("span",{text:t}),el("b",{text:f(w[k])})))));
+  if((r.rueckfragen||[]).length){b.append(el("h3",{text:offenOhnePos?"Bitte noch ergänzen":"Offene Punkte"}),el("ul",{class:"offen-liste"},...r.rueckfragen.map(t=>el("li",{text:t}))))}
+  if((r.positionen||[]).length){
+    const tb=el("tbody");
+    for(const p of r.positionen)tb.append(el("tr",{},el("td",{text:p.taetigkeit}),el("td",{text:p.status}),el("td",{class:"betrag",text:euro(p.betrag)})));
+    b.append(el("h3",{text:"Ihre Leistungen"}),el("table",{class:"tabelle-rolle"},el("thead",{},el("tr",{},el("th",{text:"Leistung"}),el("th",{text:"Einordnung"}),el("th",{class:"betrag",text:"Betrag"}))),tb));
+  }
+  if((r.fundstellen||[]).length){b.append(el("h3",{text:"Quellen"}),el("ul",{class:"quellen"},...r.fundstellen.map(t=>el("li",{text:t}))));
+    if((r.regel_ids||[]).length)b.append(el("p",{class:"quellen",text:"Regeln im Regelkatalog: "+r.regel_ids.join(", ")}))}
+  b.append(el("p",{class:"vermerk",text:(r.hinweis||"Entwurf – vom Steuerberater zu prüfen")+". Der Schnellcheck ist eine Ersteinschätzung, keine Rechts- oder Steuerberatung. "+(r.positionshinweis||"")}));
+
+  const weiter=el("aside",{class:"weiter"},
+    el("div",{},el("h3",{text:"Rechnungen automatisch auslesen und ausführlich prüfen lassen?"}),
+      el("p",{text:"In der Vollversion laden Sie Rechnungen hoch und erhalten einen nachvollziehbaren Prüfbericht – mit denselben Regeln wie hier."}),
+      el("ul",{},el("li",{text:"Rechnungen und Belege hochladen statt abtippen"}),el("li",{text:"mehrere Unterlagen, gespeicherte Fälle, Jahresübersicht"}),el("li",{text:"individuelle Rückfragen und ausführlicher Bericht für den Steuerberater"}))),
+    OPT.saas_url?el("a",{class:"knopf",href:OPT.saas_url,text:"Vollversion ansehen"}):el("span",{class:"knopf",text:"Bald verfügbar"}));
+  $("ergebnis").replaceChildren(b,weiter);
+  $("ergebnis").scrollIntoView({behavior:"smooth",block:"start"});
+}
+
+async function pruefen(ev){
+  ev.preventDefault();
+  const{fall,fehler}=sammeln();
+  if(fehler.length){$("meldung").replaceChildren(...fehler.slice(0,4).flatMap((f,i)=>i?[el("br"),f]:[f]));return}
+  $("meldung").textContent="";$("pruefen").disabled=true;$("pruefen").textContent="Wird geprüft …";
+  try{
+    const a=await fetch("api/pruefen",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(fall)});
+    const d=await a.json();
+    if(!a.ok)throw Error(d.fehler||"Die Prüfung ist fehlgeschlagen.");
+    zeigen(d);
+  }catch(e){$("meldung").textContent=e.message||"Die Prüfung ist fehlgeschlagen. Bitte erneut versuchen."}
+  finally{$("pruefen").disabled=false;$("pruefen").textContent="Jetzt prüfen"}
+}
+
+fetch("api/optionen").then(r=>{if(!r.ok)throw Error();return r.json()}).then(o=>{
+  OPT=o;
+  const jetzt=new Date().getFullYear();
+  for(const j of [...o.jahre].reverse())$("jahr").append(new Option(String(j),j));
+  const vorschlag=o.jahre.includes(jetzt)?jetzt:o.jahre.filter(j=>j<=jetzt).pop();
+  if(vorschlag)$("jahr").value=String(vorschlag);
+  radios($("zwecke"),"zweck",o.zwecke.map(z=>[z.wert,z.text]));
+  radios($("einnahmeabsicht"),"einnahme",[["ja","Ja"],["nein","Nein"],["weiss","Weiß nicht"]]);
+  radios($("katalogwahl"),"katalog",[["ja","Ja"],["nein","Nein"],["weiss","Weiß nicht"]]);
+  radios($("vollstaendig"),"vollstaendig",[["ja","Ja, alle"],["nein","Nein, nur einen Teil"]]);
+  $("katalog").replaceChildren(...o.katalog.map(k=>el("li",{},k.text,el("small",{text:k.quelle}))));
+  $("zwecke").addEventListener("change",()=>$("veranstaltung").classList.toggle("versteckt",radioWert("zweck")!=="veranstaltung"));
+  $("neu").addEventListener("click",neuePosition);
+  neuePosition();
+  $("formular").addEventListener("submit",pruefen);
+}).catch(()=>{$("meldung").textContent="Der Schnellcheck konnte nicht geladen werden. Bitte Seite neu laden."});
+</script>
+</body>
+</html>

@@ -40,10 +40,18 @@ class DokumentFall(BaseModel):
     positionen: list[DokumentPosition] = Field(default_factory=list, max_length=KONFIG["max_positionen"])
 
 
-def fakten_aus(fall: DokumentFall):
+def fakten_aus(fall: DokumentFall, taetigkeit_ids: list[str] | None = None):
+    """`taetigkeit_ids` (Schnellcheck, 17.10.2026): je Position eine vom Nutzer aus der festen Liste gewählte
+    Tätigkeit (T-ID aus dem Blatt 'Tätigkeitsabgrenzung' oder 'unbekannt'). Ohne Angabe wie bisher: Erkennung
+    aus der Bezeichnung. Eine ID, die nicht in der Liste steht, gilt als 'unbekannt' (nie geraten)."""
+    if taetigkeit_ids is not None and len(taetigkeit_ids) != len(fall.positionen):
+        raise ValueError("Für jede Position genau eine Tätigkeit angeben.")
     positionen = []
-    for p in fall.positionen:
-        tid = taetigkeiten.erkenne(p.bezeichnung) or taetigkeiten.UNBEKANNT
+    for i, p in enumerate(fall.positionen):
+        if taetigkeit_ids is not None:
+            tid = taetigkeit_ids[i] if taetigkeiten.gueltige_id(taetigkeit_ids[i]) else taetigkeiten.UNBEKANNT
+        else:
+            tid = taetigkeiten.erkenne(p.bezeichnung) or taetigkeiten.UNBEKANNT
         positionen.append(Position(
             bezeichnung=p.bezeichnung, betrag=p.betrag, auftragnehmer_typ=p.auftragnehmer_typ,
             auftragnehmer_nr=p.auftragnehmer_nr, taetigkeit_id=tid,
@@ -118,8 +126,8 @@ def vorbereiten(fall: DokumentFall):
             "hinweis": "Entwurf – vom Steuerberater zu prüfen"}
 
 
-def auswerten(fall: DokumentFall):
-    f = fakten_aus(fall)
+def auswerten(fall: DokumentFall, taetigkeit_ids: list[str] | None = None):
+    f = fakten_aus(fall, taetigkeit_ids)
     fragen = offene_angaben(fall, f)
     if fragen:
         return {"ergebnisklasse": "Rückfrage nötig", "rueckfragen": fragen, "positionen": [], "werte": {}}
