@@ -235,6 +235,22 @@ class Dokumentpruefung(unittest.TestCase):
         self.assertIsNone(e.abgabe)
         self.assertIsNone(K.positionsnummern_doppelt([1, 2], 2026))
 
+    def test_struktur_sperrt_vor_der_entscheidung(self):
+        summe = K.pruefe_dokument({"summen": {"positionssumme": "1200", "kopfsumme": "1350"}}, 2026)
+        self.assertEqual(summe.klasse, K.SPERRE)
+        self.assertIsNone(summe.abgabe)
+        cent = K.pruefe_dokument({"differenz": "0.02"}, 2026)
+        self.assertEqual(cent.klasse, K.SPERRE)
+        self.assertIsNone(K.pruefe_dokument({"differenz": "0.01"}, 2026))
+        zeile = K.pruefe_dokument({"positionen": [{"nr": 2, "betragswiderspruch": True}]}, 2026)
+        self.assertEqual(zeile.klasse, K.SPERRE)
+        formen = K.pruefe_dokument({"rechtsformen": ["einzelunternehmen", "gmbh"]}, 2026)
+        self.assertEqual(formen.klasse, K.SPERRE)
+        self.assertIn("Gesellschaft", formen.begruendung[0])
+        storno = K.pruefe_dokument({"storno": True, "summen": {"gesamtsumme": "-120"}}, 2026)
+        self.assertEqual(storno.klasse, K.RUECKFRAGE)
+        self.assertTrue(any("Storno" in teil or "Saldierung" in teil for teil in storno.begruendung))
+
     def test_negative_summe_ohne_storno_sperrt_mit_storno_offen(self):
         gesperrt = K.gesamtsumme_negativ(-350, False, 2026)
         self.assertEqual(gesperrt.klasse, K.SPERRE)

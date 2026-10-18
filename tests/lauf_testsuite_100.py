@@ -61,7 +61,10 @@ ERWARTET_AUF_KLASSE = {
 }
 
 
-def _jahr(txt: str) -> int:
+def _jahr(txt: str, test: dict | None = None) -> int:
+    dokument = (test or {}).get("dokument") or {}
+    if dokument.get("jahr"):
+        return int(dokument["jahr"])
     if "Bezugsjahr 2027" in txt:
         return 2027
     treffer = re.findall(r"20\d\d", txt)
@@ -76,9 +79,14 @@ def _betrag(test: dict) -> D:
 def _position(test: dict) -> dict:
     txt = test["txt"]
     low = txt.lower()
-    jahr = _jahr(txt)
+    jahr = _jahr(txt, test)
     pos = {"betrag": _betrag(test)}
-    if "ggmbh" in low:
+    vorgegeben = str((test.get("dokument") or {}).get("empfaenger") or "").lower()
+    if vorgegeben in ("natuerliche_person", "person", "einzelperson"):
+        pass
+    elif vorgegeben:
+        pos["empfaenger"] = vorgegeben
+    elif "ggmbh" in low:
         pos["empfaenger"] = "ggmbh"
     elif "sparkasse" in low or "öffentliche" in low or "oeffentlich" in low or "stadtbetrieb" in low or "eigenbetrieb" in low:
         pos["empfaenger"] = "oeffentlich"
@@ -144,10 +152,21 @@ def messe(test: dict, *, grenzfall_zaehlt: bool = True, taetigkeit: bool = False
     """Liefert (Suite-Status aus dem Kern, Klassenname, Begründungstext)."""
     txt = test["txt"]
     low = txt.lower()
-    jahr = _jahr(txt)
+    jahr = _jahr(txt, test)
     betrag = _betrag(test)
     kat = test.get("kat", "")
     try:
+        dokument = test.get("dokument") or {}
+        if dokument:
+            struktur = K.pruefe_dokument(dokument, jahr)
+            if struktur is not None:
+                return _aus_klasse(struktur.klasse), struktur.klasse, _grundtext(struktur)
+            form = str(dokument.get("empfaenger") or "").lower()
+            if form and form in K.werte("rechtsform.kein_entgelt", jahr):
+                return "AUSGESCHLOSSEN", K.NICHT, "Zahlung an Kapital-/Handelsgesellschaft"
+            if dokument.get("vermerk_ohne_regelbezug"):
+                ergebnis = K.pruefe_positionen(jahr, [{"betrag": betrag}])
+                return _aus_klasse(ergebnis.klasse), ergebnis.klasse, _grundtext(ergebnis)
         sperre = K.pruefe_sperre(txt, jahr)
         if sperre is not None:
             return _aus_klasse(sperre.klasse), sperre.klasse, _grundtext(sperre)
@@ -314,7 +333,62 @@ def _bericht_adversarial(suite: dict, tests: list) -> str:
     zeilen.append("")
     zeilen.append(f"Abweichungen ({len(fehler)})")
     zeilen.extend(fehler or ["Keine."])
+    zeilen.append("")
+    zeilen.append("Restfehler nach Etappe 1 (Quelle, Korrektur, Commit)")
+    zeilen.append(f"Commit: {ETAPPE1_COMMIT}")
+    for fall_id, quelle, korrektur in _restfehler(ergebnisse):
+        zeilen.append(f"{fall_id}: {quelle} | {korrektur}")
     return "\n".join(zeilen) + "\n"
+
+
+ETAPPE1_COMMIT = "noch nicht gesetzt"
+
+
+def _restfehler(ergebnisse: dict) -> list[tuple[str, str, str]]:
+    """Nur noch rote Fälle. Die Texte benennen die offene Ursache, sie ändern kein Soll."""
+    hinweis = {
+        "V-014": ("Beleg-Rückfrage vor Rechtsform", "Etappe 4: öffentliche Stelle und Arbeitnehmer als Ausschluss benennen"),
+        "V-016": ("Unter der Schwelle wird still gezählt", "Etappe 3: D1-Jahresrest als Rückfrage"),
+        "V-020": ("Wort oeffentlich setzt die Rechtsform, obwohl die Veranstaltung gemeint ist", "Etappe 3/4: Veranstaltungszahl vor der Rechtsform"),
+        "V-021": ("Dieselbe Wortfalle bei oeffentlichen Schuelern", "Etappe 4: Schülerzahl-Kriterium, keine stille Rechtsform"),
+        "V-038": ("Fotografie inklusive Nachbearbeitung zählt", "Etappe 4: Zusatzleistung als Rückfrage"),
+        "V-043": ("DJ trifft ein Musik-Synonym", "Etappe 4: DJ als Grenzfall, kein Musik-Match"),
+        "V-049": ("Chorleiter zählt ohne belegte Regelmäßigkeit", "Etappe 4: Regelmäßigkeit bleibt offen"),
+        "V-051": ("Konzert nur erwähnt, Leistung nicht ausgeschlossen", "Etappe 2: Nicht-Kunst-Leistung, der Leistende entscheidet"),
+        "V-052": ("Musik nur erwähnt", "Etappe 2: Versicherung ausschließen"),
+        "V-053": ("Konzert/Klavier nur erwähnt", "Etappe 2: Spedition ausschließen"),
+        "V-054": ("Konzert nur Kontext", "Etappe 2: Reinigung ausschließen"),
+        "V-055": ("Keine Leistungsart Ordnungsdienst", "Etappe 2: Sicherheitsdienst ausschließen"),
+        "V-056": ("Konzert nur Gegenstand", "Etappe 2: Druck ausschließen"),
+        "V-057": ("Pressetext als Kapitalgesellschaft gelesen", "Etappe 2: publizistische Leistung, Erwähnung ist nicht die Rechtsform"),
+        "V-059": ("Klavierstimmung ohne Ausschluss", "Etappe 2: Handwerk ausschließen"),
+        "V-062": ("2027 wird mitgerechnet", "Etappe 3: ohne Freigabe nur Konfigurationshinweis"),
+        "V-068": ("Kilometerpauschale mit Beleg bleibt Rückfrage", "Etappe 4: mit Beleg ausnehmen"),
+        "V-070": ("Umsatzsteuerzeile bleibt in der Tätigkeit hängen", "Etappe 4: USt aus der Bemessung nehmen"),
+        "V-072": ("Knapp über der Schwelle, Tätigkeit nicht erkannt", "Etappe 3: Aggregation und Schwelle"),
+        "V-074": ("Eindeutiger Teil zählt nicht trotz offener Zeilen", "Etappe 3: S3a"),
+        "V-075": ("Zwei Empfänger werden eine Summe", "Etappe 3: Empfänger nie aggregieren"),
+        "V-076": ("Kein Jahresaggregat über Dokumente", "Etappe 3: Aggregationsmodul"),
+        "V-078": ("Saldierung nicht benannt", "Etappe 4: Storno/Gutschrift-Grund"),
+        "V-088": ("Lücke in der Positionsnummer nicht benannt", "Etappe 4: Nummernlücke als Rückfrage"),
+        "V-097": ("Übungsleiter-Anteil still als Pauschale ausgenommen", "Etappe 4: Anteil offen lassen"),
+        "V-098": ("Stimmhilfe fällt auf die Schwelle", "Etappe 4: kein Synonym, Quelle fehlt"),
+        "V-100": ("Wartung ohne Ausschluss", "Etappe 2: Wartung ausschließen"),
+        "V-105": ("Eindeutiger Betrag, Tätigkeit nicht erkannt", "Etappe 3: Schwellenlogik auf der Struktur"),
+        "V-107": ("Theaterunternehmen nicht als Verwerter", "Etappe 4: Verwerterliste"),
+        "V-108": ("Autor und Lizenz nicht getrennt", "Etappe 4: Zeilensplitting"),
+        "V-112": ("Catering ohne Ausschluss", "Etappe 2: Catering ausschließen"),
+        "V-118": ("Notenstich zählt über die Schwelle", "Etappe 2: Notenstich bleibt offen"),
+        "V-119": ("Scanner-Miete mit Anhang nicht ausgenommen", "Etappe 4: Beleg-Paar V-119/120"),
+        "V-123": ("Veranlassung durch den Verein nicht als Zählung", "Etappe 3: § 25 Abs. 1 Satz 2"),
+        "V-128": ("Kleiner Betrag beim typischen Verwerter bleibt offen", "Etappe 4: Verwerter ohne Schwelle"),
+    }
+    zeilen = []
+    for fall_id in sorted(hinweis, key=lambda wert: int(wert.split("-")[1])):
+        if not ergebnisse.get(fall_id, {}).get("ok", True):
+            quelle, korrektur = hinweis[fall_id]
+            zeilen.append((fall_id, quelle, korrektur))
+    return zeilen
 
 
 def main() -> int:

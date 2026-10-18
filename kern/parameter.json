@@ -2132,6 +2132,17 @@
    "regel": "Info-10",
    "fundstelle": "KSK-Info 10, S. 1: Auslagen und Nebenkosten, die dem Künstler vergütet werden, gehören zum Entgelt. Ausnahme nur Umsatzsteuer, Verwertungsgesellschaft, Reise und übliche Bewirtung.",
    "status": "Entwurf – vom Steuerberater zu prüfen"
+  },
+  {
+   "schluessel": "sperre.rechtsform",
+   "wert": "Widerspruch der Rechtsform: mehrere Gesellschaftsformen im selben Dokument",
+   "einheit": "Text",
+   "operator": null,
+   "von": 2015,
+   "bis": null,
+   "regel": "A2",
+   "fundstelle": "Rechenprobe A2/A3: widerspruechliche Angaben zur Rechtsform, keine stille Wahl",
+   "status": "Entwurf – vom Steuerberater zu prüfen"
   }
  ]
 }

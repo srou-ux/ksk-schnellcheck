@@ -647,6 +647,87 @@ def _sperre_aus(schluessel, jahr):
 
 
 @_luecke
+def pruefe_dokument(dokument, jahr):
+    """Strukturierte Dokumentprüfung, bevor Szenario oder Tätigkeit entschieden wird.
+
+    Die Felder beschreibt der Auftrag (Suite oder Extraktion). Der Fließtext wird hier nicht geraten.
+    Reihenfolge: Summenprobe, doppelte Positionsnummer, § 19, negative Summe, Cent-Toleranz.
+    Ein Zeilenfehler sperrt das ganze Dokument. Zwei Rechtsformen werden nicht still gewählt.
+    """
+    if not dokument:
+        return None
+    summen = dokument.get("summen") or {}
+    toleranz = D(reg("sperre.toleranz", jahr)["wert"])
+    toleranz_ab = D(reg("sperre.toleranz_ab", jahr)["wert"])
+
+    def abstand(links, rechts):
+        return abs(_d(links) - _d(rechts))
+
+    if any(p.get("betragswiderspruch") for p in dokument.get("positionen") or []):
+        return _sperre_aus("sperre.summenabweichung", jahr)
+    if summen.get("positionssumme") is not None and summen.get("kopfsumme") is not None:
+        if abstand(summen["positionssumme"], summen["kopfsumme"]) >= toleranz_ab:
+            return _sperre_aus("sperre.summenabweichung", jahr)
+    if all(summen.get(name) is not None for name in ("netto", "ust", "brutto")):
+        probe = rechenprobe_brutto(summen["netto"], summen["ust"], summen["brutto"], jahr)
+        if probe is not None:
+            return probe
+    if summen.get("betrag_worte") is not None and summen.get("betrag_ziffern") is not None:
+        if abstand(summen["betrag_worte"], summen["betrag_ziffern"]) > toleranz:
+            return _sperre_aus("sperre.summenabweichung", jahr)
+    nummern = list(dokument.get("positionsnummern") or [])
+    nummern += [p.get("nr") for p in dokument.get("positionen") or [] if p.get("nr") is not None]
+    if nummern:
+        doppelt = positionsnummern_doppelt(nummern, jahr)
+        if doppelt is not None:
+            return doppelt
+    if dokument.get("kleinunternehmer") and dokument.get("ust_ausgewiesen"):
+        return widerspruch_paragraph19(True, True, jahr)
+    if dokument.get("korrekturpaar") or (dokument.get("storno") and summen.get("gesamtsumme") is not None and _d(summen["gesamtsumme"]) < 0):
+        return saldierung_storno(jahr)
+    if summen.get("gesamtsumme") is not None:
+        negativ = gesamtsumme_negativ(summen["gesamtsumme"], False, jahr)
+        if negativ is not None:
+            return negativ
+    if dokument.get("differenz") is not None and _d(dokument["differenz"]) >= toleranz_ab:
+        sperre = _sperre_aus("sperre.toleranz_ab", jahr)
+        sperre.begruendung.extend(sperre.fundstellen)
+        return sperre
+    if dokument.get("ust_widerspruch"):
+        return _sperre_aus("sperre.ust_inkonsistent", jahr)
+    formen = [str(form).lower() for form in dokument.get("rechtsformen") or [] if form]
+    if len(set(formen)) > 1:
+        sperre = _sperre_aus("sperre.rechtsform", jahr)
+        sperre.begruendung.append(", ".join(formen))
+        return sperre
+    if dokument.get("skonto") and dokument.get("fremdwaehrung"):
+        skonto = reg("offen.skonto", jahr)
+        waehrung = reg("offen.waehrung", jahr)
+        return Ergebnis(
+            RUECKFRAGE,
+            [skonto["wert"], waehrung["wert"]],
+            fundstellen=[skonto["fundstelle"], waehrung["fundstelle"]],
+            rueckfragen=[skonto["wert"], waehrung["wert"]],
+            regeln=[skonto["regel"], waehrung["regel"]],
+        )
+    if dokument.get("gutschrift_positiv"):
+        return Ergebnis(
+            RUECKFRAGE,
+            ["Gutschrift und positiver Betrag: Richtung des Geldflusses klären."],
+            rueckfragen=["Ist das eine Gutschrift oder eine Rechnung?"],
+            regeln=["A4"],
+        )
+    if dokument.get("personal_widerspruch"):
+        return Ergebnis(
+            RUECKFRAGE,
+            ["Die Angaben zum Personal widersprechen sich."],
+            rueckfragen=["Werden angestellte Mitarbeiter in der künstlerischen Leistung eingesetzt?"],
+            regeln=["F-003"],
+        )
+    return None
+
+
+@_luecke
 def pruefe_sperre(text, jahr):
     """Summen- oder USt-Widerspruch: keine Klasse der Abgabe und keine Berechnung. Sperre geht vor jeder anderen Klasse."""
     low = text.lower()
