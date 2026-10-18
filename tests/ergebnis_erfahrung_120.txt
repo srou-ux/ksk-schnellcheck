@@ -1,0 +1,143 @@
+Suite: KSK-Schnellcheck Erfahrungs-Suite v1 (ohne KI) — gezielt gegen die Messlücken vom 18.10.2026 1.0 2026-10-18
+Abbildung:
+  ZAEHLT -> Position zählt (Abgabepflichtig oder in der Summe)
+  AUSGENOMMEN -> Nicht abgabepflichtig (Vorschlag)
+  AUSGESCHLOSSEN -> Nicht abgabepflichtig (Vorschlag)
+  OFFEN -> Rückfrage nötig / Grenzfall → Steuerberater entscheidet / Nicht abgedeckt (Quelle fehlt) / RegisterLuecke
+  SPERRE -> Sperre — Rechnung prüfen
+
+ID       erwartet         erhalten         Kern                                       
+------------------------------------------------------------------------------------------
+E-001    SPERRE           SPERRE           Sperre — Rechnung prüfen                   ✅
+E-002    SPERRE           SPERRE           Sperre — Rechnung prüfen                   ✅
+E-003    SPERRE           SPERRE           Sperre — Rechnung prüfen                   ✅
+E-004    SPERRE           SPERRE           Sperre — Rechnung prüfen                   ✅
+E-005    SPERRE           SPERRE           Sperre — Rechnung prüfen                   ✅
+E-006    SPERRE           SPERRE           Sperre — Rechnung prüfen                   ✅
+E-007    SPERRE           SPERRE           Sperre — Rechnung prüfen                   ✅
+E-008    SPERRE           SPERRE           Sperre — Rechnung prüfen                   ✅
+E-009    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-010    SPERRE           SPERRE           Sperre — Rechnung prüfen                   ✅
+E-011    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+E-012    SPERRE           SPERRE           Sperre — Rechnung prüfen                   ✅
+E-013    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+E-014    SPERRE           SPERRE           Sperre — Rechnung prüfen                   ✅
+E-015    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-016    OFFEN            OFFEN            Nicht abgedeckt (Quelle fehlt)             ✅
+E-017    OFFEN            OFFEN            Nicht abgedeckt (Quelle fehlt)             ✅
+E-018    OFFEN            OFFEN            Nicht abgedeckt (Quelle fehlt)             ✅
+E-019    OFFEN            OFFEN            Nicht abgedeckt (Quelle fehlt)             ✅
+E-020    OFFEN            OFFEN            Nicht abgedeckt (Quelle fehlt)             ✅
+E-021    OFFEN            OFFEN            Nicht abgedeckt (Quelle fehlt)             ✅
+E-022    OFFEN            OFFEN            Nicht abgedeckt (Quelle fehlt)             ✅
+E-023    OFFEN            OFFEN            Nicht abgedeckt (Quelle fehlt)             ✅
+E-024    OFFEN            OFFEN            Nicht abgedeckt (Quelle fehlt)             ✅
+E-025    OFFEN            OFFEN            Nicht abgedeckt (Quelle fehlt)             ✅
+E-026    OFFEN            OFFEN            Nicht abgedeckt (Quelle fehlt)             ✅
+E-027    OFFEN            OFFEN            Nicht abgedeckt (Quelle fehlt)             ✅
+E-028    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-029    AUSGESCHLOSSEN   AUSGESCHLOSSEN   Nicht abgabepflichtig (Vorschlag)          ✅
+E-030    AUSGESCHLOSSEN   AUSGESCHLOSSEN   Nicht abgabepflichtig (Vorschlag)          ✅
+E-031    AUSGENOMMEN      AUSGENOMMEN      Nicht abgabepflichtig (Vorschlag)          ✅
+E-032    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-033    AUSGENOMMEN      AUSGENOMMEN      Nicht abgabepflichtig (Vorschlag)          ✅
+E-034    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-035    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-036    AUSGENOMMEN      AUSGENOMMEN      Nicht abgabepflichtig (Vorschlag)          ✅
+E-037    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-038    AUSGENOMMEN      AUSGENOMMEN      Nicht abgabepflichtig (Vorschlag)          ✅
+E-039    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-040    AUSGENOMMEN      AUSGENOMMEN      Nicht abgabepflichtig (Vorschlag)          ✅
+E-041    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-042    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-043    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-044    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-045    AUSGENOMMEN      AUSGENOMMEN      Nicht abgabepflichtig (Vorschlag)          ✅
+E-046    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+E-047    OFFEN            OFFEN            Nicht abgedeckt (Quelle fehlt)             ✅
+E-048    ZAEHLT           ZAEHLT           Abgabepflichtig (Vorschlag)                ✅
+E-049    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-050    ZAEHLT           ZAEHLT           Abgabepflichtig (Vorschlag)                ✅
+E-051    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-052    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-053    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-054    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+E-055    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-056    ZAEHLT           OFFEN            Nicht abgedeckt (Quelle fehlt)             ❌
+E-057    OFFEN            OFFEN            Nicht abgedeckt (Quelle fehlt)             ✅
+E-058    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-059    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-060    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-061    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+E-062    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-063    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+E-064    ZAEHLT           ZAEHLT           Abgabepflichtig (Vorschlag)                ✅
+E-065    ZAEHLT           ZAEHLT           Abgabepflichtig (Vorschlag)                ✅
+E-066    ZAEHLT           ZAEHLT           Abgabepflichtig (Vorschlag)                ✅
+E-067    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+E-068    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-069    ZAEHLT           ZAEHLT           Abgabepflichtig (Vorschlag)                ✅
+E-070    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-071    AUSGENOMMEN      AUSGENOMMEN      Nicht abgabepflichtig (Vorschlag)          ✅
+E-072    AUSGESCHLOSSEN   AUSGESCHLOSSEN   Nicht abgabepflichtig (Vorschlag)          ✅
+E-073    AUSGESCHLOSSEN   AUSGESCHLOSSEN   Nicht abgabepflichtig (Vorschlag)          ✅
+E-074    AUSGESCHLOSSEN   AUSGESCHLOSSEN   Nicht abgabepflichtig (Vorschlag)          ✅
+E-075    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+E-076    AUSGESCHLOSSEN   AUSGESCHLOSSEN   Nicht abgabepflichtig (Vorschlag)          ✅
+E-077    AUSGESCHLOSSEN   AUSGESCHLOSSEN   Nicht abgabepflichtig (Vorschlag)          ✅
+E-078    AUSGESCHLOSSEN   AUSGESCHLOSSEN   Nicht abgabepflichtig (Vorschlag)          ✅
+E-079    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-080    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-081    AUSGENOMMEN      AUSGENOMMEN      Nicht abgabepflichtig (Vorschlag)          ✅
+E-082    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+E-083    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-084    AUSGENOMMEN      AUSGENOMMEN      Nicht abgabepflichtig (Vorschlag)          ✅
+E-085    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-086    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-087    ZAEHLT           ZAEHLT           Abgabepflichtig (Vorschlag)                ✅
+E-088    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-089    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+E-090    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-091    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-092    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+E-093    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-094    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-095    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-096    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-097    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-098    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+E-099    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-100    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+E-101    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-102    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-103    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-104    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-105    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-106    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-107    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-108    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-109    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-110    AUSGENOMMEN      AUSGENOMMEN      Nicht abgabepflichtig (Vorschlag)          ✅
+E-111    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-112    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-113    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-114    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-115    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-116    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-117    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-118    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-119    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-120    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+
+Kategorien
+  A-sperre                15/15   100.0 %
+  B-offen                 15/15   100.0 %
+  C-auslagen              15/15   100.0 %
+  D-jahre                 14/15    93.3 %
+  E-grenzen               10/10   100.0 %
+  F-rechtsform            10/10   100.0 %
+  G-musikverein           10/10   100.0 %
+  H-vertrag               10/10   100.0 %
+  I-haerte                20/20   100.0 %
+
+Gesamt 119/120  99.2 %

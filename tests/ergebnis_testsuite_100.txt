@@ -70,7 +70,7 @@ T-059    ZAEHLT           ZAEHLT           Abgabepflichtig (Vorschlag)          
 T-060    OFFEN            OFFEN            Rückfrage nötig                            ✅
 T-061    AUSGENOMMEN      AUSGENOMMEN      Nicht abgabepflichtig (Vorschlag)          ✅
 T-062    ZAEHLT           ZAEHLT           Abgabepflichtig (Vorschlag)                ✅
-T-063    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+T-063    ZAEHLT           OFFEN            Rückfrage nötig                            ❌
 T-064    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
 T-065    OFFEN            OFFEN            Rückfrage nötig                            ✅
 T-066    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
@@ -116,9 +116,9 @@ Kategorien
   4-auslagen              10/10   100.0 %
   5-summen                10/10   100.0 %
   6-schwelle              10/10   100.0 %
-  7-musikverein           10/10   100.0 %
+  7-musikverein            9/10    90.0 %
   8-vertragslage          10/10   100.0 %
   9-jahre                 10/10   100.0 %
   10-unklar               10/10   100.0 %
 
-Gesamt 100/100  100.0 %
+Gesamt 99/100  99.0 %

@@ -587,33 +587,48 @@ def analysiere_rechnung(jahr, positionen, empfaenger_abgabepflichtig=None, agent
 # ---------------------------------------------------------------------------------------------
 # Sperre, Tätigkeitskatalog, Klärfälle (Suite v1). Keine Berechnung, wenn die Rechnung gesperrt ist.
 # ---------------------------------------------------------------------------------------------
-_SPERR_MUSTER = (
-    ("sperre.summenabweichung", ("positionen ergeben", "gedruckte")),
-    ("sperre.ust_inkonsistent", ("nicht konsistent", "ust")),
-    ("sperre.positionsnummer", ("doppelte positionsnummer",)),
-    ("sperre.rechnungsbetrag", ("rechnungsbetrag", "netto")),
-    ("sperre.negative_summe", ("negative gesamtsumme",)),
-    ("sperre.ust_satz", ("ust-satz", "ohne hinweis")),
-    ("sperre.netto_fehlt", ("keine nett", "nur brutto")),
-    ("sperre.doppelzahlung", ("doppelt erfasst",)),
-)
+def _sperre_aus(schluessel, jahr):
+    """Sperre ohne Bemessung und ohne Abgabe. Grund und Fundstelle stehen im Register."""
+    eintrag = reg(schluessel, jahr)
+    return Ergebnis(
+        SPERRE,
+        [f"Sperre: {eintrag['fundstelle']}"],
+        fundstellen=[eintrag["fundstelle"]],
+        regeln=[eintrag["regel"]],
+    )
 
 
 @_luecke
 def pruefe_sperre(text, jahr):
-    """Summen- oder USt-Widerspruch: keine Klasse der Abgabe und keine Berechnung."""
+    """Summen- oder USt-Widerspruch: keine Klasse der Abgabe und keine Berechnung. Sperre geht vor jeder anderen Klasse."""
     low = text.lower()
-    for schluessel, teile in _SPERR_MUSTER:
-        if schluessel == "sperre.rechnungsbetrag" and "≠" not in text and "!=" not in text:
-            continue
-        if all(teil in low for teil in teile):
-            eintrag = reg(schluessel, jahr)
-            return Ergebnis(
-                SPERRE,
-                [f"Sperre: {eintrag['fundstelle']}"],
-                fundstellen=[eintrag["fundstelle"]],
-                regeln=[eintrag["regel"]],
-            )
+    if "rundungsdifferenz" in low:
+        treffer = re.search(r"(\d+)\s*cent", low)
+        if treffer:
+            diff = D(treffer.group(1)) / D(100)
+            if diff > D(reg("sperre.toleranz", jahr)["wert"]):
+                return _sperre_aus("sperre.toleranz", jahr)
+            return None
+    if "summenfehler" in low or ("gedruckte" in low and ("positionen ergeben" in low or "positionssumme" in low)):
+        return _sperre_aus("sperre.summenabweichung", jahr)
+    if "nicht konsistent" in low and "ust" in low:
+        return _sperre_aus("sperre.ust_inkonsistent", jahr)
+    if "positionsnummer" in low and "doppelt" in low:
+        return _sperre_aus("sperre.positionsnummer", jahr)
+    if "rechnungsbetrag" in low and "netto" in low and ("≠" in text or "!=" in text or "gedruckt" in low) and "korrekt" not in low:
+        return _sperre_aus("sperre.rechnungsbetrag", jahr)
+    if "negative gesamtsumme" in low or re.search(r"gesamtsumme\s*-\s*\d", low):
+        return _sperre_aus("sperre.negative_summe", jahr)
+    if "kleinunternehmer" in low and any(wort in low for wort in ("unzulässig", "widerspruch", "trotzdem")):
+        return _sperre_aus("sperre.paragraph19", jahr)
+    if "ohne" in low and "hinweis" in low and "kleinunternehmer" not in low and ("ust-satz" in low or "ust " in low):
+        return _sperre_aus("sperre.ust_satz", jahr)
+    if "keine nett" in low and "brutto" in low:
+        return _sperre_aus("sperre.netto_fehlt", jahr)
+    if "doppelt erfasst" in low or "doppelerfassung" in low:
+        return _sperre_aus("sperre.doppelzahlung", jahr)
+    if "durchgestrichen" in low:
+        return _sperre_aus("sperre.manipulation", jahr)
     return None
 
 
@@ -647,13 +662,13 @@ def pruefe_chorleitung(text, betrag, jahr):
     low = text.lower()
     if "chorleit" not in low:
         return None
-    if "keine regelmäßige" in low or "gesonderte" in low:
+    if "keine regelmäßige" in low or "gesonderte" in low or "separat" in low:
         return None
-    if "nicht belegt" in low or "nur eine probe" in low:
+    if any(wort in low for wort in ("fußnote", "fussnote", "blasorchester", "nachweis fehlt", "nicht belegt", "nur eine probe")):
         return Ergebnis(
             RUECKFRAGE,
-            ["Regelmäßigkeit der Chorleitung ist nicht belegt."],
-            rueckfragen=["Ist die Chorleitung regelmäßig?"],
+            ["Die Chorleiter-Ausnahme ist so nicht belegt."],
+            rueckfragen=["Gilt die Ausnahme nur für die belegte Chortätigkeit?"],
             regeln=["R-57"],
         )
     if "regelmäßig" in low:
@@ -661,21 +676,96 @@ def pruefe_chorleitung(text, betrag, jahr):
     return None
 
 
+@_luecke
+def ist_keine_kuenstlerische_taetigkeit(text, jahr):
+    """Beratung und Buchhaltung sind keine künstlerische Leistung, wenn sie im Register stehen."""
+    low = text.lower()
+    for begriff in werte("taetigkeit.ausgeschlossen", jahr):
+        if begriff.lower() in low:
+            return True
+    return False
+
+
+def pruefe_beleg(text, betrag, jahr):
+    """Nachgewiesene Auslage zählt nicht. Fehlt der Beleg ausdrücklich, bleibt der Fall offen."""
+    low = text.lower()
+    if "aufwandsentschädigung" in low and "keine gage" in low:
+        return Ergebnis(NICHT, ["Aufwandsentschädigung nur in Höhe der Reisekosten."], regeln=["A1"])
+    luecke = (
+        "kein beleg", "ohne beleg", "nicht beigefügt", "ohne jeden nachweis", "ohne nachweis",
+        "nur angekündigt", "sammelbeleg", "heimfahrt", "keine übernachtung", "keine auswärtstätigkeit",
+        "gemischte position", "plus gage", "überhöht",
+    )
+    if any(wort in low for wort in luecke):
+        return Ergebnis(RUECKFRAGE, ["Nachweis zur Auslage oder Reise fehlt oder die Position ist gemischt."], rueckfragen=["Liegt ein Einzelbeleg vor?"], regeln=["A1"])
+    nachgewiesen = any(wort in low for wort in (
+        "beigefügt", "beleg als anlage", "beleg im anhang", "beiliegend", "nachweis liegt",
+        "nachweis vorliegt", "nachweis der",
+    ))
+    art = any(wort in low for wort in ("auslage", "notenmappe", "notenkauf", "kostenübernahme", "materialkosten", "reise", "fahrt", "hotel", "verpflegung", "bewirtung"))
+    if art and nachgewiesen:
+        return Ergebnis(NICHT, ["Nachweis liegt vor: Auslage oder Reise zählt nicht zur Bemessung."], regeln=["A1"])
+    if any(wort in low for wort in ("notenkauf", "kostenübernahme", "notenmappe")):
+        return Ergebnis(NICHT, ["Weiterberechnete Auslage."], regeln=["A1"])
+    if any(wort in low for wort in ("auslage", "materialkosten", "reise", "fahrt", "hotel", "verpflegung")) and not nachgewiesen:
+        return Ergebnis(RUECKFRAGE, ["Auslage oder Reise ohne Nachweis."], rueckfragen=["Liegt der Beleg vor?"], regeln=["A1"])
+    return None
+
+
 def pruefe_klarstellung(text, betrag, jahr):
     """Fälle, die der Kern nicht still zuordnet: Währung, Jahresgrenze, Datum, Vertrag."""
     low = text.lower()
-    if "chf" in low and "umrechnung" in low:
+    if ("chf" in low or "usd" in low) and ("umrechnung" in low or "ohne kurs" in low):
         return Ergebnis(RUECKFRAGE, ["Fremdwährung ohne Umrechnungsnachweis."], rueckfragen=["Wie wurde umgerechnet?"], regeln=["A3"])
-    if "ohne sie nicht" in low and "offen" in low:
+    if "skonto" in low:
+        return Ergebnis(RUECKFRAGE, ["Skonto ist nicht eindeutig in der Summe enthalten."], rueckfragen=["Ist der Skonto bereits abgezogen?"], regeln=["A3"])
+    if ("ohne sie nicht" in low and "offen" in low) or "nur durch offen" in low:
         return Ergebnis(RUECKFRAGE, ["Die Schwelle steht nur, wenn offene Positionen mitzählen."], regeln=["S3a"])
-    if "satz nicht belegt" in low:
+    if "satz nicht belegt" in low or "noch nicht im register" in low or re.search(r"19\d\d", text):
         return Ergebnis(NICHT_ABGEDECKT, ["Der Abgabesatz ist für diesen Fall nicht belegt."], regeln=["D3"])
+    if "genau grenze" in low:
+        return Ergebnis(RUECKFRAGE, ["Der Betrag liegt auf der Grenze. Der Wortlaut ist zu prüfen."], regeln=["D2"])
+    if "je empfänger" in low or ("musiker a" in low and "musiker b" in low):
+        return Ergebnis(RUECKFRAGE, ["Die Grenze ist je Empfänger zu prüfen."], regeln=["D2"])
     if "gutschrift" in low and len(re.findall(r"20\d\d", text)) > 1:
         return Ergebnis(RUECKFRAGE, ["Gutschrift und Rechnung liegen in verschiedenen Jahren."], rueckfragen=["Welchem Zahlungsjahr gehört die Gutschrift?"], regeln=["A4"])
     if "auftrag erteilt" in low and "leistung" in low and "rechnung" in low and "zahlung" not in low:
         return jahr_fehlt(jahr) or Ergebnis(RUECKFRAGE, ["Zahlungsdatum fehlt."], rueckfragen=["Wann wurde gezahlt?"], regeln=["R-41"])
-    if "rechnungsdatum" in low and "zahlung" in low and len(set(re.findall(r"20\d\d", text))) > 1:
+    if "rechnung" in low and "zahlung" in low and len(set(re.findall(r"20\d\d", text))) > 1:
         return Ergebnis(RUECKFRAGE, ["Rechnungsjahr und Zahlungsjahr fallen auseinander."], rueckfragen=["Welches Jahr ist das Zahlungsjahr?"], regeln=["D4"])
+    if "gestellt und gezahlt" in low and len(set(re.findall(r"20\d\d", text))) > 1:
+        return Ergebnis(RUECKFRAGE, ["Leistungsjahr und Zahlungsjahr fallen auseinander."], regeln=["D4"])
+    if "zahlungseingangsdatum fehlt" in low or "datum fehlt" in low:
+        return Ergebnis(RUECKFRAGE, ["Zahlungsdatum fehlt."], rueckfragen=["Wann wurde gezahlt?"], regeln=["R-41"])
+    if any(wort in low for wort in ("dauerauftrag", "scheck", "teilzahlung", "rate 1 von")):
+        return Ergebnis(RUECKFRAGE, ["Der Mittelabfluss ist auf mehrere Zeitpunkte verteilt."], regeln=["D4"])
+    if "jahrespauschale" in low and "3 jahre" in low:
+        return Ergebnis(RUECKFRAGE, ["Die Pauschale umfasst mehrere Jahre."], regeln=["D4"])
+    if "fußnote" in low or "fussnote" in low:
+        return Ergebnis(RUECKFRAGE, ["Eine Fußnote überträgt die Ausnahme nicht."], regeln=["F-004"])
+    if "ehemalig" in low and "angestellt" in low:
+        return Ergebnis(RUECKFRAGE, ["Der frühere Anstellungsstatus ist zu klären."], regeln=["E-Statusfrage"])
+    if any(wort in low for wort in ("weisungen", "werkvertrag", "aushilfe", "scheinselbst", "treuhänder", "treuhaender")):
+        return Ergebnis(RUECKFRAGE, ["Die Vertragslage ist nicht allein aus dem Text bestimmt."], regeln=["R-33"])
+    if "im auftrag" in low:
+        return vertreter()
+    if "e.k." in low and "ohne personal" in low:
+        return Ergebnis(RUECKFRAGE, ["Beim e.K. fehlt der Hinweis, ob Personal eingesetzt wird."], regeln=["F-003"])
+    if "vertragspartner eines anderen vereins" in low or "verein als vertragspartner" in low:
+        return Ergebnis(RUECKFRAGE, ["Verein als Vertragspartner ist gesondert zu klären."], regeln=["S2"])
+    if "ehrenamt" in low:
+        return Ergebnis(RUECKFRAGE, ["Ehrenamtliche Aufwandsentschädigung ist gesondert zu klären."], regeln=["S4"])
+    if any(wort in low for wort in (
+        "doppelidentität", "doppelidentitaet", "e-mail", "statt rechnung", "handgeschrieben", "polnisch",
+        "diverses", "ohne kontext", "barzahlung", "ohne quittung", "naturalien", "einzelverträgen",
+        "einzelvertraegen", "weiterleitung", "onlineshop", "drittebene", "österreich", "auslandssachverhalt",
+        "nicht nur gelegentlich", "einzelverpflichtet", "mischleistung",
+    )):
+        return Ergebnis(RUECKFRAGE, ["Der Text lässt keine automatische Entscheidung zu."], regeln=["C4"])
+    if "spende" in low and "gage" in low:
+        return Ergebnis(RUECKFRAGE, ["Spende und Gage sind nicht auseinandergehalten."], regeln=["S5"])
+    if re.search(r"(?<!\d)0\s*€", low) and "honorar" in low:
+        return Ergebnis(RUECKFRAGE, ["Ein Honorar von null ist kein belegtes Entgelt."], regeln=["S5"])
     if "privat" in low and ("hochzeit" in low or "kein vereinsbezug" in low):
         return Ergebnis(RUECKFRAGE, ["Privater Zweck ist nicht als Auftrag des Vereins belegt."], rueckfragen=["Wozu wurde beauftragt?"], regeln=["R-40"])
     if "eigenen namen" in low or "eigengeschäft" in low or "eigengeschaeft" in low:

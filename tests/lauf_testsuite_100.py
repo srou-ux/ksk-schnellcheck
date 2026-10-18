@@ -21,8 +21,10 @@ WURZEL = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(WURZEL))
 from kern import rechnen as K  # noqa: E402
 
-SUITE = pathlib.Path(__file__).with_name("testsuite_100_positionspruefung.json")
-ERGEBNIS = pathlib.Path(__file__).with_name("ergebnis_testsuite_100.txt")
+SUITEN = (
+    (pathlib.Path(__file__).with_name("testsuite_100_positionspruefung.json"), pathlib.Path(__file__).with_name("ergebnis_suite_100.txt")),
+    (pathlib.Path(__file__).with_name("testsuite_erfahrung_120.json"), pathlib.Path(__file__).with_name("ergebnis_erfahrung_120.txt")),
+)
 
 ERWARTET_AUF_KLASSE = {
     "ZAEHLT": "Position zählt (Abgabepflichtig oder in der Summe)",
@@ -51,8 +53,10 @@ def _position(test: dict) -> dict:
     pos = {"betrag": _betrag(test)}
     if "ggmbh" in low:
         pos["empfaenger"] = "ggmbh"
-    elif "sparkasse" in low or "öffentliche" in low or "oeffentlich" in low:
+    elif "sparkasse" in low or "öffentliche" in low or "oeffentlich" in low or "stadtbetrieb" in low or "eigenbetrieb" in low:
         pos["empfaenger"] = "oeffentlich"
+    elif re.search(r"(?<![a-zäöü])se(?![a-zäöü])", low) or "societas europaea" in low:
+        pos["empfaenger"] = "se"
     else:
         for form in ("ohg", "gmbh", "ug", "ag", "kg"):
             if re.search(rf"(?<![a-zäöü]){form}(?![a-zäöü])", low):
@@ -99,10 +103,12 @@ def messe(test: dict) -> tuple[str, str]:
         klar = K.pruefe_klarstellung(txt, betrag, jahr)
         if klar is not None:
             return _aus_klasse(klar.klasse), klar.klasse
-        if "belege nur angekündigt" in low or "nur angekündigt" in low:
-            ergebnis = K.reisekosten_ohne_nachweis(betrag)
-            return _aus_klasse(ergebnis.klasse), ergebnis.klasse
-        if kat.startswith("7-") and "übungsleiter" in low:
+        beleg = K.pruefe_beleg(txt, betrag, jahr)
+        if beleg is not None:
+            if beleg.klasse == K.NICHT:
+                return "AUSGENOMMEN", beleg.klasse
+            return _aus_klasse(beleg.klasse), beleg.klasse
+        if "übungsleiter" in low:
             modus = "rueckfrage" if "überschritten" in low and "nicht überschritten" not in low else "rechnen"
             bg, ergebnis = K.uebungsleiter_bg(jahr, betrag, bestaetigung=True, bei_ueberschreitung=modus)
             if ergebnis.klasse == K.NICHT and bg == 0:
@@ -133,7 +139,9 @@ def messe(test: dict) -> tuple[str, str]:
             if pos.get("kuenstlerisch") is False:
                 return "AUSGESCHLOSSEN", K.NICHT
             return "AUSGENOMMEN", K.NICHT
-        if kat.startswith(("1-", "2-", "10-")):
+        if K.ist_keine_kuenstlerische_taetigkeit(txt, jahr) is True:
+            return "AUSGESCHLOSSEN", K.NICHT
+        if kat.startswith(("1-", "2-", "10-", "B-")):
             katalog = K.einordnung_taetigkeit(txt, jahr)
             if katalog is not None:
                 return _aus_klasse(katalog.klasse), katalog.klasse
@@ -145,9 +153,7 @@ def messe(test: dict) -> tuple[str, str]:
         return "OFFEN", f"RegisterLuecke: {exc}"
 
 
-def main() -> int:
-    suite = json.loads(SUITE.read_text(encoding="utf-8"))
-    tests = suite["tests"]
+def _bericht(suite: dict, tests: list) -> str:
     zeilen = [
         f"Suite: {suite.get('suite', '')} {suite.get('version', '')} {suite.get('datum', '')}",
         "Abbildung:",
@@ -177,10 +183,19 @@ def main() -> int:
     quote = 100 * gesamt_ok / gesamt if gesamt else 0
     zeilen.append("")
     zeilen.append(f"Gesamt {gesamt_ok}/{gesamt}  {quote:.1f} %")
-    text = "\n".join(zeilen) + "\n"
-    ERGEBNIS.write_text(text, encoding="utf-8")
+    return "\n".join(zeilen) + "\n"
+
+
+def main() -> int:
     sys.stdout.reconfigure(encoding="utf-8")
-    print(text, end="")
+    for quelle, ziel in SUITEN:
+        suite = json.loads(quelle.read_text(encoding="utf-8"))
+        text = _bericht(suite, suite["tests"])
+        ziel.write_text(text, encoding="utf-8")
+        if quelle.name.startswith("testsuite_100"):
+            quelle.with_name("ergebnis_testsuite_100.txt").write_text(text, encoding="utf-8")
+        print(text, end="")
+        print()
     return 0
 
 

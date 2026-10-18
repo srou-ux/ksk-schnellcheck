@@ -1,0 +1,124 @@
+Suite: KSK-Schnellcheck Testsuite v1 (ohne KI) 1.0 2026-10-18
+Abbildung:
+  ZAEHLT -> Position zählt (Abgabepflichtig oder in der Summe)
+  AUSGENOMMEN -> Nicht abgabepflichtig (Vorschlag)
+  AUSGESCHLOSSEN -> Nicht abgabepflichtig (Vorschlag)
+  OFFEN -> Rückfrage nötig / Grenzfall → Steuerberater entscheidet / Nicht abgedeckt (Quelle fehlt) / RegisterLuecke
+  SPERRE -> Sperre — Rechnung prüfen
+
+ID       erwartet         erhalten         Kern                                       
+------------------------------------------------------------------------------------------
+T-001    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+T-002    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+T-003    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+T-004    ZAEHLT           ZAEHLT           Abgabepflichtig (Vorschlag)                ✅
+T-005    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+T-006    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+T-007    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+T-008    ZAEHLT           ZAEHLT           Abgabepflichtig (Vorschlag)                ✅
+T-009    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+T-010    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+T-011    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+T-012    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+T-013    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+T-014    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+T-015    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+T-016    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+T-017    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+T-018    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+T-019    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+T-020    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+T-021    AUSGESCHLOSSEN   AUSGESCHLOSSEN   Nicht abgabepflichtig (Vorschlag)          ✅
+T-022    AUSGESCHLOSSEN   AUSGESCHLOSSEN   Nicht abgabepflichtig (Vorschlag)          ✅
+T-023    AUSGESCHLOSSEN   AUSGESCHLOSSEN   Nicht abgabepflichtig (Vorschlag)          ✅
+T-024    AUSGESCHLOSSEN   AUSGESCHLOSSEN   Nicht abgabepflichtig (Vorschlag)          ✅
+T-025    AUSGENOMMEN      AUSGENOMMEN      Nicht abgabepflichtig (Vorschlag)          ✅
+T-026    AUSGENOMMEN      AUSGENOMMEN      Nicht abgabepflichtig (Vorschlag)          ✅
+T-027    AUSGESCHLOSSEN   AUSGESCHLOSSEN   Nicht abgabepflichtig (Vorschlag)          ✅
+T-028    AUSGESCHLOSSEN   AUSGESCHLOSSEN   Nicht abgabepflichtig (Vorschlag)          ✅
+T-029    AUSGESCHLOSSEN   AUSGESCHLOSSEN   Nicht abgabepflichtig (Vorschlag)          ✅
+T-030    AUSGESCHLOSSEN   AUSGESCHLOSSEN   Nicht abgabepflichtig (Vorschlag)          ✅
+T-031    AUSGENOMMEN      AUSGENOMMEN      Nicht abgabepflichtig (Vorschlag)          ✅
+T-032    AUSGENOMMEN      AUSGENOMMEN      Nicht abgabepflichtig (Vorschlag)          ✅
+T-033    AUSGENOMMEN      AUSGENOMMEN      Nicht abgabepflichtig (Vorschlag)          ✅
+T-034    AUSGENOMMEN      AUSGENOMMEN      Nicht abgabepflichtig (Vorschlag)          ✅
+T-035    AUSGENOMMEN      AUSGENOMMEN      Nicht abgabepflichtig (Vorschlag)          ✅
+T-036    OFFEN            OFFEN            Rückfrage nötig                            ✅
+T-037    AUSGENOMMEN      AUSGENOMMEN      Nicht abgabepflichtig (Vorschlag)          ✅
+T-038    AUSGENOMMEN      AUSGENOMMEN      Nicht abgabepflichtig (Vorschlag)          ✅
+T-039    AUSGENOMMEN      AUSGENOMMEN      Nicht abgabepflichtig (Vorschlag)          ✅
+T-040    AUSGENOMMEN      AUSGENOMMEN      Nicht abgabepflichtig (Vorschlag)          ✅
+T-041    SPERRE           SPERRE           Sperre — Rechnung prüfen                   ✅
+T-042    SPERRE           SPERRE           Sperre — Rechnung prüfen                   ✅
+T-043    SPERRE           SPERRE           Sperre — Rechnung prüfen                   ✅
+T-044    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+T-045    SPERRE           SPERRE           Sperre — Rechnung prüfen                   ✅
+T-046    SPERRE           SPERRE           Sperre — Rechnung prüfen                   ✅
+T-047    SPERRE           SPERRE           Sperre — Rechnung prüfen                   ✅
+T-048    OFFEN            OFFEN            Rückfrage nötig                            ✅
+T-049    SPERRE           SPERRE           Sperre — Rechnung prüfen                   ✅
+T-050    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+T-051    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+T-052    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+T-053    ZAEHLT           ZAEHLT           Abgabepflichtig (Vorschlag)                ✅
+T-054    ZAEHLT           ZAEHLT           Abgabepflichtig (Vorschlag)                ✅
+T-055    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+T-056    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+T-057    ZAEHLT           ZAEHLT           Abgabepflichtig (Vorschlag)                ✅
+T-058    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+T-059    ZAEHLT           ZAEHLT           Abgabepflichtig (Vorschlag)                ✅
+T-060    OFFEN            OFFEN            Rückfrage nötig                            ✅
+T-061    AUSGENOMMEN      AUSGENOMMEN      Nicht abgabepflichtig (Vorschlag)          ✅
+T-062    ZAEHLT           ZAEHLT           Abgabepflichtig (Vorschlag)                ✅
+T-063    ZAEHLT           OFFEN            Rückfrage nötig                            ❌
+T-064    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+T-065    OFFEN            OFFEN            Rückfrage nötig                            ✅
+T-066    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+T-067    AUSGENOMMEN      AUSGENOMMEN      Nicht abgabepflichtig (Vorschlag)          ✅
+T-068    OFFEN            OFFEN            Rückfrage nötig                            ✅
+T-069    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+T-070    AUSGENOMMEN      AUSGENOMMEN      Nicht abgabepflichtig (Vorschlag)          ✅
+T-071    OFFEN            OFFEN            Rückfrage nötig                            ✅
+T-072    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+T-073    OFFEN            OFFEN            Rückfrage nötig                            ✅
+T-074    OFFEN            OFFEN            Rückfrage nötig                            ✅
+T-075    AUSGESCHLOSSEN   AUSGESCHLOSSEN   Nicht abgabepflichtig (Vorschlag)          ✅
+T-076    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+T-077    OFFEN            OFFEN            Rückfrage nötig                            ✅
+T-078    OFFEN            OFFEN            Rückfrage nötig                            ✅
+T-079    AUSGENOMMEN      AUSGENOMMEN      Nicht abgabepflichtig (Vorschlag)          ✅
+T-080    OFFEN            OFFEN            Rückfrage nötig                            ✅
+T-081    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+T-082    OFFEN            OFFEN            Nicht abgedeckt (Quelle fehlt)             ✅
+T-083    ZAEHLT           ZAEHLT           Abgabepflichtig (Vorschlag)                ✅
+T-084    OFFEN            OFFEN            Rückfrage nötig                            ✅
+T-085    OFFEN            OFFEN            Rückfrage nötig                            ✅
+T-086    ZAEHLT           ZAEHLT           Grenzfall → Steuerberater entscheidet      ✅
+T-087    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+T-088    OFFEN            OFFEN            Rückfrage nötig                            ✅
+T-089    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+T-090    SPERRE           SPERRE           Sperre — Rechnung prüfen                   ✅
+T-091    OFFEN            OFFEN            Nicht abgedeckt (Quelle fehlt)             ✅
+T-092    OFFEN            OFFEN            Nicht abgedeckt (Quelle fehlt)             ✅
+T-093    OFFEN            OFFEN            Nicht abgedeckt (Quelle fehlt)             ✅
+T-094    OFFEN            OFFEN            Nicht abgedeckt (Quelle fehlt)             ✅
+T-095    OFFEN            OFFEN            Nicht abgedeckt (Quelle fehlt)             ✅
+T-096    OFFEN            OFFEN            Nicht abgedeckt (Quelle fehlt)             ✅
+T-097    OFFEN            OFFEN            Nicht abgedeckt (Quelle fehlt)             ✅
+T-098    OFFEN            OFFEN            Nicht abgedeckt (Quelle fehlt)             ✅
+T-099    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
+T-100    OFFEN            OFFEN            Rückfrage nötig                            ✅
+
+Kategorien
+  1-kuenstlerisch         10/10   100.0 %
+  2-publizistisch         10/10   100.0 %
+  3-rechtsform            10/10   100.0 %
+  4-auslagen              10/10   100.0 %
+  5-summen                10/10   100.0 %
+  6-schwelle              10/10   100.0 %
+  7-musikverein            9/10    90.0 %
+  8-vertragslage          10/10   100.0 %
+  9-jahre                 10/10   100.0 %
+  10-unklar               10/10   100.0 %
+
+Gesamt 99/100  99.0 %

@@ -845,6 +845,72 @@
    "regel": "C4",
    "fundstelle": "Quellenluecke: ohne Katalogtreffer keine automatische Entscheidung",
    "status": "Entwurf – vom Steuerberater zu prüfen"
+  },
+  {
+   "schluessel": "sperre.manipulation",
+   "wert": "sperre",
+   "einheit": "Text",
+   "operator": null,
+   "von": 2015,
+   "bis": null,
+   "regel": "A3",
+   "fundstelle": "Rechenprobe A2/A3: nachtraeglich geaenderte Zeile",
+   "status": "Entwurf – vom Steuerberater zu prüfen"
+  },
+  {
+   "schluessel": "sperre.paragraph19",
+   "wert": "sperre",
+   "einheit": "Text",
+   "operator": null,
+   "von": 2015,
+   "bis": null,
+   "regel": "A2",
+   "fundstelle": "Rechenprobe A2/A3: Kleinunternehmer und Umsatzsteuer widersprechen sich",
+   "status": "Entwurf – vom Steuerberater zu prüfen"
+  },
+  {
+   "schluessel": "sperre.toleranz",
+   "wert": "0.01",
+   "einheit": "Euro",
+   "operator": null,
+   "von": 2015,
+   "bis": null,
+   "regel": "A3",
+   "fundstelle": "Rechenprobe A2/A3: Rundungsdifferenz ueber 1 Cent",
+   "status": "Entwurf – vom Steuerberater zu prüfen"
+  },
+  {
+   "schluessel": "rechtsform.kein_entgelt",
+   "wert": "se",
+   "einheit": "Rechtsform",
+   "operator": null,
+   "von": 2015,
+   "bis": null,
+   "regel": "R-138",
+   "fundstelle": "Ableitung: die SE ist einer AG gleichgestellt",
+   "status": "Entwurf – vom Steuerberater zu prüfen"
+  },
+  {
+   "schluessel": "taetigkeit.ausgeschlossen",
+   "wert": "beratung",
+   "einheit": "Text",
+   "operator": null,
+   "von": 2015,
+   "bis": null,
+   "regel": "F-006",
+   "fundstelle": "Beratung ist keine kuenstlerische oder publizistische Leistung",
+   "status": "Entwurf – vom Steuerberater zu prüfen"
+  },
+  {
+   "schluessel": "taetigkeit.ausgeschlossen",
+   "wert": "buchhaltung",
+   "einheit": "Text",
+   "operator": null,
+   "von": 2015,
+   "bis": null,
+   "regel": "F-006",
+   "fundstelle": "Buchhaltung ist keine kuenstlerische oder publizistische Leistung",
+   "status": "Entwurf – vom Steuerberater zu prüfen"
   }
  ]
 }
