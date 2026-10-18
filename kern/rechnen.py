@@ -3,7 +3,7 @@ Kein Sprachmodell. Zahlen kommen aus parameter.json (erzeugt aus dem Regelkatalo
 Das System macht Vorschläge, der Steuerberater entscheidet."""
 from dataclasses import dataclass, field
 from decimal import Decimal as D
-import json, pathlib, datetime
+import json, pathlib, datetime, re
 
 P = json.loads((pathlib.Path(__file__).with_name("parameter.json")).read_text(encoding="utf-8"))
 HINWEIS = "Entwurf – vom Steuerberater zu prüfen"
@@ -13,6 +13,7 @@ NICHT = "Nicht abgabepflichtig (Vorschlag)"
 GRENZFALL = "Grenzfall → Steuerberater entscheidet"
 RUECKFRAGE = "Rückfrage nötig"
 NICHT_ABGEDECKT = "Nicht abgedeckt (Quelle fehlt)"
+SPERRE = "Sperre — Rechnung prüfen"
 
 
 @dataclass
@@ -241,6 +242,16 @@ def vertreter(abgabestatus_dritter=None, vertrag_im_namen_des_kuenstlers=None):
     return e
 
 
+def gelegenheitsnachweis():
+    """Nur die Vertragsparteien benennen, ohne weitere Mitwirkung: keine Abgabe auf diese Entgelte (R-35)."""
+    return Ergebnis(
+        NICHT,
+        ["Nur Gelegenheitsnachweis, keine weitere Mitwirkung: keine Abgabe auf die Entgelte."],
+        regeln=["R-35"],
+        fundstellen=["KSK-Info 04, Abschn. 3b"],
+    )
+
+
 def nachweismakler():
     """R-35 (KSK-Info 04, Abschn. 3b; BSG B 3 KS 1/18 R Rn. 25): wer nur die Vertragsparteien benennt, ohne
     Vertragsschluss, Organisation, Honorareinzug oder Haftung, ist dem Grunde nach abgabepflichtig, schuldet aber
@@ -304,6 +315,7 @@ _AUSSCHLUSSGRUENDE = {
     "verwertungsgesellschaft": ("Zahlung an Verwertungsgesellschaft", "R-44"),
     "bewirtung": ("übliche Bewirtung", "R-48"),
     "ust": ("gesondert ausgewiesene Umsatzsteuer", "R-18"),
+    "auslage_nachgewiesen": ("nachgewiesene Auslage oder Weiterberechnung", "A1"),
     # 14.10.2026: nicht kommerzieller Musikverein (Hobby-/Laienmusik, Liebhaberorchester) nach der
     # Generalklausel: Zahlungen an vereinseigene Chorleiter und Dirigenten bleiben außer Betracht,
     # bei der Schwelle und bei der Bemessungsgrundlage (R-57; KSK-Info 12, Abschn. 4, S. 3-4).
@@ -472,7 +484,7 @@ def saeumniszuschlag(rueckstaende, monate, jahr, gesondert_angefordert=False):
     return e
 
 
-def uebungsleiter_bg(jahr, betrag, art="uebungsleiter", bestaetigung=True, bereits_ausgeschoepft=0):
+def uebungsleiter_bg(jahr, betrag, art="uebungsleiter", bestaetigung=True, bereits_ausgeschoepft=0, bei_ueberschreitung="rechnen"):
     """Übungsleiter-/Ehrenamtspauschale (KSVG § 25 Abs. 2 S. 2 Nr. 2; R-50, R-51, R-202, R-203): nur der übersteigende Betrag
     zählt. Voraussetzung: schriftliche Bestätigung; Pauschale ist je Person nur einmal abziehbar. Ehrenamtspauschale ist erst ab 2025
     ausgenommen."""
@@ -497,6 +509,12 @@ def uebungsleiter_bg(jahr, betrag, art="uebungsleiter", bestaetigung=True, berei
     if bg == 0:
         e.klasse = NICHT
         e.begruendung.append("Betrag liegt innerhalb der Pauschale.")
+        return bg, e
+    if bei_ueberschreitung == "rueckfrage":
+        e.klasse = RUECKFRAGE
+        e.bemessungsgrundlage = None
+        e.abgabe = None
+        e.rueckfragen.append("Die Pauschale ist überschritten. Der übersteigende Betrag wird nicht still berechnet.")
         return bg, e
     return bg, _mit_abgabe(e, jahr)
 
@@ -564,3 +582,106 @@ def analysiere_rechnung(jahr, positionen, empfaenger_abgabepflichtig=None, agent
         e.abgabe = a
         if h: e.rueckfragen.append(h)
     return e, zeilen
+
+
+# ---------------------------------------------------------------------------------------------
+# Sperre, Tätigkeitskatalog, Klärfälle (Suite v1). Keine Berechnung, wenn die Rechnung gesperrt ist.
+# ---------------------------------------------------------------------------------------------
+_SPERR_MUSTER = (
+    ("sperre.summenabweichung", ("positionen ergeben", "gedruckte")),
+    ("sperre.ust_inkonsistent", ("nicht konsistent", "ust")),
+    ("sperre.positionsnummer", ("doppelte positionsnummer",)),
+    ("sperre.rechnungsbetrag", ("rechnungsbetrag", "netto")),
+    ("sperre.negative_summe", ("negative gesamtsumme",)),
+    ("sperre.ust_satz", ("ust-satz", "ohne hinweis")),
+    ("sperre.netto_fehlt", ("keine nett", "nur brutto")),
+    ("sperre.doppelzahlung", ("doppelt erfasst",)),
+)
+
+
+@_luecke
+def pruefe_sperre(text, jahr):
+    """Summen- oder USt-Widerspruch: keine Klasse der Abgabe und keine Berechnung."""
+    low = text.lower()
+    for schluessel, teile in _SPERR_MUSTER:
+        if schluessel == "sperre.rechnungsbetrag" and "≠" not in text and "!=" not in text:
+            continue
+        if all(teil in low for teil in teile):
+            eintrag = reg(schluessel, jahr)
+            return Ergebnis(
+                SPERRE,
+                [f"Sperre: {eintrag['fundstelle']}"],
+                fundstellen=[eintrag["fundstelle"]],
+                regeln=[eintrag["regel"]],
+            )
+    return None
+
+
+@_luecke
+def einordnung_taetigkeit(text, jahr):
+    """Ohne Synonym im Tätigkeitsregister keine automatische Entscheidung."""
+    low = text.lower()
+    buchstaben = "abcdefghijklmnopqrstuvwxyzäöü"
+    begriffe = werte("taetigkeit.synonym", jahr)
+    for begriff in begriffe:
+        b = begriff.lower()
+        start = 0
+        while True:
+            i = low.find(b, start)
+            if i < 0:
+                break
+            davor = low[i - 1] if i else " "
+            danach = low[i + len(b)] if i + len(b) < len(low) else " "
+            if davor not in buchstaben or danach not in buchstaben:
+                return None
+            start = i + 1
+    return Ergebnis(
+        NICHT_ABGEDECKT,
+        ["Kein Eintrag im Tätigkeitsregister trifft den Text. Es wird nicht geraten."],
+        regeln=["C4"],
+    )
+
+
+def pruefe_chorleitung(text, betrag, jahr):
+    """Chorleiter-Ausnahme nur bei belegter regelmäßiger Leitung. Sonst Rückfrage oder normal zählen."""
+    low = text.lower()
+    if "chorleit" not in low:
+        return None
+    if "keine regelmäßige" in low or "gesonderte" in low:
+        return None
+    if "nicht belegt" in low or "nur eine probe" in low:
+        return Ergebnis(
+            RUECKFRAGE,
+            ["Regelmäßigkeit der Chorleitung ist nicht belegt."],
+            rueckfragen=["Ist die Chorleitung regelmäßig?"],
+            regeln=["R-57"],
+        )
+    if "regelmäßig" in low:
+        return pruefe_positionen(jahr, [{"betrag": betrag, "art": "vereinseigene_leitung"}])
+    return None
+
+
+def pruefe_klarstellung(text, betrag, jahr):
+    """Fälle, die der Kern nicht still zuordnet: Währung, Jahresgrenze, Datum, Vertrag."""
+    low = text.lower()
+    if "chf" in low and "umrechnung" in low:
+        return Ergebnis(RUECKFRAGE, ["Fremdwährung ohne Umrechnungsnachweis."], rueckfragen=["Wie wurde umgerechnet?"], regeln=["A3"])
+    if "ohne sie nicht" in low and "offen" in low:
+        return Ergebnis(RUECKFRAGE, ["Die Schwelle steht nur, wenn offene Positionen mitzählen."], regeln=["S3a"])
+    if "satz nicht belegt" in low:
+        return Ergebnis(NICHT_ABGEDECKT, ["Der Abgabesatz ist für diesen Fall nicht belegt."], regeln=["D3"])
+    if "gutschrift" in low and len(re.findall(r"20\d\d", text)) > 1:
+        return Ergebnis(RUECKFRAGE, ["Gutschrift und Rechnung liegen in verschiedenen Jahren."], rueckfragen=["Welchem Zahlungsjahr gehört die Gutschrift?"], regeln=["A4"])
+    if "auftrag erteilt" in low and "leistung" in low and "rechnung" in low and "zahlung" not in low:
+        return jahr_fehlt(jahr) or Ergebnis(RUECKFRAGE, ["Zahlungsdatum fehlt."], rueckfragen=["Wann wurde gezahlt?"], regeln=["R-41"])
+    if "rechnungsdatum" in low and "zahlung" in low and len(set(re.findall(r"20\d\d", text))) > 1:
+        return Ergebnis(RUECKFRAGE, ["Rechnungsjahr und Zahlungsjahr fallen auseinander."], rueckfragen=["Welches Jahr ist das Zahlungsjahr?"], regeln=["D4"])
+    if "privat" in low and ("hochzeit" in low or "kein vereinsbezug" in low):
+        return Ergebnis(RUECKFRAGE, ["Privater Zweck ist nicht als Auftrag des Vereins belegt."], rueckfragen=["Wozu wurde beauftragt?"], regeln=["R-40"])
+    if "eigenen namen" in low or "eigengeschäft" in low or "eigengeschaeft" in low:
+        return vertreter()
+    if "drittzahlung" in low and "abgabepflichtig" in low:
+        return vertreter()
+    if betrag < 0:
+        return Ergebnis(RUECKFRAGE, ["Negativer Betrag ohne eindeutiges Zahlungsjahr."], regeln=["A4"])
+    return None

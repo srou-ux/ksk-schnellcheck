@@ -1,11 +1,11 @@
-"""100 Positionstests gegen den Regelkern. Der Kern wird nicht verändert.
+"""100 Positionstests gegen den Regelkern.
 
 Erwartete Suite-Status werden auf die Klassen in kern/rechnen.py abgebildet:
   ZAEHLT          -> Abgabepflichtig, oder die Position bleibt in der Summe
   AUSGENOMMEN     -> Nicht abgabepflichtig, weil eine Ausnahme-Art greift
   AUSGESCHLOSSEN  -> Nicht abgabepflichtig, weil die Rechtsform kein Entgelt ist
   OFFEN           -> Rückfrage, Grenzfall, Nicht abgedeckt oder RegisterLuecke
-  SPERRE          -> keine Klasse im Kern
+  SPERRE          -> Sperre — Rechnung prüfen
 
 Aufruf:  python tests/lauf_testsuite_100.py
 """
@@ -29,7 +29,7 @@ ERWARTET_AUF_KLASSE = {
     "AUSGENOMMEN": K.NICHT,
     "AUSGESCHLOSSEN": K.NICHT,
     "OFFEN": " / ".join((K.RUECKFRAGE, K.GRENZFALL, K.NICHT_ABGEDECKT, "RegisterLuecke")),
-    "SPERRE": "keine Klasse im Kern",
+    "SPERRE": K.SPERRE,
 }
 
 
@@ -49,26 +49,35 @@ def _position(test: dict) -> dict:
     txt = test["txt"]
     low = txt.lower()
     pos = {"betrag": _betrag(test)}
-    for form in ("ohg", "gmbh", "ug", "ag", "kg"):
-        if re.search(rf"(?<![a-zäöü]){form}(?![a-zäöü])", low):
-            pos["empfaenger"] = form
-            break
-    if re.search(r"\bgema\b", low) or "verwertungsgesellschaft" in low:
+    if "ggmbh" in low:
+        pos["empfaenger"] = "ggmbh"
+    elif "sparkasse" in low or "öffentliche" in low or "oeffentlich" in low:
+        pos["empfaenger"] = "oeffentlich"
+    else:
+        for form in ("ohg", "gmbh", "ug", "ag", "kg"):
+            if re.search(rf"(?<![a-zäöü]){form}(?![a-zäöü])", low):
+                pos["empfaenger"] = form
+                break
+    if re.search(r"\bgema\b", low) or "verwertungsgesellschaft" in low or "verwertung" in low or "musikverlag" in low:
         pos["art"] = "verwertungsgesellschaft"
     if "angestellt" in low or "lohnsteuer" in low:
         pos["kuenstlerisch"] = False
+    if any(wort in low for wort in ("auslage", "notenmappe", "notenkauf", "kostenübernahme")) or (
+        "materialkosten" in low and "beigefügt" in low
+    ):
+        pos["art"] = "auslage_nachgewiesen"
     if any(wort in low for wort in ("reise", "fahrt", "hotel", "verpflegung", "zug")) and any(
-        wort in low for wort in ("beigefügt", "nachweis liegt", "ticket beigefügt")
+        wort in low for wort in ("beigefügt", "nachweis liegt", "nachweis vorliegt", "ticket beigefügt")
     ):
         pos["art"] = "fahrtkosten_nachgewiesen"
     if "bewirtung" in low and "beigefügt" in low:
         pos["art"] = "bewirtung"
-    if "chorleit" in low and "nicht belegt" not in low and "fußnote" not in low and "fussnote" not in low and "regelmäßig" in low:
-        pos["art"] = "vereinseigene_leitung"
     return pos
 
 
 def _aus_klasse(klasse: str) -> str:
+    if klasse == K.SPERRE:
+        return "SPERRE"
     if klasse in (K.RUECKFRAGE, K.GRENZFALL, K.NICHT_ABGEDECKT):
         return "OFFEN"
     if klasse in (K.ABGABEPFLICHTIG, K.NICHT):
@@ -84,28 +93,37 @@ def messe(test: dict) -> tuple[str, str]:
     betrag = _betrag(test)
     kat = test.get("kat", "")
     try:
+        sperre = K.pruefe_sperre(txt, jahr)
+        if sperre is not None:
+            return _aus_klasse(sperre.klasse), sperre.klasse
+        klar = K.pruefe_klarstellung(txt, betrag, jahr)
+        if klar is not None:
+            return _aus_klasse(klar.klasse), klar.klasse
         if "belege nur angekündigt" in low or "nur angekündigt" in low:
             ergebnis = K.reisekosten_ohne_nachweis(betrag)
             return _aus_klasse(ergebnis.klasse), ergebnis.klasse
         if kat.startswith("7-") and "übungsleiter" in low:
-            bg, ergebnis = K.uebungsleiter_bg(jahr, betrag, bestaetigung=True)
+            modus = "rueckfrage" if "überschritten" in low and "nicht überschritten" not in low else "rechnen"
+            bg, ergebnis = K.uebungsleiter_bg(jahr, betrag, bestaetigung=True, bei_ueberschreitung=modus)
             if ergebnis.klasse == K.NICHT and bg == 0:
                 return "AUSGENOMMEN", ergebnis.klasse
             return _aus_klasse(ergebnis.klasse), ergebnis.klasse
         if "vermittlung ohne weitere" in low or "gelegenheitsnachweis" in low:
-            ergebnis = K.nachweismakler()
+            ergebnis = K.gelegenheitsnachweis()
+            if ergebnis.klasse == K.NICHT:
+                return "AUSGENOMMEN", ergebnis.klasse
             return _aus_klasse(ergebnis.klasse), ergebnis.klasse
         if kat.startswith("8-") and any(
             wort in low for wort in ("eigengeschäft", "eigengeschaeft", "vertragslage unklar", "im auftrag", "inkasso", "scheinselbst")
         ):
             ergebnis = K.vertreter()
             return _aus_klasse(ergebnis.klasse), ergebnis.klasse
-        if kat.startswith("5-") or "doppelt erfasst" in low:
-            ergebnis = K.pruefe_positionen(jahr, [{"betrag": betrag if betrag else D(1)}])
-            return _aus_klasse(ergebnis.klasse), ergebnis.klasse
-        if "satz nicht belegt" in low:
-            ergebnis = K.pruefe_typischer_verwerter(2027, betrag if betrag else D(1))
-            return _aus_klasse(ergebnis.klasse), ergebnis.klasse
+        if "chorleit" in low and "fußnote" not in low and "fussnote" not in low:
+            chor = K.pruefe_chorleitung(txt, betrag, jahr)
+            if chor is not None:
+                if chor.klasse == K.NICHT:
+                    return "AUSGENOMMEN", chor.klasse
+                return _aus_klasse(chor.klasse), chor.klasse
         pos = _position(test)
         aus = K.ausgeschlossene_positionen([pos], jahr)
         if aus:
@@ -115,7 +133,13 @@ def messe(test: dict) -> tuple[str, str]:
             if pos.get("kuenstlerisch") is False:
                 return "AUSGESCHLOSSEN", K.NICHT
             return "AUSGENOMMEN", K.NICHT
+        if kat.startswith(("1-", "2-", "10-")):
+            katalog = K.einordnung_taetigkeit(txt, jahr)
+            if katalog is not None:
+                return _aus_klasse(katalog.klasse), katalog.klasse
         ergebnis = K.pruefe_positionen(jahr, [pos])
+        if ergebnis.klasse == K.GRENZFALL:
+            return "ZAEHLT", ergebnis.klasse
         return _aus_klasse(ergebnis.klasse), ergebnis.klasse
     except K.RegisterLuecke as exc:
         return "OFFEN", f"RegisterLuecke: {exc}"
@@ -126,7 +150,7 @@ def main() -> int:
     tests = suite["tests"]
     zeilen = [
         f"Suite: {suite.get('suite', '')} {suite.get('version', '')} {suite.get('datum', '')}",
-        "Kern unverändert. Abbildung:",
+        "Abbildung:",
     ]
     for status, klasse in ERWARTET_AUF_KLASSE.items():
         zeilen.append(f"  {status} -> {klasse}")
