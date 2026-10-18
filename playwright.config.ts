@@ -1,0 +1,21 @@
+import { defineConfig } from "@playwright/test";
+
+export default defineConfig({
+  testDir: "e2e",
+  timeout: 60_000,
+  use: {
+    baseURL: "http://localhost:3000",
+    trace: "retain-on-failure",
+  },
+  webServer: {
+    command: "npm run dev -- --port 3000",
+    url: "http://localhost:3000",
+    reuseExistingServer: false,
+    timeout: 120_000,
+    env: {
+      KSK_LLM_MODE: "mock",
+      ADMIN_PASSWORD: "e2e-admin-passwort",
+      KSK_DATA_DIR: "data-e2e",
+    },
+  },
+});

@@ -1,0 +1,20 @@
+{
+  "stamp": "2026-10-05",
+  "rounding": "half_up_integer_cents",
+  "roundingNote": "Abgabe in Cent = (Bemessungsgrundlage in Cent × Satz in Basispunkten + 5000) ÷ 10000, ganzzahlig abgerundet. Das ist kaufmännisches Runden auf ganze Cent. In der Prüfung gibt es keine Fließkomma-Beträge.",
+  "thresholdScope": "Die Jahresgrenze gilt nur für § 24 Abs. 2 KSVG (Eigenwerbung und Generalklausel). Typische Verwerter nach § 24 Abs. 1 haben diese Grenze nicht. Wird die Grenze überschritten, ist die gesamte Jahressumme Bemessungsgrundlage, nicht nur der übersteigende Teil.",
+  "years": {
+    "2025": {
+      "rateBps": 500,
+      "thresholdCents": 70000,
+      "rateSource": "Künstlersozialkasse, Abgabesatz für 2025: 5,0 Prozent",
+      "thresholdSource": "§ 54 KSVG: abweichend von § 24 Abs. 2 Satz 2 beträgt die Entgeltsumme im Kalenderjahr 2025 700 Euro"
+    },
+    "2026": {
+      "rateBps": 490,
+      "thresholdCents": 100000,
+      "rateSource": "Künstlersozialkasse, Abgabesatz für 2026: 4,9 Prozent",
+      "thresholdSource": "§ 24 Abs. 2 Satz 2 KSVG, Stand der Quelle Q-KSVG@2026-10-05: 1.000 Euro"
+    }
+  }
+}

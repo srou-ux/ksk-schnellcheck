@@ -1,0 +1,61 @@
+{
+  "version": "v12",
+  "stamp": "2026-10-05",
+  "roles": {
+    "typischer_verwerter": {
+      "thresholdApplies": false,
+      "citation": "§ 24 Abs. 1 KSVG",
+      "layperson": "Der Auftraggeber gehört zu den im Gesetz genannten Unternehmen, die künstlerische oder publizistische Leistungen typischerweise verwerten. Für diese Unternehmen gilt die Jahresgrenze nicht."
+    },
+    "eigenwerbung": {
+      "thresholdApplies": true,
+      "citation": "§ 24 Abs. 2 Satz 1 Nummer 1 KSVG",
+      "layperson": "Der Auftraggeber wirbt oder betreibt Öffentlichkeitsarbeit für das eigene Unternehmen und beauftragt dafür eine selbständige künstlerische oder publizistische Leistung. Die Abgabepflicht setzt voraus, dass die Entgelte des Kalenderjahres die Jahresgrenze übersteigen."
+    },
+    "generalklausel": {
+      "thresholdApplies": true,
+      "citation": "§ 24 Abs. 2 Satz 1 Nummer 2 KSVG",
+      "layperson": "Der Auftraggeber nutzt die Leistung für Unternehmenszwecke und will damit Einnahmen erzielen. Die Abgabepflicht setzt voraus, dass die Entgelte des Kalenderjahres die Jahresgrenze übersteigen."
+    }
+  },
+  "payeeGesellschaft": {
+    "state": "NICHT_ABGABEPFLICHTIG",
+    "citation": "KSK-FAQ Unternehmen und Verwerter, ausgewertet zum Quellenstand 2026-10-05: Entgelte an Gesellschaften sind keine Bemessungsgrundlage, weil Vertragspartner kein selbständiger Künstler oder Publizist ist",
+    "reason": "Die Rechnung weist eine Gesellschaft als Leistungserbringerin aus. Solche Entgelte stehen nach der hinterlegten FAQ-Regel nicht in der Bemessungsgrundlage. Wenn unklar ist, ob der Vertrag mit der Gesellschaft oder mit einer natürlichen Person geschlossen wurde, darf diese Regel nicht angewendet werden; dann bleibt der Empfänger ungeklärt."
+  },
+  "includedInBase": ["honorar", "material", "reise", "bewirtung", "gemischt", "drittleistung"],
+  "hints": [
+    {
+      "kind": "reise",
+      "dependency": "unselbstaendig",
+      "citation": "§ 1 Nr. 1 KSVEntgV in Verbindung mit § 25 Abs. 2 Satz 3 KSVG",
+      "reason": "Nachgewiesene Reisekosten des selbständigen Künstlers oder Publizisten, die der Abgabepflichtige übernimmt, sind dem Entgelt nicht zuzurechnen, soweit sie die Grenzen des § 3 Nr. 16 EStG nicht übersteigen.",
+      "requiredEvidence": "Belege über Fahrt, Übernachtung, Verpflegungsmehraufwand oder Reisenebenkosten, die in der Person des Künstlers oder Publizisten entstanden sind, plus die Vereinbarung, dass der Auftraggeber diese Kosten übernimmt.",
+      "whenEvidenceDoesNotWork": "Weiterberechnete Reisekosten Dritter fallen nicht unter § 1 Nr. 1 KSVEntgV. Eine Pauschale ohne Nachweis und Kosten oberhalb der Grenzen des § 3 Nr. 16 EStG bleiben im Entgelt. Ein Nachweis beweist den Vorgang, er erschafft ihn nicht."
+    },
+    {
+      "kind": "bewirtung",
+      "dependency": "unselbstaendig",
+      "citation": "§ 1 Nr. 2 KSVEntgV",
+      "reason": "Übliche Aufwendungen für die Bewirtung des selbständigen Künstlers oder Publizisten sind dem Entgelt nicht zuzurechnen.",
+      "requiredEvidence": "Beleg über eine übliche Bewirtung des Künstlers oder Publizisten und der Zusammenhang mit dem Auftrag.",
+      "whenEvidenceDoesNotWork": "Bewirtung anderer Personen, ein in ein Pauschalhonorar eingeschlossener Anteil ohne Ausweis und eine unübliche Zuwendung wirken nicht als Ausnahme. Ein Nachweis beweist den Vorgang, er erschafft ihn nicht."
+    },
+    {
+      "kind": "gemischt",
+      "dependency": "gemischt",
+      "citation": "§ 25 Abs. 2 Satz 1 KSVG; Ausnahmen nur § 1 KSVEntgV",
+      "reason": "Ohne Aufteilung gilt der Gesamtbetrag. Nur ein gesondert ausgewiesener und belegter Anteil, der unter § 1 KSVEntgV fällt, kann aus dem Entgelt ausscheiden. Material ist nach der hinterlegten Regel nicht ausgenommen. Der Arbeitsanteil bleibt abgabepflichtig.",
+      "requiredEvidence": "Schriftliche Aufteilung in Arbeitsanteil und Ausnahmeanteil sowie Belege nur für den Anteil, der Reise- oder Bewirtungskosten nach § 1 KSVEntgV ist.",
+      "whenEvidenceDoesNotWork": "Ein Materialbeleg allein nimmt nichts aus der Bemessungsgrundlage. Ohne Aufteilung bleibt der Gesamtbetrag pflichtig. Ein Nachweis beweist einen realen Vorgang, er erschafft keine Ausnahme und keine nachträgliche Aufteilung."
+    },
+    {
+      "kind": "drittleistung",
+      "dependency": "eigenstaendig",
+      "citation": "§ 25 Abs. 2 Satz 1 KSVG; § 1 Nr. 1 KSVEntgV erfasst weiterberechnete Kosten Dritter nicht",
+      "reason": "Eine weiterberechnete Drittleistung ist ein eigener Vorgang. Sie fällt nicht schon deshalb aus dem Entgelt, weil sie auf der Rechnung neben dem Honorar steht.",
+      "requiredEvidence": "Beleg, der genau diese weiterberechnete Leistung, den Dritten und den durchgereichten Betrag ausweist. Wirkt der Beleg, dann nur auf diese Position.",
+      "whenEvidenceDoesNotWork": "Der Beleg wirkt nicht auf das Honorar und nicht auf andere Positionen. Weiterberechnete Reisekosten Dritter sind keine Reisekosten im Sinne von § 1 Nr. 1 KSVEntgV. Ein Nachweis erschafft den Vorgang nicht."
+    }
+  ]
+}

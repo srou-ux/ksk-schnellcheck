@@ -1,51 +1,13 @@
-# Standardmäßig alles im Projektstamm ignorieren.
-# Nur explizit freigegebene Ordner/Dateien werden hochgeladen.
-/*
-
-# --- Erlaubt: öffentliche Quellen ---
-!/quellen/
-
-# --- Erlaubt: Programmcode (später) ---
-!/src/
-!/app/
-!/schnellcheck/
-!/kern/
-!/verifier/
-!/scripts/
-!/.devcontainer/
-!/.github/
-!/tests/
-!/README.md
-!/CLAUDE.md
-!/.gitattributes
-!/AGENTS.md
-!/regelwerk/
-!/aufgaben/
-!/.gitignore
-
-# --- app/: lokale, nie hochzuladende Laufzeitdaten (Lückenprotokoll, Schlüssel) ---
-# (siehe aufgaben/PROMPT_ClaudeCode_Chatbot_1.md: "Kein Schlüssel ... keine Kundendaten im Repo")
-/app/_lokal/
-/app/.env
-/app/**/.env
-
-# --- Python-Caches (ueberall, auch unter app/ und tests/) ---
-__pycache__/
-*.pyc
-
-# --- Ausdrücklich NICHT hochladen (auch als Dokumentation, zusätzlich zur Default-Sperre oben) ---
-.claude/
-doku/
-korrektur/
-neu/
-*.zip
-*.xlsx
-
-# Kundendaten / private Daten - niemals hochladen
-kunden/
-echte_daten/
-*.private
-*.env
-
-# Ausnahme: Regelkatalog und Testfälle (nur öffentliche Quellen, erfundene Testfälle)
-!/regelwerk/*.xlsx
+node_modules
+.next
+out
+data
+data-e2e
+data-browser
+config/secrets.env
+.env.local
+.env*.local
+test-results
+playwright-report
+blob-report
+*.tsbuildinfo

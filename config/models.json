@@ -1,0 +1,8 @@
+{
+  "readSmall": "mistral-small-latest",
+  "readMedium": "mistral-medium-3.5",
+  "readLarge": "mistral-large-latest",
+  "evaluate": "mistral-medium-3.5",
+  "examiner": "mistral-large-latest",
+  "chat": "mistral-medium-3.5"
+}

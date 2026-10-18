@@ -1,0 +1,8 @@
+{
+  "maxUploadBytes": 20971520,
+  "allowedMimeTypes": ["application/pdf", "image/png", "image/jpeg"],
+  "methodologyVersion": "v12",
+  "rulesStamp": "2026-10-05",
+  "filingDeadlineMonth": 3,
+  "filingDeadlineDay": 31
+}

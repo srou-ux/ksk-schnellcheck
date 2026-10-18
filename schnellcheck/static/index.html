@@ -220,6 +220,9 @@ function euro(s){
   return g.replace(/\B(?=(\d{3})+(?!\d))/g,".")+","+n+" €";
 }
 function prozent(s){return String(s).replace(".",",")+" %"}
+function anzeigeKlasse(text){
+  return String(text||"").replaceAll("Steuerberater entscheidet","Ihre Bestätigung erforderlich").replaceAll("vom Steuerberater zu prüfen","Ihre Bestätigung erforderlich");
+}
 
 function neuePosition(){
   const t=$("vorlage-position").content.firstElementChild.cloneNode(true);
@@ -271,7 +274,7 @@ function zeigen(r){
   const titel=offenOhnePos?"Es fehlen noch Angaben":r.anzeige.titel;
   const b=el("article",{class:"bericht stufe-"+stufe});
   b.append(el("div",{class:"urteil"},el("div",{class:"stempel",text:titel}),
-    el("div",{},el("h2",{text:titel}),el("p",{class:"klasse",text:"Ergebnis des Regelkerns: "+r.ergebnisklasse}))));
+    el("div",{},el("h2",{text:titel}),el("p",{class:"klasse",text:"Ergebnis des Regelkerns: "+anzeigeKlasse(r.ergebnisklasse)}))));
   if(r.begruendung)b.append(el("p",{class:"begruendung",text:r.begruendung}));
   const w=r.werte||{};const zahlen=WERTE.filter(([k])=>w[k]!=null);
   if(zahlen.length)b.append(el("div",{class:"zahlen"},...zahlen.map(([k,t,f])=>el("div",{class:"zahl"},el("span",{text:t}),el("b",{text:f(w[k])})))));
@@ -283,12 +286,12 @@ function zeigen(r){
   }
   if((r.fundstellen||[]).length){b.append(el("h3",{text:"Quellen"}),el("ul",{class:"quellen"},...r.fundstellen.map(t=>el("li",{text:t}))));
     if((r.regel_ids||[]).length)b.append(el("p",{class:"quellen",text:"Regeln im Regelkatalog: "+r.regel_ids.join(", ")}))}
-  b.append(el("p",{class:"vermerk",text:(r.hinweis||"Entwurf – vom Steuerberater zu prüfen")+". Der Schnellcheck ist eine Ersteinschätzung, keine Rechts- oder Steuerberatung. "+(r.positionshinweis||"")}));
+  b.append(el("p",{class:"vermerk",text:"Vorschlag — Ihre Bestätigung erforderlich. Der Schnellcheck ist eine Ersteinschätzung, keine Rechts- oder Steuerberatung. "+(r.positionshinweis||"")}));
 
   const weiter=el("aside",{class:"weiter"},
     el("div",{},el("h3",{text:"Rechnungen automatisch auslesen und ausführlich prüfen lassen?"}),
       el("p",{text:"In der Vollversion laden Sie Rechnungen hoch und erhalten einen nachvollziehbaren Prüfbericht – mit denselben Regeln wie hier."}),
-      el("ul",{},el("li",{text:"Rechnungen und Belege hochladen statt abtippen"}),el("li",{text:"mehrere Unterlagen, gespeicherte Fälle, Jahresübersicht"}),el("li",{text:"individuelle Rückfragen und ausführlicher Bericht für den Steuerberater"}))),
+      el("ul",{},el("li",{text:"Rechnungen und Belege hochladen statt abtippen"}),el("li",{text:"mehrere Unterlagen, gespeicherte Fälle, Jahresübersicht"}),el("li",{text:"individuelle Rückfragen und ausführlicher Bericht zum Export"}))),
     OPT.saas_url?el("a",{class:"knopf",href:OPT.saas_url,text:"Vollversion ansehen"}):el("span",{class:"knopf",text:"Bald verfügbar"}));
   $("ergebnis").replaceChildren(b,weiter);
   $("ergebnis").scrollIntoView({behavior:"smooth",block:"start"});

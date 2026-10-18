@@ -60,7 +60,7 @@ export const LEERER_STAND: Pruefstand = { dokumente: [], audit: [], nachrichten:
 
 export const STATUS_LABEL: Record<Positionsstatus, string> = {
   ZAEHLT: "Zählt",
-  OFFEN: "Offen",
+  OFFEN: "Offen — im Chat klären",
   SPERRE: "Sperre",
   AUSGESCHLOSSEN: "Ausgeschlossen",
   AUSGENOMMEN: "Ausgenommen",

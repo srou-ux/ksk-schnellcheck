@@ -1,0 +1,40 @@
+{
+  "version": "ksk-quellen-v1",
+  "umfang": [
+    { "id": "ksvg", "label": "Künstlersozialversicherungsgesetz (KSVG)", "pflicht": true },
+    { "id": "ksventgv", "label": "Künstlersozialversicherungs-Entgeltverordnung (KSVEntgV)", "pflicht": true },
+    { "id": "abgabesatz", "label": "Offizielle Jahresregelung oder Bekanntmachung zum Künstlersozialabgabesatz", "pflicht": true },
+    { "id": "ksk_informationen", "label": "Einschlägige Informationsschriften der Künstlersozialkasse", "pflicht": true },
+    { "id": "ergaenzende_normen", "label": "Für den unterstützten Prüfumfang erforderliche ergänzende gesetzliche Vorschriften", "pflicht": true }
+  ],
+  "offizielle_domains": [
+    "gesetze-im-internet.de",
+    "kuenstlersozialkasse.de",
+    "bmas.de",
+    "bundesregierung.de",
+    "recht.bund.de",
+    "bundesgesetzblatt.de"
+  ],
+  "max_quellen": 12,
+  "max_download_bytes": 15728640,
+  "max_nachrecherche_versuche": 3,
+  "nachrecherche_zeitlimit_ms": 180000,
+  "kostenlimit_usd": 1.0,
+  "nachrecherche_modell": "gpt-6.1-sol",
+  "max_kosten_pro_recherche_usd": 0.12,
+  "kostenmodell": {
+    "input_usd_pro_million": 10.0,
+    "output_usd_pro_million": 50.0,
+    "websuche_usd_pro_aufruf": 0.01,
+    "nachrecherche_input_usd_pro_million": 1.0,
+    "nachrecherche_output_usd_pro_million": 5.0
+  },
+  "prompt_version": "ksk-auswertung-v1",
+  "auswertung_version": "ksk-auswertung-v1",
+  "ausgangsquellen": ["10", "12", "27"],
+  "einstiege": {
+    "mediencenter": "https://www.kuenstlersozialkasse.de/service-und-medien/mediencenter-unternehmen-und-verwerter",
+    "ksvg": "https://www.gesetze-im-internet.de/ksvg/index.html",
+    "ksventgv": "https://www.gesetze-im-internet.de/ksventgv/BJNR001560991.html"
+  }
+}

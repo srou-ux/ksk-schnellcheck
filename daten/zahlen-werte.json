@@ -1,0 +1,113 @@
+{
+  "liste_stand": "2026-10-06",
+  "letzte_aenderung": "2026-10-07",
+  "wertegruppen": [
+    {
+      "name": "abgabepflichtgrenze_veranstalter",
+      "thema": "abgabepflicht",
+      "stichworte": ["abgabepflicht", "abgabepflichtgrenze"],
+      "beschreibung": "Jährliche Entgeltgrenze für nicht-kommerzielle Veranstalter (z. B. Musikvereine)",
+      "quelle": "Info_12_Abgabepflicht_von_Musikvereinen.pdf",
+      "werte": [
+        { "betrag": 450, "gueltig_ab": "2019-01-01", "gueltig_bis": "2024-12-31" },
+        { "betrag": 700, "gueltig_ab": "2025-01-01", "gueltig_bis": "2025-12-31" },
+        { "betrag": 1000, "gueltig_ab": "2026-01-01", "gueltig_bis": null }
+      ]
+    },
+    {
+      "name": "bagatellgrenze_zahlungsvorgang",
+      "thema": "bagatell",
+      "stichworte": ["bagatell", "zahlungsvorgang"],
+      "beschreibung": "Bagatellgrenze je einzelnen Zahlungsvorgang",
+      "quelle": "KSVEntgV.pdf",
+      "werte": [
+        { "betrag": 20, "gueltig_ab": "2019-01-01", "gueltig_bis": null }
+      ]
+    },
+    {
+      "name": "abgabesatz",
+      "einheit": "prozent",
+      "thema": "abgabesatz",
+      "stichworte": ["abgabesatz"],
+      "beschreibung": "Künstlersozialabgabe, Abgabesatz",
+      "quelle": "Künstlersozialkasse, Abgabesatz",
+      "werte": [
+        { "betrag": 5, "gueltig_ab": "2025-01-01", "gueltig_bis": "2025-12-31" },
+        { "betrag": 4.9, "gueltig_ab": "2026-01-01", "gueltig_bis": null }
+      ]
+    },
+    {
+      "name": "kilometerpauschale",
+      "thema": "reisekosten",
+      "stichworte": ["reisekosten", "kilometer", "bewirtung"],
+      "beschreibung": "Kilometerpauschale je km",
+      "quelle": "Info_10_Ausnahmen_zur_Bemessungsgrundlage_Reise-_und_Bewirtungskosten.pdf",
+      "werte": [
+        { "betrag": 0.3, "gueltig_ab": "2002-01-01", "gueltig_bis": null }
+      ]
+    },
+    {
+      "name": "bewirtung_oberer_satz",
+      "thema": "reisekosten",
+      "stichworte": ["reisekosten", "bewirtung"],
+      "beschreibung": "Bewirtungspauschale, oberer Satz",
+      "quelle": "Info_10_Ausnahmen_zur_Bemessungsgrundlage_Reise-_und_Bewirtungskosten.pdf",
+      "werte": [
+        { "betrag": 24, "gueltig_ab": "2014-01-01", "gueltig_bis": "2019-12-31" },
+        { "betrag": 28, "gueltig_ab": "2020-01-01", "gueltig_bis": null }
+      ]
+    },
+    {
+      "name": "bewirtung_unterer_satz",
+      "thema": "reisekosten",
+      "stichworte": ["reisekosten", "bewirtung"],
+      "beschreibung": "Bewirtungspauschale, unterer Satz",
+      "quelle": "Info_10_Ausnahmen_zur_Bemessungsgrundlage_Reise-_und_Bewirtungskosten.pdf",
+      "werte": [
+        { "betrag": 12, "gueltig_ab": "2014-01-01", "gueltig_bis": "2019-12-31" },
+        { "betrag": 14, "gueltig_ab": "2020-01-01", "gueltig_bis": null }
+      ]
+    },
+    {
+      "name": "ehrenamtspauschale",
+      "thema": "ehrenamt",
+      "stichworte": ["ehrenamt", "ehrenamtspauschale"],
+      "beschreibung": "Ehrenamtspauschale",
+      "quelle": "Info_10_Ausnahmen_zur_Bemessungsgrundlage_Reise-_und_Bewirtungskosten.pdf",
+      "werte": [
+        { "betrag": 840, "gueltig_ab": "2025-01-01", "gueltig_bis": "2025-12-31" },
+        { "betrag": 960, "gueltig_ab": "2026-01-01", "gueltig_bis": null }
+      ]
+    },
+    {
+      "name": "vorauszahlung_freigrenze",
+      "thema": "vorauszahlung",
+      "stichworte": ["vorauszahlung", "vorauszahlungspflicht"],
+      "beschreibung": "Monatliche Vorauszahlung entfällt bis zu diesem Betrag (§ 27 Abs. 3 Satz 3 KSVG)",
+      "quelle": "KSVG.pdf",
+      "werte": [
+        { "betrag": 40, "gueltig_ab": "2002-01-01", "gueltig_bis": null }
+      ]
+    },
+    {
+      "name": "bewirtung_nachweispflicht",
+      "thema": "bewirtung",
+      "stichworte": ["bewirtung", "einzelnachweis", "nachweispflicht"],
+      "beschreibung": "Bewirtungs-Nachweispflicht",
+      "bedingung": "ohne Einzelnachweis → zuzurechnen",
+      "quelle": "Info_10_Ausnahmen_zur_Bemessungsgrundlage_Reise-_und_Bewirtungskosten.pdf",
+      "werte": []
+    },
+    {
+      "name": "ermaessigung_paragraph_50",
+      "einheit": "prozent",
+      "thema": "ermäßigung",
+      "stichworte": ["ermäßigung", "§ 50", "paragraph 50"],
+      "beschreibung": "Ermäßigung der Künstlersozialabgabe nach § 50 KSVG",
+      "quelle": "KSVG.pdf",
+      "werte": [
+        { "betrag": 25, "gueltig_ab": "1983-01-01", "gueltig_bis": "1999-12-31" }
+      ]
+    }
+  ]
+}

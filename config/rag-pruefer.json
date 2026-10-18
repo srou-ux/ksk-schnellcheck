@@ -1,0 +1,7 @@
+{
+  "pruefer": [
+    { "id": "P1", "label": "Prüfer 1 (medium)", "modell": "mistral-medium-latest" },
+    { "id": "P2", "label": "Prüfer 2 (large)", "modell": "mistral-large-latest" }
+  ],
+  "angezeigte_antwort": "P2"
+}
