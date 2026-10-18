@@ -761,3 +761,18 @@ Anlass: Test des Nutzers („Bäckerei, Werbung für unser eigenes Geschäft“ 
 - **Korpus mit Small, 3. Lauf (17.10.2026, 0232a1a): 0 FALSCH** (1.692/85/0/45). Offene Befunde, alle „nicht auswertbar“ statt falsch: Small liefert öfter ungültiges JSON (unerlaubte Werte für `verwerterart`/`auskunft_thema`, verschachtelte oder abgebrochene Antworten, erfundene Schlüssel wie `veranstaltungszahl_unbekannt_aber_angegeben`). Vorschlag: unerlaubten Aufzählungswert verwerfen (Feld bleibt leer, dann Rückfrage) statt die ganze Antwort; nie raten. Zwei Antworttexte mit abgeschnittenem Paragrafen hielt die Antwortprüfung richtig an.
 - **Schritt 2 (17.10.2026): Rückfragen nach Tatsachen.** Umgesetzt wie im Arbeitsstand beschrieben (792fb2c). Befunde dabei: (1) `app/router.py::_aktualisiere_feld` nahm über `POST /knopf` auch Felder an, die nur das System setzt (`katalog_taetigkeit`, `herkunft`), und eine Position −1 (= letzte); jetzt abgelehnt. (2) `app/einordnung.py::erfasse` übernahm einen vom Modell gelieferten anderen Zweck über eine Knopf-Auswahl hinweg; jetzt bleibt die Auswahl. (3) Die Testläufer klicken für gespeicherte Fälle mit der alten Kategorie den Zweck-Knopf derselben Einordnung (`einordnung.KATEGORIE_ZU_ZWECK`; „Typischer Verwerter“ → „Werbung oder Öffentlichkeitsarbeit für Kunden“) – Testfälle unverändert.
 - **Testarchiv mit Small nach Schritt 2 (17.10.2026):** Lesart von Small schwankt zwischen Läufen (A-999: dreimal Rückfrage, dann falsch – auf dem alten Code). Fest abgefangen: `anzahl_je_betrag` ‚<N>mal … jede Rechnung <Betrag>‘ (P-04a), `vg_als_empfaenger` Betrag vor ‚an die GEMA‘ (AT-2026-039). **Offen, Vorschlag zur Entscheidung:** Zweck nur vom Modell vermutet (kein Wort im Text, z. B. ‚30-Jahr-Feier … Firmenveranstaltung‘ → Veranstaltung) immer per Rückfrage bestätigen lassen (AT-2026-004, A-999, P-12, AT-2026-007).
+
+
+## Befunde im neuen KSK-Schnellcheck (17.10.2026, Codex)
+
+- `schnellcheck/static/index.html`: Komma ohne gültigen Centteil wurde entfernt (`12,345` → `12345`); fehlerhafte Tausendergruppen ebenfalls normalisiert. Behoben durch vollständige Formatprüfung.
+- Dieselbe Seite: Änderungen ließen alte Ergebnisse stehen; verspätete Antworten konnten nicht mehr passende Ergebnisse anzeigen. Behoben durch sofortiges Verwerfen und Abgleich von Eingabeversion/Anfragekennung.
+- `app/static/dokumente.html`: CSV-Felder aus Dokumenttext waren nur CSV-escaped, nicht gegen Formelauswertung geschützt. Formelpräfixe werden jetzt als Text exportiert, einschließlich führender Leer-/Steuerzeichen. Der alte Exportzustand wird bei Korrekturen gelöscht.
+- Nachweis: acht Regressionstests auf dem Original-JavaScript (vorher rot, nachher grün), vollständige Projektprüfung grün, 60 Dokument-HTTP-Fälle grün. Browserprüfung lokal offen; CI wurde ergänzt. Siehe `SCHNELLCHECK_Abnahme_2026-10-17.md`.
+
+
+## PDF-Import: leere Felder trotz lesbarem Text (18.10.2026)
+
+- `app/dokument_lesen.py`: Beschreibung und Betrag waren getrennte PDF-Textobjekte. Normale Textextraktion erzeugte zwei Zeilen, sodass der Positionsparser keinen Kandidaten erkannte. Layout-Extraktion stellt die räumliche Zeile wieder her; Test mit getrennten Textobjekten und Summenzeilen ergänzt.
+- Eindeutige Empfängerfelder wurden bisher gar nicht übernommen. Jetzt Vorschlag mit Beleg an die Oberfläche; manuelle Änderungen und Widersprüche bleiben geschützt. Angaben zu Zahlung/Jahresvollständigkeit bleiben unbestätigt.
+- Änderung ausschließlich in `ksk-schnellcheck`.

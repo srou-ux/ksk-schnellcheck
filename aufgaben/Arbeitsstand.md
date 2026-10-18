@@ -564,3 +564,26 @@ Auftrag des Nutzers: alle Fehler beheben, unabhängig vom Sprachmodell (vielleic
 - **Live (Testarchiv, Small):** 1. Lauf 7 falsch. Gegenlauf auf dem alten Stand (2eaeb5d) 3 falsch; Nachbau der vom Modell gelieferten Angaben zeigte: alter und neuer Code entscheiden gleich – Small liest dieselben Texte von Lauf zu Lauf verschieden (auch bei Temperatur 0). Zwei solcher Lesarten jetzt fest abgefangen („fünfmal … jede Rechnung 250 €“, „1.500 EUR … an die GEMA“). 2. Lauf: **3 falsch** (A-999 Messe, AT-2026-004 Firmenfeier, AT-2026-007 „Agentur (GmbH)“) – Deutungsfälle, in denen Small den Zweck selbst rät.
 - **Offen (Entscheidung nötig):** Soll ein Zweck, den nur das Modell vermutet (kein passendes Wort im Text), immer per Rückfrage bestätigt werden? Weniger falsch, mehr Rückfragen. Zum Upload-Vorschlag von ChatGPT fehlen noch: zweite Erkennung am Originalbild, Prüfung Positionen + Umsatzsteuer = Gesamt, Rechnungs- und Zahlungsdatum getrennt, Original und Angaben nebeneinander. Mistral-Dokumenterkennung würde die Datei an Mistral schicken (bisher: nur Text) – Entscheidung des Nutzers.
 
+
+
+## KSK-Schnellcheck: Oberflächenfehler abgesichert (17.10.2026, Codex)
+
+Basis im neuen Repository: `5994db7`. Der bestehende Schnellcheck bleibt erhalten; kein Austausch durch den parallelen lokalen Entwurf. Betragseingabe verwirft fehlerhafte Trennzeichen statt Beträge zu verändern. Änderungen verwerfen alte Ergebnisse, verspätete Antworten ebenfalls. Dokumenten-CSV neutralisiert Formelpräfixe; Korrekturen löschen den Exportzustand. Regeln, Zahlen und Quellen unverändert.
+
+Abnahme: `python scripts/pruefe_alles.py` vorher/nachher ALLES GRÜN; 8 JavaScript-Regressionstests bestanden; 60/60 Dokumentfälle über echten HTTP-Server bestanden. Neuer Schnellcheck-Browsertest in CI eingebunden, lokal mangels Chromium nicht ausgeführt. Details und Grenzen: `aufgaben/SCHNELLCHECK_Abnahme_2026-10-17.md`. Separater Pull Request, kein automatischer Merge.
+
+
+## Codespaces: Dokument-Upload automatisch starten (18.10.2026)
+
+Auf Nutzerwunsch ist die Dokumentenprüfung der automatische Einstieg: `postStartCommand` und `postAttachCommand` starten Port 8000, der als „Dokument hochladen – KSK-Prüfung“ im Browser geöffnet werden soll. Das manuelle Formular auf 8100 bleibt optional und öffnet sich nicht automatisch.
+
+Das Startskript beendet keine laufenden Server mehr. Eine Sperre verhindert parallele Starts, eine Gesundheitsprüfung prüft die tatsächliche Bereitschaft; bei Startfehlern gibt es keine falsche Erfolgsmeldung. Lokal geprüft: Shell-Syntax/JSON gültig, echter Serverstart, Upload-Seite HTTP 200, zweiter Start behält denselben Serverprozess. Die Browser-Taböffnung selbst hängt vom Codespaces-Client ab und wurde nicht in einem echten Codespace bedient. Bestehende Codespaces benötigen nach dem Pull einmal „Rebuild Container“.
+
+
+## PDF-Felder automatisch übernehmen (18.10.2026)
+
+Nur Repository `srou-ux/ksk-schnellcheck`; `ksk-assistent` wird nicht verändert. Ursache des Nutzerbefunds mit der bereitgestellten Testrechnung: Standard-PDF-Extraktion trennte die visuellen Zeilen „Logo-Gestaltung“ und „1.500,00 EUR“; der Positionsleser lieferte keine Positionen. Layout-Extraktion hält diese Zeilen zusammen, separate Positionsnummern werden entfernt. Summen und Umsatzsteuer bleiben ausgeschlossen.
+
+Eindeutig beschriftete Rechnungsempfänger/Auftraggeber werden als Vorschlag mit Textbeleg im Feld Auftraggeber vorbelegt. Keine Ableitung des Zahlungsjahres aus Rechnungsdatum/Zahlungsziel, keine automatische Zahlungsbestätigung oder Schätzung der Rechtsform. Manuelle Korrekturen werden nicht überschrieben. Unterschiedliche Empfänger entfernen eine automatische Vorbelegung und erzeugen einen sichtbaren Hinweis. Mehrdeutige Spalten werden nicht geraten.
+
+Nachweise: sechs zusätzliche Parser-Tests, zwei zusätzliche JavaScript-Tests (insgesamt zehn), bereitgestellte Original-Testrechnung über echten Upload-Endpunkt korrekt (eine Position, 1500.00, richtiger Empfänger). Browserprüfung um Upload mit getrennten PDF-Textobjekten und Kontrolle der automatisch gefüllten Felder erweitert. Vollständige Projektprüfung siehe PR/CI.

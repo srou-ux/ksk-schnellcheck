@@ -1,11 +1,13 @@
 {
-  "name": "KSK-Assistent (Entwurf, nur erfundene Testdaten)",
+  "name": "KSK – Dokument hochladen und prüfen",
   "image": "mcr.microsoft.com/devcontainers/python:3.11",
   "postCreateCommand": "sudo apt-get update && sudo apt-get install -y tesseract-ocr tesseract-ocr-deu poppler-utils && pip install --disable-pip-version-check -r app/requirements.txt",
   "postAttachCommand": "bash scripts/start_codespace.sh",
+  "postStartCommand": "bash scripts/start_codespace.sh",
   "forwardPorts": [8000],
   "portsAttributes": {
-    "8000": { "label": "KSK-Dokumentenprüfung", "onAutoForward": "openBrowser" }
+    "8000": { "label": "Dokument hochladen – KSK-Prüfung", "onAutoForward": "openBrowser" },
+    "8100": { "label": "Optional: manuelles Formular", "onAutoForward": "silent" }
   },
   "customizations": {
     "vscode": { "settings": { "python.defaultInterpreterPath": "/usr/local/bin/python" } }

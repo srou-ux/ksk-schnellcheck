@@ -195,6 +195,15 @@ footer{border-top:1px solid var(--linie);padding:22px 0 40px;font-size:13px;colo
 "use strict";
 const $=id=>document.getElementById(id);
 let OPT=null;
+let revision=0, lauf=0;
+
+function verwerfen(){
+  revision++;
+  $("ergebnis").replaceChildren();
+  $("meldung").textContent="";
+}
+$("formular").addEventListener("input",verwerfen);
+$("formular").addEventListener("change",verwerfen);
 
 function el(tag,attrs,...kinder){const e=document.createElement(tag);for(const[k,v]of Object.entries(attrs||{})){if(k==="text")e.textContent=v;else if(k==="class")e.className=v;else e.setAttribute(k,v)}for(const k of kinder)if(k!=null)e.append(k);return e}
 
@@ -206,12 +215,12 @@ function janein(v){return v==="ja"?true:v==="nein"?false:null}
 
 // Betrag „1.250,00“ / „1250.5“ -> „1250.00“-Zeichenkette (nur Umformen, kein Rechnen)
 function betragText(s){
-  s=(s||"").replace(/\s|€/g,"");
+  s=(s||"").trim().replace(/\s*€$/,"").trim();
   if(!s)return null;
-  if(/,\d{1,2}$/.test(s))s=s.replace(/\./g,"").replace(",",".");
-  else if(/^\d{1,3}(\.\d{3})+$/.test(s))s=s.replace(/\./g,"");
-  else s=s.replace(/,/g,"");
-  return /^\d+(\.\d{1,2})?$/.test(s)?s:"ungueltig";
+  // Nur eindeutige Schreibweisen; ungültige Trennzeichen nie still entfernen.
+  if(/^\d+(?:[.,]\d{1,2})?$/.test(s))return s.replace(",",".");
+  if(/^\d{1,3}(?:\.\d{3})+(?:,\d{1,2})?$/.test(s))return s.replace(/\./g,"").replace(",",".");
+  return "ungueltig";
 }
 // „2400“ -> „2.400,00 €“ (nur Darstellung)
 function euro(s){
@@ -222,13 +231,14 @@ function euro(s){
 function prozent(s){return String(s).replace(".",",")+" %"}
 
 function neuePosition(){
+  verwerfen();
   const t=$("vorlage-position").content.firstElementChild.cloneNode(true);
   const sel=t.querySelector('[data-feld="leistung"]');
   for(const l of OPT.leistungen)sel.append(new Option(l.name,l.id));
   const rf=t.querySelector('[data-feld="rechtsform"]');
   for(const[k,v]of Object.entries(OPT.rechtsformen))rf.append(new Option(v,k));
   sel.addEventListener("change",()=>{const l=OPT.leistungen.find(x=>x.id===sel.value);t.querySelector(".leistungshinweis").textContent=l&&l.hinweis?"Hinweis: "+l.hinweis:""});
-  t.querySelector(".entfernen").addEventListener("click",()=>{t.remove();nummern()});
+  t.querySelector(".entfernen").addEventListener("click",()=>{t.remove();nummern();verwerfen()});
   $("positionen").append(t);nummern();
   if($("positionen").children.length>=OPT.max_positionen)$("neu").disabled=true;
 }
@@ -296,16 +306,19 @@ function zeigen(r){
 
 async function pruefen(ev){
   ev.preventDefault();
+  verwerfen();
+  const id=++lauf, stand=revision;
   const{fall,fehler}=sammeln();
   if(fehler.length){$("meldung").replaceChildren(...fehler.slice(0,4).flatMap((f,i)=>i?[el("br"),f]:[f]));return}
   $("meldung").textContent="";$("pruefen").disabled=true;$("pruefen").textContent="Wird geprüft …";
   try{
     const a=await fetch("api/pruefen",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(fall)});
     const d=await a.json();
+    if(id!==lauf||stand!==revision)return;
     if(!a.ok)throw Error(d.fehler||"Die Prüfung ist fehlgeschlagen.");
     zeigen(d);
-  }catch(e){$("meldung").textContent=e.message||"Die Prüfung ist fehlgeschlagen. Bitte erneut versuchen."}
-  finally{$("pruefen").disabled=false;$("pruefen").textContent="Jetzt prüfen"}
+  }catch(e){if(id===lauf&&stand===revision)$("meldung").textContent=e.message||"Die Prüfung ist fehlgeschlagen. Bitte erneut versuchen."}
+  finally{if(id===lauf){$("pruefen").disabled=false;$("pruefen").textContent="Jetzt prüfen"}}
 }
 
 fetch("api/optionen").then(r=>{if(!r.ok)throw Error();return r.json()}).then(o=>{

@@ -12,6 +12,7 @@ import urllib.request
 W = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(W))
 from tests.app.test_dokumente import pdf
+from tests.app.test_dokument_layout import layout_pdf
 
 
 def hauptlauf():
@@ -38,6 +39,17 @@ def hauptlauf():
                 page.goto(url + pfad)
                 expect(page.locator('#bereiche a[aria-current="page"]')).to_have_text("Rechnungen prüfen")
                 expect(page.locator("#bereiche a", has_text="KSK-Chat")).to_have_count(0)
+            # Beschrifteter Rechnungsempfänger + Betrag in separatem PDF-Textobjekt.
+            page.goto(url + "/rechnungen")
+            page.locator("#files").set_input_files({"name":"layout-test.pdf", "mimeType":"application/pdf", "buffer":layout_pdf()})
+            expect(page.locator("#rows tr")).to_have_count(1)
+            expect(page.locator('[data-field="bezeichnung"]')).to_have_value("Logo-Gestaltung")
+            expect(page.locator('[data-field="betrag"]')).to_have_value("1500.00")
+            expect(page.locator("#company")).to_have_value("Baeckerei Test GmbH")
+            expect(page.locator("#autofill-note")).to_contain_text("RECHNUNGSEMPFAENGER")
+            expect(page.locator("#year")).to_have_value("")
+            expect(page.locator("#net-paid")).not_to_be_checked()
+            page.locator("#company").fill("Manuell korrigiert")
             for n, (betrag, erwartung) in enumerate([(1500, "73,50"), (1600, "78,40"), (1700, "83,30"), (1800, "88,20")]):
                 page.goto(url + "/rechnungen")
                 # Keine eval-basierte Pollingfunktion: die Seite verbietet unsafe-eval ausdrücklich.
