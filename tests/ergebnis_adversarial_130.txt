@@ -268,7 +268,7 @@ V-128 | K2-kaskade | erwartet ZAEHLT | erhalten OFFEN | Grund Status
   kern:  Kein Eintrag im Tätigkeitsregister trifft den Text. Es wird nicht geraten. C4
 
 Restfehler nach Etappe 1 (Quelle, Korrektur, Commit)
-Commit: noch nicht gesetzt
+Commit: 56246ec
 V-014: Beleg-Rückfrage vor Rechtsform | Etappe 4: öffentliche Stelle und Arbeitnehmer als Ausschluss benennen
 V-016: Unter der Schwelle wird still gezählt | Etappe 3: D1-Jahresrest als Rückfrage
 V-020: Wort oeffentlich setzt die Rechtsform, obwohl die Veranstaltung gemeint ist | Etappe 3/4: Veranstaltungszahl vor der Rechtsform

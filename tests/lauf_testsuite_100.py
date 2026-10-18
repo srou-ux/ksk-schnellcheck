@@ -341,7 +341,7 @@ def _bericht_adversarial(suite: dict, tests: list) -> str:
     return "\n".join(zeilen) + "\n"
 
 
-ETAPPE1_COMMIT = "noch nicht gesetzt"
+ETAPPE1_COMMIT = "56246ec"
 
 
 def _restfehler(ergebnisse: dict) -> list[tuple[str, str, str]]:
