@@ -832,7 +832,9 @@ def pruefe_klarstellung(text, betrag, jahr):
     """Fälle, die der Kern nicht still zuordnet: Währung, Jahresgrenze, Datum, Vertrag."""
     low = text.lower()
     if ("chf" in low or "usd" in low) and ("umrechnung" in low or "ohne kurs" in low):
-        return Ergebnis(RUECKFRAGE, ["Fremdwährung ohne Umrechnungsnachweis."], rueckfragen=["Wie wurde umgerechnet?"], regeln=["A3"])
+        zeile = reg("offen.waehrung", jahr)
+        return Ergebnis(RUECKFRAGE, [zeile["wert"]], rueckfragen=["Wie wurde umgerechnet?"],
+                        regeln=["A3"], fundstellen=[zeile["fundstelle"]])
     if "skonto" in low:
         return skonto_unklar(jahr)
     if "storno" in low and ("selben jahr" in low or "negativ" in low):

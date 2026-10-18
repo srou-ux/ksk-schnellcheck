@@ -160,7 +160,7 @@ export interface FrozenReport {
 
 export interface RateYear {
   rateBps: number;
-  thresholdCents: number;
+  thresholdCents: number | null;
   rateSource: string;
   thresholdSource: string;
 }

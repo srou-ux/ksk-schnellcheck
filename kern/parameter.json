@@ -836,14 +836,14 @@
    "status": "Entwurf – vom Steuerberater zu prüfen"
   },
   {
-   "schluessel": "taetigkeit.synonym",
+   "schluessel": "szenarien.eigenwerbung",
    "wert": "eigenwerbung",
    "einheit": "Text",
    "operator": null,
    "von": 2015,
    "bis": null,
-   "regel": "C4",
-   "fundstelle": "Quellenluecke: ohne Katalogtreffer keine automatische Entscheidung",
+   "regel": "KSVG-24-2",
+   "fundstelle": "KSVG § 24 Abs. 2 Satz 1 Nummer 1. Eigenwerbung ist ein Verwerter-Szenario, keine Tätigkeit.",
    "status": "Entwurf – vom Steuerberater zu prüfen"
   },
   {
@@ -2092,6 +2092,39 @@
   {
    "schluessel": "auslage.gehoert_zum_entgelt",
    "wert": "notenmaterial",
+   "einheit": "Text",
+   "operator": null,
+   "von": 2015,
+   "bis": null,
+   "regel": "Info-10",
+   "fundstelle": "KSK-Info 10, S. 1: Auslagen und Nebenkosten, die dem Künstler vergütet werden, gehören zum Entgelt. Ausnahme nur Umsatzsteuer, Verwertungsgesellschaft, Reise und übliche Bewirtung.",
+   "status": "Entwurf – vom Steuerberater zu prüfen"
+  },
+  {
+   "schluessel": "offen.waehrung",
+   "wert": "Fremdwährung ohne Umrechnungsnachweis — Kurs und Nachweis vorlegen",
+   "einheit": "Text",
+   "operator": null,
+   "von": 2015,
+   "bis": null,
+   "regel": "A3",
+   "fundstelle": "Testfall L-23: Euro-Betrag und Umrechnungsgrundlage klären; keine erfundene Euro-Summe. Eine Umrechnungsregel ist in der Quellenbasis nicht belegt.",
+   "status": "Entwurf – vom Steuerberater zu prüfen"
+  },
+  {
+   "schluessel": "auslage.mit_beleg_ausgenommen",
+   "wert": "verpflegungsmehraufwand",
+   "einheit": "Text",
+   "operator": null,
+   "von": 2015,
+   "bis": null,
+   "regel": "KSVEntgV-1",
+   "fundstelle": "KSVEntgV § 1 Nr. 1: nachgewiesene Reisekosten innerhalb der Grenzen des § 3 Nr. 16 EStG zählen nicht. KSK-Info 10, S. 2.",
+   "status": "Entwurf – vom Steuerberater zu prüfen"
+  },
+  {
+   "schluessel": "auslage.gehoert_zum_entgelt",
+   "wert": "plakatrahmen",
    "einheit": "Text",
    "operator": null,
    "von": 2015,

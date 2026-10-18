@@ -2,19 +2,79 @@
   "stamp": "2026-10-05",
   "rounding": "half_up_integer_cents",
   "roundingNote": "Abgabe in Cent = (Bemessungsgrundlage in Cent × Satz in Basispunkten + 5000) ÷ 10000, ganzzahlig abgerundet. Das ist kaufmännisches Runden auf ganze Cent. In der Prüfung gibt es keine Fließkomma-Beträge.",
-  "thresholdScope": "Die Jahresgrenze gilt nur für § 24 Abs. 2 KSVG (Eigenwerbung und Generalklausel). Typische Verwerter nach § 24 Abs. 1 haben diese Grenze nicht. Wird die Grenze überschritten, ist die gesamte Jahressumme Bemessungsgrundlage, nicht nur der übersteigende Teil.",
+  "thresholdScope": "Die Jahresgrenze gilt nur für § 24 Abs. 2 KSVG (Eigenwerbung und Generalklausel). Typische Verwerter nach § 24 Abs. 1 haben diese Grenze nicht. Wird die Grenze überschritten, ist die gesamte Jahressumme Bemessungsgrundlage, nicht nur der übersteigende Teil. 2015–2018 haben im Regelregister einen Abgabesatz und keine Schwelle. 2027 steht im Regelregister, hier aber bewusst nicht: ohne freigegebenen Satz bleibt das Jahr ein sichtbarer Konfigurationsfehler.",
   "years": {
+    "2015": {
+      "rateBps": 520,
+      "thresholdCents": null,
+      "rateSource": "KSK-Info 01, Abschn. 4, S. 8 (Stand 01.2026)",
+      "thresholdSource": "Keine Schwelle im Regelregister. Das Blatt Schwellen beginnt 2019. Nicht ergänzt."
+    },
+    "2016": {
+      "rateBps": 520,
+      "thresholdCents": null,
+      "rateSource": "KSK-Info 01, Abschn. 4, S. 8",
+      "thresholdSource": "Keine Schwelle im Regelregister. Das Blatt Schwellen beginnt 2019. Nicht ergänzt."
+    },
+    "2017": {
+      "rateBps": 480,
+      "thresholdCents": null,
+      "rateSource": "KSK-Info 01, Abschn. 4, S. 8",
+      "thresholdSource": "Keine Schwelle im Regelregister. Das Blatt Schwellen beginnt 2019. Nicht ergänzt."
+    },
+    "2018": {
+      "rateBps": 420,
+      "thresholdCents": null,
+      "rateSource": "KSK-Info 01, Abschn. 4, S. 8",
+      "thresholdSource": "Keine Schwelle im Regelregister. Das Blatt Schwellen beginnt 2019. Nicht ergänzt."
+    },
+    "2019": {
+      "rateBps": 420,
+      "thresholdCents": 45000,
+      "rateSource": "Künstlersozialabgabe-Verordnung 2019, § 1",
+      "thresholdSource": "KSVG § 24 Abs. 3 a. F.; BSG B 3 KS 3/21 R Rn. 18. 450 Euro nur als Geringfügigkeitsgrenze, zusätzlich Regelmäßigkeit."
+    },
+    "2020": {
+      "rateBps": 420,
+      "thresholdCents": 45000,
+      "rateSource": "Künstlersozialabgabe-Verordnung 2020, § 1",
+      "thresholdSource": "KSVG § 24 Abs. 3 a. F.; BSG B 3 KS 3/21 R Rn. 18. 450 Euro nur als Geringfügigkeitsgrenze, zusätzlich Regelmäßigkeit."
+    },
+    "2021": {
+      "rateBps": 420,
+      "thresholdCents": 45000,
+      "rateSource": "Künstlersozialabgabe-Verordnung 2021, § 1",
+      "thresholdSource": "KSVG § 24 Abs. 3 a. F.; BSG B 3 KS 3/21 R Rn. 18. 450 Euro nur als Geringfügigkeitsgrenze, zusätzlich Regelmäßigkeit."
+    },
+    "2022": {
+      "rateBps": 420,
+      "thresholdCents": 45000,
+      "rateSource": "Künstlersozialabgabe-Verordnung 2022, § 1",
+      "thresholdSource": "KSVG § 24 Abs. 1 Satz 2, Abs. 3 a. F.; Ende der Fassung A: Art. 34 Abs. 1 des 8. SGB IV-ÄndG (01.01.2023)"
+    },
+    "2023": {
+      "rateBps": 500,
+      "thresholdCents": 45000,
+      "rateSource": "Künstlersozialabgabe-Verordnung 2023, § 1",
+      "thresholdSource": "KSVG § 24 Abs. 2 Satz 2 (Kopien 2023-05-13, 2024-05-21)"
+    },
+    "2024": {
+      "rateBps": 500,
+      "thresholdCents": 45000,
+      "rateSource": "Künstlersozialabgabe-Verordnung 2024, § 1",
+      "thresholdSource": "KSVG § 24 Abs. 2 Satz 2 (Kopien 2023-05-13, 2024-05-21)"
+    },
     "2025": {
       "rateBps": 500,
       "thresholdCents": 70000,
-      "rateSource": "Künstlersozialkasse, Abgabesatz für 2025: 5,0 Prozent",
-      "thresholdSource": "§ 54 KSVG: abweichend von § 24 Abs. 2 Satz 2 beträgt die Entgeltsumme im Kalenderjahr 2025 700 Euro"
+      "rateSource": "Künstlersozialabgabe-Verordnung 2025, § 1",
+      "thresholdSource": "KSVG § 54: 'Abweichend von § 24 Absatz 2 Satz 2 beträgt die Entgeltsumme 700 Euro im Kalenderjahr 2025'"
     },
     "2026": {
       "rateBps": 490,
       "thresholdCents": 100000,
-      "rateSource": "Künstlersozialkasse, Abgabesatz für 2026: 4,9 Prozent",
-      "thresholdSource": "§ 24 Abs. 2 Satz 2 KSVG, Stand der Quelle Q-KSVG@2026-10-05: 1.000 Euro"
+      "rateSource": "Künstlersozialabgabe-Verordnung 2026, § 1",
+      "thresholdSource": "KSVG § 24 Abs. 2 Satz 2 (aktuell)"
     }
   }
 }

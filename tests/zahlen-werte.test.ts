@@ -136,7 +136,7 @@ describe("Werteliste", () => {
     const dir = mkdtempSync(path.join(tmpdir(), "ksk-werte-"));
     const file = path.join(dir, "zahlen-werte.json");
     schreibeZahlenWerte(next, file);
-    expect(JSON.parse(readFileSync(file, "utf8")).wertegruppen[0].werte).toHaveLength(4);
+    expect(JSON.parse(readFileSync(file, "utf8")).wertegruppen[0].werte).toHaveLength(5);
     expect(existsSync(`${file}.tmp`)).toBe(false);
     expect(existsSync(`${file}.bak`)).toBe(false);
     expect(jahreswechselHinweis(new Date(2026, 9, 7))).toBe("⚠️ Für 2027 prüfen!");

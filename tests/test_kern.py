@@ -283,6 +283,15 @@ class RegisterAusbau(unittest.TestCase):
         self.assertIsNone(K.pruefe_beleg("Porto für den Versand der Partitur", 12, 2026))
         self.assertIn("Befreiung", K.listentreffer("Der Verein ist gemeinnützig.", "gemeinnuetzig", 2026)["fundstelle"])
 
+    def test_eigenwerbung_ist_szenario_und_waehrung_bleibt_offen(self):
+        self.assertNotIn("eigenwerbung", K.werte("taetigkeit.synonym", 2026))
+        self.assertIn("eigenwerbung", K.werte("szenarien.eigenwerbung", 2026))
+        self.assertEqual(K.einordnung_taetigkeit("Eigenwerbung", 2026).klasse, K.NICHT_ABGEDECKT)
+        self.assertEqual(K.pruefe_eigenwerbung(2026, 1500).klasse, K.ABGABEPFLICHTIG)
+        waehrung = K.pruefe_klarstellung("Gage 2000 USD ohne Kurs", 2000, 2026)
+        self.assertEqual(waehrung.klasse, K.RUECKFRAGE)
+        self.assertIn("Umrechnungsnachweis", waehrung.begruendung[0])
+
 
 class Wächter(unittest.TestCase):
     def test_keine_fachlichen_festwerte_im_kern(self):

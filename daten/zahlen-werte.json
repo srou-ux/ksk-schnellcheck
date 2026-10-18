@@ -1,15 +1,16 @@
 {
   "liste_stand": "2026-10-06",
-  "letzte_aenderung": "2026-10-07",
+  "letzte_aenderung": "2026-10-18",
   "wertegruppen": [
     {
       "name": "abgabepflichtgrenze_veranstalter",
       "thema": "abgabepflicht",
       "stichworte": ["abgabepflicht", "abgabepflichtgrenze"],
-      "beschreibung": "Jährliche Entgeltgrenze für nicht-kommerzielle Veranstalter (z. B. Musikvereine)",
+      "beschreibung": "Jährliche Entgeltgrenze. 450 Euro 2019–2022 sind die Geringfügigkeitsgrenze der Fassung A, zusätzlich Regelmäßigkeit. 450 Euro 2023–2024 sind die Grenze nach § 24 Abs. 2 Satz 2 (Fassung B).",
       "quelle": "Info_12_Abgabepflicht_von_Musikvereinen.pdf",
       "werte": [
-        { "betrag": 450, "gueltig_ab": "2019-01-01", "gueltig_bis": "2024-12-31" },
+        { "betrag": 450, "gueltig_ab": "2019-01-01", "gueltig_bis": "2022-12-31", "quelle": "KSVG § 24 Abs. 3 a. F.; BSG B 3 KS 3/21 R Rn. 18. 450 Euro nur als Geringfügigkeitsgrenze, zusätzlich Regelmäßigkeit." },
+        { "betrag": 450, "gueltig_ab": "2023-01-01", "gueltig_bis": "2024-12-31", "quelle": "KSVG § 24 Abs. 2 Satz 2 (Kopien 2023-05-13, 2024-05-21)" },
         { "betrag": 700, "gueltig_ab": "2025-01-01", "gueltig_bis": "2025-12-31" },
         { "betrag": 1000, "gueltig_ab": "2026-01-01", "gueltig_bis": null }
       ]
@@ -32,8 +33,19 @@
       "beschreibung": "Künstlersozialabgabe, Abgabesatz",
       "quelle": "Künstlersozialkasse, Abgabesatz",
       "werte": [
+        { "betrag": 5.2, "gueltig_ab": "2015-01-01", "gueltig_bis": "2015-12-31", "quelle": "KSK-Info 01, Abschn. 4, S. 8 (Stand 01.2026)" },
+        { "betrag": 5.2, "gueltig_ab": "2016-01-01", "gueltig_bis": "2016-12-31", "quelle": "KSK-Info 01, Abschn. 4, S. 8" },
+        { "betrag": 4.8, "gueltig_ab": "2017-01-01", "gueltig_bis": "2017-12-31", "quelle": "KSK-Info 01, Abschn. 4, S. 8" },
+        { "betrag": 4.2, "gueltig_ab": "2018-01-01", "gueltig_bis": "2018-12-31", "quelle": "KSK-Info 01, Abschn. 4, S. 8" },
+        { "betrag": 4.2, "gueltig_ab": "2019-01-01", "gueltig_bis": "2019-12-31", "quelle": "Künstlersozialabgabe-Verordnung 2019, § 1" },
+        { "betrag": 4.2, "gueltig_ab": "2020-01-01", "gueltig_bis": "2020-12-31", "quelle": "Künstlersozialabgabe-Verordnung 2020, § 1" },
+        { "betrag": 4.2, "gueltig_ab": "2021-01-01", "gueltig_bis": "2021-12-31", "quelle": "Künstlersozialabgabe-Verordnung 2021, § 1" },
+        { "betrag": 4.2, "gueltig_ab": "2022-01-01", "gueltig_bis": "2022-12-31", "quelle": "Künstlersozialabgabe-Verordnung 2022, § 1" },
+        { "betrag": 5, "gueltig_ab": "2023-01-01", "gueltig_bis": "2023-12-31", "quelle": "Künstlersozialabgabe-Verordnung 2023, § 1" },
+        { "betrag": 5, "gueltig_ab": "2024-01-01", "gueltig_bis": "2024-12-31", "quelle": "Künstlersozialabgabe-Verordnung 2024, § 1" },
         { "betrag": 5, "gueltig_ab": "2025-01-01", "gueltig_bis": "2025-12-31" },
-        { "betrag": 4.9, "gueltig_ab": "2026-01-01", "gueltig_bis": null }
+        { "betrag": 4.9, "gueltig_ab": "2026-01-01", "gueltig_bis": "2026-12-31" },
+        { "betrag": 5, "gueltig_ab": "2027-01-01", "gueltig_bis": "2027-12-31", "quelle": "Verordnung zur Künstlersozialabgabe 2027, Art. 1 § 1 (BGBl. 2026 I Nr. 262)" }
       ]
     },
     {
@@ -73,7 +85,7 @@
       "thema": "ehrenamt",
       "stichworte": ["ehrenamt", "ehrenamtspauschale"],
       "beschreibung": "Ehrenamtspauschale",
-      "quelle": "Info_10_Ausnahmen_zur_Bemessungsgrundlage_Reise-_und_Bewirtungskosten.pdf",
+      "quelle": "KSK-Info 24, 24a (Stand 01.2026); Info 01 Abschn. 3",
       "werte": [
         { "betrag": 840, "gueltig_ab": "2025-01-01", "gueltig_bis": "2025-12-31" },
         { "betrag": 960, "gueltig_ab": "2026-01-01", "gueltig_bis": null }

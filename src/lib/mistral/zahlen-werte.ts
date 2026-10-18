@@ -292,7 +292,8 @@ export function kontextBlock(liste: ZahlenListe, jahr: number): string {
   const zeilen = liste.wertegruppen.flatMap((gruppe) => {
     const wert = wertFuerJahr(gruppe, jahr);
     if (!wert) return [];
-    return [`- ${gruppenLabel(gruppe)}: ${formatWert(gruppe, wert.betrag)} (Quelle: ${quellenKuerzel(gruppe.quelle)})`];
+    const quelle = wert.quelle ?? gruppe.quelle;
+    return [`- ${gruppenLabel(gruppe)}: ${formatWert(gruppe, wert.betrag)} (Quelle: ${quellenKuerzel(quelle)})`];
   });
   return [
     `## Kontext (vom System bereitgestellt — verbindlich, Stand: ${liste.liste_stand})`,

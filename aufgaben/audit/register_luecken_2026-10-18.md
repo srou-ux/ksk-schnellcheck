@@ -6,8 +6,33 @@ Entwurf – vom Steuerberater zu prüfen. Eingetragen wurde nur, was in den PDFs
 
 - Suite-100: 100/100
 - Erfahrungs-Suite: 120/120
-- `tests/test_kern.py`: 41 Tests, Wächter grün, `parameter.json` passt zur Excel
+- In diesem Durchgang hat sich keine Erwartung geändert (keine Zeile OFFEN → entschieden).
+- `tests/test_kern.py`: 42 Tests, Wächter grün, `parameter.json` passt zur Excel
 - `aufgaben/audit/korpus/lauf_offline.py` liegt nicht im Repo. Die historische 1.000er-Kontrolle (0 falsch, 124 Rückfragen) konnte damit nicht neu gemessen werden.
+
+## Bestandskorrektur (zweiter Durchgang)
+
+`regeln/saetze.json` hatte nur 2025 und 2026. Jetzt stehen 2015–2026 darin, Sätze und Fundstellen aus `kern/parameter.json`. 2015–2018 haben einen Satz und keine Schwelle (`thresholdCents` null); eine 450-Euro-Grenze für diese Jahre steht im Register nicht und wurde nicht erfunden. 2019–2022 haben 450 Euro als Geringfügigkeitsgrenze der Fassung A, mit dem Hinweis auf die zusätzliche Regelmäßigkeit, nicht als harte Grenze nach § 24 Abs. 2. 2023–2024 haben dieselben 450 Euro als Fassung B. 2027 bleibt in `saetze.json` leer: der Rücktest verlangt, dass ein fehlender Satz dort ein sichtbarer Konfigurationsfehler ist. Der Satz 2027 steht im Regelregister und in `daten/zahlen-werte.json`. Die Next-Rechnung rechnet weiter nur freigegebene Sätze; die JSON-Datei erteilt keine Freigabe. Der Python-Kern rechnet die Sätze 2015–2027 schon aus `parameter.json`.
+
+`daten/zahlen-werte.json`: Ehrenamtspauschale zeigt auf KSK-Info 24, 24a (vorher fälschlich Info 10). Die 450-Euro-Zeile 2019–2024 ist geteilt: 2019–2022 Fassung A (BSG B 3 KS 3/21 R Rn. 18) und 2023–2024 Fassung B (§ 24 Abs. 2 Satz 2). Der Chat-Kontext nimmt die Fundstelle der einzelnen Zeile. Abgabesätze 2015–2024 und 2027 stehen jahrweise mit der Fundstelle aus dem Regelregister; 2026 endet am 31.12.2026, damit 4,9 Prozent nicht still in 2027 weitergilt.
+
+`taetigkeit.synonym` „eigenwerbung“ ist umgezogen auf `szenarien.eigenwerbung` (KSVG § 24 Abs. 2 Satz 1 Nummer 1). `pruefe_eigenwerbung` bleibt. Ein Text, der nur „Eigenwerbung“ nennt, ist keine bekannte Tätigkeit.
+
+`offen.waehrung`: Fremdwährung ohne Umrechnungsnachweis bleibt Rückfrage. Text und Fundstelle (Testfall L-23, keine Umrechnungsregel in der Quellenbasis) stehen im Register. T-048 und E-009 bleiben OFFEN.
+
+Zusätzlich, weil die kürzeren Wörter schon trafen und die Suiten gleich blieben: `verpflegungsmehraufwand` unter `auslage.mit_beleg_ausgenommen` (KSVEntgV § 1 Nr. 1), `plakatrahmen` unter `auslage.gehoert_zum_entgelt` (Info 10, S. 1).
+
+Die Datei `aufgaben/audit/vorschlag_begriffe_excel_2026-10-18.md` gibt es nicht. Der Begriffs-Fix Konzert/Musik steht schon in der Excel (T-07) und in `app/taetigkeiten.py`.
+
+## Weiter bewusst nicht automatisiert
+
+Die Liste unten gilt unverändert. Insbesondere nicht nachgetragen, weil die Quelle es nicht hergibt:
+
+- Stadt, Landkreis, Gemeinde, Amt, Behörde nicht unter `rechtsform.kein_entgelt`. Info 11, S. 1: sie können abgabepflichtig sein.
+- Programmierung und Softwareentwicklung nicht ausgeschlossen. Info 06 nennt sie nicht.
+- Logo und Briefkopf nicht als künstlerisch. In Info 02 und Info 06 nicht wörtlich. Das Aktenzeichen BSG B 3 KR 37/04 R liegt nicht unter `quellen/`.
+- `lizenz.auffuehrungsmaterial` nicht ausgenommen. § 25 Abs. 2 Nr. 1 nimmt Verwertungsgesellschaften aus, nicht Aufführungsmaterial eines Verlags.
+- Stämme wie Kabarett, Comedy, Malerei, Zauberei nicht zusätzlich zu den wörtlichen Berufsformen.
 
 ## Erwartungen, die sich geändert haben
 
