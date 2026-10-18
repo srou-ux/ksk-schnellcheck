@@ -97,7 +97,7 @@
     {"id": "T-090", "kat": "9-jahre", "txt": "Anzahlung doppelt erfasst (Rechnung + Zahlungsbeleg)", "betrag": 500, "status": "SPERRE", "regel": "A5-Doppelzahlung"},
     {"id": "T-091", "kat": "10-unklar", "txt": "Übersetzung Programmheft durch beeidigte Übersetzerin", "betrag": 200, "status": "OFFEN", "regel": "C4-Quellenluecke"},
     {"id": "T-092", "kat": "10-unklar", "txt": "Konzeption Programmablauf Jubiläumskonzert", "betrag": 120, "status": "OFFEN", "regel": "C4-Quellenluecke"},
-    {"id": "T-093", "kat": "10-unklar", "txt": "Webdesign Vereinsseite mit individueller Gestaltung", "betrag": 1500, "status": "OFFEN", "regel": "C4-Quellenluecke"},
+    {"id": "T-093", "kat": "10-unklar", "txt": "Webdesign Vereinsseite mit individueller Gestaltung", "betrag": 1500, "status": "ZAEHLT", "regel": "Info-06 Web-Designer, KSK-Info 12 nennt Webdesigner"},
     {"id": "T-094", "kat": "10-unklar", "txt": "Softwareentwicklung Voting-App für Publikumsabstimmung", "betrag": 2000, "status": "OFFEN", "regel": "C4-Quellenluecke"},
     {"id": "T-095", "kat": "10-unklar", "txt": "Kunstunterricht Workshop für Kinder (Verein)", "betrag": 250, "status": "OFFEN", "regel": "C4-Quellenluecke"},
     {"id": "T-096", "kat": "10-unklar", "txt": "Stimmcoaching für Chorsängerinnen", "betrag": 180, "status": "OFFEN", "regel": "C4-Quellenluecke"},

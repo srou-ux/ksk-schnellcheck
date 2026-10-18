@@ -262,6 +262,28 @@ class Dokumentpruefung(unittest.TestCase):
         self.assertIsNone(zwei.abgabe)
 
 
+class RegisterAusbau(unittest.TestCase):
+    def test_webdesign_ist_bekannt_uebersetzung_bleibt_offen(self):
+        self.assertIsNone(K.einordnung_taetigkeit("Webdesign Vereinsseite", 2026))
+        offen = K.einordnung_taetigkeit("Übersetzung Programmheft durch eine Übersetzerin", 2026)
+        self.assertEqual(offen.klasse, K.RUECKFRAGE)
+        self.assertEqual(K.einordnung_taetigkeit("Softwareentwicklung Voting-App", 2026).klasse, K.NICHT_ABGEDECKT)
+        self.assertEqual(K.einordnung_taetigkeit("Evaluation des Konzerts durch eine Soziologin", 2026).klasse, K.NICHT_ABGEDECKT)
+        self.assertFalse(K.ist_keine_kuenstlerische_taetigkeit("Softwareentwicklung Voting-App", 2026))
+
+    def test_schuelerzahl_zwanzig_und_sechzig(self):
+        self.assertEqual(K.musikverein_schueler(2026, 45).klasse, K.RUECKFRAGE)
+        self.assertEqual(K.musikverein_schueler(2026, 10, True, True).klasse, K.NICHT)
+        self.assertEqual(K.musikverein_schueler(2026, 40, True, True).klasse, K.NICHT)
+        self.assertEqual(K.musikverein_schueler(2026, 80, True, True).klasse, K.GRENZFALL)
+
+    def test_gemeinde_ist_kein_ausschluss_und_porto_zaehlt(self):
+        self.assertNotIn("stadt", K.werte("rechtsform.kein_entgelt", 2026))
+        self.assertIn("stadt", K.werte("auftraggeber.kommune", 2026))
+        self.assertIsNone(K.pruefe_beleg("Porto für den Versand der Partitur", 12, 2026))
+        self.assertIn("Befreiung", K.listentreffer("Der Verein ist gemeinnützig.", "gemeinnuetzig", 2026)["fundstelle"])
+
+
 class Wächter(unittest.TestCase):
     def test_keine_fachlichen_festwerte_im_kern(self):
         """Zahlen im Code nur technisch: 100 (Prozent), 0.01 (Cent), 12/31 (Kalenderjahresende). Alles andere gehört ins Regelregister."""

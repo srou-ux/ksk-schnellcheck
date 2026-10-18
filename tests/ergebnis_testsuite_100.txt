@@ -98,12 +98,12 @@ T-087    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)    
 T-088    OFFEN            OFFEN            Rückfrage nötig                            ✅
 T-089    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
 T-090    SPERRE           SPERRE           Sperre — Rechnung prüfen                   ✅
-T-091    OFFEN            OFFEN            Nicht abgedeckt (Quelle fehlt)             ✅
+T-091    OFFEN            OFFEN            Rückfrage nötig                            ✅
 T-092    OFFEN            OFFEN            Nicht abgedeckt (Quelle fehlt)             ✅
-T-093    OFFEN            OFFEN            Nicht abgedeckt (Quelle fehlt)             ✅
+T-093    ZAEHLT           ZAEHLT           Abgabepflichtig (Vorschlag)                ✅
 T-094    OFFEN            OFFEN            Nicht abgedeckt (Quelle fehlt)             ✅
-T-095    OFFEN            OFFEN            Nicht abgedeckt (Quelle fehlt)             ✅
-T-096    OFFEN            OFFEN            Nicht abgedeckt (Quelle fehlt)             ✅
+T-095    OFFEN            OFFEN            Rückfrage nötig                            ✅
+T-096    OFFEN            OFFEN            Rückfrage nötig                            ✅
 T-097    OFFEN            OFFEN            Nicht abgedeckt (Quelle fehlt)             ✅
 T-098    OFFEN            OFFEN            Nicht abgedeckt (Quelle fehlt)             ✅
 T-099    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅

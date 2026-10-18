@@ -564,6 +564,12 @@ Auftrag des Nutzers: alle Fehler beheben, unabhängig vom Sprachmodell (vielleic
 - **Live (Testarchiv, Small):** 1. Lauf 7 falsch. Gegenlauf auf dem alten Stand (2eaeb5d) 3 falsch; Nachbau der vom Modell gelieferten Angaben zeigte: alter und neuer Code entscheiden gleich – Small liest dieselben Texte von Lauf zu Lauf verschieden (auch bei Temperatur 0). Zwei solcher Lesarten jetzt fest abgefangen („fünfmal … jede Rechnung 250 €“, „1.500 EUR … an die GEMA“). 2. Lauf: **3 falsch** (A-999 Messe, AT-2026-004 Firmenfeier, AT-2026-007 „Agentur (GmbH)“) – Deutungsfälle, in denen Small den Zweck selbst rät.
 - **Offen (Entscheidung nötig):** Soll ein Zweck, den nur das Modell vermutet (kein passendes Wort im Text), immer per Rückfrage bestätigt werden? Weniger falsch, mehr Rückfragen. Zum Upload-Vorschlag von ChatGPT fehlen noch: zweite Erkennung am Originalbild, Prüfung Positionen + Umsatzsteuer = Gesamt, Rechnungs- und Zahlungsdatum getrennt, Original und Angaben nebeneinander. Mistral-Dokumenterkennung würde die Datei an Mistral schicken (bisher: nur Text) – Entscheidung des Nutzers.
 
+## Register aus den KSK-Infos (18.10.2026)
+- 104 neue Registerzeilen, jede mit Fundstelle aus den PDFs unter `quellen/`. Liste und bewusste Lücken: `aufgaben/audit/register_luecken_2026-10-18.md`.
+- Info 06: weitere Tätigkeitsbegriffe (unter anderem Web-Designer, Musiker, Kabarettist, Maskenbildner). Übersetzung, Kunstunterricht, Gesangsunterricht und Stimmcoaching bleiben Rückfrage.
+- Info 12: Schülergrenze 20 und die Vermutung zwischen 20 und 60 ergänzt. Die 60 bleibt. Info 11: Stadt, Landkreis und Gemeinde sind nicht von der Abgabe ausgenommen.
+- Suite-100 100/100, Erfahrungs-Suite 120/120. Geänderte Erwartungen nur T-093, E-017 (Webdesign) und E-024 (Maskenbildner am Theater). `lauf_offline.py` fehlt, die 1.000er-Kontrolle wurde nicht neu gezählt.
+
 ## Dokumentprüfungen Kategorie A, Cent-Toleranz, Konzert/Musik (18.10.2026)
 - Fünf Prüfungen im Kern, jede mit eigener Registerzeile und Fundstelle: Rechenprobe brutto (Widerspruch = Sperre, keine Abgabe), doppelte Positionsnummer (Sperre), negative Gesamtsumme ohne Storno (Sperre; mit Storno im selben Jahr Rückfrage), Widerspruch § 19 UStG (Sperre), unklarer Skonto (Rückfrage, keine Sperre).
 - Rundung: bis 1 Cent kein Sperrgrund, Hinweis „Rundungsdifferenz 1 ct, rechnerisch unbedeutend“; ab 2 Cent Sperre. Beide Grenzen stehen im Register (`sperre.toleranz`, `sperre.toleranz_ab`, `sperre.toleranz_hinweis`).

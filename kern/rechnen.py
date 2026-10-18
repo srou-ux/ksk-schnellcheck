@@ -57,6 +57,44 @@ def werte(schluessel, jahr):
     return {r["wert"] for r in _zeilen(schluessel, jahr)}
 
 
+_BUCHSTABEN = "abcdefghijklmnopqrstuvwxyzäöü"
+
+
+def _wortstelle(text, begriff, beide_grenzen):
+    low = text.lower()
+    b = str(begriff).lower()
+    if not b:
+        return False
+    start = 0
+    while True:
+        i = low.find(b, start)
+        if i < 0:
+            return False
+        davor = low[i - 1] if i else " "
+        danach = low[i + len(b)] if i + len(b) < len(low) else " "
+        links = davor not in _BUCHSTABEN
+        rechts = danach not in _BUCHSTABEN
+        if links and rechts if beide_grenzen else links or rechts:
+            return True
+        start = i + 1
+
+
+def ganzes_wort(text, begriff):
+    """Der Registerbegriff steht für sich, nicht als Teil eines längeren Wortes."""
+    return _wortstelle(text, begriff, True)
+
+
+def listentreffer(text, schluessel, jahr, ganz=False):
+    """Erste Registerzeile, deren Wert im Text vorkommt."""
+    for eintrag in _zeilen(schluessel, jahr):
+        wert = str(eintrag["wert"])
+        if ganz and ganzes_wort(text, wert):
+            return eintrag
+        if not ganz and wert.lower() in text.lower():
+            return eintrag
+    return None
+
+
 def vergleich(schluessel, jahr, a, b):
     """Wendet den im Register hinterlegten Operator an: a <op> b."""
     op = reg(schluessel, jahr)["operator"]
@@ -271,8 +309,17 @@ def musikverein_schueler(jahr, schueler, struktur_bekannt=False, weitere_taetigk
     if not (struktur_bekannt and weitere_taetigkeiten_bekannt):
         e.rueckfragen += ["Strukturierter Unterricht gegen Gebühren?", "Vergütung je Ausbilder?", "Weitere Tätigkeiten des Vereins?"]
         return e
-    e.klasse = GRENZFALL if vergleich("musikverein.schueler_grenze", jahr, _d(schueler), wert("musikverein.schueler_grenze", jahr)) else NICHT
-    e.begruendung.append('Vermutung der KSK-Praxis (kein Gesetz); zahlt der Verein einem Ausbilder mehr als in Info 12 genannt, Grenzfall.')
+    zahl = _d(schueler)
+    if vergleich("musikverein.schueler_unter", jahr, zahl, wert("musikverein.schueler_unter", jahr)):
+        e.klasse = NICHT
+        e.begruendung.append(reg("musikverein.schueler_unter", jahr)["fundstelle"])
+        return e
+    if vergleich("musikverein.schueler_grenze", jahr, zahl, wert("musikverein.schueler_grenze", jahr)):
+        e.klasse = GRENZFALL
+        e.begruendung.append(reg("musikverein.schueler_grenze", jahr)["fundstelle"])
+        return e
+    e.klasse = NICHT
+    e.begruendung.append(reg("musikverein.schueler_mitte", jahr)["fundstelle"])
     return e
 
 
@@ -638,21 +685,19 @@ def pruefe_sperre(text, jahr):
 @_luecke
 def einordnung_taetigkeit(text, jahr):
     """Ohne Synonym im Tätigkeitsregister keine automatische Entscheidung."""
-    low = text.lower()
-    buchstaben = "abcdefghijklmnopqrstuvwxyzäöü"
-    begriffe = werte("taetigkeit.synonym", jahr)
-    for begriff in begriffe:
-        b = begriff.lower()
-        start = 0
-        while True:
-            i = low.find(b, start)
-            if i < 0:
-                break
-            davor = low[i - 1] if i else " "
-            danach = low[i + len(b)] if i + len(b) < len(low) else " "
-            if davor not in buchstaben or danach not in buchstaben:
-                return None
-            start = i + 1
+    for schluessel in ("taetigkeit.offen", "ausland.kuenstler", "gesellschafter.gmbh"):
+        eintrag = listentreffer(text, schluessel, jahr, ganz=True)
+        if eintrag:
+            return Ergebnis(
+                RUECKFRAGE,
+                [eintrag["fundstelle"]],
+                fundstellen=[eintrag["fundstelle"]],
+                rueckfragen=[eintrag["fundstelle"]],
+                regeln=[eintrag["regel"]],
+            )
+    for begriff in werte("taetigkeit.synonym", jahr):
+        if _wortstelle(text, begriff, False):
+            return None
     return Ergebnis(
         NICHT_ABGEDECKT,
         ["Kein Eintrag im Tätigkeitsregister trifft den Text. Es wird nicht geraten."],
@@ -705,13 +750,15 @@ def pruefe_beleg(text, betrag, jahr):
         "beigefügt", "beleg als anlage", "beleg im anhang", "beiliegend", "nachweis liegt",
         "nachweis vorliegt", "nachweis der",
     ))
-    art = any(wort in low for wort in ("auslage", "notenmappe", "notenkauf", "kostenübernahme", "materialkosten", "reise", "fahrt", "hotel", "verpflegung", "bewirtung"))
-    if art and nachgewiesen:
-        return Ergebnis(NICHT, ["Nachweis liegt vor: Auslage oder Reise zählt nicht zur Bemessung."], regeln=["A1"])
-    if any(wort in low for wort in ("notenkauf", "kostenübernahme", "notenmappe")):
-        return Ergebnis(NICHT, ["Weiterberechnete Auslage."], regeln=["A1"])
-    if any(wort in low for wort in ("auslage", "materialkosten", "reise", "fahrt", "hotel", "verpflegung")) and not nachgewiesen:
-        return Ergebnis(RUECKFRAGE, ["Auslage oder Reise ohne Nachweis."], rueckfragen=["Liegt der Beleg vor?"], regeln=["A1"])
+    mit_beleg = listentreffer(text, "auslage.mit_beleg_ausgenommen", jahr)
+    if mit_beleg and nachgewiesen:
+        return Ergebnis(NICHT, [mit_beleg["fundstelle"]], fundstellen=[mit_beleg["fundstelle"]], regeln=[mit_beleg["regel"]])
+    ohne = listentreffer(text, "auslage.auch_ohne_beleg_ausgenommen", jahr)
+    if ohne:
+        return Ergebnis(NICHT, [ohne["fundstelle"]], fundstellen=[ohne["fundstelle"]], regeln=[ohne["regel"]])
+    offen = listentreffer(text, "auslage.ohne_beleg_offen", jahr)
+    if offen and not nachgewiesen:
+        return Ergebnis(RUECKFRAGE, [offen["fundstelle"]], fundstellen=[offen["fundstelle"]], rueckfragen=["Liegt der Beleg vor?"], regeln=[offen["regel"]])
     return None
 
 

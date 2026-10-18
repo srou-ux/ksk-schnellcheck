@@ -50,6 +50,7 @@ def _betrag(test: dict) -> D:
 def _position(test: dict) -> dict:
     txt = test["txt"]
     low = txt.lower()
+    jahr = _jahr(txt)
     pos = {"betrag": _betrag(test)}
     if "ggmbh" in low:
         pos["empfaenger"] = "ggmbh"
@@ -62,7 +63,7 @@ def _position(test: dict) -> dict:
             if re.search(rf"(?<![a-zäöü]){form}(?![a-zäöü])", low):
                 pos["empfaenger"] = form
                 break
-    if re.search(r"\bgema\b", low) or "verwertungsgesellschaft" in low or "verwertung" in low or "musikverlag" in low:
+    if K.listentreffer(txt, "entgelt.ausgenommen", jahr):
         pos["art"] = "verwertungsgesellschaft"
     if "angestellt" in low or "lohnsteuer" in low:
         pos["kuenstlerisch"] = False

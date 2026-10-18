@@ -23,15 +23,15 @@ E-012    SPERRE           SPERRE           Sperre — Rechnung prüfen          
 E-013    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
 E-014    SPERRE           SPERRE           Sperre — Rechnung prüfen                   ✅
 E-015    OFFEN            OFFEN            Rückfrage nötig                            ✅
-E-016    OFFEN            OFFEN            Nicht abgedeckt (Quelle fehlt)             ✅
-E-017    OFFEN            OFFEN            Nicht abgedeckt (Quelle fehlt)             ✅
+E-016    OFFEN            OFFEN            Rückfrage nötig                            ✅
+E-017    ZAEHLT           ZAEHLT           Abgabepflichtig (Vorschlag)                ✅
 E-018    OFFEN            OFFEN            Nicht abgedeckt (Quelle fehlt)             ✅
-E-019    OFFEN            OFFEN            Nicht abgedeckt (Quelle fehlt)             ✅
+E-019    OFFEN            OFFEN            Rückfrage nötig                            ✅
 E-020    OFFEN            OFFEN            Nicht abgedeckt (Quelle fehlt)             ✅
 E-021    OFFEN            OFFEN            Nicht abgedeckt (Quelle fehlt)             ✅
 E-022    OFFEN            OFFEN            Nicht abgedeckt (Quelle fehlt)             ✅
 E-023    OFFEN            OFFEN            Nicht abgedeckt (Quelle fehlt)             ✅
-E-024    OFFEN            OFFEN            Nicht abgedeckt (Quelle fehlt)             ✅
+E-024    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
 E-025    OFFEN            OFFEN            Nicht abgedeckt (Quelle fehlt)             ✅
 E-026    OFFEN            OFFEN            Nicht abgedeckt (Quelle fehlt)             ✅
 E-027    OFFEN            OFFEN            Nicht abgedeckt (Quelle fehlt)             ✅
