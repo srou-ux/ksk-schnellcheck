@@ -36,18 +36,21 @@ def extrahiere(dokument) -> dict:
     if doppelt:
         nr = doppelt.group(1)
         felder["positionen"] = [
-            {"nr": nr, "betrag": "", "text": "", "betragswiderspruch": False, "unsicher": False},
-            {"nr": nr, "betrag": "", "text": "", "betragswiderspruch": False, "unsicher": False},
+            {"nr": nr, "betrag": "", "text": "", "betragswiderspruch": False, "unsicher": False, "netto": "", "ust": "", "satz": ""},
+            {"nr": nr, "betrag": "", "text": "", "betragswiderspruch": False, "unsicher": False, "netto": "", "ust": "", "satz": ""},
         ]
     zeile = re.search(r"position\s+(\d+)[^\n]{0,80}betragswiderspruch", text.lower())
     if zeile:
         felder["positionen"].append({
             "nr": zeile.group(1), "betrag": "", "text": "", "betragswiderspruch": True, "unsicher": False,
+            "netto": "", "ust": "", "satz": "",
         })
     low = text.lower()
     felder["kleinunternehmer_genannt"] = "kleinunternehmer" in low
     felder["umsatzsteuer_genannt"] = bool(re.search(r"(?<![a-zäöü])ust(?![a-zäöü])|umsatzsteuer", low))
     felder["storno_genannt"] = "storno" in low
+    felder["ust_saetze"] = re.findall(r"(\d+)\s*prozent", low)
+    felder["summe_ohne_einheitlichen_satz"] = "passt zu keinem" in low
     felder["rechtsform_angaben"] = _formen(low)
     if re.search(r"(oeffentliche|öffentliche)\s+(musikschule|stelle|sparkasse)", low):
         felder["rechtsform_angaben"].append("oeffentlich")
@@ -76,6 +79,9 @@ def _text(dokument) -> str:
 def _nach_wort(text: str, wort: str) -> str | None:
     treffer = re.search(rf"{wort}(?:\s+\w+){{0,3}}\s+{_BETRAG}", text.lower())
     if not treffer:
+        return None
+    danach = text.lower()[treffer.end():treffer.end() + 16]
+    if re.match(r"\s*prozent", danach):
         return None
     return dezimal(treffer.group(1))
 

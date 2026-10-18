@@ -119,7 +119,7 @@ V-112    AUSGESCHLOSSEN OFFEN          ohne Anker Nicht abgedeckt (Quelle feh…
 V-113    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
 V-114    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
 V-115    SPERRE         SPERRE         ok         Sperre — Rechnung prüfen     ✅
-V-116    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
+V-116    OFFEN          OFFEN          ohne Anker Rückfrage nötig              ✅
 V-117    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
 V-118    OFFEN          ZAEHLT         ohne Anker Nicht abgabepflichtig (Vors… ❌
 V-119    AUSGENOMMEN    OFFEN          ohne Anker Rückfrage nötig              ❌

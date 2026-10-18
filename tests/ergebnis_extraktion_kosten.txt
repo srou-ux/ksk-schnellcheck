@@ -1,3 +1,7 @@
 Kostenlog Extraktion. Beträge in Token und Seiten, kein geschätzter Euro-Preis.
 Aufrufe 0 | Seiten 0 | Prompt-Token 0 | Completion-Token 0
+Kosten je Stufe
+  ocr: Aufrufe 0 | Seiten 0 | Prompt 0 | Completion 0
+  small: Aufrufe 0 | Seiten 0 | Prompt 0 | Completion 0
+  medium: Aufrufe 0 | Seiten 0 | Prompt 0 | Completion 0
 

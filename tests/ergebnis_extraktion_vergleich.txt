@@ -1,17 +1,17 @@
-Vergleich Extraktion, Suite 130. Kern unverändert. Strukturfelder der Suite werden nicht als Lesung benutzt.
-Fehlerquelle Extraktion: das Feld war leer oder unsicher. Fehlerquelle Kern: Felder lagen vor, die Entscheidung weicht ab.
+Vergleich Extraktion, Suite 130. Strukturfelder der Suite werden nicht als Lesung benutzt.
+Fehlerquelle Extraktion: das benannte Feld war leer oder unsicher. Fehlerquelle Kern: das Feld lag vor, die Entscheidung weicht ab.
 
 Regel-Leser
 
   K1-prio                19/20
-  K2-kaskade             12/22
-  K3-widerspruch         11/15
+  K2-kaskade             13/22
+  K3-widerspruch         12/15
   K4-varianten           15/19
   K5-erwahnung           2/13
   K6-register            11/15
   K7-grenzen             9/13
   K8-mengen              12/13
-Gesamt 91/130
+Gesamt 93/130
 
 Paar-Check
   V-119/V-120: FEHLER
@@ -23,46 +23,43 @@ Sperre-Ausbreitung
   V-122: sperrt das Dokument
   V-125: sperrt das Dokument
 
-Abweichungen
-V-014 | K2-kaskade | erwartet AUSGESCHLOSSEN | erhalten OFFEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
-V-016 | K2-kaskade | erwartet OFFEN | erhalten ZAEHLT | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
-V-020 | K2-kaskade | erwartet OFFEN | erhalten AUSGESCHLOSSEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
-V-021 | K2-kaskade | erwartet OFFEN | erhalten AUSGESCHLOSSEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
-V-030 | K3-widerspruch | erwartet SPERRE | erhalten OFFEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
-V-034 | K3-widerspruch | erwartet SPERRE | erhalten OFFEN | Kern | Felder lagen vor, der Kern hat anders entschieden. Kernregel prüfen, Erwartung nicht verbiegen.
-V-035 | K3-widerspruch | erwartet OFFEN | erhalten ZAEHLT | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
-V-038 | K4-varianten | erwartet OFFEN | erhalten ZAEHLT | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
-V-043 | K4-varianten | erwartet OFFEN | erhalten ZAEHLT | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
-V-049 | K4-varianten | erwartet OFFEN | erhalten ZAEHLT | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
-V-051 | K5-erwahnung | erwartet AUSGESCHLOSSEN | erhalten OFFEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
-V-052 | K5-erwahnung | erwartet AUSGESCHLOSSEN | erhalten OFFEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
-V-053 | K5-erwahnung | erwartet AUSGESCHLOSSEN | erhalten OFFEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
-V-054 | K5-erwahnung | erwartet AUSGESCHLOSSEN | erhalten OFFEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
-V-055 | K5-erwahnung | erwartet AUSGESCHLOSSEN | erhalten OFFEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
-V-056 | K5-erwahnung | erwartet AUSGESCHLOSSEN | erhalten OFFEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
-V-057 | K5-erwahnung | erwartet ZAEHLT | erhalten AUSGESCHLOSSEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
-V-059 | K5-erwahnung | erwartet AUSGESCHLOSSEN | erhalten OFFEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
-V-062 | K6-register | erwartet OFFEN | erhalten ZAEHLT | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
-V-068 | K6-register | erwartet AUSGENOMMEN | erhalten OFFEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
-V-070 | K6-register | erwartet AUSGENOMMEN | erhalten OFFEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
-V-072 | K7-grenzen | erwartet ZAEHLT | erhalten OFFEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
-V-074 | K7-grenzen | erwartet ZAEHLT | erhalten OFFEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
-V-075 | K7-grenzen | erwartet OFFEN | erhalten ZAEHLT | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
-V-076 | K7-grenzen | erwartet ZAEHLT | erhalten OFFEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
-V-094 | K3-widerspruch | erwartet OFFEN | erhalten AUSGESCHLOSSEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
-V-097 | K2-kaskade | erwartet OFFEN | erhalten AUSGENOMMEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
-V-098 | K4-varianten | erwartet OFFEN | erhalten ZAEHLT | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
-V-100 | K5-erwahnung | erwartet AUSGESCHLOSSEN | erhalten OFFEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
-V-105 | K8-mengen | erwartet ZAEHLT | erhalten OFFEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
-V-107 | K2-kaskade | erwartet ZAEHLT | erhalten OFFEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
-V-108 | K2-kaskade | erwartet OFFEN | erhalten ZAEHLT | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
-V-112 | K5-erwahnung | erwartet AUSGESCHLOSSEN | erhalten OFFEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
-V-116 | K2-kaskade | erwartet OFFEN | erhalten AUSGESCHLOSSEN | Kern | Felder lagen vor, der Kern hat anders entschieden. Kernregel prüfen, Erwartung nicht verbiegen.
-V-118 | K5-erwahnung | erwartet OFFEN | erhalten ZAEHLT | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
-V-119 | K6-register | erwartet AUSGENOMMEN | erhalten OFFEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
-V-123 | K2-kaskade | erwartet ZAEHLT | erhalten OFFEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
-V-128 | K2-kaskade | erwartet ZAEHLT | erhalten OFFEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
-V-130 | K1-prio | erwartet ZAEHLT | erhalten OFFEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
+Mistral nicht gemessen. Aufruf abgebrochen: Mistral-Aufruf 401: {"detail":"Invalid API Key"} Es gibt keine Teilquote.
 
-Mistral nicht gemessen. Aufruf abgebrochen: Mistral-Aufruf 401: {"detail":"Invalid API Key"}
- Es gibt keine Teilquote.
+Feld-Diagnose je Abweichung
+V-014 | K2-kaskade | erwartet AUSGESCHLOSSEN | Regel OFFEN | Mistral nicht gemessen | Extraktion | beschaeftigung nicht gelesen | Regel: leer | Mistral: nicht gemessen
+V-016 | K2-kaskade | erwartet OFFEN | Regel ZAEHLT | Mistral nicht gemessen | Extraktion | jahresaggregat nicht gelesen | Regel: leer | Mistral: nicht gemessen
+V-020 | K2-kaskade | erwartet OFFEN | Regel AUSGESCHLOSSEN | Mistral nicht gemessen | Extraktion | veranstaltungszahl nicht gelesen | Regel: leer | Mistral: nicht gemessen
+V-021 | K2-kaskade | erwartet OFFEN | Regel AUSGESCHLOSSEN | Mistral nicht gemessen | Extraktion | schuelerzahl nicht gelesen | Regel: leer | Mistral: nicht gemessen
+V-030 | K3-widerspruch | erwartet SPERRE | Regel OFFEN | Mistral nicht gemessen | Extraktion | betrag_in_worten nicht als Zahl gelesen | Regel: leer | Mistral: nicht gemessen
+V-035 | K3-widerspruch | erwartet OFFEN | Regel ZAEHLT | Mistral nicht gemessen | Extraktion | gutschrift nicht gelesen | Regel: leer | Mistral: nicht gemessen
+V-038 | K4-varianten | erwartet OFFEN | Regel ZAEHLT | Mistral nicht gemessen | Extraktion | taetigkeit nicht gelesen | Regel: leer | Mistral: nicht gemessen
+V-043 | K4-varianten | erwartet OFFEN | Regel ZAEHLT | Mistral nicht gemessen | Extraktion | taetigkeit nicht gelesen | Regel: leer | Mistral: nicht gemessen
+V-049 | K4-varianten | erwartet OFFEN | Regel ZAEHLT | Mistral nicht gemessen | Extraktion | taetigkeit nicht gelesen | Regel: leer | Mistral: nicht gemessen
+V-051 | K5-erwahnung | erwartet AUSGESCHLOSSEN | Regel OFFEN | Mistral nicht gemessen | Extraktion | leistungsart nicht von der Erwaehnung getrennt | Regel: leer | Mistral: nicht gemessen
+V-052 | K5-erwahnung | erwartet AUSGESCHLOSSEN | Regel OFFEN | Mistral nicht gemessen | Extraktion | leistungsart nicht von der Erwaehnung getrennt | Regel: leer | Mistral: nicht gemessen
+V-053 | K5-erwahnung | erwartet AUSGESCHLOSSEN | Regel OFFEN | Mistral nicht gemessen | Extraktion | leistungsart nicht von der Erwaehnung getrennt | Regel: leer | Mistral: nicht gemessen
+V-054 | K5-erwahnung | erwartet AUSGESCHLOSSEN | Regel OFFEN | Mistral nicht gemessen | Extraktion | leistungsart nicht von der Erwaehnung getrennt | Regel: leer | Mistral: nicht gemessen
+V-055 | K5-erwahnung | erwartet AUSGESCHLOSSEN | Regel OFFEN | Mistral nicht gemessen | Extraktion | leistungsart nicht von der Erwaehnung getrennt | Regel: leer | Mistral: nicht gemessen
+V-056 | K5-erwahnung | erwartet AUSGESCHLOSSEN | Regel OFFEN | Mistral nicht gemessen | Extraktion | leistungsart nicht von der Erwaehnung getrennt | Regel: leer | Mistral: nicht gemessen
+V-057 | K5-erwahnung | erwartet ZAEHLT | Regel AUSGESCHLOSSEN | Mistral nicht gemessen | Extraktion | taetigkeit nicht gelesen | Regel: leer | Mistral: nicht gemessen
+V-059 | K5-erwahnung | erwartet AUSGESCHLOSSEN | Regel OFFEN | Mistral nicht gemessen | Extraktion | leistungsart nicht von der Erwaehnung getrennt | Regel: leer | Mistral: nicht gemessen
+V-062 | K6-register | erwartet OFFEN | Regel ZAEHLT | Mistral nicht gemessen | Kern | jahr nicht als Fassung gelesen | Regel: gefüllt | Mistral: nicht gemessen
+V-068 | K6-register | erwartet AUSGENOMMEN | Regel OFFEN | Mistral nicht gemessen | Extraktion | fahrtkosten_beleg nicht gelesen | Regel: leer | Mistral: nicht gemessen
+V-070 | K6-register | erwartet AUSGENOMMEN | Regel OFFEN | Mistral nicht gemessen | Extraktion | ust_zeile nicht erkannt | Regel: leer | Mistral: nicht gemessen
+V-072 | K7-grenzen | erwartet ZAEHLT | Regel OFFEN | Mistral nicht gemessen | Extraktion | jahresaggregat nicht gelesen | Regel: leer | Mistral: nicht gemessen
+V-074 | K7-grenzen | erwartet ZAEHLT | Regel OFFEN | Mistral nicht gemessen | Extraktion | jahresaggregat nicht gelesen | Regel: leer | Mistral: nicht gemessen
+V-075 | K7-grenzen | erwartet OFFEN | Regel ZAEHLT | Mistral nicht gemessen | Extraktion | empfaenger nicht getrennt | Regel: leer | Mistral: nicht gemessen
+V-076 | K7-grenzen | erwartet ZAEHLT | Regel OFFEN | Mistral nicht gemessen | Extraktion | jahresaggregat nicht gelesen | Regel: leer | Mistral: nicht gemessen
+V-094 | K3-widerspruch | erwartet OFFEN | Regel AUSGESCHLOSSEN | Mistral nicht gemessen | Extraktion | personal nicht gelesen | Regel: leer | Mistral: nicht gemessen
+V-097 | K2-kaskade | erwartet OFFEN | Regel AUSGENOMMEN | Mistral nicht gemessen | Extraktion | uebungsleiter_anteil nicht gelesen | Regel: leer | Mistral: nicht gemessen
+V-098 | K4-varianten | erwartet OFFEN | Regel ZAEHLT | Mistral nicht gemessen | Extraktion | taetigkeit nicht gelesen | Regel: leer | Mistral: nicht gemessen
+V-100 | K5-erwahnung | erwartet AUSGESCHLOSSEN | Regel OFFEN | Mistral nicht gemessen | Extraktion | leistungsart nicht von der Erwaehnung getrennt | Regel: leer | Mistral: nicht gemessen
+V-105 | K8-mengen | erwartet ZAEHLT | Regel OFFEN | Mistral nicht gemessen | Extraktion | positionen[] nicht gesplittet | Regel: leer | Mistral: nicht gemessen
+V-107 | K2-kaskade | erwartet ZAEHLT | Regel OFFEN | Mistral nicht gemessen | Extraktion | verwerter nicht gelesen | Regel: leer | Mistral: nicht gemessen
+V-108 | K2-kaskade | erwartet OFFEN | Regel ZAEHLT | Mistral nicht gemessen | Extraktion | positionen[] nicht gesplittet | Regel: leer | Mistral: nicht gemessen
+V-112 | K5-erwahnung | erwartet AUSGESCHLOSSEN | Regel OFFEN | Mistral nicht gemessen | Extraktion | leistungsart nicht von der Erwaehnung getrennt | Regel: leer | Mistral: nicht gemessen
+V-118 | K5-erwahnung | erwartet OFFEN | Regel ZAEHLT | Mistral nicht gemessen | Extraktion | taetigkeit nicht gelesen | Regel: leer | Mistral: nicht gemessen
+V-119 | K6-register | erwartet AUSGENOMMEN | Regel OFFEN | Mistral nicht gemessen | Extraktion | beleg_vorhanden nicht gelesen | Regel: leer | Mistral: nicht gemessen
+V-123 | K2-kaskade | erwartet ZAEHLT | Regel OFFEN | Mistral nicht gemessen | Extraktion | veranlassung nicht gelesen | Regel: leer | Mistral: nicht gemessen
+V-128 | K2-kaskade | erwartet ZAEHLT | Regel OFFEN | Mistral nicht gemessen | Extraktion | verwerter nicht gelesen | Regel: leer | Mistral: nicht gemessen
+V-130 | K1-prio | erwartet ZAEHLT | Regel OFFEN | Mistral nicht gemessen | Extraktion | vermerk nicht vom Zahlungsjahr getrennt | Regel: leer | Mistral: nicht gemessen

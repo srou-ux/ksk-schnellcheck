@@ -2,7 +2,7 @@
 Kein Sprachmodell. Zahlen kommen aus parameter.json (erzeugt aus dem Regelkatalog). Geld nur als Decimal.
 Das System macht Vorschläge, der Steuerberater entscheidet."""
 from dataclasses import dataclass, field
-from decimal import Decimal as D
+from decimal import Decimal as D, InvalidOperation, ROUND_HALF_UP
 import json, pathlib, datetime, re
 
 P = json.loads((pathlib.Path(__file__).with_name("parameter.json")).read_text(encoding="utf-8"))
@@ -693,6 +693,9 @@ def pruefe_dokument(dokument, jahr):
         sperre = _sperre_aus("sperre.toleranz_ab", jahr)
         sperre.begruendung.extend(sperre.fundstellen)
         return sperre
+    probe_ust = ust_rechenprobe(dokument, jahr)
+    if probe_ust is not None:
+        return probe_ust
     if dokument.get("ust_widerspruch"):
         return _sperre_aus("sperre.ust_inkonsistent", jahr)
     formen = [str(form).lower() for form in dokument.get("rechtsformen") or [] if form]
@@ -724,6 +727,9 @@ def pruefe_dokument(dokument, jahr):
             rueckfragen=["Werden angestellte Mitarbeiter in der künstlerischen Leistung eingesetzt?"],
             regeln=["F-003"],
         )
+    stelle = oeffentliche_stelle(dokument, jahr)
+    if stelle is not None:
+        return stelle
     return None
 
 
@@ -841,6 +847,74 @@ def pruefe_beleg(text, betrag, jahr):
     if offen and not nachgewiesen:
         return Ergebnis(RUECKFRAGE, [offen["fundstelle"]], fundstellen=[offen["fundstelle"]], rueckfragen=["Liegt der Beleg vor?"], regeln=[offen["regel"]])
     return None
+
+
+def _cent(betrag):
+    """Cent-genau, ohne die Abgabe selbst zu runden."""
+    return _d(betrag).quantize(D("0.01"), rounding=ROUND_HALF_UP)
+
+
+def _ust_erwartet(netto, satz):
+    return _cent(_d(netto) * _d(satz) / D(100))
+
+
+@_luecke
+def ust_rechenprobe(dokument, jahr):
+    """Ausgewiesene Umsatzsteuer gegen die Sätze im Register. Kein Mittelwert.
+
+    Sperre nur, wenn die ausgewiesene Steuer zu keinem Satz passt und die Summe
+    zu keinem einheitlichen Satz passt. Zeilen, die je für sich aufgehen, bleiben.
+    """
+    saetze = [D(eintrag) for eintrag in werte("ust.satz", jahr)]
+    if not saetze:
+        return None
+    summen = (dokument or {}).get("summen") or {}
+    kopf = None
+    if summen.get("netto") is not None and summen.get("ust") is not None:
+        treffer = [satz for satz in saetze if _ust_erwartet(summen["netto"], satz) == _cent(summen["ust"])]
+        kopf = treffer[0] if len(treffer) == 1 else False
+    zeile_ohne_satz = False
+    for position in (dokument or {}).get("positionen") or []:
+        if position.get("netto") is None or position.get("ust") is None:
+            continue
+        if position.get("satz") is not None:
+            if _ust_erwartet(position["netto"], position["satz"]) != _cent(position["ust"]):
+                zeile_ohne_satz = True
+            continue
+        if not any(_ust_erwartet(position["netto"], satz) == _cent(position["ust"]) for satz in saetze):
+            zeile_ohne_satz = True
+    if zeile_ohne_satz and kopf is False:
+        return _sperre_aus("sperre.ust_mischsatz", jahr)
+    genannt = []
+    for roh in (dokument or {}).get("ust_saetze") or []:
+        try:
+            genannt.append(D(str(roh)))
+        except InvalidOperation:
+            continue
+    if len({satz for satz in genannt if satz in saetze}) > 1 and dokument.get("summe_ohne_einheitlichen_satz") and kopf is not True:
+        return _sperre_aus("sperre.ust_mischsatz", jahr)
+    return None
+
+
+@_luecke
+def oeffentliche_stelle(dokument, jahr):
+    """Öffentliche Stelle vor dem Ausschluss einer Kapitalgesellschaft.
+
+    Info 11 und Info 16: eine öffentliche Stelle kann Verwerter sein.
+    Das ist eine Rückfrage, keine stille Ausnahme.
+    """
+    form = str((dokument or {}).get("empfaenger") or "").lower()
+    auftrag = str((dokument or {}).get("auftraggeber") or "").lower()
+    if form != "oeffentlich" and auftrag != "oeffentlich":
+        return None
+    eintrag = reg("offen.oeffentliche_stelle", jahr)
+    return Ergebnis(
+        RUECKFRAGE,
+        [eintrag["wert"]],
+        fundstellen=[eintrag["fundstelle"]],
+        rueckfragen=[eintrag["wert"]],
+        regeln=[eintrag["regel"]],
+    )
 
 
 @_luecke

@@ -1,0 +1,24 @@
+# Nur dieser Ablauf bekommt den API-Schlüssel.
+# Der Ablauf „Prüfen“ bleibt ohne Schlüssel und ohne Sprachmodell.
+name: Extraktion
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  messen:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Modellliste
+        env:
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+        run: python tests/test_mistral_verbindung.py
+      - name: Suite 130
+        env:
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+        run: python -m extraktion.messung

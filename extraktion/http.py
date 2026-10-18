@@ -15,6 +15,25 @@ class Schnittstellenfehler(RuntimeError):
         super().__init__(f"Mistral-Aufruf {status}: {hinweis}")
 
 
+def get_json(pfad: str, schluessel: str, *, timeout: int = 30) -> dict:
+    """GET ohne Nutzdaten. Der Schlüssel steht nur im Header."""
+    adresse = konfig()["endpunkt"].rstrip("/") + pfad
+    anfrage = urllib.request.Request(
+        adresse,
+        headers={"Authorization": "Bearer " + schluessel},
+        method="GET",
+    )
+    try:
+        with urllib.request.urlopen(anfrage, timeout=timeout) as antwort:
+            return json.loads(antwort.read().decode("utf-8"))
+    except urllib.error.HTTPError as fehler:
+        try:
+            text = fehler.read().decode("utf-8", errors="replace")[:300]
+        finally:
+            fehler.close()
+        raise Schnittstellenfehler(fehler.code, text) from None
+
+
 def post_json(pfad: str, koerper: dict, schluessel: str, *, timeout: int = 90) -> dict:
     adresse = konfig()["endpunkt"].rstrip("/") + pfad
     anfrage = urllib.request.Request(

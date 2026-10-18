@@ -2143,6 +2143,50 @@
    "regel": "A2",
    "fundstelle": "Rechenprobe A2/A3: widerspruechliche Angaben zur Rechtsform, keine stille Wahl",
    "status": "Entwurf – vom Steuerberater zu prüfen"
+  },
+  {
+   "schluessel": "ust.satz",
+   "wert": "7",
+   "einheit": "Prozent",
+   "operator": null,
+   "von": 2015,
+   "bis": null,
+   "regel": "A3",
+   "fundstelle": "UStG § 12 Abs. 2: ermäßigter Steuersatz 7 Prozent. Der Satz steht im Register, nicht im Code.",
+   "status": "Entwurf – vom Steuerberater zu prüfen"
+  },
+  {
+   "schluessel": "ust.satz",
+   "wert": "19",
+   "einheit": "Prozent",
+   "operator": null,
+   "von": 2015,
+   "bis": null,
+   "regel": "A3",
+   "fundstelle": "UStG § 12 Abs. 1: Regelsteuersatz 19 Prozent. Der Satz steht im Register, nicht im Code.",
+   "status": "Entwurf – vom Steuerberater zu prüfen"
+  },
+  {
+   "schluessel": "sperre.ust_mischsatz",
+   "wert": "USt-Rechenprobe, Mischsaetze",
+   "einheit": "Text",
+   "operator": null,
+   "von": 2015,
+   "bis": null,
+   "regel": "A3",
+   "fundstelle": "§ 25 Abs. 1 KSVG: die Abgabe bemisst sich nach dem Entgelt. Rechenprobe: ausgewiesene Umsatzsteuer passt zu keinem Satz und die Summe zu keinem einheitlichen Satz.",
+   "status": "Entwurf – vom Steuerberater zu prüfen"
+  },
+  {
+   "schluessel": "offen.oeffentliche_stelle",
+   "wert": "Öffentliche Stelle als Verwerter: Info 11/16, Rückfrage ob die Verwertereigenschaft in Betracht kommt.",
+   "einheit": "Text",
+   "operator": null,
+   "von": 2015,
+   "bis": null,
+   "regel": "Info-11",
+   "fundstelle": "KSK-Info 11, S. 1 Abschn. 1-2: Städte, Landkreise und Gemeinden können abgabepflichtig sein. KSK-Info 16, Stand 09.2025: Abgabepflicht öffentlich-rechtlicher Institutionen. Keine stille Ausnahme wie eine Zahlung an eine Kapitalgesellschaft.",
+   "status": "Entwurf – vom Steuerberater zu prüfen"
   }
  ]
 }

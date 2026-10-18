@@ -251,6 +251,40 @@ class Dokumentpruefung(unittest.TestCase):
         self.assertEqual(storno.klasse, K.RUECKFRAGE)
         self.assertTrue(any("Storno" in teil or "Saldierung" in teil for teil in storno.begruendung))
 
+    def test_ust_rechenprobe_mischsatz_sperrt_passende_zeile_nicht(self):
+        falsch = K.pruefe_dokument({
+            "positionen": [{"netto": "100.00", "ust": "20.00"}],
+            "summen": {"netto": "100.00", "ust": "20.00"},
+        }, 2026)
+        self.assertEqual(falsch.klasse, K.SPERRE)
+        self.assertIsNone(falsch.abgabe)
+        self.assertTrue(any("Rechenprobe" in teil or "Misch" in teil for teil in falsch.begruendung))
+        passt = K.ust_rechenprobe({
+            "positionen": [{"netto": "100.00", "ust": "19.00", "satz": "19"}],
+            "summen": {"netto": "100.00", "ust": "19.00"},
+        }, 2026)
+        self.assertIsNone(passt)
+        text = K.pruefe_dokument({
+            "ust_saetze": ["7", "19"],
+            "summe_ohne_einheitlichen_satz": True,
+        }, 2026)
+        self.assertEqual(text.klasse, K.SPERRE)
+        self.assertIsNone(text.abgabe)
+
+    def test_oeffentliche_stelle_vor_kapitalgesellschaft(self):
+        stelle = K.pruefe_dokument({"empfaenger": "oeffentlich", "jahr": 2026}, 2026)
+        self.assertEqual(stelle.klasse, K.RUECKFRAGE)
+        self.assertIn("Info 11", stelle.begruendung[0])
+        self.assertIn("11/16", stelle.begruendung[0])
+        auftrag = K.pruefe_dokument({"empfaenger": "natuerliche_person", "auftraggeber": "oeffentlich"}, 2026)
+        self.assertEqual(auftrag.klasse, K.RUECKFRAGE)
+        self.assertIsNone(K.pruefe_dokument({"empfaenger": "gmbh"}, 2026))
+        sperre = K.pruefe_dokument({
+            "empfaenger": "oeffentlich",
+            "summen": {"positionssumme": "1200", "kopfsumme": "1350"},
+        }, 2026)
+        self.assertEqual(sperre.klasse, K.SPERRE)
+
     def test_negative_summe_ohne_storno_sperrt_mit_storno_offen(self):
         gesperrt = K.gesamtsumme_negativ(-350, False, 2026)
         self.assertEqual(gesperrt.klasse, K.SPERRE)

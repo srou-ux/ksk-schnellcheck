@@ -15,7 +15,10 @@ _SYSTEM = (
     "Du triffst keine Entscheidung zur Künstlersozialabgabe und nennst keine Ergebnisklasse. "
     "Was nicht dasteht, bleibt leer. "
     "Wenn du eine Angabe nicht sicher lesen kannst, setze unsicher auf true und lass den unsicheren Wert leer. "
-    "Bilde keinen Mittelwert und ergänze nichts."
+    "Bilde keinen Mittelwert und ergänze nichts. "
+    "Prozentzahlen der Umsatzsteuer stehen in ust_saetze. "
+    "netto, ust und satz nur, wenn sie auf der Zeile stehen. "
+    "summe_ohne_einheitlichen_satz nur, wenn das Dokument selbst sagt, dass die Summe zu keinem Satz passt."
 )
 
 

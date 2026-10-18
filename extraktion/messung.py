@@ -6,6 +6,7 @@ from __future__ import annotations
 
 import json
 import pathlib
+import re
 import sys
 
 WURZEL = pathlib.Path(__file__).resolve().parents[1]
@@ -58,11 +59,134 @@ def _deckt_gold(felder: dict, gold: dict) -> bool:
     return True
 
 
-def _korrektur(quelle: str) -> str:
+def soll_feld(test: dict) -> str:
+    """Das eine Feld, an dem dieser Fall hängt. Keine Ergebnisklasse."""
+    text = test["txt"].lower().replace("ä", "ae").replace("ö", "oe").replace("ü", "ue").replace("ß", "ss")
+    if "betrag in worten" in text:
+        return "betrag_in_worten"
+    if "zwei empfaenger" in text or "fotograf a" in text:
+        return "empfaenger"
+    if "umsatzsteuer separat" in text or "reine ust" in text or "ust-zeile" in text:
+        return "ust_zeile"
+    if "scanner-miete" in text or "anhang vorhanden" in text:
+        return "beleg_vorhanden"
+    if "reisekosten" in text or "eur/km" in text:
+        return "fahrtkosten_beleg"
+    if "in derselben rechnung" in text or "positionen" in text:
+        return "positionen[]"
+    if "gutschrift" in text:
+        return "gutschrift"
+    if "veranstaltungen" in text:
+        return "veranstaltungszahl"
+    if "schueler" in text:
+        return "schuelerzahl"
+    if "traegerschaft" in text or "fest angestellt" in text:
+        return "beschaeftigung"
+    if "personal" in text or "angestellte mitarbeiter" in text:
+        return "personal"
+    if "uebungsleiter" in text:
+        return "uebungsleiter_anteil"
+    if "jahr 2027" in text or "im jahr 2027" in text:
+        return "jahr"
+    if "verwerter" in text or "theaterunternehmen" in text:
+        return "verwerter"
+    if "jahresaggregat" in text or "aggregat" in text or "drei rechnungen" in text or "jahresentgelt" in text:
+        return "jahresaggregat"
+    if "veranlasst" in text or "auf anweisung" in text:
+        return "veranlassung"
+    if "bis 2028" in text or "loeschen" in text:
+        return "vermerk"
+    if "eigenwerbung" in text and "szenario" in text:
+        return "szenario"
+    gold = test.get("dokument") or {}
+    if gold.get("rechtsformen"):
+        return "rechtsform_angaben"
+    if gold.get("positionsnummern") or any(p.get("nr") for p in gold.get("positionen") or []):
+        return "positionen[].nr"
+    for name in _GOLD:
+        if (gold.get("summen") or {}).get(name):
+            return "summen." + name
+    if "prozent" in text and "ust" in text:
+        return "ust_saetze"
+    if any(wort in text for wort in ("konzert", "musik", "klavier", "chor", "kuenstler")) and any(
+        wort in text for wort in ("evaluation", "versicherung", "transport", "reinigung", "sicherheit", "druck", "stimmung", "wartung", "nahrung")
+    ):
+        return "leistungsart"
+    if any(wort in text for wort in ("pressetext", "social-media", "dj ", "dirigent", "stimmhilfe", "fotograf", "notenschreib", "gesang")):
+        return "taetigkeit"
+    return "leistungsart"
+
+
+def feld_satz(name: str) -> str:
+    saetze = {
+        "empfaenger": "empfaenger nicht getrennt",
+        "ust_zeile": "ust_zeile nicht erkannt",
+        "positionen[]": "positionen[] nicht gesplittet",
+        "positionen[].nr": "positionen[].nr nicht gelesen",
+        "beleg_vorhanden": "beleg_vorhanden nicht gelesen",
+        "fahrtkosten_beleg": "fahrtkosten_beleg nicht gelesen",
+        "betrag_in_worten": "betrag_in_worten nicht als Zahl gelesen",
+        "ust_saetze": "ust_saetze nicht gelesen",
+        "rechtsform_angaben": "rechtsform_angaben nicht gelesen",
+        "gutschrift": "gutschrift nicht gelesen",
+        "veranstaltungszahl": "veranstaltungszahl nicht gelesen",
+        "schuelerzahl": "schuelerzahl nicht gelesen",
+        "beschaeftigung": "beschaeftigung nicht gelesen",
+        "personal": "personal nicht gelesen",
+        "uebungsleiter_anteil": "uebungsleiter_anteil nicht gelesen",
+        "jahr": "jahr nicht als Fassung gelesen",
+        "jahresaggregat": "jahresaggregat nicht gelesen",
+        "veranlassung": "veranlassung nicht gelesen",
+        "verwerter": "verwerter nicht gelesen",
+        "vermerk": "vermerk nicht vom Zahlungsjahr getrennt",
+        "szenario": "szenario nicht gelesen",
+        "leistungsart": "leistungsart nicht von der Erwaehnung getrennt",
+        "taetigkeit": "taetigkeit nicht gelesen",
+    }
+    if name in saetze:
+        return saetze[name]
+    if name.startswith("summen."):
+        return name + " nicht gelesen"
+    return name + " leer"
+
+
+def feld_stand(felder: dict | None, name: str) -> str:
+    if not felder:
+        return "nicht gemessen"
+    summen = felder.get("summen") or {}
+    positionen = felder.get("positionen") or []
+    if name == "empfaenger":
+        gefuellt = bool(felder.get("empfaenger")) or len(felder.get("rechtsform_angaben") or []) > 1
+    elif name == "ust_zeile":
+        gefuellt = bool(summen.get("ust")) or any(p.get("ust") for p in positionen)
+    elif name == "positionen[]":
+        gefuellt = len(positionen) >= 2
+    elif name == "positionen[].nr":
+        gefuellt = sum(1 for p in positionen if p.get("nr")) >= 2
+    elif name == "beleg_vorhanden":
+        gefuellt = bool(felder.get("beleg_vorhanden"))
+    elif name == "betrag_in_worten":
+        from extraktion.felder import dezimal
+        wort = str(felder.get("betrag_in_worten") or "").strip()
+        gefuellt = bool(wort) and dezimal(wort) is not None
+    elif name == "ust_saetze":
+        gefuellt = len(felder.get("ust_saetze") or []) >= 2
+    elif name == "rechtsform_angaben":
+        gefuellt = bool(felder.get("rechtsform_angaben") or felder.get("empfaenger"))
+    elif name.startswith("summen."):
+        gefuellt = bool(summen.get(name.split(".", 1)[1]))
+    else:
+        wert = felder.get(name)
+        gefuellt = wert not in ("", None, [], False)
+    return "gefüllt" if gefuellt else "leer"
+
+
+def _korrektur(quelle: str, feld: str) -> str:
+    satz = feld_satz(feld)
     if quelle == "Extraktion":
-        return "Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen."
+        return satz + ". Nicht mitteln, nicht still übernehmen."
     if quelle == "Kern":
-        return "Felder lagen vor, der Kern hat anders entschieden. Kernregel prüfen, Erwartung nicht verbiegen."
+        return satz + ". Feldbezug geprüft, der Kern hat anders entschieden. Erwartung nicht verbiegen."
     return ""
 
 
@@ -87,7 +211,10 @@ def laufe(weg: str, tests: list, **kwargs) -> tuple[list[dict], list[dict]]:
                 break
             continue
         erhalten, klasse, grund = entscheide(test, felder)
+        feld = soll_feld(test)
         quelle = fehlerquelle(test, felder, erhalten)
+        if quelle == "Extraktion" and feld_stand(felder, feld) == "gefüllt":
+            quelle = "Kern"
         zeilen.append({
             "id": test["id"],
             "kat": test.get("kat", ""),
@@ -95,8 +222,11 @@ def laufe(weg: str, tests: list, **kwargs) -> tuple[list[dict], list[dict]]:
             "erhalten": erhalten,
             "ok": erhalten == test["status"],
             "quelle": quelle,
-            "korrektur": _korrektur(quelle),
+            "feld": feld,
+            "stand": feld_stand(felder, feld),
+            "korrektur": _korrektur(quelle, feld),
             "grund": grund,
+            "felder": felder,
         })
         for aufruf in felder.get("kosten") or []:
             kosten.append({"id": test["id"], **aufruf})
@@ -124,15 +254,31 @@ def bericht(name: str, zeilen: list[dict]) -> str:
     for fall_id in SPERRE_AUSBREITUNG:
         sperrt = by_id.get(fall_id, {}).get("erhalten") == "SPERRE" and by_id.get(fall_id, {}).get("ok")
         teile.append(f"  {fall_id}: {'sperrt das Dokument' if sperrt else 'sperrt nicht'}")
-    teile.append("")
-    teile.append("Abweichungen")
-    for zeile in zeilen:
-        if zeile["ok"]:
+    return "\n".join(teile)
+
+
+def feld_bericht(regel: list[dict], mistral: list[dict] | None) -> str:
+    """Je Abweichung das konkrete Feld und der Stand bei beiden Lesern."""
+    andere = {zeile["id"]: zeile for zeile in mistral or []}
+    vollstaendig = bool(mistral) and len(mistral) == len(regel) and all(zeile["erhalten"] != "ABBRUCH" for zeile in mistral)
+    teile = ["Feld-Diagnose je Abweichung"]
+    for zeile in regel:
+        gegen = andere.get(zeile["id"]) if vollstaendig else None
+        if zeile["ok"] and (gegen is None or gegen["ok"]):
             continue
+        feld = zeile.get("feld") or soll_feld({"txt": "", "dokument": {}})
+        links = zeile.get("stand") or feld_stand(zeile.get("felder"), feld)
+        rechts = feld_stand(gegen.get("felder") if gegen else None, feld) if vollstaendig else "nicht gemessen"
+        quelle = zeile["quelle"]
+        if gegen and not gegen["ok"] and zeile["ok"]:
+            quelle = gegen["quelle"]
         teile.append(
-            f"{zeile['id']} | {zeile['kat']} | erwartet {zeile['erwartet']} | erhalten {zeile['erhalten']} "
-            f"| {zeile['quelle']} | {zeile['korrektur']}"
+            f"{zeile['id']} | {zeile['kat']} | erwartet {zeile['erwartet']} | Regel {zeile['erhalten']} | "
+            f"Mistral {gegen['erhalten'] if gegen else 'nicht gemessen'} | {quelle} | {feld_satz(feld)} | "
+            f"Regel: {links} | Mistral: {rechts}"
         )
+    if len(teile) == 1:
+        teile.append("keine Abweichung")
     return "\n".join(teile)
 
 
@@ -140,9 +286,21 @@ def kosten_text(zeilen: list[dict]) -> str:
     seiten = sum(int(zeile.get("seiten") or 0) for zeile in zeilen)
     prompt = sum(int(zeile.get("prompt_tokens") or 0) for zeile in zeilen)
     completion = sum(int(zeile.get("completion_tokens") or 0) for zeile in zeilen)
+    je_stufe: dict[str, list] = {}
+    for zeile in zeilen:
+        je_stufe.setdefault(str(zeile.get("stufe") or ""), []).append(zeile)
+    stufen = ["Kosten je Stufe"]
+    for name in ("ocr", "small", "medium"):
+        gruppe = je_stufe.get(name, [])
+        stufen.append(
+            f"  {name}: Aufrufe {len(gruppe)} | Seiten {sum(int(zeile.get('seiten') or 0) for zeile in gruppe)} | "
+            f"Prompt {sum(int(zeile.get('prompt_tokens') or 0) for zeile in gruppe)} | "
+            f"Completion {sum(int(zeile.get('completion_tokens') or 0) for zeile in gruppe)}"
+        )
     teile = [
         "Kostenlog Extraktion. Beträge in Token und Seiten, kein geschätzter Euro-Preis.",
         f"Aufrufe {len(zeilen)} | Seiten {seiten} | Prompt-Token {prompt} | Completion-Token {completion}",
+        *stufen,
         "",
     ]
     for zeile in zeilen:
@@ -167,17 +325,19 @@ def main() -> int:
         mistral_zeilen, kosten = laufe("mistral", tests)
         abbruch = next((zeile for zeile in mistral_zeilen if zeile["erhalten"] == "ABBRUCH"), None)
         if abbruch or len(mistral_zeilen) != len(tests):
-            grund = abbruch["korrektur"] if abbruch else "Lauf unvollständig."
+            grund = (abbruch["korrektur"] if abbruch else "Lauf unvollständig.").replace("\n", " ").strip()
             mistral_text = "Mistral nicht gemessen. " + grund + " Es gibt keine Teilquote."
         else:
             mistral_text = bericht("Mistral OCR 4.1 + Small", mistral_zeilen)
     text = [
-        "Vergleich Extraktion, Suite 130. Kern unverändert. Strukturfelder der Suite werden nicht als Lesung benutzt.",
-        "Fehlerquelle Extraktion: das Feld war leer oder unsicher. Fehlerquelle Kern: Felder lagen vor, die Entscheidung weicht ab.",
+        "Vergleich Extraktion, Suite 130. Strukturfelder der Suite werden nicht als Lesung benutzt.",
+        "Fehlerquelle Extraktion: das benannte Feld war leer oder unsicher. Fehlerquelle Kern: das Feld lag vor, die Entscheidung weicht ab.",
         "",
         bericht("Regel-Leser", regel_zeilen),
         "",
         mistral_text,
+        "",
+        feld_bericht(regel_zeilen, mistral_zeilen if mistral_zeilen and not mistral_text.startswith("Mistral nicht gemessen") else None),
     ]
     BERICHT.write_text("\n".join(text) + "\n", encoding="utf-8")
     KOSTEN.write_text(kosten_text(kosten) + "\n", encoding="utf-8")

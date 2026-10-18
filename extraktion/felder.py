@@ -25,8 +25,11 @@ SCHEMA = {
                     "text": {"type": "string"},
                     "betragswiderspruch": {"type": "boolean"},
                     "unsicher": {"type": "boolean"},
+                    "netto": {"type": "string"},
+                    "ust": {"type": "string"},
+                    "satz": {"type": "string"},
                 },
-                "required": ["nr", "betrag", "text", "betragswiderspruch", "unsicher"],
+                "required": ["nr", "betrag", "text", "betragswiderspruch", "unsicher", "netto", "ust", "satz"],
             },
         },
         "summen": {
@@ -45,11 +48,14 @@ SCHEMA = {
         "kleinunternehmer_genannt": {"type": "boolean"},
         "umsatzsteuer_genannt": {"type": "boolean"},
         "storno_genannt": {"type": "boolean"},
+        "ust_saetze": {"type": "array", "items": {"type": "string"}},
+        "summe_ohne_einheitlichen_satz": {"type": "boolean"},
     },
     "required": [
         "positionen", "summen", "empfaenger", "rechtsform_angaben", "jahr",
         "betrag_in_worten", "betrag_in_ziffern", "unklare_felder", "unsicher",
         "kleinunternehmer_genannt", "umsatzsteuer_genannt", "storno_genannt",
+        "ust_saetze", "summe_ohne_einheitlichen_satz",
     ],
 }
 
@@ -77,6 +83,8 @@ def leer() -> dict:
         "kleinunternehmer_genannt": False,
         "umsatzsteuer_genannt": False,
         "storno_genannt": False,
+        "ust_saetze": [],
+        "summe_ohne_einheitlichen_satz": False,
         "ocr_bloecke": [],
         "kosten": [],
         "modelle": [],
@@ -136,7 +144,9 @@ def aus_modell(roh: dict) -> dict:
             felder["rechtsform_angaben"] = [str(teil) for teil in wert if str(teil).strip()]
         elif name == "unklare_felder" and isinstance(wert, list):
             felder["unklare_felder"] = [str(teil) for teil in wert if str(teil).strip()]
-        elif name in ("unsicher", "kleinunternehmer_genannt", "umsatzsteuer_genannt", "storno_genannt"):
+        elif name == "ust_saetze" and isinstance(wert, list):
+            felder["ust_saetze"] = [str(teil) for teil in wert if str(teil).strip()]
+        elif name in ("unsicher", "kleinunternehmer_genannt", "umsatzsteuer_genannt", "storno_genannt", "summe_ohne_einheitlichen_satz"):
             felder[name] = bool(wert)
         elif isinstance(wert, str):
             felder[name] = wert.strip()
@@ -150,6 +160,9 @@ def _position(teil: dict) -> dict:
         "text": str(teil.get("text") or ""),
         "betragswiderspruch": bool(teil.get("betragswiderspruch")),
         "unsicher": bool(teil.get("unsicher")),
+        "netto": str(teil.get("netto") or ""),
+        "ust": str(teil.get("ust") or ""),
+        "satz": str(teil.get("satz") or ""),
     }
 
 
@@ -189,6 +202,10 @@ def an_kern(felder: dict, jahr_fallback: int) -> dict:
             zeile["betrag"] = zahl
         if position.get("betragswiderspruch"):
             zeile["betragswiderspruch"] = True
+        for name in ("netto", "ust", "satz"):
+            zahl = dezimal(position.get(name, ""))
+            if zahl is not None:
+                zeile[name] = zahl
         if zeile:
             positionen.append(zeile)
     if positionen:
@@ -215,4 +232,10 @@ def an_kern(felder: dict, jahr_fallback: int) -> dict:
         dokument["ust_ausgewiesen"] = True
     if felder.get("storno_genannt") and "storno_genannt" not in unklar:
         dokument["storno"] = True
+    if "ust_saetze" not in unklar:
+        saetze = [str(satz).strip() for satz in felder.get("ust_saetze") or [] if str(satz).strip()]
+        if saetze:
+            dokument["ust_saetze"] = saetze
+    if felder.get("summe_ohne_einheitlichen_satz") and "summe_ohne_einheitlichen_satz" not in unklar:
+        dokument["summe_ohne_einheitlichen_satz"] = True
     return dokument

@@ -1,3 +1,4 @@
+import os
 import pathlib
 import sys
 import unittest
@@ -5,6 +6,7 @@ import unittest
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[2]))
 
 from extraktion.felder import an_kern, aus_modell, dezimal
+from extraktion.schluessel import ablage, schluessel
 from extraktion.konfidenz import bloecke_filtern, einigung
 from extraktion.schnittstelle import extrahiere_dokument
 
@@ -39,6 +41,31 @@ class Regel(unittest.TestCase):
         self.assertNotIn("abgabepflichtig", felder)
 
 
+class Schluessel(unittest.TestCase):
+    def test_umgebung_gilt_vor_der_datei_und_wird_nicht_ueberschrieben(self):
+        vorher = os.environ.get("MISTRAL_API_KEY")
+        os.environ["MISTRAL_API_KEY"] = "nur-ein-test"
+        try:
+            self.assertEqual(schluessel(), "nur-ein-test")
+            self.assertEqual(ablage()["quelle"], "umgebung")
+            self.assertEqual(ablage()["laenge_umgebung"], len("nur-ein-test"))
+            self.assertEqual(os.environ["MISTRAL_API_KEY"], "nur-ein-test")
+        finally:
+            if vorher is None:
+                os.environ.pop("MISTRAL_API_KEY", None)
+            else:
+                os.environ["MISTRAL_API_KEY"] = vorher
+
+    def test_datei_wird_nicht_in_die_umgebung_kopiert(self):
+        vorher = os.environ.pop("MISTRAL_API_KEY", None)
+        try:
+            schluessel()
+            self.assertNotIn("MISTRAL_API_KEY", os.environ)
+        finally:
+            if vorher is not None:
+                os.environ["MISTRAL_API_KEY"] = vorher
+
+
 class Konfidenz(unittest.TestCase):
     def test_block_unter_schwelle_faellt_weg(self):
         text, weg = bloecke_filtern(
@@ -71,6 +98,16 @@ class AnKern(unittest.TestCase):
         dokument = an_kern(felder, 2026)
         self.assertNotIn("kopfsumme", dokument.get("summen", {}))
         self.assertEqual(dokument["summen"]["positionssumme"], "1200")
+
+    def test_mischsatz_wird_gelesen_nicht_entschieden(self):
+        felder = extrahiere_dokument(
+            "USt 7 Prozent und 19 Prozent in einer Rechnung, Summe passt zu keinem der beiden Saetze",
+            "rule",
+        )
+        self.assertEqual(felder["ust_saetze"], ["7", "19"])
+        self.assertTrue(felder["summe_ohne_einheitlichen_satz"])
+        self.assertEqual(felder["summen"]["ust"], "")
+        self.assertNotIn("klasse", felder)
 
     def test_kernmodul_importiert_die_extraktion_nicht(self):
         text = (__import__("pathlib").Path(__file__).resolve().parents[2] / "kern" / "rechnen.py").read_text(encoding="utf-8")

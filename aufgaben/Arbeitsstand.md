@@ -565,11 +565,13 @@ Auftrag des Nutzers: alle Fehler beheben, unabhängig vom Sprachmodell (vielleic
 - **Offen (Entscheidung nötig):** Soll ein Zweck, den nur das Modell vermutet (kein passendes Wort im Text), immer per Rückfrage bestätigt werden? Weniger falsch, mehr Rückfragen. Zum Upload-Vorschlag von ChatGPT fehlen noch: zweite Erkennung am Originalbild, Prüfung Positionen + Umsatzsteuer = Gesamt, Rechnungs- und Zahlungsdatum getrennt, Original und Angaben nebeneinander. Mistral-Dokumenterkennung würde die Datei an Mistral schicken (bisher: nur Text) – Entscheidung des Nutzers.
 
 ## Extraktion vor dem Kern (18.10.2026)
-- Neues Paket `extraktion/`: `extrahiere_dokument` mit `rule` und `mistral`. Der Kern wird nicht aufgerufen, um eine Klasse zu wählen, und nicht verändert. App, Kern, Gegenrechnung und Schnellcheck bleiben ohne Sprachmodell.
+- Neues Paket `extraktion/`: `extrahiere_dokument` mit `rule` und `mistral`. Das Sprachmodell füllt Felder, der Kern entscheidet. App, Gegenrechnung und Schnellcheck bleiben ohne Sprachmodell.
 - Mistral ist zweistufig und gepinnt: OCR `mistral-ocr-4-1`, dann `mistral-small-latest`. Drei Ablesungen, keine Mittelung. Block unter 0,85 Konfidenz fällt weg. Medium nur, wenn Small kein gültiges JSON liefert. Schlüssel nur aus `MISTRAL_API_KEY` oder `config/secrets.env`.
-- Regel-Leser auf der Suite 130, ohne die hinterlegten Strukturfelder: **91/130**. Bericht `tests/ergebnis_extraktion_vergleich.txt`.
-- Mistral-Spalte nicht gemessen: der hinterlegte Schlüssel kommt mit 401 zurück. Keine Teilquote, keine Token. Kostenlog leer in `tests/ergebnis_extraktion_kosten.txt`.
-- Suite-100 100/100, Erfahrungs-Suite 120/120, Adversarial mit hinterlegter Struktur bleibt 95/130.
+- Zwei Kernregeln, Sätze nur im Register: `ust.satz` 7 und 19 (UStG § 12). Passt die ausgewiesene Umsatzsteuer zu keinem Satz und die Summe zu keinem einheitlichen Satz, sperrt `sperre.ust_mischsatz` (§ 25 Abs. 1 KSVG, Rechenprobe). Eine öffentliche Stelle als Verwerter (`offen.oeffentliche_stelle`, KSK-Info 11 und Info 16) ist eine Rückfrage, bevor eine Kapitalgesellschaft ausgeschlossen wird.
+- Regel-Leser auf der Suite 130, ohne die hinterlegten Strukturfelder: **93/130** (vorher 91/130). V-034 und V-116 sind damit grün. Bericht `tests/ergebnis_extraktion_vergleich.txt`, je Abweichung das konkrete Feld.
+- Schlüssel: erst die Umgebungsvariable, nur wenn sie fehlt `config/secrets.env`. Die Datei überschreibt die Variable nicht und wird nicht in die Umgebung kopiert. Wert nie loggen, nie drucken, nie committen. Ablauf „Extraktion“ (von Hand) reicht das Actions-Secret an Modellliste und Suite 130 durch. Der Ablauf „Prüfen“ bleibt ohne Schlüssel.
+- Verbindungstest lokal: Quelle Datei, Länge 45, Umgebung Länge 0, kein BOM, kein Leerzeichen. HTTP 401, der geladene Wert gilt bei der API nicht. Die Suite 130 über Mistral bleibt deshalb ohne Teilquote. Kostenlog 0 Aufrufe.
+- Suite-100 100/100, Erfahrungs-Suite 120/120, Adversarial mit hinterlegter Struktur bleibt 95/130. Kern-Tests 45.
 
 ## Adversarial-Etappe 1 (18.10.2026)
 - Strukturierte Dokumentfelder in der Adversarial-Suite. `kern/rechnen.py` prüft sie vor Szenario und Tätigkeit: Summenprobe, doppelte Positionsnummer, § 19, negative Summe, Cent-Toleranz. Eine fehlerhafte Zeile sperrt das Dokument.
