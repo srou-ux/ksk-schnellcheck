@@ -63,7 +63,7 @@ E-052    OFFEN            OFFEN            Rückfrage nötig                    
 E-053    OFFEN            OFFEN            Rückfrage nötig                            ✅
 E-054    ZAEHLT           ZAEHLT           Nicht abgabepflichtig (Vorschlag)          ✅
 E-055    OFFEN            OFFEN            Rückfrage nötig                            ✅
-E-056    ZAEHLT           OFFEN            Nicht abgedeckt (Quelle fehlt)             ❌
+E-056    OFFEN            OFFEN            Nicht abgedeckt (Quelle fehlt)             ✅
 E-057    OFFEN            OFFEN            Nicht abgedeckt (Quelle fehlt)             ✅
 E-058    OFFEN            OFFEN            Rückfrage nötig                            ✅
 E-059    OFFEN            OFFEN            Rückfrage nötig                            ✅
@@ -133,11 +133,11 @@ Kategorien
   A-sperre                15/15   100.0 %
   B-offen                 15/15   100.0 %
   C-auslagen              15/15   100.0 %
-  D-jahre                 14/15    93.3 %
+  D-jahre                 15/15   100.0 %
   E-grenzen               10/10   100.0 %
   F-rechtsform            10/10   100.0 %
   G-musikverein           10/10   100.0 %
   H-vertrag               10/10   100.0 %
   I-haerte                20/20   100.0 %
 
-Gesamt 119/120  99.2 %
+Gesamt 120/120  100.0 %

@@ -61,7 +61,7 @@
     {"id": "E-053", "kat": "D-jahre", "txt": "Dauerauftrag: Dirigent monatlich 200 €, 12 Monate, Mittelabfluss je Monat zählen", "betrag": 2400, "status": "OFFEN", "regel": "D4-Aggregation Dauerleistungen"},
     {"id": "E-054", "kat": "D-jahre", "txt": "Vorschuss Februar, Restzahlung November, alles im selben Jahr — zusammenzählen", "betrag": 900, "status": "ZAEHLT", "regel": "A5-Vorschuss+Rest"},
     {"id": "E-055", "kat": "D-jahre", "txt": "Rechnung über geleistete Arbeit vom 03/2026, gestellt und gezahlt 01/2027", "betrag": 1000, "status": "OFFEN", "regel": "D4-Leistung vs Zahlung"},
-    {"id": "E-056", "kat": "D-jahre", "txt": "Historisch: Zahlung 2015, Satz und Grenze aus Register 2015", "betrag": 1100, "status": "ZAEHLT", "regel": "D3-Zeitfenster abgedeckt"},
+    {"id": "E-056", "kat": "D-jahre", "txt": "Historisch: Zahlung 2015, Satz und Grenze aus Register 2015", "betrag": 1100, "status": "OFFEN", "regel": "D3-Schwelle 2015 fehlt im Register, nicht raten"},
     {"id": "E-057", "kat": "D-jahre", "txt": "Zahlungsjahr 1995: vor Zeitfenster des Registers", "betrag": 900, "status": "OFFEN", "regel": "D3-vor Zeitfenster"},
     {"id": "E-058", "kat": "D-jahre", "txt": "Scheck eingelöst im Folgejahr (Übergabe Dez., Einlösung Jan.)", "betrag": 250, "status": "OFFEN", "regel": "D4-Mittelabfluss Scheck"},
     {"id": "E-059", "kat": "D-jahre", "txt": "Teilzahlung.rate 1 von 3 im Bezugsjahr, Rest im Folgejahr", "betrag": 300, "status": "OFFEN", "regel": "D4-Ratenzahlung klären"},

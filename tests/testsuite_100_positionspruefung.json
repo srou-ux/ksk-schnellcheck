@@ -67,7 +67,7 @@
     {"id": "T-060", "kat": "6-schwelle", "txt": "Schwelle nur mit OFFEN-Positionen erfüllt, ohne sie nicht", "betrag": 1100, "status": "OFFEN", "regel": "S3a-nicht-robust"},
     {"id": "T-061", "kat": "7-musikverein", "txt": "Chorleitung und regelmäßige Dirigiertätigkeit Vereinschor, fester Chorleiter", "betrag": 2400, "status": "AUSGENOMMEN", "regel": "S4-§24 Abs.2 S.3 Nr.2"},
     {"id": "T-062", "kat": "7-musikverein", "txt": "Auftragskomposition durch externen Komponisten, Verein zahlt direkt", "betrag": 1500, "status": "ZAEHLT", "regel": "S4-Ausnahme-keine-Übertragung"},
-    {"id": "T-063", "kat": "7-musikverein", "txt": "Fußnote: 'Abgabefreiheit Chorleiter gilt auch für Fanfare'", "status": "ZAEHLT", "regel": "S4/F-004-unzulaessige-Uebertragung"},
+    {"id": "T-063", "kat": "7-musikverein", "txt": "Fußnote: 'Abgabefreiheit Chorleiter gilt auch für Fanfare'", "status": "OFFEN", "regel": "S4/F-004-unzulaessige-Uebertragung: Rueckfrage, nicht automatisch zaehlen"},
     {"id": "T-064", "kat": "7-musikverein", "txt": "Chorleiter-Honorar für gesonderte Gala-Mitwirkung (keine regelmäßige Chorleitung)", "betrag": 800, "status": "ZAEHLT", "regel": "S4-separat-messen"},
     {"id": "T-065", "kat": "7-musikverein", "txt": "Chorleitung, aber 'regelmäßig' nicht belegt, nur eine Probe dokumentiert", "betrag": 600, "status": "OFFEN", "regel": "S4-Nachweis-Rueckfrage"},
     {"id": "T-066", "kat": "7-musikverein", "txt": "Klavierbegleitung Chorprobe, freischaffender Pianist, einmalig", "betrag": 150, "status": "ZAEHLT", "regel": "S4-nicht-Chorleiter"},
