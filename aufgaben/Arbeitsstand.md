@@ -571,3 +571,10 @@ Auftrag des Nutzers: alle Fehler beheben, unabhängig vom Sprachmodell (vielleic
 Basis im neuen Repository: `5994db7`. Der bestehende Schnellcheck bleibt erhalten; kein Austausch durch den parallelen lokalen Entwurf. Betragseingabe verwirft fehlerhafte Trennzeichen statt Beträge zu verändern. Änderungen verwerfen alte Ergebnisse, verspätete Antworten ebenfalls. Dokumenten-CSV neutralisiert Formelpräfixe; Korrekturen löschen den Exportzustand. Regeln, Zahlen und Quellen unverändert.
 
 Abnahme: `python scripts/pruefe_alles.py` vorher/nachher ALLES GRÜN; 8 JavaScript-Regressionstests bestanden; 60/60 Dokumentfälle über echten HTTP-Server bestanden. Neuer Schnellcheck-Browsertest in CI eingebunden, lokal mangels Chromium nicht ausgeführt. Details und Grenzen: `aufgaben/SCHNELLCHECK_Abnahme_2026-10-17.md`. Separater Pull Request, kein automatischer Merge.
+
+
+## Codespaces: Dokument-Upload automatisch starten (18.10.2026)
+
+Auf Nutzerwunsch ist die Dokumentenprüfung der automatische Einstieg: `postStartCommand` und `postAttachCommand` starten Port 8000, der als „Dokument hochladen – KSK-Prüfung“ im Browser geöffnet werden soll. Das manuelle Formular auf 8100 bleibt optional und öffnet sich nicht automatisch.
+
+Das Startskript beendet keine laufenden Server mehr. Eine Sperre verhindert parallele Starts, eine Gesundheitsprüfung prüft die tatsächliche Bereitschaft; bei Startfehlern gibt es keine falsche Erfolgsmeldung. Lokal geprüft: Shell-Syntax/JSON gültig, echter Serverstart, Upload-Seite HTTP 200, zweiter Start behält denselben Serverprozess. Die Browser-Taböffnung selbst hängt vom Codespaces-Client ab und wurde nicht in einem echten Codespace bedient. Bestehende Codespaces benötigen nach dem Pull einmal „Rebuild Container“.

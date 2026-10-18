@@ -58,3 +58,10 @@ Prinzip: **Das System macht Vorschläge, der Steuerberater entscheidet.**
 gelesen; bewertet wird mit demselben Regelkern und derselben Gegenrechnung wie im Schnellcheck. Kein Sprachmodell, kein
 Chat (entfernt am 17.10.2026; der frühere Stand steht im Git-Verlauf). Anleitung, Grenzen und Testbefehle:
 [app/DOKUMENTE.md](app/DOKUMENTE.md).
+
+
+## Direkt in GitHub Codespaces testen
+
+Codespaces startet automatisch die Dokumentenprüfung auf Port 8000. Dort können PDFs, Fotos, XLSX und CSV hochgeladen werden. Port 8100 ist nur das optionale manuelle Formular und wird nicht automatisch geöffnet.
+
+Bei einem bestehenden Codespace auf dem PR-Zweig einmal `git pull --ff-only` ausführen und über die Befehlspalette (F1) **Codespaces: Rebuild Container** wählen. Neue Codespaces übernehmen die Konfiguration direkt. Beim erneuten Verbinden bleibt ein laufender Server bestehen. Falls der Browser den neuen Tab blockiert: unten **Ports**, bei **8000** auf das Globus-Symbol klicken.
