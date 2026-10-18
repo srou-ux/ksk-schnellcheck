@@ -1,0 +1,322 @@
+Suite: KSK-Adversarial-Suite v1 — Kombinationen, Kaskaden, Widersprüche und Wortvarianten 1.0 2026-10-18
+Gewertet wird der Status und, wo ein Anker im erwarteten Grund steht, die Begründung des Kerns.
+Ein Fall ist nur grün, wenn der Status stimmt und der getroffene Anker im Kerntext vorkommt.
+
+ID       erwartet       erhalten       Grund      Kern                        
+--------------------------------------------------------------------------------------------------------------
+V-001    SPERRE         OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ❌
+V-002    SPERRE         OFFEN          passt nicht Rückfrage nötig              ❌
+V-003    OFFEN          OFFEN          ohne Anker Rückfrage nötig              ✅
+V-004    SPERRE         OFFEN          passt nicht Nicht abgedeckt (Quelle feh… ❌
+V-005    OFFEN          OFFEN          passt nicht Nicht abgedeckt (Quelle feh… ❌
+V-006    SPERRE         ZAEHLT         passt nicht Nicht abgabepflichtig (Vors… ❌
+V-007    OFFEN          OFFEN          passt nicht Rückfrage nötig              ❌
+V-008    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
+V-009    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
+V-010    OFFEN          OFFEN          ok         Rückfrage nötig              ✅
+V-011    SPERRE         SPERRE         ohne Anker Sperre — Rechnung prüfen     ✅
+V-012    AUSGESCHLOSSEN AUSGESCHLOSSEN ok         Nicht abgabepflichtig (Vors… ✅
+V-013    OFFEN          OFFEN          ohne Anker Rückfrage nötig              ✅
+V-014    AUSGESCHLOSSEN OFFEN          passt nicht Rückfrage nötig              ❌
+V-015    ZAEHLT         ZAEHLT         ohne Anker Nicht abgabepflichtig (Vors… ✅
+V-016    OFFEN          ZAEHLT         ohne Anker Nicht abgabepflichtig (Vors… ❌
+V-017    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
+V-018    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
+V-019    OFFEN          OFFEN          ohne Anker Rückfrage nötig              ✅
+V-020    OFFEN          AUSGESCHLOSSEN ohne Anker Nicht abgabepflichtig (Vors… ❌
+V-021    OFFEN          AUSGESCHLOSSEN ohne Anker Nicht abgabepflichtig (Vors… ❌
+V-022    ZAEHLT         ZAEHLT         ok         Nicht abgabepflichtig (Vors… ✅
+V-023    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
+V-024    OFFEN          OFFEN          ohne Anker Rückfrage nötig              ✅
+V-025    ZAEHLT         ZAEHLT         ohne Anker Nicht abgabepflichtig (Vors… ✅
+V-026    SPERRE         AUSGESCHLOSSEN ok         Nicht abgabepflichtig (Vors… ❌
+V-027    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
+V-028    OFFEN          OFFEN          ohne Anker Rückfrage nötig              ✅
+V-029    OFFEN          OFFEN          ohne Anker Rückfrage nötig              ✅
+V-030    SPERRE         OFFEN          passt nicht Nicht abgedeckt (Quelle feh… ❌
+V-031    OFFEN          OFFEN          passt nicht Nicht abgedeckt (Quelle feh… ❌
+V-032    OFFEN          OFFEN          ohne Anker Rückfrage nötig              ✅
+V-033    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
+V-034    SPERRE         OFFEN          passt nicht Nicht abgedeckt (Quelle feh… ❌
+V-035    OFFEN          ZAEHLT         ohne Anker Nicht abgabepflichtig (Vors… ❌
+V-036    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
+V-037    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
+V-038    OFFEN          ZAEHLT         ohne Anker Nicht abgabepflichtig (Vors… ❌
+V-039    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
+V-040    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
+V-041    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
+V-042    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
+V-043    OFFEN          ZAEHLT         ohne Anker Nicht abgabepflichtig (Vors… ❌
+V-044    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
+V-045    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
+V-046    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
+V-047    OFFEN          OFFEN          ohne Anker Rückfrage nötig              ✅
+V-048    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
+V-049    OFFEN          ZAEHLT         ohne Anker Abgabepflichtig (Vorschlag)  ❌
+V-050    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
+V-051    AUSGESCHLOSSEN OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ❌
+V-052    AUSGESCHLOSSEN OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ❌
+V-053    AUSGESCHLOSSEN OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ❌
+V-054    AUSGESCHLOSSEN OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ❌
+V-055    AUSGESCHLOSSEN OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ❌
+V-056    AUSGESCHLOSSEN OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ❌
+V-057    ZAEHLT         AUSGESCHLOSSEN ohne Anker Nicht abgabepflichtig (Vors… ❌
+V-058    AUSGESCHLOSSEN AUSGESCHLOSSEN ohne Anker Nicht abgabepflichtig (Vors… ✅
+V-059    AUSGESCHLOSSEN OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ❌
+V-060    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
+V-061    OFFEN          OFFEN          ok         Nicht abgedeckt (Quelle feh… ✅
+V-062    OFFEN          ZAEHLT         ohne Anker Nicht abgabepflichtig (Vors… ❌
+V-063    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
+V-064    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
+V-065    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
+V-066    OFFEN          OFFEN          ohne Anker Rückfrage nötig              ✅
+V-067    OFFEN          OFFEN          ohne Anker Rückfrage nötig              ✅
+V-068    AUSGENOMMEN    OFFEN          ohne Anker Rückfrage nötig              ❌
+V-069    OFFEN          OFFEN          ohne Anker Rückfrage nötig              ✅
+V-070    AUSGENOMMEN    OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ❌
+V-071    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
+V-072    ZAEHLT         OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ❌
+V-073    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
+V-074    ZAEHLT         OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ❌
+V-075    OFFEN          ZAEHLT         ohne Anker Nicht abgabepflichtig (Vors… ❌
+V-076    ZAEHLT         OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ❌
+V-077    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
+V-078    OFFEN          OFFEN          passt nicht Nicht abgedeckt (Quelle feh… ❌
+V-079    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
+V-080    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
+V-081    OFFEN          OFFEN          ohne Anker Rückfrage nötig              ✅
+V-082    SPERRE         OFFEN          passt nicht Nicht abgedeckt (Quelle feh… ❌
+V-083    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
+V-084    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
+V-085    OFFEN          OFFEN          ohne Anker Rückfrage nötig              ✅
+V-086    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
+V-087    OFFEN          OFFEN          ohne Anker Rückfrage nötig              ✅
+V-088    OFFEN          OFFEN          passt nicht Nicht abgedeckt (Quelle feh… ❌
+V-089    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
+V-090    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
+V-091    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
+V-092    AUSGESCHLOSSEN OFFEN          passt nicht Rückfrage nötig              ❌
+V-093    ZAEHLT         ZAEHLT         ohne Anker Nicht abgabepflichtig (Vors… ✅
+V-094    OFFEN          AUSGESCHLOSSEN ohne Anker Nicht abgabepflichtig (Vors… ❌
+V-095    ZAEHLT         ZAEHLT         ohne Anker Nicht abgabepflichtig (Vors… ✅
+V-096    OFFEN          OFFEN          ohne Anker Rückfrage nötig              ✅
+V-097    OFFEN          AUSGENOMMEN    ohne Anker Nicht abgabepflichtig (Vors… ❌
+V-098    OFFEN          ZAEHLT         ohne Anker Nicht abgabepflichtig (Vors… ❌
+V-099    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
+V-100    AUSGESCHLOSSEN OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ❌
+V-101    OFFEN          OFFEN          ok         Nicht abgedeckt (Quelle feh… ✅
+V-102    OFFEN          OFFEN          ohne Anker Rückfrage nötig              ✅
+V-103    OFFEN          OFFEN          ohne Anker Rückfrage nötig              ✅
+V-104    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
+V-105    ZAEHLT         OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ❌
+V-106    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
+V-107    ZAEHLT         OFFEN          ok         Nicht abgedeckt (Quelle feh… ❌
+V-108    OFFEN          ZAEHLT         ohne Anker Nicht abgabepflichtig (Vors… ❌
+V-109    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
+V-110    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
+V-111    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
+V-112    AUSGESCHLOSSEN OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ❌
+V-113    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
+V-114    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
+V-115    SPERRE         SPERRE         ok         Sperre — Rechnung prüfen     ✅
+V-116    OFFEN          AUSGESCHLOSSEN ohne Anker Nicht abgabepflichtig (Vors… ❌
+V-117    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
+V-118    OFFEN          ZAEHLT         ohne Anker Nicht abgabepflichtig (Vors… ❌
+V-119    AUSGENOMMEN    OFFEN          ohne Anker Rückfrage nötig              ❌
+V-120    OFFEN          OFFEN          ohne Anker Rückfrage nötig              ✅
+V-121    OFFEN          OFFEN          ok         Rückfrage nötig              ✅
+V-122    SPERRE         OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ❌
+V-123    ZAEHLT         OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ❌
+V-124    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
+V-125    SPERRE         SPERRE         ohne Anker Sperre — Rechnung prüfen     ✅
+V-126    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
+V-127    OFFEN          OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ✅
+V-128    ZAEHLT         OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ❌
+V-129    SPERRE         AUSGESCHLOSSEN ohne Anker Nicht abgabepflichtig (Vors… ❌
+V-130    ZAEHLT         OFFEN          ohne Anker Nicht abgedeckt (Quelle feh… ❌
+
+Kategorien
+  K1-prio                 12/20    60.0 %  Ziel 100 %  ❌
+  K2-kaskade              12/22    54.5 %  Ziel  90 %  ❌
+  K3-widerspruch           8/15    53.3 %  Ziel 100 %  ❌
+  K4-varianten            15/19    78.9 %  Ziel  90 %  ❌
+  K5-erwahnung             2/13    15.4 %  Ziel  90 %  ❌
+  K6-register             11/15    73.3 %  Ziel  90 %  ❌
+  K7-grenzen               7/13    53.8 %  Ziel  90 %  ❌
+  K8-mengen               10/13    76.9 %  Ziel  90 %  ❌
+
+Gesamt 77/130  59.2 %
+
+Paar-Check (beide müssen stimmen)
+  V-119/V-120: FEHLER ❌
+  V-123/V-124: FEHLER ❌
+  V-092/V-093: FEHLER ❌
+  V-082/V-083: FEHLER ❌
+  V-061/V-101: beide richtig ✅
+
+Sperre-Ausbreitung
+  V-122: sperrt nicht ❌
+  V-125: sperrt das Dokument ✅
+
+Abnahme: nicht bestanden
+
+Abweichungen (53)
+V-001 | K1-prio | erwartet SPERRE | erhalten OFFEN | Grund Status
+  warum: Sperre schlaegt OFFEN. Es darf keine Rueckfrage kommen, sondern die Summensperre mit Grund.
+  kern:  Kein Eintrag im Tätigkeitsregister trifft den Text. Es wird nicht geraten. C4
+V-002 | K1-prio | erwartet SPERRE | erhalten OFFEN | Grund passt nicht
+  warum: Rechenprobe schlaegt Drittzahlungs-Szenario. Reihenfolge: erst Dokument pruefen, dann Szenario.
+  kern:  Abgabeschuldner nicht allein aus der Rechnung bestimmbar. Vertrag, Vollmacht, im Namen und für Rechnung wessen? Ist der Auftraggeber selbst abgabepflichtig? R-33 R-78
+V-004 | K1-prio | erwartet SPERRE | erhalten OFFEN | Grund passt nicht
+  warum: Doppelte Pos-Nr bleibt Sperre, auch wenn die Summe 'dazu passt' — Doppelerfassungsgefahr.
+  kern:  Kein Eintrag im Tätigkeitsregister trifft den Text. Es wird nicht geraten. C4
+V-005 | K1-prio | erwartet OFFEN | erhalten OFFEN | Grund passt nicht
+  warum: Negativsumme mit Storno = Rueckfrage zur Saldierung, keine Sperre.
+  kern:  Kein Eintrag im Tätigkeitsregister trifft den Text. Es wird nicht geraten. C4
+V-006 | K1-prio | erwartet SPERRE | erhalten ZAEHLT | Grund passt nicht
+  warum: §19-Widerspruch schlaegt die eindeutige Taetigkeit Gesang. Nie 'zaehlt' trotz Widerspruch.
+  kern:  Summe 0 € übersteigt die Schwelle 1000 € des Jahres 2026 nicht. R-11 R-24
+V-007 | K1-prio | erwartet OFFEN | erhalten OFFEN | Grund passt nicht
+  warum: Zwei OFFEN-Gruende (Skonto, Waehrung). Erwartung: OFFEN mit beiden Gruenden aufgelistet.
+  kern:  Fremdwährung ohne Umrechnungsnachweis — Kurs und Nachweis vorlegen Wie wurde umgerechnet? A3
+V-014 | K2-kaskade | erwartet AUSGESCHLOSSEN | erhalten OFFEN | Grund passt nicht
+  warum: Doppelt abgesichert: oeffentliche Stelle UND Arbeitnehmer. Erwartung: Ausschluss mit dem ersten zutreffenden Grund, beide benannt.
+  kern:  KSVEntgV § 1 Nr. 1 und Info 10: ohne Nachweis keine Ausnahme. Verpflegung zusätzlich an verpflegung.stunden_grenze und verpflegung.stunden_ganztag im Register gebunden. Liegt der Beleg vor? KSVEntgV-1
+V-016 | K2-kaskade | erwartet OFFEN | erhalten ZAEHLT | Grund Status
+  warum: Unter Schwelle: kein Automatik-Nein, sondern Rueckfrage zu weiteren Zahlungen im Jahr (D1-Vorbehalt).
+  kern:  Summe 0 € übersteigt die Schwelle 1000 € des Jahres 2026 nicht. R-11 R-24
+V-020 | K2-kaskade | erwartet OFFEN | erhalten AUSGESCHLOSSEN | Grund Status
+  warum: Info-12-Kaskade: unter 4 Veranstaltungen keine Pflicht ueber Generalklausel, aber Restjahre unklar → Rueckfrage.
+  kern:  Zahlung an Kapital-/Handelsgesellschaft
+V-021 | K2-kaskade | erwartet OFFEN | erhalten AUSGESCHLOSSEN | Grund Status
+  warum: Schuelerzahl-Kriterium 20 UND 60: Teilbedingung erfuellt, Teil nicht. Rueckfrage, kein Automatismus.
+  kern:  Zahlung an Kapital-/Handelsgesellschaft
+V-026 | K3-widerspruch | erwartet SPERRE | erhalten AUSGESCHLOSSEN | Grund Status
+  warum: Widerspruch Rechtsform im Dokument selbst. Nicht still eine Form waehlen.
+  kern:  Zahlung an Kapital-/Handelsgesellschaft
+V-030 | K3-widerspruch | erwartet SPERRE | erhalten OFFEN | Grund passt nicht
+  warum: Betragswiderspruch = Summensperre-Analogon. Keine still rechnende Aufloesung.
+  kern:  Kein Eintrag im Tätigkeitsregister trifft den Text. Es wird nicht geraten. C4
+V-031 | K3-widerspruch | erwartet OFFEN | erhalten OFFEN | Grund passt nicht
+  warum: Korrekturpaar: Saldierung pruefen, Rueckfrage ob Storno oder Verrechnung.
+  kern:  Kein Eintrag im Tätigkeitsregister trifft den Text. Es wird nicht geraten. C4
+V-034 | K3-widerspruch | erwartet SPERRE | erhalten OFFEN | Grund passt nicht
+  warum: Mischsaetze muessen je Position aufgehen. Rechenprobe schlaegt fehl.
+  kern:  Kein Eintrag im Tätigkeitsregister trifft den Text. Es wird nicht geraten. C4
+V-035 | K3-widerspruch | erwartet OFFEN | erhalten ZAEHLT | Grund Status
+  warum: Dokumenttyp-Widerspruch: Gutschrift oder Rechnung? Richtung des Geldflusses klaeren.
+  kern:  Summe 0 € übersteigt die Schwelle 1000 € des Jahres 2026 nicht. R-11 R-24
+V-038 | K4-varianten | erwartet OFFEN | erhalten ZAEHLT | Grund Status
+  warum: Synonym-Variante 'fotografische Begleitung'. Erwartung: Fotografie erkannt, aber 'inkl. Nachbearbeitung' = moegliche nicht-kuenstlerische Zusatzleistung → Rueckfrage/Splitting.
+  kern:  Summe 450 € übersteigt die Schwelle 1000 € des Jahres 2026 nicht. R-11 R-24
+V-043 | K4-varianten | erwartet OFFEN | erhalten ZAEHLT | Grund Status
+  warum: DJ ist Grenzfall (darbietend oder nur abspielend?). Erwartung OFFEN mit Grenzfall-Kommentar, kein blindes 'musik'-Match.
+  kern:  Summe 500 € übersteigt die Schwelle 1000 € des Jahres 2026 nicht. R-11 R-24
+V-049 | K4-varianten | erwartet OFFEN | erhalten ZAEHLT | Grund Status
+  warum: Zwei Begriffe fuer eine Person: Chorleiter-Ausnahme relevant, 'regelmaessig' belegt? Rueckfrage mit konkretem Klaertext.
+  kern:  Summe 2200 € übersteigt die Schwelle 1000 € des Jahres 2026. R-11 R-24
+V-051 | K5-erwahnung | erwartet AUSGESCHLOSSEN | erhalten OFFEN | Grund Status
+  warum: 'Konzert' nur erwaehnt, Leistung ist wissenschaftliche Auswertung. Kern-Fall des Begriffs-Fix.
+  kern:  Kein Eintrag im Tätigkeitsregister trifft den Text. Es wird nicht geraten. C4
+V-052 | K5-erwahnung | erwartet AUSGESCHLOSSEN | erhalten OFFEN | Grund Status
+  warum: 'Musik' nur erwaehnt, Leistung = Versicherung.
+  kern:  Kein Eintrag im Tätigkeitsregister trifft den Text. Es wird nicht geraten. C4
+V-053 | K5-erwahnung | erwartet AUSGESCHLOSSEN | erhalten OFFEN | Grund Status
+  warum: 'Konzert' und 'Klavier' erwaehnt, Leistung = Spedition.
+  kern:  Kein Eintrag im Tätigkeitsregister trifft den Text. Es wird nicht geraten. C4
+V-054 | K5-erwahnung | erwartet AUSGESCHLOSSEN | erhalten OFFEN | Grund Status
+  warum: Reinigungsleistung, 'Konzert' nur Kontext.
+  kern:  Kein Eintrag im Tätigkeitsregister trifft den Text. Es wird nicht geraten. C4
+V-055 | K5-erwahnung | erwartet AUSGESCHLOSSEN | erhalten OFFEN | Grund Status
+  warum: Ordnungsdienst, kein Bezug zur kuenstlerischen Leistung selbst.
+  kern:  Kein Eintrag im Tätigkeitsregister trifft den Text. Es wird nicht geraten. C4
+V-056 | K5-erwahnung | erwartet AUSGESCHLOSSEN | erhalten OFFEN | Grund Status
+  warum: Druckerei-Handwerksleistung, 'Konzert' nur Gegenstand.
+  kern:  Kein Eintrag im Tätigkeitsregister trifft den Text. Es wird nicht geraten. C4
+V-057 | K5-erwahnung | erwartet ZAEHLT | erhalten AUSGESCHLOSSEN | Grund Status
+  warum: Grenztest: Pressetext = publizistische Leistung, Konzert ist nur Thema der Leistung. Erwaehnung entscheidet nicht, die Leistungsart.
+  kern:  Zahlung an Kapital-/Handelsgesellschaft
+V-059 | K5-erwahnung | erwartet AUSGESCHLOSSEN | erhalten OFFEN | Grund Status
+  warum: Klavierstimmer = Handwerk, kein Fehlmatch auf 'klavier'/'konzert'.
+  kern:  Kein Eintrag im Tätigkeitsregister trifft den Text. Es wird nicht geraten. C4
+V-062 | K6-register | erwartet OFFEN | erhalten ZAEHLT | Grund Status
+  warum: 2027: Satz im Register, aber keine Freigabe in saetze.json. Sichtbarer Konfigurationshinweis, keine stille Berechnung.
+  kern:  Summe 0 € übersteigt die Schwelle 1000 € des Jahres 2027 nicht. R-11 R-24
+V-068 | K6-register | erwartet AUSGENOMMEN | erhalten OFFEN | Grund Status
+  warum: Kombination: km-Satz im Rahmen der Info-10-Grenzen UND Route belegt → ausgenommen. Testet Zusammenspiel Synonym + Beleg + Satz.
+  kern:  KSVEntgV § 1 Nr. 1 und Info 10: ohne Nachweis keine Ausnahme. Verpflegung zusätzlich an verpflegung.stunden_grenze und verpflegung.stunden_ganztag im Register gebunden. Liegt der Beleg vor? KSVEntgV-1
+V-070 | K6-register | erwartet AUSGENOMMEN | erhalten OFFEN | Grund Status
+  warum: USt zaehlt nie zur Bemessungsgrundlage (§ 25 Abs. 1 KSVG). Testet isolierte USt-Zeile ohne die Nettoposition anzufassen.
+  kern:  Kein Eintrag im Tätigkeitsregister trifft den Text. Es wird nicht geraten. C4
+V-072 | K7-grenzen | erwartet ZAEHLT | erhalten OFFEN | Grund Status
+  warum: Knapp drueber: ueberschritten heisst ueberschritten, ganze Summe zaehlt.
+  kern:  Kein Eintrag im Tätigkeitsregister trifft den Text. Es wird nicht geraten. C4
+V-074 | K7-grenzen | erwartet ZAEHLT | erhalten OFFEN | Grund Status
+  warum: S3a robust: auch ohne die OFFEN-Positionen ueberschritten → zaehlt fuer den eindeutigen Teil.
+  kern:  Kein Eintrag im Tätigkeitsregister trifft den Text. Es wird nicht geraten. C4
+V-075 | K7-grenzen | erwartet OFFEN | erhalten ZAEHLT | Grund Status
+  warum: Empfaengertrennung: je Empfaenger unter 1.000. Rueckfrage je Empfaenger-Jahresrest, kein Aggregat ueber beide.
+  kern:  Summe 0 € übersteigt die Schwelle 1000 € des Jahres 2026 nicht. R-11 R-24
+V-076 | K7-grenzen | erwartet ZAEHLT | erhalten OFFEN | Grund Status
+  warum: Jahresaggregat 1.200 > 1.000: zaehlt komplett. Testet Aggregation ueber mehrere Dokumente.
+  kern:  Kein Eintrag im Tätigkeitsregister trifft den Text. Es wird nicht geraten. C4
+V-078 | K7-grenzen | erwartet OFFEN | erhalten OFFEN | Grund passt nicht
+  warum: Saldierung: 900 EUR verbleiben → unter Schwelle. Saldierung = Pruefsache → Rueckfrage.
+  kern:  Kein Eintrag im Tätigkeitsregister trifft den Text. Es wird nicht geraten. C4
+V-082 | K8-mengen | erwartet SPERRE | erhalten OFFEN | Grund passt nicht
+  warum: Toleranzgrenze: 0,02 EUR > 0,01 EUR Toleranz → Sperre. Grenztest der Cent-Toleranz von oben.
+  kern:  Kein Eintrag im Tätigkeitsregister trifft den Text. Es wird nicht geraten. C4
+V-088 | K8-mengen | erwartet OFFEN | erhalten OFFEN | Grund passt nicht
+  warum: Luecke in Positionsnummern: fehlt eine Zeile? Rueckfrage, kein still hinnehmen.
+  kern:  Kein Eintrag im Tätigkeitsregister trifft den Text. Es wird nicht geraten. C4
+V-092 | K1-prio | erwartet AUSGESCHLOSSEN | erhalten OFFEN | Grund passt nicht
+  warum: Prioritaet: Rechtsform/Vertragspartner VOR Taetigkeit. Webdesign-Entscheidung wird nicht erreicht.
+  kern:  Abgabeschuldner nicht allein aus der Rechnung bestimmbar. Vertrag, Vollmacht, im Namen und für Rechnung wessen? Ist der Auftraggeber selbst abgabepflichtig? R-33 R-78
+V-094 | K3-widerspruch | erwartet OFFEN | erhalten AUSGESCHLOSSEN | Grund Status
+  warum: Personalfrage widerspruechlich: klaeren, keine stille Richtung.
+  kern:  keine künstlerische oder publizistische Leistung
+V-097 | K2-kaskade | erwartet OFFEN | erhalten AUSGENOMMEN | Grund Status
+  warum: Anteilsrechnung noetig: 600 EUR entgeltpflichtig? Rueckfrage/anteilige Kennzeichnung, kein stilles Ganz-oder-Gar-nicht.
+  kern:  Betrag liegt innerhalb der Pauschale. R-50 R-51 R-202 R-203
+V-098 | K4-varianten | erwartet OFFEN | erhalten ZAEHLT | Grund Status
+  warum: 'Stimmhilfe' ist kein Register-Synonym: bewusst erfundenes Wort. OFFEN 'keine Quelle', kein Fehlmatch auf 'stimme'.
+  kern:  Summe 0 € übersteigt die Schwelle 1000 € des Jahres 2026 nicht. R-11 R-24
+V-100 | K5-erwahnung | erwartet AUSGESCHLOSSEN | erhalten OFFEN | Grund Status
+  warum: Wartung = Handwerk. 'Musik'/'Chor' nur Kontext.
+  kern:  Kein Eintrag im Tätigkeitsregister trifft den Text. Es wird nicht geraten. C4
+V-105 | K8-mengen | erwartet ZAEHLT | erhalten OFFEN | Grund Status
+  warum: Mengen- und Grenzstabilitaet: 1.500 EUR eindeutig, Schwelle ueberschritten; 0,00-Position unbedenklich.
+  kern:  Kein Eintrag im Tätigkeitsregister trifft den Text. Es wird nicht geraten. C4
+V-107 | K2-kaskade | erwartet ZAEHLT | erhalten OFFEN | Grund Status
+  warum: Theaterunternehmen = typischer Verwerter (Info 7): keine Schwelle. Zaehlt ohne Jahresrest-Rueckfrage.
+  kern:  Kein Eintrag im Tätigkeitsregister trifft den Text. Es wird nicht geraten. C4
+V-108 | K2-kaskade | erwartet OFFEN | erhalten ZAEHLT | Grund Status
+  warum: Zwei Zeilen: Autor-Zaehlung + Lizenz-Ausnahme. Erwartung Splitting, Gesamtentscheid mit beiden Teilergebnissen.
+  kern:  Summe 0 € übersteigt die Schwelle 1000 € des Jahres 2026 nicht. R-11 R-24
+V-112 | K5-erwahnung | erwartet AUSGESCHLOSSEN | erhalten OFFEN | Grund Status
+  warum: Catering/Einkauf, 'Kuenstler' nur Kontext.
+  kern:  Kein Eintrag im Tätigkeitsregister trifft den Text. Es wird nicht geraten. C4
+V-116 | K2-kaskade | erwartet OFFEN | erhalten AUSGESCHLOSSEN | Grund Status
+  warum: Oeffentliche Stelle als Verwerter: Info 11/16-Konstellation, Rueckfrage ob Verwerter-Qualitaet ueberhaupt in Betracht kommt.
+  kern:  Zahlung an Kapital-/Handelsgesellschaft
+V-118 | K5-erwahnung | erwartet OFFEN | erhalten ZAEHLT | Grund Status
+  warum: Notenstich = technische Dienstleistung vs. Komposition = kuenstlerisch. Wer ist Empfaenger? Rueckfrage zur Leistungsart.
+  kern:  Summe 450 € übersteigt die Schwelle 1000 € des Jahres 2026 nicht. R-11 R-24
+V-119 | K6-register | erwartet AUSGENOMMEN | erhalten OFFEN | Grund Status
+  warum: Positiv-Kontrollfall fuer die neue Synonym-Gruppe mit Beleg: ausgenommen mit Fundstelle.
+  kern:  KSVEntgV § 1 Nr. 1 und Info 10: ohne Nachweis keine Ausnahme. Verpflegung zusätzlich an verpflegung.stunden_grenze und verpflegung.stunden_ganztag im Register gebunden. Liegt der Beleg vor? KSVEntgV-1
+V-122 | K7-grenzen | erwartet SPERRE | erhalten OFFEN | Grund Status
+  warum: Ein einziger Sperre-Grund in einer Zeile sperrt das GESAMTE Dokument vor der Aggregation. Testet Sperre-Ausbreitung ueber Zeilengrenzen.
+  kern:  Kein Eintrag im Tätigkeitsregister trifft den Text. Es wird nicht geraten. C4
+V-123 | K2-kaskade | erwartet ZAEHLT | erhalten OFFEN | Grund Status
+  warum: § 25 Abs. 1 S. 2: Veranlassung durch den Verwerter zaehlt, Zahlung durch Dritten aendert nichts. Kern-Pfad E2.
+  kern:  Kein Eintrag im Tätigkeitsregister trifft den Text. Es wird nicht geraten. C4
+V-128 | K2-kaskade | erwartet ZAEHLT | erhalten OFFEN | Grund Status
+  warum: Typischer Verwerter: Schwelle unanwendbar, 300 EUR zaehlen trotzdem. Kontrollfall dass kleine Betraege nicht still fallen gelassen werden.
+  kern:  Kein Eintrag im Tätigkeitsregister trifft den Text. Es wird nicht geraten. C4
+V-129 | K3-widerspruch | erwartet SPERRE | erhalten AUSGESCHLOSSEN | Grund Status
+  warum: Dreifach-Widerspruch Empfaengeridentitaet: kein stiller Mittelweg. SPERRE wegen Identitaetsunklarheit, alle drei Widersprueche benannt.
+  kern:  Zahlung an Kapital-/Handelsgesellschaft
+V-130 | K1-prio | erwartet ZAEHLT | erhalten OFFEN | Grund Status
+  warum: Aufbewahrungsfristen (Info 17) betreffen den Nutzer, nicht die Pruefentscheidung: sauber dokumentierte Rechnung zaehlt. Zusaetzliche Regeln speisen nicht still in die Pruefentscheidung ein.
+  kern:  Kein Eintrag im Tätigkeitsregister trifft den Text. Es wird nicht geraten. C4

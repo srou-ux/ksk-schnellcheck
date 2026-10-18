@@ -564,6 +564,11 @@ Auftrag des Nutzers: alle Fehler beheben, unabhängig vom Sprachmodell (vielleic
 - **Live (Testarchiv, Small):** 1. Lauf 7 falsch. Gegenlauf auf dem alten Stand (2eaeb5d) 3 falsch; Nachbau der vom Modell gelieferten Angaben zeigte: alter und neuer Code entscheiden gleich – Small liest dieselben Texte von Lauf zu Lauf verschieden (auch bei Temperatur 0). Zwei solcher Lesarten jetzt fest abgefangen („fünfmal … jede Rechnung 250 €“, „1.500 EUR … an die GEMA“). 2. Lauf: **3 falsch** (A-999 Messe, AT-2026-004 Firmenfeier, AT-2026-007 „Agentur (GmbH)“) – Deutungsfälle, in denen Small den Zweck selbst rät.
 - **Offen (Entscheidung nötig):** Soll ein Zweck, den nur das Modell vermutet (kein passendes Wort im Text), immer per Rückfrage bestätigt werden? Weniger falsch, mehr Rückfragen. Zum Upload-Vorschlag von ChatGPT fehlen noch: zweite Erkennung am Originalbild, Prüfung Positionen + Umsatzsteuer = Gesamt, Rechnungs- und Zahlungsdatum getrennt, Original und Angaben nebeneinander. Mistral-Dokumenterkennung würde die Datei an Mistral schicken (bisher: nur Text) – Entscheidung des Nutzers.
 
+## Adversarial-Suite (18.10.2026)
+- `tests/testsuite_adversarial_130.json` und Lauf in `tests/lauf_testsuite_100.py`. Ergebnis: `tests/ergebnis_adversarial_130.txt`.
+- 77/130. K1 12/20, K3 8/15, beide unter 100 %. K5 2/13. Suite-100 bleibt 100/100, Erfahrungs-Suite 120/120.
+- Abnahme nicht bestanden. Die Abweichungen stehen im Ergebnisfile.
+
 ## Korpus ohne Sprachmodell (18.10.2026)
 - `scripts/lauf_offline.py` ersetzt den gelöschten Chat-Lauf. 1.822 Fälle, perfekte Fakten, heutiger Kern: **1.782 richtig, 40 nachgefragt, 0 falsch**.
 - Die 40 sind Fahrtkosten ohne Beleg (F09): Grenzfall, das Soll erlaubt abgabepflichtig oder Rückfrage. Keine falsche Abgabe.
