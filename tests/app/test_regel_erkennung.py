@@ -42,6 +42,9 @@ class TestErkennung(unittest.TestCase):
 
     def test_unbekannt_und_nichts(self):
         self.assertIsNone(T.erkenne("Beratung zur Datenschutz-Grundverordnung"))
+        self.assertIsNone(T.erkenne("Evaluation des Konzerts durch eine Soziologin"))
+        self.assertEqual(T.erkenne("Konzert"), "T-07")
+        self.assertEqual(T.erkenne("Konzerthonorar"), "T-07")
         self.assertEqual(T.kombiniere(None, None, beschrieben=True), T.UNBEKANNT)
         self.assertIsNone(T.kombiniere(None, None, beschrieben=False))
         self.assertEqual(T.gruppe(T.UNBEKANNT), "unsicher")

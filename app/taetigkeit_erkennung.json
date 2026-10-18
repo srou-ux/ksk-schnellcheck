@@ -38,5 +38,8 @@
   ],
   "_hinweis_kontakt": "Live-Lauf 15.10.2026 (korpus-j10-oa2, KB-1641): 'Unsere Firma sitzt in 10115 Berlin, Telefon 030 1234567' traf 'telefon' (Nebenkosten, T-67 unsicher) -> Grenzfall. Folgt auf ein Wort, das mit einem 'kontakt_woerter' beginnt, direkt eine Telefonnummer (mindestens sechs Ziffern, kein Euro-Betrag), ist es eine Kontaktangabe, keine Leistung.",
   "eigene_seite_davor": "(?:\\bunser\\w*|\\bwir sind (?:ein|eine|einer)?|\\bich bin (?:ein|eine)?)\\s*(?:[\\w-]+\\s+){1,2}(?:fuer|im bereich|in der)\\s+$",
-  "_hinweis_eigene_seite": "Live-Lauf 16.10.2026 (ganzer Korpus, KB-0587): 'Unsere Agentur für Öffentlichkeitsarbeit … einem freien Sprecher' – 'Öffentlichkeitsarbeit' (T-60) beschreibt den AUFTRAGGEBER, nicht die Leistung; mit dem Sprecher (T-05) ergab es einen Widerspruch (Grenzfall). Ein Begriff direkt nach 'unser(e) <Wort> für' / 'wir sind eine <Wort> für' (Muster 'eigene_seite_davor', auf den Text in Kleinschreibung ohne Umlaute) zählt nicht als Leistung."
+  "_hinweis_eigene_seite": "Live-Lauf 16.10.2026 (ganzer Korpus, KB-0587): 'Unsere Agentur für Öffentlichkeitsarbeit … einem freien Sprecher' – 'Öffentlichkeitsarbeit' (T-60) beschreibt den AUFTRAGGEBER, nicht die Leistung; mit dem Sprecher (T-05) ergab es einen Widerspruch (Grenzfall). Ein Begriff direkt nach 'unser(e) <Wort> für' / 'wir sind eine <Wort> für' (Muster 'eigene_seite_davor', auf den Text in Kleinschreibung ohne Umlaute) zählt nicht als Leistung.",
+  "erwaehnung_begriffe": ["konzert", "musik"],
+  "erwaehnung_davor": ["des ", "eines "],
+  "_hinweis_erwaehnung": "Ein Begriff zählt nur, wenn er die Leistung benennt. 'des Konzerts' in 'Evaluation des Konzerts durch eine Soziologin' erwähnt das Konzert, ist aber nicht die abgerechnete Leistung."
 }

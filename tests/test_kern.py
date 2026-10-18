@@ -219,6 +219,49 @@ class GeneralklauselOhneVeranstaltungen(unittest.TestCase):
         self.assertEqual(e4.regeln, ["R-14", "R-132"])
 
 
+class Dokumentpruefung(unittest.TestCase):
+    def test_rechenprobe_widerspruch_sperrt_ohne_abgabe(self):
+        e = K.rechenprobe_brutto(1000, 190, 1200, 2026)
+        self.assertEqual(e.klasse, K.SPERRE)
+        self.assertIn("Rechenprobe brutto", e.begruendung)
+        self.assertIsNone(e.abgabe)
+        self.assertIsNone(e.bemessungsgrundlage)
+        self.assertIsNone(K.rechenprobe_brutto(1000, 190, 1190, 2026))
+
+    def test_doppelte_positionsnummer_sperrt(self):
+        e = K.positionsnummern_doppelt([7, 7], 2026)
+        self.assertEqual(e.klasse, K.SPERRE)
+        self.assertIn("doppelte Positionsnummer", e.begruendung[0])
+        self.assertIsNone(e.abgabe)
+        self.assertIsNone(K.positionsnummern_doppelt([1, 2], 2026))
+
+    def test_negative_summe_ohne_storno_sperrt_mit_storno_offen(self):
+        gesperrt = K.gesamtsumme_negativ(-350, False, 2026)
+        self.assertEqual(gesperrt.klasse, K.SPERRE)
+        self.assertIsNone(gesperrt.abgabe)
+        offen = K.gesamtsumme_negativ(-350, True, 2026)
+        self.assertEqual(offen.klasse, K.RUECKFRAGE)
+        self.assertNotEqual(offen.klasse, K.SPERRE)
+
+    def test_paragraph19_und_skonto(self):
+        e = K.widerspruch_paragraph19(True, True, 2026)
+        self.assertEqual(e.klasse, K.SPERRE)
+        self.assertIn("§19", e.begruendung[0])
+        self.assertIsNone(e.abgabe)
+        self.assertIsNone(K.widerspruch_paragraph19(True, False, 2026))
+        skonto = K.skonto_unklar(2026)
+        self.assertEqual(skonto.klasse, K.RUECKFRAGE)
+        self.assertNotEqual(skonto.klasse, K.SPERRE)
+
+    def test_ein_cent_hinweis_zwei_cent_sperre(self):
+        self.assertEqual(K.rundungshinweis("Rundungsdifferenz 1 Cent zwischen Positionssumme und Kopfsumme", 2026),
+                         "Rundungsdifferenz 1 ct, rechnerisch unbedeutend")
+        self.assertIsNone(K.pruefe_sperre("Rundungsdifferenz 1 Cent zwischen Positionssumme und Kopfsumme", 2026))
+        zwei = K.pruefe_sperre("Rundungsdifferenz 2 Cent zwischen Positionssumme und Kopfsumme", 2026)
+        self.assertEqual(zwei.klasse, K.SPERRE)
+        self.assertIsNone(zwei.abgabe)
+
+
 class Wächter(unittest.TestCase):
     def test_keine_fachlichen_festwerte_im_kern(self):
         """Zahlen im Code nur technisch: 100 (Prozent), 0.01 (Cent), 12/31 (Kalenderjahresende). Alles andere gehört ins Regelregister."""

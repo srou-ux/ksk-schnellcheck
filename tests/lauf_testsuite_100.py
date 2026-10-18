@@ -146,6 +146,9 @@ def messe(test: dict) -> tuple[str, str]:
             if katalog is not None:
                 return _aus_klasse(katalog.klasse), katalog.klasse
         ergebnis = K.pruefe_positionen(jahr, [pos])
+        hinweis = K.rundungshinweis(txt, jahr)
+        if hinweis:
+            ergebnis.begruendung.append(hinweis)
         if ergebnis.klasse == K.GRENZFALL:
             return "ZAEHLT", ergebnis.klasse
         return _aus_klasse(ergebnis.klasse), ergebnis.klasse

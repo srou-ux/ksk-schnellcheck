@@ -518,7 +518,7 @@
   },
   {
    "schluessel": "sperre.positionsnummer",
-   "wert": "sperre",
+   "wert": "doppelte Positionsnummer — Zeilensplitting oder Duplikat prüfen",
    "einheit": "Text",
    "operator": null,
    "von": 2015,
@@ -529,7 +529,7 @@
   },
   {
    "schluessel": "sperre.rechnungsbetrag",
-   "wert": "sperre",
+   "wert": "Rechenprobe brutto",
    "einheit": "Text",
    "operator": null,
    "von": 2015,
@@ -540,7 +540,7 @@
   },
   {
    "schluessel": "sperre.negative_summe",
-   "wert": "sperre",
+   "wert": "Negative Gesamtsumme ohne Stornorechnung",
    "einheit": "Text",
    "operator": null,
    "von": 2015,
@@ -859,7 +859,7 @@
   },
   {
    "schluessel": "sperre.paragraph19",
-   "wert": "sperre",
+   "wert": "Widerspruch §19 UStG — Rechnung prüfen",
    "einheit": "Text",
    "operator": null,
    "von": 2015,
@@ -910,6 +910,50 @@
    "bis": null,
    "regel": "F-006",
    "fundstelle": "Buchhaltung ist keine kuenstlerische oder publizistische Leistung",
+   "status": "Entwurf – vom Steuerberater zu prüfen"
+  },
+  {
+   "schluessel": "sperre.toleranz_ab",
+   "wert": "0.02",
+   "einheit": "Euro",
+   "operator": null,
+   "von": 2015,
+   "bis": null,
+   "regel": "A3",
+   "fundstelle": "Rechenprobe A2/A3: Rundungsdifferenz ab 2 Cent ist eine Sperre",
+   "status": "Entwurf – vom Steuerberater zu prüfen"
+  },
+  {
+   "schluessel": "sperre.toleranz_hinweis",
+   "wert": "Rundungsdifferenz 1 ct, rechnerisch unbedeutend",
+   "einheit": "Text",
+   "operator": null,
+   "von": 2015,
+   "bis": null,
+   "regel": "A3",
+   "fundstelle": "Rechenprobe A2/A3: bis 1 Cent kein Sperrgrund",
+   "status": "Entwurf – vom Steuerberater zu prüfen"
+  },
+  {
+   "schluessel": "offen.skonto",
+   "wert": "Ist der Skonto in der Summe enthalten?",
+   "einheit": "Text",
+   "operator": null,
+   "von": 2015,
+   "bis": null,
+   "regel": "A3",
+   "fundstelle": "Rechenprobe A2/A3: Skonto-Abzug unklar, keine Sperre",
+   "status": "Entwurf – vom Steuerberater zu prüfen"
+  },
+  {
+   "schluessel": "offen.storno",
+   "wert": "Storno im selben Jahr: Saldierung ist zu prüfen",
+   "einheit": "Text",
+   "operator": null,
+   "von": 2015,
+   "bis": null,
+   "regel": "A4",
+   "fundstelle": "Rechenprobe A2/A3: negative Summe mit Storno bleibt offen",
    "status": "Entwurf – vom Steuerberater zu prüfen"
   }
  ]

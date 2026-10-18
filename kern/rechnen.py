@@ -590,9 +590,10 @@ def analysiere_rechnung(jahr, positionen, empfaenger_abgabepflichtig=None, agent
 def _sperre_aus(schluessel, jahr):
     """Sperre ohne Bemessung und ohne Abgabe. Grund und Fundstelle stehen im Register."""
     eintrag = reg(schluessel, jahr)
+    grund = eintrag["wert"] if eintrag["wert"] and eintrag["wert"] != "sperre" else eintrag["fundstelle"]
     return Ergebnis(
         SPERRE,
-        [f"Sperre: {eintrag['fundstelle']}"],
+        [grund],
         fundstellen=[eintrag["fundstelle"]],
         regeln=[eintrag["regel"]],
     )
@@ -606,8 +607,8 @@ def pruefe_sperre(text, jahr):
         treffer = re.search(r"(\d+)\s*cent", low)
         if treffer:
             diff = D(treffer.group(1)) / D(100)
-            if diff > D(reg("sperre.toleranz", jahr)["wert"]):
-                return _sperre_aus("sperre.toleranz", jahr)
+            if diff >= D(reg("sperre.toleranz_ab", jahr)["wert"]):
+                return _sperre_aus("sperre.toleranz_ab", jahr)
             return None
     if "summenfehler" in low or ("gedruckte" in low and ("positionen ergeben" in low or "positionssumme" in low)):
         return _sperre_aus("sperre.summenabweichung", jahr)
@@ -618,6 +619,8 @@ def pruefe_sperre(text, jahr):
     if "rechnungsbetrag" in low and "netto" in low and ("≠" in text or "!=" in text or "gedruckt" in low) and "korrekt" not in low:
         return _sperre_aus("sperre.rechnungsbetrag", jahr)
     if "negative gesamtsumme" in low or re.search(r"gesamtsumme\s*-\s*\d", low):
+        if "storno" in low:
+            return None
         return _sperre_aus("sperre.negative_summe", jahr)
     if "kleinunternehmer" in low and any(wort in low for wort in ("unzulässig", "widerspruch", "trotzdem")):
         return _sperre_aus("sperre.paragraph19", jahr)
@@ -712,13 +715,81 @@ def pruefe_beleg(text, betrag, jahr):
     return None
 
 
+@_luecke
+def rechenprobe_brutto(netto, ust, brutto, jahr):
+    """Netto plus Umsatzsteuer muss der Bruttosumme entsprechen. Widerspruch sperrt, ohne Abgabe."""
+    diff = abs(_d(netto) + _d(ust) - _d(brutto))
+    if diff >= D(reg("sperre.toleranz_ab", jahr)["wert"]) or diff > D(reg("sperre.toleranz", jahr)["wert"]):
+        return _sperre_aus("sperre.rechnungsbetrag", jahr)
+    return None
+
+
+@_luecke
+def positionsnummern_doppelt(nummern, jahr):
+    """Dieselbe Positionsnummer auf zwei Zeilen sperrt."""
+    if len(list(nummern)) != len(set(nummern)):
+        return _sperre_aus("sperre.positionsnummer", jahr)
+    return None
+
+
+@_luecke
+def gesamtsumme_negativ(summe, storno_im_selben_jahr, jahr):
+    """Negative Gesamtsumme ohne Storno im selben Jahr sperrt. Mit Storno bleibt die Saldierung offen."""
+    if _d(summe) < 0 and storno_im_selben_jahr:
+        return saldierung_storno(jahr)
+    if _d(summe) < 0:
+        return _sperre_aus("sperre.negative_summe", jahr)
+    return None
+
+
+@_luecke
+def widerspruch_paragraph19(kleinunternehmer, ust_ausgewiesen, jahr):
+    """Kleinunternehmer-Regelung und ausgewiesene Umsatzsteuer zugleich sperren."""
+    if kleinunternehmer and ust_ausgewiesen:
+        return _sperre_aus("sperre.paragraph19", jahr)
+    return None
+
+
+@_luecke
+def skonto_unklar(jahr):
+    """Skonto, dessen Abzug unklar ist, wird nachgefragt und nicht gesperrt."""
+    eintrag = reg("offen.skonto", jahr)
+    return Ergebnis(RUECKFRAGE, [eintrag["wert"]], fundstellen=[eintrag["fundstelle"]], rueckfragen=[eintrag["wert"]], regeln=[eintrag["regel"]])
+
+
+@_luecke
+def saldierung_storno(jahr):
+    """Storno im selben Jahr: keine Sperre, die Saldierung bleibt zu prüfen."""
+    eintrag = reg("offen.storno", jahr)
+    return Ergebnis(RUECKFRAGE, [eintrag["wert"]], fundstellen=[eintrag["fundstelle"]], rueckfragen=[eintrag["wert"]], regeln=[eintrag["regel"]])
+
+
+@_luecke
+def rundungshinweis(text, jahr):
+    """Bis zur Toleranz kein Sperrgrund, aber ein Hinweis in der Begründung."""
+    low = text.lower()
+    if "rundungsdifferenz" not in low:
+        return None
+    treffer = re.search(r"(\d+)\s*cent", low)
+    if not treffer:
+        return None
+    diff = D(treffer.group(1)) / D(100)
+    if diff > D(reg("sperre.toleranz", jahr)["wert"]):
+        return None
+    if diff <= 0:
+        return None
+    return reg("sperre.toleranz_hinweis", jahr)["wert"]
+
+
 def pruefe_klarstellung(text, betrag, jahr):
     """Fälle, die der Kern nicht still zuordnet: Währung, Jahresgrenze, Datum, Vertrag."""
     low = text.lower()
     if ("chf" in low or "usd" in low) and ("umrechnung" in low or "ohne kurs" in low):
         return Ergebnis(RUECKFRAGE, ["Fremdwährung ohne Umrechnungsnachweis."], rueckfragen=["Wie wurde umgerechnet?"], regeln=["A3"])
     if "skonto" in low:
-        return Ergebnis(RUECKFRAGE, ["Skonto ist nicht eindeutig in der Summe enthalten."], rueckfragen=["Ist der Skonto bereits abgezogen?"], regeln=["A3"])
+        return skonto_unklar(jahr)
+    if "storno" in low and ("selben jahr" in low or "negativ" in low):
+        return saldierung_storno(jahr)
     if ("ohne sie nicht" in low and "offen" in low) or "nur durch offen" in low:
         return Ergebnis(RUECKFRAGE, ["Die Schwelle steht nur, wenn offene Positionen mitzählen."], regeln=["S3a"])
     if "satz nicht belegt" in low or "noch nicht im register" in low or re.search(r"19\d\d", text):

@@ -110,6 +110,18 @@ def _muster(begriff: str) -> re.Pattern[str]:
 _VERNEINUNG = re.compile(r"(?:\bohne|\bnicht|\bexkl\w*|\babzueglich|\bausser|\bkeine?)\W+(?:\w+\W+){0,1}$")
 
 
+_ERWAEHNUNG_BEGRIFFE = frozenset(_norm(w) for w in _SPRACHE.get("erwaehnung_begriffe", []))
+_ERWAEHNUNG_DAVOR = tuple(_SPRACHE.get("erwaehnung_davor", []))
+
+
+def _ist_nur_erwaehnung(t: str, begriff: str, anfang: int) -> bool:
+    """Genitiv davor: der Begriff erwähnt den Anlass, benennt aber nicht die Leistung."""
+    if begriff not in _ERWAEHNUNG_BEGRIFFE:
+        return False
+    davor = t[max(0, anfang - 16):anfang]
+    return any(davor.endswith(prefix) for prefix in _ERWAEHNUNG_DAVOR)
+
+
 def _ist_eigener_zweck(t: str, ende: int) -> bool:
     """'Öffentlichkeitsarbeit für sich selbst' beschreibt den Zweck des Auftraggebers, nicht die Leistung."""
     folgt = t[ende:ende + int(_SPRACHE["abstand"]) + max(map(len, _SPRACHE["eigener_zweck"]))]
@@ -148,7 +160,8 @@ def _bejahte_stellen(t: str, begriff: str) -> list[tuple[int, int]]:
         if _VERNEINUNG.search(t[max(0, treffer.start() - 25):treffer.start()]):
             continue
         if (_ist_eigener_zweck(t, treffer.end()) or _ist_kontaktangabe(t, begriff, treffer.end())
-                or _beschreibt_auftraggeber(t, treffer.start())):
+                or _beschreibt_auftraggeber(t, treffer.start())
+                or _ist_nur_erwaehnung(t, begriff, treffer.start())):
             continue
         stellen.append((treffer.start(), treffer.end()))
     return stellen
