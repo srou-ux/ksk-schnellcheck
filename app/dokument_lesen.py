@@ -58,9 +58,39 @@ def textpositionen(text, beleg):
             continue
         betrag = geld(m[2])
         if betrag is not None:
-            kandidaten.append({"bezeichnung": m[1].strip(), "betrag": betrag,
+            bezeichnung = re.sub(r"^\d+\s{2,}", "", m[1].strip())
+            kandidaten.append({"bezeichnung": bezeichnung, "betrag": betrag,
                                "beleg": f"{beleg}, Zeile {n}: {zeile.strip()}"})
     return kandidaten
+
+
+def formularvorschlaege(text):
+    """Nur beschriftete Dokumentfelder. Kein Rechnungsdatum als Zahlungsjahr interpretieren."""
+    gefunden = {}
+    zeilen = text.splitlines()
+    labels = {"rechnungsempfänger", "rechnungsempfaenger", "auftraggeber"}
+    for i, zeile in enumerate(zeilen):
+        spalten = re.split(r"\s{2,}", zeile.strip())
+        for spalte, zelle in enumerate(spalten):
+            wert = None
+            label, trenner, inhalt = zelle.partition(":")
+            if label.strip().casefold() not in labels:
+                continue
+            if trenner and inhalt.strip():
+                wert = inhalt.strip()
+            elif i + 1 < len(zeilen):
+                # Nur die nächste nichtleere Zeile im selben Spaltenraster.
+                folge = next((z for z in zeilen[i + 1:] if z.strip()), "")
+                teile = re.split(r"\s{2,}", folge.strip())
+                if len(teile) == len(spalten):
+                    wert = teile[spalte].strip()
+            kopfwoerter = labels | {"rechnungssteller", "rechnungsstellerin", "leistung", "netto", "betrag"}
+            if (wert and len(wert) <= 300 and wert.casefold() not in kopfwoerter
+                    and not re.search(r":|\b(?:EUR|IBAN)\b", wert, re.I)):
+                gefunden.setdefault("unternehmensart", []).append({"wert": wert,
+                    "beleg": f"{zelle.strip()} → {wert}"})
+    # Widersprechende Empfänger, z.B. mehrere Rechnungen in einer PDF: nichts vorbelegen.
+    return {k: vs[0] for k, vs in gefunden.items() if len({v["wert"] for v in vs}) == 1}
 
 
 def _ocr(bild: Path):
@@ -132,7 +162,9 @@ def lese(pfad: Path, endung: str):
         if len(reader.pages) > KONFIG["max_seiten"]:
             raise Lesefehler("Die PDF hat zu viele Seiten. Bitte aufteilen.")
         for n, page in enumerate(reader.pages, start=1):
-            text = page.extract_text() or ""
+            # Normale Extraktion trennt häufig Beschreibung und Betrag derselben Tabellenzeile.
+            # Layout erhält ihre räumliche Zuordnung; keine verketteten Nachbarzeilen erraten.
+            text = page.extract_text(extraction_mode="layout") or ""
             if not text.strip():
                 if not shutil.which("pdftoppm"):
                     raise Lesefehler("Diese PDF enthält einen Scan. Auf dem Server fehlt Poppler für die Texterkennung.")
@@ -191,7 +223,8 @@ def lese(pfad: Path, endung: str):
         hinweise.append("Texterkennung kann Ziffern und Wörter verwechseln. Alle Beträge am Original kontrollieren.")
     if not kandidaten:
         hinweise.append("Keine eindeutigen Positionen erkannt. Sie können die Positionen unten manuell erfassen.")
-    return {"text": text, "positionen": kandidaten, "hinweise": hinweise, "methode": methode}
+    return {"text": text, "positionen": kandidaten, "hinweise": hinweise, "methode": methode,
+            "formularvorschlaege": formularvorschlaege(text)}
 
 
 def main():

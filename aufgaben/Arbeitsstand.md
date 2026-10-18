@@ -578,3 +578,12 @@ Abnahme: `python scripts/pruefe_alles.py` vorher/nachher ALLES GRÜN; 8 JavaScri
 Auf Nutzerwunsch ist die Dokumentenprüfung der automatische Einstieg: `postStartCommand` und `postAttachCommand` starten Port 8000, der als „Dokument hochladen – KSK-Prüfung“ im Browser geöffnet werden soll. Das manuelle Formular auf 8100 bleibt optional und öffnet sich nicht automatisch.
 
 Das Startskript beendet keine laufenden Server mehr. Eine Sperre verhindert parallele Starts, eine Gesundheitsprüfung prüft die tatsächliche Bereitschaft; bei Startfehlern gibt es keine falsche Erfolgsmeldung. Lokal geprüft: Shell-Syntax/JSON gültig, echter Serverstart, Upload-Seite HTTP 200, zweiter Start behält denselben Serverprozess. Die Browser-Taböffnung selbst hängt vom Codespaces-Client ab und wurde nicht in einem echten Codespace bedient. Bestehende Codespaces benötigen nach dem Pull einmal „Rebuild Container“.
+
+
+## PDF-Felder automatisch übernehmen (18.10.2026)
+
+Nur Repository `srou-ux/ksk-schnellcheck`; `ksk-assistent` wird nicht verändert. Ursache des Nutzerbefunds mit der bereitgestellten Testrechnung: Standard-PDF-Extraktion trennte die visuellen Zeilen „Logo-Gestaltung“ und „1.500,00 EUR“; der Positionsleser lieferte keine Positionen. Layout-Extraktion hält diese Zeilen zusammen, separate Positionsnummern werden entfernt. Summen und Umsatzsteuer bleiben ausgeschlossen.
+
+Eindeutig beschriftete Rechnungsempfänger/Auftraggeber werden als Vorschlag mit Textbeleg im Feld Auftraggeber vorbelegt. Keine Ableitung des Zahlungsjahres aus Rechnungsdatum/Zahlungsziel, keine automatische Zahlungsbestätigung oder Schätzung der Rechtsform. Manuelle Korrekturen werden nicht überschrieben. Unterschiedliche Empfänger entfernen eine automatische Vorbelegung und erzeugen einen sichtbaren Hinweis. Mehrdeutige Spalten werden nicht geraten.
+
+Nachweise: sechs zusätzliche Parser-Tests, zwei zusätzliche JavaScript-Tests (insgesamt zehn), bereitgestellte Original-Testrechnung über echten Upload-Endpunkt korrekt (eine Position, 1500.00, richtiger Empfänger). Browserprüfung um Upload mit getrennten PDF-Textobjekten und Kontrolle der automatisch gefüllten Felder erweitert. Vollständige Projektprüfung siehe PR/CI.

@@ -769,3 +769,10 @@ Anlass: Test des Nutzers („Bäckerei, Werbung für unser eigenes Geschäft“ 
 - Dieselbe Seite: Änderungen ließen alte Ergebnisse stehen; verspätete Antworten konnten nicht mehr passende Ergebnisse anzeigen. Behoben durch sofortiges Verwerfen und Abgleich von Eingabeversion/Anfragekennung.
 - `app/static/dokumente.html`: CSV-Felder aus Dokumenttext waren nur CSV-escaped, nicht gegen Formelauswertung geschützt. Formelpräfixe werden jetzt als Text exportiert, einschließlich führender Leer-/Steuerzeichen. Der alte Exportzustand wird bei Korrekturen gelöscht.
 - Nachweis: acht Regressionstests auf dem Original-JavaScript (vorher rot, nachher grün), vollständige Projektprüfung grün, 60 Dokument-HTTP-Fälle grün. Browserprüfung lokal offen; CI wurde ergänzt. Siehe `SCHNELLCHECK_Abnahme_2026-10-17.md`.
+
+
+## PDF-Import: leere Felder trotz lesbarem Text (18.10.2026)
+
+- `app/dokument_lesen.py`: Beschreibung und Betrag waren getrennte PDF-Textobjekte. Normale Textextraktion erzeugte zwei Zeilen, sodass der Positionsparser keinen Kandidaten erkannte. Layout-Extraktion stellt die räumliche Zeile wieder her; Test mit getrennten Textobjekten und Summenzeilen ergänzt.
+- Eindeutige Empfängerfelder wurden bisher gar nicht übernommen. Jetzt Vorschlag mit Beleg an die Oberfläche; manuelle Änderungen und Widersprüche bleiben geschützt. Angaben zu Zahlung/Jahresvollständigkeit bleiben unbestätigt.
+- Änderung ausschließlich in `ksk-schnellcheck`.

@@ -105,3 +105,29 @@ test('Verworfenes Dokumentergebnis kann nicht mehr exportiert werden',()=>{
   assert.equal(s.run('letztesErgebnis'),null);
   s.context.csvSpeichern(); // Ohne Ergebnis darf kein Download erzeugt werden.
 });
+
+
+test('Dokumentfelder werden vorbelegt, manuelle Korrekturen bleiben erhalten',()=>{
+  const s=laden('app/static/dokumente.html');
+  const v=wert=>({formularvorschlaege:{unternehmensart:{wert,beleg:'Rechnungsempfänger: '+wert}}});
+  s.element('company').value='';
+  s.context.uebernehmen(v('Bäckerei Test'),'rechnung.pdf');
+  assert.equal(s.element('company').value,'Bäckerei Test');
+  assert.match(s.element('autofill-note').textContent,/rechnung.pdf/);
+  s.element('company').value='Meine Korrektur';
+  s.element('facts').events.input({target:{id:'company'}});
+  s.context.uebernehmen(v('Andere Firma'),'zweite.pdf');
+  assert.equal(s.element('company').value,'Meine Korrektur');
+  assert.match(s.element('autofill-note').textContent,/Unterschiedliche/);
+});
+
+test('Widersprechende Empfänger entfernen eine automatische Vorbelegung',()=>{
+  const s=laden('app/static/dokumente.html');
+  const v=wert=>({formularvorschlaege:{unternehmensart:{wert,beleg:wert}}});
+  s.element('company').value='';
+  s.context.uebernehmen(v('Firma A'),'a.pdf');
+  s.context.uebernehmen(v('Firma B'),'b.pdf');
+  assert.equal(s.element('company').value,'');
+  s.context.uebernehmen(v('Firma C'),'c.pdf');
+  assert.equal(s.element('company').value,'');
+});

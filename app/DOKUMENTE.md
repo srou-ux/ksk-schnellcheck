@@ -54,3 +54,10 @@ python tests/app/playwright_dokumente.py
 Die reguläre Suite enthält Dokumenttests mit 180 erzeugten PDF-/XLSX-/CSV-Fällen sowie Gegenbeispielen für Bestätigung, Manipulation, Mischpositionen, Jahresgrenzen, unbekannte Tätigkeiten, Dateifehler und OCR. Der Live-Test startet einen echten HTTP-Server und prüft weitere 60 erzeugte Belege. Der Browsertest benötigt Playwright und Chromium; er läuft zusätzlich im GitHub-Workflow. OCR-Tests melden ausdrücklich „übersprungen“, wenn die Systemprogramme fehlen.
 
 Alle fachlichen Sollwerte folgen dem vorhandenen Entwurfsregelwerk. Erfolgreiche Tests ersetzen keine Freigabe durch einen Steuerberater und keinen Lasttest für viele gleichzeitige Nutzer.
+
+
+### Automatische Vorbelegung (18.10.2026)
+
+Text-PDFs werden unter Erhalt ihrer Zeilenanordnung gelesen. Eindeutige Positionen mit Beschreibung und Betrag erscheinen direkt in der Tabelle. Beschriftete Rechnungsempfänger bzw. Auftraggeber werden zusätzlich im Auftraggeberfeld vorgeschlagen, mit sichtbarem Textbeleg. Bereits korrigierte Felder werden nicht überschrieben. Bei verschiedenen Empfängern ist die gemeinsame Zuordnung zu klären.
+
+Das ist keine allgemeine Erkennung sämtlicher Rechnungsformate: Mehrdeutige Tabellen, mehrere Preisspalten und fehlende Beschriftungen bleiben offen. Rechnungsdatum und Zahlungsziel ersetzen keinen Zahlungsnachweis. Zahlungsjahr, tatsächliche Zahlung, Jahresvollständigkeit und nicht belegte Rechtsform müssen weiterhin ergänzt bzw. bestätigt werden.
