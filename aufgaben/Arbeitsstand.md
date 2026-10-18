@@ -564,6 +564,11 @@ Auftrag des Nutzers: alle Fehler beheben, unabhängig vom Sprachmodell (vielleic
 - **Live (Testarchiv, Small):** 1. Lauf 7 falsch. Gegenlauf auf dem alten Stand (2eaeb5d) 3 falsch; Nachbau der vom Modell gelieferten Angaben zeigte: alter und neuer Code entscheiden gleich – Small liest dieselben Texte von Lauf zu Lauf verschieden (auch bei Temperatur 0). Zwei solcher Lesarten jetzt fest abgefangen („fünfmal … jede Rechnung 250 €“, „1.500 EUR … an die GEMA“). 2. Lauf: **3 falsch** (A-999 Messe, AT-2026-004 Firmenfeier, AT-2026-007 „Agentur (GmbH)“) – Deutungsfälle, in denen Small den Zweck selbst rät.
 - **Offen (Entscheidung nötig):** Soll ein Zweck, den nur das Modell vermutet (kein passendes Wort im Text), immer per Rückfrage bestätigt werden? Weniger falsch, mehr Rückfragen. Zum Upload-Vorschlag von ChatGPT fehlen noch: zweite Erkennung am Originalbild, Prüfung Positionen + Umsatzsteuer = Gesamt, Rechnungs- und Zahlungsdatum getrennt, Original und Angaben nebeneinander. Mistral-Dokumenterkennung würde die Datei an Mistral schicken (bisher: nur Text) – Entscheidung des Nutzers.
 
+## Korpus ohne Sprachmodell (18.10.2026)
+- `scripts/lauf_offline.py` ersetzt den gelöschten Chat-Lauf. 1.822 Fälle, perfekte Fakten, heutiger Kern: **1.782 richtig, 40 nachgefragt, 0 falsch**.
+- Die 40 sind Fahrtkosten ohne Beleg (F09): Grenzfall, das Soll erlaubt abgabepflichtig oder Rückfrage. Keine falsche Abgabe.
+- Bericht: `aufgaben/audit/alltag999_auswertung.md`.
+
 ## Zahlenquellen und Eigenwerbung (18.10.2026)
 - `rules/saetze.json`: Jahre 2015–2026 aus `kern/parameter.json`. 2015–2018 ohne Schwelle. 2019–2022 sind 450 Euro Geringfügigkeit (Fassung A), 2023–2024 Fassung B. 2027 bleibt in dieser Datei leer (sichtbarer Konfigurationsfehler, Rücktest). Der Satz steht im Regelregister.
 - `daten/zahlen-werte.json`: Ehrenamt auf KSK-Info 24/24a. 450-Euro-Grenze in Fassung A (bis 2022) und Fassung B (2023–2024) geteilt. Abgabesätze 2015–2027 jahrweise; 4,9 Prozent endet 2026.

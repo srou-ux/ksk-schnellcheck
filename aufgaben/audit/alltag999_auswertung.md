@@ -63,4 +63,20 @@ Kein Fix steht im Prompt. Alles liegt in der Regelbasis (Excel und JSON-Begriffs
 - **Fundstellen:** Bei R-03 erscheint ein BSG-Urteil aus derselben Excel-Zeile unter „Norm“. Die Ebene richtet sich nach der Gruppe der Regel. Gemeldet in `FUNDE_Chatbot.md`, nicht geändert.
 - **Burggraben:** Regelbasis, Schema und Soll-Werte liegen nur im privaten Repo `srou-ux/ksk-assistent`, nichts davon ist öffentlich.
 
-Vergleich Endstand gegen vorher (77 gemeinsame Fälle, live im Browser): besser P-34, P-39; schlechter keiner; kein neuer FALSCH- oder FEHLER-Fall. Die Antworten des Modells schwanken von Lauf zu Lauf; P-28/P-30 waren in einzelnen Läufen nachgefragt. Die Fixes B8, B10 und B11 machen sie unabhängiger vom Modell.
+Vergleich Endstand gegen vorher (77 gemeinsame Fälle, live im Browser): besser P-34, P-39; schlechter keiner; kein neuer FALSCH- oder FEHLER-Fall. Die Antworten des Modells schwanken von Lauf zu Lauf; P-28/P-30 waren in einzelnen Läufen nachgefragt. Die Fixes B8, B10 und B11 machen sie unabhängig vom Modell.
+
+## Korpus neu gemessen (18.10.2026)
+
+Der alte Lauf `aufgaben/audit/korpus/lauf_offline.py` ist am 17.10.2026 mit dem Chat gelöscht worden. Ersetzt ist `scripts/lauf_offline.py`. Er nimmt die perfekten Fakten aus `aufgaben/audit/korpus_beispiele.json` und ruft den heutigen Kern auf (`app.bewertung._rufe_kern_auf`). Steht ein Betrag nur in fremder Währung, fragt `app.pflichtangaben.euro_fragen` nach dem Euro-Betrag, bevor gerechnet wird. Bewertung wie im alten Prüfkatalog: passende Klasse und passende Zahl = richtig; Rückfrage, Grenzfall oder fehlende Quelle statt eines sicheren Solls = nachgefragt; eine andere sichere Klasse oder eine andere Zahl = falsch.
+
+Der Korpus hat 1.822 Fälle, nicht 1.000. Die Zahl 876/0/124 steht in keiner Ergebnisdatei. Der letzte gespeicherte Orakel-Lauf (17.10.2026, `792fb2c`) war 1.822 richtig, 0 nachgefragt, 0 falsch.
+
+| Messung | Fälle | richtig | nachgefragt | falsch |
+|---|---|---|---|---|
+| Genanntes Vergleichsziel | 1.000 | 876 | 124 | 0 |
+| Letzter gespeicherter Orakel-Lauf | 1.822 | 1.822 | 0 | 0 |
+| Heute, aktueller Kern | 1.822 | 1.782 | 40 | **0** |
+
+0 falsch. 40 Nachfragen, das liegt unter 124.
+
+Die 40 Nachfragen sind alle Familie F09, Fahrtkosten ohne Beleg (KB-1057 bis KB-1135, jeder zweite Fall). Das Soll erlaubt abgabepflichtig oder Rückfrage. Der Kern liefert Grenzfall, weil die Fahrtkostenzeile keine Tätigkeits-ID hat und die Summe verändert. Es wird keine falsche Abgabe ausgegeben. Die übrigen 18 Familien sind 0 nachgefragt und 0 falsch, einschließlich Fremdwährung (F11) und Säumniszuschlag (F15).

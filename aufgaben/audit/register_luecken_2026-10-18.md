@@ -8,7 +8,7 @@ Entwurf – vom Steuerberater zu prüfen. Eingetragen wurde nur, was in den PDFs
 - Erfahrungs-Suite: 120/120
 - In diesem Durchgang hat sich keine Erwartung geändert (keine Zeile OFFEN → entschieden).
 - `tests/test_kern.py`: 42 Tests, Wächter grün, `parameter.json` passt zur Excel
-- `aufgaben/audit/korpus/lauf_offline.py` liegt nicht im Repo. Die historische 1.000er-Kontrolle (0 falsch, 124 Rückfragen) konnte damit nicht neu gemessen werden.
+- Korpus neu gemessen (`scripts/lauf_offline.py`): 1.822 Fälle, 1.782 richtig, 40 nachgefragt, 0 falsch. Die 40 sind F09 ohne Beleg (Grenzfall). Einzelheiten in `aufgaben/audit/alltag999_auswertung.md`.
 
 ## Bestandskorrektur (zweiter Durchgang)
 
