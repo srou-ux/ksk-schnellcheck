@@ -26,6 +26,11 @@ jobs:
         run: pip install --disable-pip-version-check -r app/requirements.txt -r app/requirements-test.txt
       - name: Alle Prüfungen (Regelwerk, Quellen, Prüfsummen, Kern, Testfälle, Schnellcheck, App, Gegenrechnung)
         run: python scripts/pruefe_alles.py
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Betragseingabe, Ergebniszustand und CSV-Schutz
+        run: node --test tests/schnellcheck/frontend.test.cjs
   oberflaeche:
     # Echter Browser und echter HTTP-Server, Fotos/Scans mit Tesseract und Poppler (wie auf dem Server).
     runs-on: ubuntu-24.04
@@ -40,6 +45,8 @@ jobs:
       - run: sudo apt-get update -q && sudo apt-get install -y -q tesseract-ocr tesseract-ocr-deu poppler-utils
       - run: pip install --disable-pip-version-check -r app/requirements.txt -r app/requirements-test.txt playwright
       - run: playwright install --with-deps chromium
+      - name: Schnellcheck im Browser
+        run: python tests/schnellcheck/playwright_schnellcheck.py
       - name: Dokumentenoberfläche im Browser
         run: python tests/app/playwright_dokumente.py
       - name: Dokumentenprüfung über echten HTTP-Server

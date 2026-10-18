@@ -51,3 +51,14 @@ ergänzen und im Webserver/Proxy keine Anfrageinhalte protokollieren.
     python -m unittest discover -s tests/schnellcheck -t .
 
 Läuft auch in `python scripts/pruefe_alles.py` mit (muss „ALLES GRÜN“ melden).
+
+Die JavaScript-Regressionstests benötigen zusätzlich Node.js (keine npm-Pakete):
+
+    node --test tests/schnellcheck/frontend.test.cjs
+
+Sie prüfen die echte Seitenlogik für Betragseingabe, veraltete Antworten und den CSV-Export.
+Für den vollständigen Browserablauf nach Installation von Playwright und Chromium:
+
+    python tests/schnellcheck/playwright_schnellcheck.py
+
+Beide Prüfungen sind im GitHub-Workflow `Prüfen` eingebunden.

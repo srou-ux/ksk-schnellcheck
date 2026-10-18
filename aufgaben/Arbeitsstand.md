@@ -564,3 +564,10 @@ Auftrag des Nutzers: alle Fehler beheben, unabhängig vom Sprachmodell (vielleic
 - **Live (Testarchiv, Small):** 1. Lauf 7 falsch. Gegenlauf auf dem alten Stand (2eaeb5d) 3 falsch; Nachbau der vom Modell gelieferten Angaben zeigte: alter und neuer Code entscheiden gleich – Small liest dieselben Texte von Lauf zu Lauf verschieden (auch bei Temperatur 0). Zwei solcher Lesarten jetzt fest abgefangen („fünfmal … jede Rechnung 250 €“, „1.500 EUR … an die GEMA“). 2. Lauf: **3 falsch** (A-999 Messe, AT-2026-004 Firmenfeier, AT-2026-007 „Agentur (GmbH)“) – Deutungsfälle, in denen Small den Zweck selbst rät.
 - **Offen (Entscheidung nötig):** Soll ein Zweck, den nur das Modell vermutet (kein passendes Wort im Text), immer per Rückfrage bestätigt werden? Weniger falsch, mehr Rückfragen. Zum Upload-Vorschlag von ChatGPT fehlen noch: zweite Erkennung am Originalbild, Prüfung Positionen + Umsatzsteuer = Gesamt, Rechnungs- und Zahlungsdatum getrennt, Original und Angaben nebeneinander. Mistral-Dokumenterkennung würde die Datei an Mistral schicken (bisher: nur Text) – Entscheidung des Nutzers.
 
+
+
+## KSK-Schnellcheck: Oberflächenfehler abgesichert (17.10.2026, Codex)
+
+Basis im neuen Repository: `5994db7`. Der bestehende Schnellcheck bleibt erhalten; kein Austausch durch den parallelen lokalen Entwurf. Betragseingabe verwirft fehlerhafte Trennzeichen statt Beträge zu verändern. Änderungen verwerfen alte Ergebnisse, verspätete Antworten ebenfalls. Dokumenten-CSV neutralisiert Formelpräfixe; Korrekturen löschen den Exportzustand. Regeln, Zahlen und Quellen unverändert.
+
+Abnahme: `python scripts/pruefe_alles.py` vorher/nachher ALLES GRÜN; 8 JavaScript-Regressionstests bestanden; 60/60 Dokumentfälle über echten HTTP-Server bestanden. Neuer Schnellcheck-Browsertest in CI eingebunden, lokal mangels Chromium nicht ausgeführt. Details und Grenzen: `aufgaben/SCHNELLCHECK_Abnahme_2026-10-17.md`. Separater Pull Request, kein automatischer Merge.
