@@ -12,6 +12,7 @@ SCHRITTE = [
     ("Quellen unverändert (Prüfsummen, nur ergänzen)", [PY, "scripts/pruefsummen.py", "--pruefen"]),
     ("parameter.json passt zur Excel", [PY, "kern/erzeuge_parameter.py", "--pruefen"]),
     ("Kern-Tests (inkl. Regelregister, Wächter gegen Festwerte)", [PY, "tests/test_kern.py"]),
+    ("Extraktion ohne Netz (Regel, Konfidenz, Schema)", [PY, "tests/extraktion/test_adapter.py"]),
     ("Testfälle gegen den Kern", [PY, "tests/lauf_testfaelle.py"]),
     ("Testarchiv aktuell (alle Chatbot-Testfälle mit Soll, nur ergänzen)", [PY, "scripts/erzeuge_testarchiv.py", "--pruefen"]),
 ]

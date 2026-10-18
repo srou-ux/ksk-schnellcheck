@@ -564,6 +564,13 @@ Auftrag des Nutzers: alle Fehler beheben, unabhängig vom Sprachmodell (vielleic
 - **Live (Testarchiv, Small):** 1. Lauf 7 falsch. Gegenlauf auf dem alten Stand (2eaeb5d) 3 falsch; Nachbau der vom Modell gelieferten Angaben zeigte: alter und neuer Code entscheiden gleich – Small liest dieselben Texte von Lauf zu Lauf verschieden (auch bei Temperatur 0). Zwei solcher Lesarten jetzt fest abgefangen („fünfmal … jede Rechnung 250 €“, „1.500 EUR … an die GEMA“). 2. Lauf: **3 falsch** (A-999 Messe, AT-2026-004 Firmenfeier, AT-2026-007 „Agentur (GmbH)“) – Deutungsfälle, in denen Small den Zweck selbst rät.
 - **Offen (Entscheidung nötig):** Soll ein Zweck, den nur das Modell vermutet (kein passendes Wort im Text), immer per Rückfrage bestätigt werden? Weniger falsch, mehr Rückfragen. Zum Upload-Vorschlag von ChatGPT fehlen noch: zweite Erkennung am Originalbild, Prüfung Positionen + Umsatzsteuer = Gesamt, Rechnungs- und Zahlungsdatum getrennt, Original und Angaben nebeneinander. Mistral-Dokumenterkennung würde die Datei an Mistral schicken (bisher: nur Text) – Entscheidung des Nutzers.
 
+## Extraktion vor dem Kern (18.10.2026)
+- Neues Paket `extraktion/`: `extrahiere_dokument` mit `rule` und `mistral`. Der Kern wird nicht aufgerufen, um eine Klasse zu wählen, und nicht verändert. App, Kern, Gegenrechnung und Schnellcheck bleiben ohne Sprachmodell.
+- Mistral ist zweistufig und gepinnt: OCR `mistral-ocr-4-1`, dann `mistral-small-latest`. Drei Ablesungen, keine Mittelung. Block unter 0,85 Konfidenz fällt weg. Medium nur, wenn Small kein gültiges JSON liefert. Schlüssel nur aus `MISTRAL_API_KEY` oder `config/secrets.env`.
+- Regel-Leser auf der Suite 130, ohne die hinterlegten Strukturfelder: **91/130**. Bericht `tests/ergebnis_extraktion_vergleich.txt`.
+- Mistral-Spalte nicht gemessen: der hinterlegte Schlüssel kommt mit 401 zurück. Keine Teilquote, keine Token. Kostenlog leer in `tests/ergebnis_extraktion_kosten.txt`.
+- Suite-100 100/100, Erfahrungs-Suite 120/120, Adversarial mit hinterlegter Struktur bleibt 95/130.
+
 ## Adversarial-Etappe 1 (18.10.2026)
 - Strukturierte Dokumentfelder in der Adversarial-Suite. `kern/rechnen.py` prüft sie vor Szenario und Tätigkeit: Summenprobe, doppelte Positionsnummer, § 19, negative Summe, Cent-Toleranz. Eine fehlerhafte Zeile sperrt das Dokument.
 - Neue Registerzeile `sperre.rechtsform` (Rechenprobe A2/A3): zwei Rechtsformen werden nicht still gewählt.

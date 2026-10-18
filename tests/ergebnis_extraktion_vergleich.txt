@@ -1,0 +1,68 @@
+Vergleich Extraktion, Suite 130. Kern unverändert. Strukturfelder der Suite werden nicht als Lesung benutzt.
+Fehlerquelle Extraktion: das Feld war leer oder unsicher. Fehlerquelle Kern: Felder lagen vor, die Entscheidung weicht ab.
+
+Regel-Leser
+
+  K1-prio                19/20
+  K2-kaskade             12/22
+  K3-widerspruch         11/15
+  K4-varianten           15/19
+  K5-erwahnung           2/13
+  K6-register            11/15
+  K7-grenzen             9/13
+  K8-mengen              12/13
+Gesamt 91/130
+
+Paar-Check
+  V-119/V-120: FEHLER
+  V-123/V-124: FEHLER
+  V-092/V-093: beide richtig
+  V-082/V-083: beide richtig
+  V-061/V-101: beide richtig
+Sperre-Ausbreitung
+  V-122: sperrt das Dokument
+  V-125: sperrt das Dokument
+
+Abweichungen
+V-014 | K2-kaskade | erwartet AUSGESCHLOSSEN | erhalten OFFEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
+V-016 | K2-kaskade | erwartet OFFEN | erhalten ZAEHLT | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
+V-020 | K2-kaskade | erwartet OFFEN | erhalten AUSGESCHLOSSEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
+V-021 | K2-kaskade | erwartet OFFEN | erhalten AUSGESCHLOSSEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
+V-030 | K3-widerspruch | erwartet SPERRE | erhalten OFFEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
+V-034 | K3-widerspruch | erwartet SPERRE | erhalten OFFEN | Kern | Felder lagen vor, der Kern hat anders entschieden. Kernregel prüfen, Erwartung nicht verbiegen.
+V-035 | K3-widerspruch | erwartet OFFEN | erhalten ZAEHLT | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
+V-038 | K4-varianten | erwartet OFFEN | erhalten ZAEHLT | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
+V-043 | K4-varianten | erwartet OFFEN | erhalten ZAEHLT | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
+V-049 | K4-varianten | erwartet OFFEN | erhalten ZAEHLT | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
+V-051 | K5-erwahnung | erwartet AUSGESCHLOSSEN | erhalten OFFEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
+V-052 | K5-erwahnung | erwartet AUSGESCHLOSSEN | erhalten OFFEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
+V-053 | K5-erwahnung | erwartet AUSGESCHLOSSEN | erhalten OFFEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
+V-054 | K5-erwahnung | erwartet AUSGESCHLOSSEN | erhalten OFFEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
+V-055 | K5-erwahnung | erwartet AUSGESCHLOSSEN | erhalten OFFEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
+V-056 | K5-erwahnung | erwartet AUSGESCHLOSSEN | erhalten OFFEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
+V-057 | K5-erwahnung | erwartet ZAEHLT | erhalten AUSGESCHLOSSEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
+V-059 | K5-erwahnung | erwartet AUSGESCHLOSSEN | erhalten OFFEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
+V-062 | K6-register | erwartet OFFEN | erhalten ZAEHLT | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
+V-068 | K6-register | erwartet AUSGENOMMEN | erhalten OFFEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
+V-070 | K6-register | erwartet AUSGENOMMEN | erhalten OFFEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
+V-072 | K7-grenzen | erwartet ZAEHLT | erhalten OFFEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
+V-074 | K7-grenzen | erwartet ZAEHLT | erhalten OFFEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
+V-075 | K7-grenzen | erwartet OFFEN | erhalten ZAEHLT | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
+V-076 | K7-grenzen | erwartet ZAEHLT | erhalten OFFEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
+V-094 | K3-widerspruch | erwartet OFFEN | erhalten AUSGESCHLOSSEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
+V-097 | K2-kaskade | erwartet OFFEN | erhalten AUSGENOMMEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
+V-098 | K4-varianten | erwartet OFFEN | erhalten ZAEHLT | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
+V-100 | K5-erwahnung | erwartet AUSGESCHLOSSEN | erhalten OFFEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
+V-105 | K8-mengen | erwartet ZAEHLT | erhalten OFFEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
+V-107 | K2-kaskade | erwartet ZAEHLT | erhalten OFFEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
+V-108 | K2-kaskade | erwartet OFFEN | erhalten ZAEHLT | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
+V-112 | K5-erwahnung | erwartet AUSGESCHLOSSEN | erhalten OFFEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
+V-116 | K2-kaskade | erwartet OFFEN | erhalten AUSGESCHLOSSEN | Kern | Felder lagen vor, der Kern hat anders entschieden. Kernregel prüfen, Erwartung nicht verbiegen.
+V-118 | K5-erwahnung | erwartet OFFEN | erhalten ZAEHLT | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
+V-119 | K6-register | erwartet AUSGENOMMEN | erhalten OFFEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
+V-123 | K2-kaskade | erwartet ZAEHLT | erhalten OFFEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
+V-128 | K2-kaskade | erwartet ZAEHLT | erhalten OFFEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
+V-130 | K1-prio | erwartet ZAEHLT | erhalten OFFEN | Extraktion | Feld leer oder unsicher gelesen. Nicht mitteln, nicht still übernehmen. Leser nachschärfen.
+
+Mistral nicht gemessen. Aufruf abgebrochen: Mistral-Aufruf 401: {"detail":"Invalid API Key"}
+ Es gibt keine Teilquote.

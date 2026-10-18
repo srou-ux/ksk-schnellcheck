@@ -1,0 +1,8 @@
+{
+  "MISTRAL_OCR_MODEL": "mistral-ocr-4-1",
+  "MISTRAL_SMALL_MODEL": "mistral-small-latest",
+  "MISTRAL_MEDIUM_MODEL": "mistral-medium-latest",
+  "ocr_konfidenz_minimum": 0.85,
+  "ablesungen": 3,
+  "endpunkt": "https://api.mistral.ai"
+}

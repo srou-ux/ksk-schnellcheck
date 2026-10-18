@@ -1,0 +1,3 @@
+Kostenlog Extraktion. Beträge in Token und Seiten, kein geschätzter Euro-Preis.
+Aufrufe 0 | Seiten 0 | Prompt-Token 0 | Completion-Token 0
+
