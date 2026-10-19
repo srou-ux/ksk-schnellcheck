@@ -2,13 +2,17 @@ import os
 import pathlib
 import sys
 import unittest
+from decimal import Decimal
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[2]))
 
+from extraktion.belege import trenne
 from extraktion.felder import an_kern, aus_modell, dezimal
-from extraktion.schluessel import ablage, schluessel
 from extraktion.konfidenz import bloecke_filtern, einigung
+from extraktion.schluessel import ablage, schluessel
 from extraktion.schnittstelle import extrahiere_dokument
+from extraktion.verbatim import nur_woertlich, steht
+from kern import rechnen as K
 
 
 def _lesung(**kwargs):
@@ -90,6 +94,23 @@ class Konfidenz(unittest.TestCase):
         self.assertEqual(dezimal(felder["summen"]["kopfsumme"]), "10.00")
         self.assertFalse(felder["unsicher"])
 
+    def test_abweichende_zeilensteuer_loescht_nicht_den_namen(self):
+        zeile = {
+            "nr": "01", "betrag": "1800.00", "text": "Foto", "betragswiderspruch": False,
+            "unsicher": False, "netto": "1800.00", "ust": "", "satz": "",
+        }
+        andere = dict(zeile)
+        andere["ust"] = "342.00"
+        a = _lesung(empfaenger_name="Steinbach Naturstein GmbH", positionen=[zeile], summen={"netto": "2470.00"})
+        b = _lesung(empfaenger_name="Steinbach Naturstein GmbH", positionen=[andere], summen={"netto": "2470.00"})
+        felder = einigung([a, a, b])
+        self.assertEqual(felder["positionen"][0]["ust"], "")
+        self.assertEqual(felder["positionen"][0]["netto"], "1800.00")
+        dokument = an_kern(felder, 2026)
+        self.assertEqual(dokument["empfaenger_name"], "Steinbach Naturstein GmbH")
+        self.assertEqual(dokument["summen"]["netto"], "2470.00")
+        self.assertNotIn("ust", dokument["positionen"][0])
+
 
 class AnKern(unittest.TestCase):
     def test_unsichere_summe_geht_nicht_in_den_kern(self):
@@ -108,6 +129,96 @@ class AnKern(unittest.TestCase):
         self.assertTrue(felder["summe_ohne_einheitlichen_satz"])
         self.assertEqual(felder["summen"]["ust"], "")
         self.assertNotIn("klasse", felder)
+
+    def test_abgeleitete_zeilen_ust_faellt_weg(self):
+        text = "Pos 01 1.800,00 Euro. Nettosumme 2.470,00 Euro. USt 469,30 Euro. Rechnungsbetrag 2.939,30 Euro."
+        felder = extrahiere_dokument("leer", "rule")
+        felder["positionen"] = [{
+            "nr": "01", "betrag": "1800.00", "text": "", "betragswiderspruch": False, "unsicher": False,
+            "netto": "1800.00", "ust": "342.00", "satz": "19",
+        }]
+        felder["summen"]["netto"] = "2470.00"
+        felder["summen"]["ust"] = "469.30"
+        felder["summen"]["brutto"] = "2939.30"
+        felder = nur_woertlich(felder, text)
+        self.assertIn("positionen[0].ust", felder["abgeleitet"])
+        self.assertEqual(felder["positionen"][0]["ust"], "")
+        self.assertEqual(felder["summen"]["ust"], "469.30")
+        dokument = an_kern(felder, 2026)
+        self.assertNotIn("ust", dokument["positionen"][0])
+        self.assertEqual(dokument["summen"]["ust"], "469.30")
+
+    def test_rechtsform_ersetzt_den_namen_nicht(self):
+        felder = extrahiere_dokument("Steinbach Naturstein GmbH", "rule")
+        felder["empfaenger_name"] = "Steinbach Naturstein GmbH"
+        felder["rechtsform_angaben"] = ["GmbH"]
+        felder = nur_woertlich(felder, "Rechnung an Steinbach Naturstein GmbH")
+        dokument = an_kern(felder, 2026)
+        self.assertEqual(dokument["empfaenger_name"], "Steinbach Naturstein GmbH")
+        self.assertEqual(dokument["rechtsform"], "gmbh")
+        self.assertNotIn("empfaenger", dokument)
+
+    def test_mehrere_faelle_werden_getrennt_und_ohne_soll(self):
+        text = "Fall F1 Foto\nSoll-Bewertung\n121,03 Euro\nFall F2 Verlag\nSoll-Bewertung\n85,75 Euro"
+        teile = trenne(text)
+        self.assertEqual(len(teile), 2)
+        self.assertNotIn("121,03", teile[0])
+        self.assertIn("Verlag", teile[1])
+
+    def test_tausenderzeichen_bleibt_woertlich(self):
+        text = "Nettosumme 2\u00b7470,00 Euro. Pos 01 1\u202f800,00 Euro."
+        self.assertTrue(steht("2470.00", text))
+        self.assertTrue(steht("1800,00", text))
+        self.assertFalse(steht("342.00", text))
+        self.assertEqual(dezimal("1800,00"), "1800.00")
+        self.assertEqual(dezimal("1.800,00"), "1800.00")
+
+    def test_vier_belege_f1_rechnet_ohne_soll(self):
+        text = "\n".join([
+            "Fall F1 Werbefotografie Eigenwerbung",
+            "Rechnungsempfänger: Steinbach Naturstein GmbH",
+            "Pos 01 1\u202f800,00 Euro",
+            "Pos 02 220,00 Euro",
+            "Pos 03 450,00 Euro",
+            "Nettosumme: 2\u00b7470,00 Euro · USt 469,30 Euro · Rechnungsbetrag: 2.939,30 Euro",
+            "Soll-Bewertung",
+            "Soll-Abgabe: 121,03 Euro",
+            "Fall F2 Publizist",
+            "Rechnungsempfänger: Rheinland Verlag GmbH & Co. KG",
+            "Soll-Bewertung",
+            "Fall F3 Agentur",
+            "Rechnungsempfänger: VitaWelt Krankenversicherung a.G.",
+            "Soll-Bewertung",
+            "Fall F4 Hochzeit",
+            "Rechnungsempfänger: Familie Brautpaar",
+            "Soll-Bewertung",
+        ])
+        teile = trenne(text)
+        self.assertEqual(len(teile), 4)
+        self.assertNotIn("121,03", teile[0])
+        self.assertIn("Eigenwerbung", teile[0])
+        felder = extrahiere_dokument("leer", "rule")
+        felder["empfaenger_name"] = "Steinbach Naturstein GmbH"
+        felder["rechtsform_angaben"] = ["GmbH"]
+        felder["jahr"] = "2026"
+        felder["positionen"] = [{
+            "nr": "01", "betrag": "1800.00", "text": "", "betragswiderspruch": False, "unsicher": False,
+            "netto": "1800.00", "ust": "342.00", "satz": "19",
+        }]
+        felder["summen"]["positionssumme"] = "2470.00"
+        felder["summen"]["netto"] = "2470.00"
+        felder["summen"]["ust"] = "469.30"
+        felder["summen"]["brutto"] = "2939.30"
+        felder["summen"]["kopfsumme"] = "2939.30"
+        felder = nur_woertlich(felder, teile[0])
+        self.assertIn("positionen[0].ust", felder["abgeleitet"])
+        dokument = an_kern(felder, 2026)
+        self.assertEqual(dokument["empfaenger_name"], "Steinbach Naturstein GmbH")
+        self.assertNotEqual(dokument.get("empfaenger"), "gmbh")
+        self.assertIsNone(K.pruefe_dokument(dokument, 2026))
+        entscheid = K.pruefe_eigenwerbung(2026, dokument["summen"]["netto"])
+        self.assertEqual(entscheid.klasse, K.ABGABEPFLICHTIG)
+        self.assertEqual(entscheid.abgabe, Decimal("121.03"))
 
     def test_kernmodul_importiert_die_extraktion_nicht(self):
         text = (__import__("pathlib").Path(__file__).resolve().parents[2] / "kern" / "rechnen.py").read_text(encoding="utf-8")

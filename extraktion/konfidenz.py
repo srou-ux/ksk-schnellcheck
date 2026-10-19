@@ -4,7 +4,7 @@ Es wird kein Mittelwert gebildet und keine der abweichenden Lesungen übernommen
 """
 from __future__ import annotations
 
-from extraktion.felder import kanon, leer
+from extraktion.felder import _kanon_wert, kanon, leer
 
 
 def bloecke_filtern(bloecke: list, minimum: float) -> tuple[str, list]:
@@ -60,10 +60,29 @@ def einigung(ablesungen: list[dict]) -> dict:
         else:
             felder["unklare_felder"].append("summen." + name)
             felder["unsicher"] = True
-    positionen = [kanon(lesung).get("positionen") for lesung in ablesungen]
-    if all(andere == positionen[0] for andere in positionen):
-        felder["positionen"] = list(ablesungen[0].get("positionen") or [])
-    else:
+    felder["positionen"] = _positionen_einigen(ablesungen, felder)
+    return felder
+
+
+def _positionen_einigen(ablesungen: list[dict], felder: dict) -> list:
+    """Gleiche Zeilenfelder bleiben. Ein abweichendes Feld leert nur sich selbst."""
+    listen = [lesung.get("positionen") or [] for lesung in ablesungen]
+    if len({len(liste) for liste in listen}) != 1:
         felder["unklare_felder"].append("positionen")
         felder["unsicher"] = True
-    return felder
+        return []
+    namen = ("nr", "betrag", "text", "betragswiderspruch", "unsicher", "netto", "ust", "satz")
+    ergebnis = []
+    for index in range(len(listen[0])):
+        zeile = {}
+        for name in namen:
+            werte = [liste[index].get(name) for liste in listen]
+            vergleich = [_kanon_wert(wert) for wert in werte]
+            if all(andere == vergleich[0] for andere in vergleich):
+                zeile[name] = listen[0][index].get(name)
+            else:
+                zeile[name] = False if name in ("betragswiderspruch", "unsicher") else ""
+                felder["unklare_felder"].append(f"positionen[{index}].{name}")
+                felder["unsicher"] = True
+        ergebnis.append(zeile)
+    return ergebnis

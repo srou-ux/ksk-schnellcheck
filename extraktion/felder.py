@@ -39,6 +39,7 @@ SCHEMA = {
             "required": list(SUMMEN),
         },
         "empfaenger": {"type": "string"},
+        "empfaenger_name": {"type": "string"},
         "rechtsform_angaben": {"type": "array", "items": {"type": "string"}},
         "jahr": {"type": "string"},
         "betrag_in_worten": {"type": "string"},
@@ -52,7 +53,7 @@ SCHEMA = {
         "summe_ohne_einheitlichen_satz": {"type": "boolean"},
     },
     "required": [
-        "positionen", "summen", "empfaenger", "rechtsform_angaben", "jahr",
+        "positionen", "summen", "empfaenger", "empfaenger_name", "rechtsform_angaben", "jahr",
         "betrag_in_worten", "betrag_in_ziffern", "unklare_felder", "unsicher",
         "kleinunternehmer_genannt", "umsatzsteuer_genannt", "storno_genannt",
         "ust_saetze", "summe_ohne_einheitlichen_satz",
@@ -74,6 +75,7 @@ def leer() -> dict:
         "positionen": [],
         "summen": {name: "" for name in SUMMEN},
         "empfaenger": "",
+        "empfaenger_name": "",
         "rechtsform_angaben": [],
         "jahr": "",
         "betrag_in_worten": "",
@@ -94,7 +96,7 @@ def leer() -> dict:
 def dezimal(text: str) -> str | None:
     """Liest eine geschriebene Zahl. Kein Mittelwert, kein Ersatzwert."""
     roh = (text or "").strip().replace(" ", "")
-    if not roh or not re.fullmatch(r"-?\d{1,3}(?:\.\d{3})*(?:,\d+)?|-?\d+(?:\.\d+)?", roh):
+    if not roh or not re.fullmatch(r"-?\d{1,3}(?:\.\d{3})+(?:,\d+)?|-?\d+,\d+|-?\d+(?:\.\d+)?", roh):
         return None
     if "," in roh:
         roh = roh.replace(".", "").replace(",", ".")
@@ -169,12 +171,13 @@ def _position(teil: dict) -> dict:
 def an_kern(felder: dict, jahr_fallback: int) -> dict:
     """Nur sichere, gefüllte Angaben. Unsichere Felder bleiben draußen."""
     unklar = set(felder.get("unklare_felder") or [])
-    if felder.get("unsicher"):
+    if felder.get("unsicher") and not unklar:
         unklar.update(SCHEMA["required"])
     dokument: dict = {}
     summen = {}
+    abgeleitet_summen = set(felder.get("abgeleitet") or [])
     for name in SUMMEN:
-        if name in unklar or ("summen." + name) in unklar:
+        if name in unklar or ("summen." + name) in unklar or ("summen." + name) in abgeleitet_summen:
             continue
         zahl = dezimal((felder.get("summen") or {}).get(name, ""))
         if zahl is not None:
@@ -190,19 +193,23 @@ def an_kern(felder: dict, jahr_fallback: int) -> dict:
         dokument["differenz"] = summen["differenz"]
     positionen = []
     nummern = []
-    for position in felder.get("positionen") or []:
+    abgeleitet = set(felder.get("abgeleitet") or [])
+    for index, position in enumerate(felder.get("positionen") or []):
         if position.get("unsicher"):
             continue
         zeile = {}
-        if position.get("nr"):
+        if position.get("nr") and f"positionen[{index}].nr" not in abgeleitet:
             zeile["nr"] = position["nr"]
             nummern.append(position["nr"])
-        zahl = dezimal(position.get("betrag", ""))
-        if zahl is not None:
-            zeile["betrag"] = zahl
+        if f"positionen[{index}].betrag" not in abgeleitet:
+            zahl = dezimal(position.get("betrag", ""))
+            if zahl is not None:
+                zeile["betrag"] = zahl
         if position.get("betragswiderspruch"):
             zeile["betragswiderspruch"] = True
         for name in ("netto", "ust", "satz"):
+            if f"positionen[{index}].{name}" in abgeleitet:
+                continue
             zahl = dezimal(position.get(name, ""))
             if zahl is not None:
                 zeile[name] = zahl
@@ -215,12 +222,24 @@ def an_kern(felder: dict, jahr_fallback: int) -> dict:
     formen = []
     if "rechtsform_angaben" not in unklar:
         formen = [str(form).lower() for form in felder.get("rechtsform_angaben") or [] if str(form).strip()]
-    if len(set(formen)) > 1:
-        dokument["rechtsformen"] = formen
+    name = ""
+    if "empfaenger_name" not in unklar and "empfaenger_name" not in abgeleitet_summen:
+        name = str(felder.get("empfaenger_name") or "").strip()
+    if not name and "empfaenger" not in unklar and "empfaenger" not in abgeleitet_summen:
+        name = str(felder.get("empfaenger") or "").strip()
+    name_ist_form = bool(name) and name.lower() in set(formen)
+    if name and not name_ist_form:
+        dokument["empfaenger_name"] = name
+        if len(set(formen)) > 1:
+            dokument["rechtsformen"] = list(dict.fromkeys(formen))
+        elif len(formen) == 1:
+            dokument["rechtsform"] = formen[0]
+    elif len(set(formen)) > 1:
+        dokument["rechtsformen"] = list(dict.fromkeys(formen))
     elif len(formen) == 1 and "empfaenger" not in unklar:
         dokument["empfaenger"] = formen[0]
-    elif felder.get("empfaenger") and "empfaenger" not in unklar:
-        dokument["empfaenger"] = felder["empfaenger"].lower()
+    elif name and "empfaenger" not in unklar:
+        dokument["empfaenger"] = name.lower()
     jahr = felder.get("jahr") or ""
     if "jahr" not in unklar and re.fullmatch(r"20\d\d", jahr):
         dokument["jahr"] = int(jahr)

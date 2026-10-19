@@ -4,6 +4,7 @@ from __future__ import annotations
 import re
 
 from extraktion.felder import SUMMEN, dezimal, leer
+from extraktion.verbatim import nur_woertlich
 
 _BETRAG = r"(-?\d{1,3}(?:\.\d{3})+(?:,\d{2})?|-?\d+,\d{2}|-?\d+\.\d{2}|-?\d+)"
 _FORMEN = (
@@ -65,7 +66,7 @@ def extrahiere(dokument) -> dict:
     elif len(set(jahre)) > 1:
         felder["unklare_felder"].append("jahr")
         felder["unsicher"] = True
-    return felder
+    return nur_woertlich(felder, text)
 
 
 def _text(dokument) -> str:

@@ -665,9 +665,8 @@ def pruefe_dokument(dokument, jahr):
 
     if any(p.get("betragswiderspruch") for p in dokument.get("positionen") or []):
         return _sperre_aus("sperre.summenabweichung", jahr)
-    if summen.get("positionssumme") is not None and summen.get("kopfsumme") is not None:
-        if abstand(summen["positionssumme"], summen["kopfsumme"]) >= toleranz_ab:
-            return _sperre_aus("sperre.summenabweichung", jahr)
+    if _summen_widerspruch(summen, toleranz_ab):
+        return _sperre_aus("sperre.summenabweichung", jahr)
     if all(summen.get(name) is not None for name in ("netto", "ust", "brutto")):
         probe = rechenprobe_brutto(summen["netto"], summen["ust"], summen["brutto"], jahr)
         if probe is not None:
@@ -915,6 +914,32 @@ def oeffentliche_stelle(dokument, jahr):
         rueckfragen=[eintrag["wert"]],
         regeln=[eintrag["regel"]],
     )
+
+
+def _summen_widerspruch(summen, toleranz_ab):
+    """Positionssumme zuerst gegen das Netto. Sonst Positionssumme plus Umsatzsteuer gegen das Brutto.
+
+    Geht eine der beiden Proben auf, ist das kein Widerspruch. Ein ausgewiesenes Netto,
+    das von der Positionssumme abweicht, bleibt eine Sperre. Fehlen Netto und Umsatzsteuer,
+    gilt der direkte Vergleich von Positions- und Kopfsumme.
+    """
+    def abstand(links, rechts):
+        return abs(_d(links) - _d(rechts))
+
+    def da(name):
+        return summen.get(name) is not None
+
+    pos = summen.get("positionssumme")
+    if da("positionssumme") and da("netto") and abstand(pos, summen["netto"]) >= toleranz_ab:
+        return True
+    if da("positionssumme") and da("netto"):
+        return False
+    ziel = summen.get("brutto") if da("brutto") else summen.get("kopfsumme")
+    if da("positionssumme") and da("ust") and ziel is not None:
+        return abstand(_d(pos) + _d(summen["ust"]), ziel) >= toleranz_ab
+    if da("positionssumme") and da("kopfsumme") and not da("netto") and not da("brutto"):
+        return abstand(pos, summen["kopfsumme"]) >= toleranz_ab
+    return False
 
 
 @_luecke

@@ -181,7 +181,12 @@ def feld_stand(felder: dict | None, name: str) -> str:
     return "gefüllt" if gefuellt else "leer"
 
 
-def _korrektur(quelle: str, feld: str) -> str:
+def _korrektur(quelle: str, feld: str, stand: str = "") -> str:
+    if quelle == "Kern" and feld == "jahr" and stand == "gefüllt":
+        return (
+            "Jahr gelesen. Der Kern rechnet 2027 aus parameter.json. "
+            "saetze.json gibt das Jahr nicht frei. Erwartung nicht verbiegen."
+        )
     satz = feld_satz(feld)
     if quelle == "Extraktion":
         return satz + ". Nicht mitteln, nicht still übernehmen."
@@ -224,7 +229,7 @@ def laufe(weg: str, tests: list, **kwargs) -> tuple[list[dict], list[dict]]:
             "quelle": quelle,
             "feld": feld,
             "stand": feld_stand(felder, feld),
-            "korrektur": _korrektur(quelle, feld),
+            "korrektur": _korrektur(quelle, feld, feld_stand(felder, feld)),
             "grund": grund,
             "felder": felder,
         })

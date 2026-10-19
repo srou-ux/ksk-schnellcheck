@@ -6,16 +6,20 @@ import json
 from pathlib import Path
 
 from extraktion import http
+from extraktion.belege import trenne
 from extraktion.felder import SCHEMA, aus_modell, konfig, leer
 from extraktion.konfidenz import bloecke_filtern, einigung
 from extraktion.schluessel import schluessel as lies_schluessel
+from extraktion.verbatim import nur_woertlich
 
 _SYSTEM = (
     "Du füllst nur Felder, die im Dokument stehen. "
     "Du triffst keine Entscheidung zur Künstlersozialabgabe und nennst keine Ergebnisklasse. "
+    "Übernimm nur Werte, die im Text stehen. Wenn ein Wert fehlt, lasse das Feld leer. Rechne nichts nach. "
     "Was nicht dasteht, bleibt leer. "
     "Wenn du eine Angabe nicht sicher lesen kannst, setze unsicher auf true und lass den unsicheren Wert leer. "
     "Bilde keinen Mittelwert und ergänze nichts. "
+    "Der Name steht in empfaenger_name. Die Rechtsform steht nur in rechtsform_angaben und ersetzt den Namen nicht. "
     "Prozentzahlen der Umsatzsteuer stehen in ust_saetze. "
     "netto, ust und satz nur, wenn sie auf der Zeile stehen. "
     "summe_ohne_einheitlichen_satz nur, wenn das Dokument selbst sagt, dass die Summe zu keinem Satz passt."
@@ -47,24 +51,47 @@ def extrahiere(dokument, *, transport=None, schluessel: str | None = None) -> di
     else:
         verworfen = []
         text = _text(dokument) if not text else text
-    ablesungen = []
+    teile = trenne(text)
+    belege = []
     modell = cfg["MISTRAL_SMALL_MODEL"]
+    for teil in teile:
+        felder, kosten_teil, modell, fehler = _lies_small(teil, aufruf, key, cfg, modell)
+        kosten.extend(kosten_teil)
+        if fehler:
+            felder = leer()
+            felder["unsicher"] = True
+            felder["unklare_felder"] = [fehler]
+        else:
+            felder = nur_woertlich(felder, teil)
+        felder["text"] = teil
+        felder["kosten"] = list(kosten_teil)
+        belege.append(felder)
+        if fehler:
+            break
+    if len(belege) == 1:
+        felder = belege[0]
+        felder["kosten"] = kosten
+        felder["ocr_bloecke"] = verworfen
+        felder["modelle"] = [cfg["MISTRAL_OCR_MODEL"], modell] if bloecke or _ist_datei(dokument) else [modell]
+        return felder
+    huelle = leer()
+    huelle["belege"] = belege
+    huelle["kosten"] = kosten
+    huelle["ocr_bloecke"] = verworfen
+    huelle["modelle"] = [cfg["MISTRAL_OCR_MODEL"], modell] if bloecke or _ist_datei(dokument) else [modell]
+    return huelle
+
+
+def _lies_small(text, aufruf, key, cfg, modell):
+    ablesungen = []
+    kosten = []
     for _ in range(int(cfg["ablesungen"])):
         roh, kosten_zeile, modell = _stufe_small(text, aufruf, key, cfg, modell)
         kosten.append(kosten_zeile)
         if roh is None:
-            felder = leer()
-            felder["unsicher"] = True
-            felder["unklare_felder"] = ["small"]
-            felder["kosten"] = kosten
-            felder["ocr_bloecke"] = verworfen
-            return felder
+            return leer(), kosten, modell, "small"
         ablesungen.append(aus_modell(roh))
-    felder = einigung(ablesungen)
-    felder["kosten"] = kosten
-    felder["ocr_bloecke"] = verworfen
-    felder["modelle"] = [cfg["MISTRAL_OCR_MODEL"], modell] if bloecke or _ist_datei(dokument) else [modell]
-    return felder
+    return einigung(ablesungen), kosten, modell, ""
 
 
 def _stufe_ocr(dokument, aufruf, key: str, cfg: dict) -> tuple[str, list, list]:

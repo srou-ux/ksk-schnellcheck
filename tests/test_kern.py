@@ -242,6 +242,16 @@ class Dokumentpruefung(unittest.TestCase):
         cent = K.pruefe_dokument({"differenz": "0.02"}, 2026)
         self.assertEqual(cent.klasse, K.SPERRE)
         self.assertIsNone(K.pruefe_dokument({"differenz": "0.01"}, 2026))
+        netto_brutto = K.pruefe_dokument({
+            "summen": {
+                "positionssumme": "2470.00",
+                "kopfsumme": "2939.30",
+                "netto": "2470.00",
+                "ust": "469.30",
+                "brutto": "2939.30",
+            }
+        }, 2026)
+        self.assertIsNone(netto_brutto)
         zeile = K.pruefe_dokument({"positionen": [{"nr": 2, "betragswiderspruch": True}]}, 2026)
         self.assertEqual(zeile.klasse, K.SPERRE)
         formen = K.pruefe_dokument({"rechtsformen": ["einzelunternehmen", "gmbh"]}, 2026)
