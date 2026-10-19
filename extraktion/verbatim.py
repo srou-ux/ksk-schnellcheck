@@ -26,8 +26,15 @@ def nur_woertlich(felder: dict, text: str) -> dict:
     for index, position in enumerate(felder.get("positionen") or []):
         for name in ("nr", "betrag", "netto", "ust", "satz"):
             position[name] = pruefe(position.get(name, ""), f"positionen[{index}].{name}")
-    for name in ("empfaenger", "empfaenger_name", "jahr", "betrag_in_worten", "betrag_in_ziffern"):
+    for name in ("empfaenger", "empfaenger_name", "jahr", "betrag_in_worten", "betrag_in_ziffern", "leistungsart"):
         felder[name] = pruefe(felder.get(name, ""), name)
+    erwahnungen = []
+    for eintrag in felder.get("erwahnungen") or []:
+        if steht(str(eintrag), quelle):
+            erwahnungen.append(eintrag)
+        else:
+            abgeleitet.append("erwahnungen")
+    felder["erwahnungen"] = erwahnungen
     formen = []
     for form in felder.get("rechtsform_angaben") or []:
         if steht(str(form), quelle):

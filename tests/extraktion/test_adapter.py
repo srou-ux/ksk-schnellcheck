@@ -10,6 +10,8 @@ from extraktion.belege import trenne
 from extraktion.felder import an_kern, aus_modell, dezimal
 from extraktion.konfidenz import bloecke_filtern, einigung
 from extraktion.schluessel import ablage, schluessel
+from extraktion.hybrid import kombiniere
+from extraktion.mistral_adapter import _SYSTEM, ocr_kosten
 from extraktion.schnittstelle import extrahiere_dokument
 from extraktion.verbatim import nur_woertlich, steht
 from kern import rechnen as K
@@ -219,6 +221,46 @@ class AnKern(unittest.TestCase):
         entscheid = K.pruefe_eigenwerbung(2026, dokument["summen"]["netto"])
         self.assertEqual(entscheid.klasse, K.ABGABEPFLICHTIG)
         self.assertEqual(entscheid.abgabe, Decimal("121.03"))
+
+    def test_hybrid_fuellt_leeres_feld_und_sperrt_widerspruch(self):
+        regel = extrahiere_dokument("leer", "rule")
+        modell = extrahiere_dokument("leer", "rule")
+        regel["summen"]["netto"] = "2470.00"
+        modell["summen"]["ust"] = "469.30"
+        felder = kombiniere(regel, modell)
+        self.assertEqual(felder["herkunft"]["summen.netto"], "regel")
+        self.assertEqual(felder["herkunft"]["summen.ust"], "mistral")
+        self.assertEqual(felder["leser_widerspruch"], [])
+        modell["summen"]["netto"] = "1000.00"
+        felder = kombiniere(regel, modell)
+        self.assertIn("summen.netto", felder["leser_widerspruch"])
+        self.assertEqual(felder["summen"]["netto"], "")
+        dokument = an_kern(felder, 2026)
+        sperre = K.pruefe_dokument(dokument, 2026)
+        self.assertEqual(sperre.klasse, K.RUECKFRAGE)
+
+    def test_leistungsart_ist_nicht_die_erwaehnung(self):
+        self.assertIn("erwahnungen", _SYSTEM)
+        self.assertIn("leistungsart", _SYSTEM)
+        text = "Evaluation unseres Konzerts durch eine Soziologin"
+        felder = extrahiere_dokument("leer", "rule")
+        felder["leistungsart"] = "Evaluation"
+        felder["erwahnungen"] = ["Konzert", "nicht im text"]
+        felder = nur_woertlich(felder, text)
+        self.assertEqual(felder["leistungsart"], "Evaluation")
+        self.assertEqual(felder["erwahnungen"], ["Konzert"])
+        self.assertIn("erwahnungen", felder["abgeleitet"])
+
+    def test_ocr_kosten_zaehlen_seiten_und_token(self):
+        zeile = ocr_kosten(
+            {"model": "mistral-ocr-4-1", "usage_info": {"pages_processed": 3, "prompt_tokens": 12, "completion_tokens": 4}},
+            "mistral-ocr-4-1",
+            0,
+        )
+        self.assertEqual(zeile["stufe"], "ocr")
+        self.assertEqual(zeile["seiten"], 3)
+        self.assertEqual(zeile["prompt_tokens"], 12)
+        self.assertEqual(zeile["completion_tokens"], 4)
 
     def test_kernmodul_importiert_die_extraktion_nicht(self):
         text = (__import__("pathlib").Path(__file__).resolve().parents[2] / "kern" / "rechnen.py").read_text(encoding="utf-8")

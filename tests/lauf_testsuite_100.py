@@ -148,9 +148,10 @@ def grund_passt(warum: str, kern_grund: str) -> bool | None:
     return True if getroffen else None
 
 
-def messe(test: dict, *, grenzfall_zaehlt: bool = True, taetigkeit: bool = False) -> tuple[str, str, str]:
+def messe(test: dict, *, grenzfall_zaehlt: bool = True, taetigkeit: bool = False, taetigkeitstext: str | None = None) -> tuple[str, str, str]:
     """Liefert (Suite-Status aus dem Kern, Klassenname, Begründungstext)."""
     txt = test["txt"]
+    stoff = taetigkeitstext or txt
     low = txt.lower()
     jahr = _jahr(txt, test)
     betrag = _betrag(test)
@@ -209,10 +210,10 @@ def messe(test: dict, *, grenzfall_zaehlt: bool = True, taetigkeit: bool = False
             if pos.get("kuenstlerisch") is False:
                 return "AUSGESCHLOSSEN", K.NICHT, grund
             return "AUSGENOMMEN", K.NICHT, grund
-        if K.ist_keine_kuenstlerische_taetigkeit(txt, jahr) is True:
+        if K.ist_keine_kuenstlerische_taetigkeit(stoff, jahr) is True:
             return "AUSGESCHLOSSEN", K.NICHT, "Tätigkeit im Register ausgeschlossen"
         if taetigkeit or kat.startswith(("1-", "2-", "10-", "B-")):
-            katalog = K.einordnung_taetigkeit(txt, jahr)
+            katalog = K.einordnung_taetigkeit(stoff, jahr)
             if katalog is not None:
                 return _aus_klasse(katalog.klasse), katalog.klasse, _grundtext(katalog)
         ergebnis = K.pruefe_positionen(jahr, [pos])

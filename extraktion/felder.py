@@ -51,12 +51,14 @@ SCHEMA = {
         "storno_genannt": {"type": "boolean"},
         "ust_saetze": {"type": "array", "items": {"type": "string"}},
         "summe_ohne_einheitlichen_satz": {"type": "boolean"},
+        "leistungsart": {"type": "string"},
+        "erwahnungen": {"type": "array", "items": {"type": "string"}},
     },
     "required": [
         "positionen", "summen", "empfaenger", "empfaenger_name", "rechtsform_angaben", "jahr",
         "betrag_in_worten", "betrag_in_ziffern", "unklare_felder", "unsicher",
         "kleinunternehmer_genannt", "umsatzsteuer_genannt", "storno_genannt",
-        "ust_saetze", "summe_ohne_einheitlichen_satz",
+        "ust_saetze", "summe_ohne_einheitlichen_satz", "leistungsart", "erwahnungen",
     ],
 }
 
@@ -87,6 +89,8 @@ def leer() -> dict:
         "storno_genannt": False,
         "ust_saetze": [],
         "summe_ohne_einheitlichen_satz": False,
+        "leistungsart": "",
+        "erwahnungen": [],
         "ocr_bloecke": [],
         "kosten": [],
         "modelle": [],
@@ -148,6 +152,8 @@ def aus_modell(roh: dict) -> dict:
             felder["unklare_felder"] = [str(teil) for teil in wert if str(teil).strip()]
         elif name == "ust_saetze" and isinstance(wert, list):
             felder["ust_saetze"] = [str(teil) for teil in wert if str(teil).strip()]
+        elif name == "erwahnungen" and isinstance(wert, list):
+            felder["erwahnungen"] = [str(teil) for teil in wert if str(teil).strip()]
         elif name in ("unsicher", "kleinunternehmer_genannt", "umsatzsteuer_genannt", "storno_genannt", "summe_ohne_einheitlichen_satz"):
             felder[name] = bool(wert)
         elif isinstance(wert, str):
@@ -257,4 +263,9 @@ def an_kern(felder: dict, jahr_fallback: int) -> dict:
             dokument["ust_saetze"] = saetze
     if felder.get("summe_ohne_einheitlichen_satz") and "summe_ohne_einheitlichen_satz" not in unklar:
         dokument["summe_ohne_einheitlichen_satz"] = True
+    leistung = str(felder.get("leistungsart") or "").strip()
+    if leistung and "leistungsart" not in unklar and "leistungsart" not in abgeleitet_summen:
+        dokument["leistungsart"] = leistung
+    if felder.get("leser_widerspruch"):
+        dokument["leser_widerspruch"] = [str(teil) for teil in felder["leser_widerspruch"] if str(teil).strip()]
     return dokument

@@ -656,6 +656,13 @@ def pruefe_dokument(dokument, jahr):
     """
     if not dokument:
         return None
+    wege = [str(teil) for teil in dokument.get("leser_widerspruch") or [] if str(teil).strip()]
+    if wege:
+        return Ergebnis(
+            RUECKFRAGE,
+            ["Leser widersprechen sich bei: " + ", ".join(wege) + ". Kein Mittelwert."],
+            rueckfragen=["Welche Lesung steht so im Beleg?"],
+        )
     summen = dokument.get("summen") or {}
     toleranz = D(reg("sperre.toleranz", jahr)["wert"])
     toleranz_ab = D(reg("sperre.toleranz_ab", jahr)["wert"])

@@ -22,7 +22,9 @@ _SYSTEM = (
     "Der Name steht in empfaenger_name. Die Rechtsform steht nur in rechtsform_angaben und ersetzt den Namen nicht. "
     "Prozentzahlen der Umsatzsteuer stehen in ust_saetze. "
     "netto, ust und satz nur, wenn sie auf der Zeile stehen. "
-    "summe_ohne_einheitlichen_satz nur, wenn das Dokument selbst sagt, dass die Summe zu keinem Satz passt."
+    "summe_ohne_einheitlichen_satz nur, wenn das Dokument selbst sagt, dass die Summe zu keinem Satz passt. "
+    "leistungsart ist nur die Leistung, die Rechnungsgegenstand ist. "
+    "Bloße Erwähnungen, Namen, Fußnoten und Kontext gehören in erwahnungen, nicht in leistungsart."
 )
 
 
@@ -119,15 +121,20 @@ def _stufe_ocr(dokument, aufruf, key: str, cfg: dict) -> tuple[str, list, list]:
                 "text": block.get("content") or block.get("markdown") or "",
                 "konfidenz": wert,
             })
-    nutzung = antwort.get("usage_info") or {}
-    kosten = [{
-        "stufe": "ocr",
-        "modell": antwort.get("model") or cfg["MISTRAL_OCR_MODEL"],
-        "seiten": nutzung.get("pages_processed") or len(seiten),
-        "prompt_tokens": None,
-        "completion_tokens": None,
-    }]
+    kosten = [ocr_kosten(antwort, cfg["MISTRAL_OCR_MODEL"], len(seiten))]
     return "\n".join(texte), bloecke, kosten
+
+
+def ocr_kosten(antwort: dict, modell: str, seiten_anzahl: int) -> dict:
+    """Seiten und Token aus der OCR-Antwort. Fehlende Token bleiben leer, sie werden nicht geschätzt."""
+    nutzung = antwort.get("usage_info") or antwort.get("usage") or {}
+    return {
+        "stufe": "ocr",
+        "modell": antwort.get("model") or modell,
+        "seiten": nutzung.get("pages_processed") or seiten_anzahl,
+        "prompt_tokens": nutzung.get("prompt_tokens"),
+        "completion_tokens": nutzung.get("completion_tokens"),
+    }
 
 
 def _stufe_small(text: str, aufruf, key: str, cfg: dict, modell: str):

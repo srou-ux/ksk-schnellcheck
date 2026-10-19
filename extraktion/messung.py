@@ -25,8 +25,10 @@ _GOLD = ("positionssumme", "kopfsumme", "netto", "ust", "brutto", "gesamtsumme")
 
 def entscheide(test: dict, felder: dict) -> tuple[str, str, str]:
     kopie = {schluessel: wert for schluessel, wert in test.items() if schluessel != "dokument"}
-    kopie["dokument"] = an_kern(felder, 2026)
-    return messe(kopie, grenzfall_zaehlt=False, taetigkeit=True)
+    dokument = an_kern(felder, 2026)
+    kopie["dokument"] = dokument
+    stoff = str(dokument.get("leistungsart") or "").strip() or None
+    return messe(kopie, grenzfall_zaehlt=False, taetigkeit=True, taetigkeitstext=stoff)
 
 
 def fehlerquelle(test: dict, felder: dict, erhalten: str) -> str:
@@ -317,6 +319,35 @@ def kosten_text(zeilen: list[dict]) -> str:
     return "\n".join(teile)
 
 
+def _hybrid(tests: list, regel_zeilen: list[dict], mistral_zeilen: list[dict]) -> list[dict]:
+    from extraktion.hybrid import kombiniere
+
+    rechts = {zeile["id"]: zeile for zeile in mistral_zeilen}
+    links = {zeile["id"]: zeile for zeile in regel_zeilen}
+    zeilen = []
+    for test in tests:
+        felder = kombiniere(links[test["id"]]["felder"], rechts[test["id"]]["felder"])
+        erhalten, klasse, grund = entscheide(test, felder)
+        feld = soll_feld(test)
+        quelle = fehlerquelle(test, felder, erhalten)
+        if quelle == "Extraktion" and feld_stand(felder, feld) == "gefüllt":
+            quelle = "Kern"
+        zeilen.append({
+            "id": test["id"],
+            "kat": test.get("kat", ""),
+            "erwartet": test["status"],
+            "erhalten": erhalten,
+            "ok": erhalten == test["status"],
+            "quelle": quelle,
+            "feld": feld,
+            "stand": feld_stand(felder, feld),
+            "korrektur": _korrektur(quelle, feld, feld_stand(felder, feld)),
+            "grund": grund,
+            "felder": felder,
+        })
+    return zeilen
+
+
 def main() -> int:
     sys.stdout.reconfigure(encoding="utf-8")
     tests = json.loads(SUITE.read_text(encoding="utf-8"))["tests"]
@@ -326,14 +357,17 @@ def main() -> int:
     kosten: list[dict] = []
     if not schluessel():
         mistral_text = "Mistral nicht gemessen: MISTRAL_API_KEY fehlt."
+        hybrid_text = "Hybrid nicht gemessen: MISTRAL_API_KEY fehlt."
     else:
         mistral_zeilen, kosten = laufe("mistral", tests)
         abbruch = next((zeile for zeile in mistral_zeilen if zeile["erhalten"] == "ABBRUCH"), None)
         if abbruch or len(mistral_zeilen) != len(tests):
             grund = (abbruch["korrektur"] if abbruch else "Lauf unvollständig.").replace("\n", " ").strip()
             mistral_text = "Mistral nicht gemessen. " + grund + " Es gibt keine Teilquote."
+            hybrid_text = "Hybrid nicht gemessen. " + grund
         else:
             mistral_text = bericht("Mistral OCR 4.1 + Small", mistral_zeilen)
+            hybrid_text = bericht("Hybrid Regel + Small", _hybrid(tests, regel_zeilen, mistral_zeilen))
     text = [
         "Vergleich Extraktion, Suite 130. Strukturfelder der Suite werden nicht als Lesung benutzt.",
         "Fehlerquelle Extraktion: das benannte Feld war leer oder unsicher. Fehlerquelle Kern: das Feld lag vor, die Entscheidung weicht ab.",
@@ -341,6 +375,8 @@ def main() -> int:
         bericht("Regel-Leser", regel_zeilen),
         "",
         mistral_text,
+        "",
+        hybrid_text,
         "",
         feld_bericht(regel_zeilen, mistral_zeilen if mistral_zeilen and not mistral_text.startswith("Mistral nicht gemessen") else None),
     ]
