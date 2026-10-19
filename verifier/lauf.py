@@ -102,7 +102,17 @@ def bearbeite(anfrage: dict, register: Register) -> dict:
             "register": register.protokoll()}
 
 
+def _utf8() -> None:
+    """python -I ignoriert PYTHONIOENCODING. Ohne diese Zeile schreibt Windows cp1252, der Elternprozess liest UTF-8."""
+    for strom in (sys.stdin, sys.stdout, sys.stderr):
+        try:
+            strom.reconfigure(encoding="utf-8")
+        except (AttributeError, OSError, ValueError):
+            pass
+
+
 def main() -> int:
+    _utf8()
     beginn = time.perf_counter_ns()
     try:
         anfrage = json.loads(sys.stdin.read())

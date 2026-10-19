@@ -60,8 +60,8 @@ def fuehre_aus(anfrage: dict, *, zeitlimit_s: float | None = None, lauf: Path | 
         except OSError as fehler:
             return {"ok": False, "fehler": f"Gegenrechnung nicht startbar: {fehler}"}
     try:
-        antwort = json.loads(r.stdout)
-    except ValueError:
+        antwort = json.loads(r.stdout or "")
+    except (ValueError, TypeError):
         return {"ok": False, "fehler": f"Gegenrechnung ohne gültige Antwort (Rückgabewert {r.returncode})"}
     if not isinstance(antwort, dict) or antwort.get("ok") is not True:
         fehler = antwort.get("fehler") if isinstance(antwort, dict) else None

@@ -23,6 +23,7 @@ Expertenebene für Steuerberater und Agenturen, nennt Urteile mit Fundstelle (nu
 - Entfernt: Mistral und die Sprachmodell-Schicht (`app/llm/`), der KSK-Chat (`app/router.py`, Bausteine, Antwort-Kontrolle, Bestätigung, Warteschlange, Lückenprotokoll), der Quellenindex (`app/rag/`), die KI beim Dokument-Lesen (`app/dokument_ki.py`), 13 Mistral-Workflows, 19 KI-Testläufer unter `aufgaben/audit/`, 58 Chat-Tests, `scripts/erzeuge_pruefliste_2.py` (brauchte den Quellenindex). Alles steht im Git-Verlauf.
 - Neu: `app/bewertung.py` (18 Funktionen unverändert aus dem Router: Kernaufruf + Gegenrechnung), `app/main.py` startet nur „Rechnungen prüfen“ (`/`, alte Adresse `/rechnungen` bleibt), `tests/app/test_ohne_ki.py` (Wächter), `tests/app/test_regel_erkennung.py` (übernommene regelbasierte Tests), `app/requirements-test.txt` (httpx nur für Tests), `scripts/pruefliste_layout.py`.
 - Geprüft: erfundene PDF, Excel, CSV und Foto (OCR) gelesen und bewertet, Gegenrechnung bestätigt.
+- Windows (19.10.2026): Lesen und Gegenrechnung schreiben UTF-8. Vorher kam „ä“ als Windows-Zeichensatz zurück, die Seite antwortete mit einem Serverfehler statt einer lesbaren Meldung. App-Tests 71 grün. Ein erfundener Fall in der Oberfläche (Bäckerei, Logo 1.500 €, 2026) endet mit „Abgabepflichtig (Vorschlag)“, Abgabe 73,50 €, Gegenrechnung bestätigt.
 - Ergebnisberichte der früheren KI-Läufe unter `aufgaben/audit/` bleiben als Nachweis; Kommentare in den Wortregeln nennen Mistral-Läufe als Herkunft einer Regel.
 
 ## KSK-Schnellcheck (17.10.2026, Repo `srou-ux/ksk-schnellcheck`)

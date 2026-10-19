@@ -194,7 +194,17 @@ def lese(pfad: Path, endung: str):
     return {"text": text, "positionen": kandidaten, "hinweise": hinweise, "methode": methode}
 
 
+def _utf8():
+    """Elternprozess liest UTF-8. Unter Windows schreibt print sonst cp1252, und „ä“ zerbricht die Antwort."""
+    for strom in (sys.stdout, sys.stderr):
+        try:
+            strom.reconfigure(encoding="utf-8")
+        except (AttributeError, OSError, ValueError):
+            pass
+
+
 def main():
+    _utf8()
     # Ressourcenbegrenzung zusätzlich zum Wanduhr-Limit des Elternprozesses; unter Windows nur letzteres.
     try:
         import resource

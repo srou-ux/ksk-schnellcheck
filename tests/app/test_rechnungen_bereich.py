@@ -38,6 +38,12 @@ class OberflaecheOhneKi(unittest.TestCase):
         self.assertEqual(client.post("/dokumente/lesen?endung=.csv&ki=1",
                                      content="Bezeichnung;Betrag\nLogo;1500,00".encode()).json()["pruefung"], ["regeln"])
 
+    def test_umlaut_im_beleg_bleibt_lesbar(self):
+        text = "Bezeichnung;Betrag\nBühnenbild für die Galerie;1500,00\n"
+        r = client.post("/dokumente/lesen?endung=.csv", content=text.encode("utf-8"))
+        self.assertEqual(r.status_code, 200, r.text)
+        self.assertIn("Bühnenbild", r.json()["text"])
+
     def test_kein_chat_mehr(self):
         self.assertEqual(client.post("/frage", json={"frage": "Hallo"}).status_code, 404)
         self.assertFalse(client.get("/gesundheit").json()["llm"])

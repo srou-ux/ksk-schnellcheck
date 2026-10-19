@@ -102,11 +102,12 @@ def _lese_prozess(daten, endung):
         pfad = Path(ordner) / ("eingabe" + endung)
         pfad.write_bytes(daten)
         try:
+            umgebung = {**os.environ, "PYTHONIOENCODING": "utf-8", "PYTHONUTF8": "1"}
             r = subprocess.run([sys.executable, "-m", "app.dokument_lesen", str(pfad), endung],
-                               cwd=WURZEL, capture_output=True, text=True, encoding="utf-8",
-                               timeout=KONFIG["zeitlimit_s"], check=True)
-            result = json.loads(r.stdout)
-        except (subprocess.SubprocessError, ValueError, OSError):
+                               cwd=WURZEL, capture_output=True, text=True, encoding="utf-8", errors="replace",
+                               timeout=KONFIG["zeitlimit_s"], check=True, env=umgebung)
+            result = json.loads(r.stdout or "")
+        except (subprocess.SubprocessError, ValueError, OSError, TypeError):
             raise HTTPException(422, "Datei konnte nicht vollständig gelesen werden oder Zeitlimit erreicht. Bitte eine kleinere Datei versuchen.") from None
     if not result.pop("ok", False):
         raise HTTPException(422, result.get("fehler", "Datei nicht lesbar."))
