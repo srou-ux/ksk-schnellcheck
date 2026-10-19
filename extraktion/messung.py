@@ -27,7 +27,11 @@ def entscheide(test: dict, felder: dict) -> tuple[str, str, str]:
     kopie = {schluessel: wert for schluessel, wert in test.items() if schluessel != "dokument"}
     dokument = an_kern(felder, 2026)
     kopie["dokument"] = dokument
-    stoff = str(dokument.get("leistungsart") or "").strip() or None
+    herkunft = felder.get("herkunft") or {}
+    quelle = herkunft.get("leistungsart")
+    stoff = None
+    if quelle in ("regel", "beide") or (not herkunft and dokument.get("leistungsart")):
+        stoff = str(dokument.get("leistungsart") or "").strip() or None
     return messe(kopie, grenzfall_zaehlt=False, taetigkeit=True, taetigkeitstext=stoff)
 
 

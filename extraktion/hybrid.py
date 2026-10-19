@@ -1,28 +1,40 @@
-"""Regel und Small nebeneinander. Ein leeres Feld übernimmt der andere Leser.
+"""Regel ist die Autorität. Small füllt nur Felder, die die Regel leer gelassen hat.
 
-Widerspruch wird nicht gemittelt und nicht still aufgelöst.
+Ein gefülltes Regelfeld wird nicht überschrieben und nicht zur Rückfrage gemacht.
 """
 from __future__ import annotations
 
-from extraktion.felder import SUMMEN, _kanon_wert, leer
+from extraktion.felder import SUMMEN, leer
 
-_TEXTE = ("empfaenger", "empfaenger_name", "jahr", "betrag_in_worten", "betrag_in_ziffern", "leistungsart")
+_TEXTE = (
+    "empfaenger", "empfaenger_name", "jahr", "betrag_in_worten", "betrag_in_ziffern",
+    "leistungsart", "taetigkeit", "verwerter", "jahresaggregat", "veranlassung", "beschaeftigung",
+)
 _LISTEN = ("rechtsform_angaben", "ust_saetze", "erwahnungen")
 _JANE = ("kleinunternehmer_genannt", "umsatzsteuer_genannt", "storno_genannt", "summe_ohne_einheitlichen_satz")
 _ZEILE = ("nr", "betrag", "text", "betragswiderspruch", "unsicher", "netto", "ust", "satz")
+_PROBE = {"betrag_in_worten", "ust_saetze", "rechtsform_angaben", "positionen"}
 
 
 def kombiniere(regel: dict, mistral: dict) -> dict:
-    """Herkunft je Feld: regel, mistral oder beide. Abweichung steht in leser_widerspruch."""
+    """Herkunft regel, mistral oder beide. Ein Konflikt lässt den Regelwert stehen."""
     felder = leer()
     herkunft: dict[str, str] = {}
-    widerspruch: list[str] = []
+    mistral = dict(mistral)
+    if _gesetzt(regel.get("rechtsform_angaben")):
+        # Ein ergänzter Name setzt die Rechtsform nicht mehr in empfaenger.
+        # V-092 bliebe dann offen, V-116 würde als Gesellschaft ausgeschlossen.
+        if not _gesetzt(regel.get("empfaenger")):
+            mistral["empfaenger"] = ""
+        if not _gesetzt(regel.get("empfaenger_name")):
+            mistral["empfaenger_name"] = ""
+    gesperrt = set(mistral.get("abgeleitet") or [])
     for name in _TEXTE:
-        _skalar(name, regel.get(name, ""), mistral.get(name, ""), felder, herkunft, widerspruch)
+        _skalar(name, regel.get(name, ""), mistral.get(name, ""), felder, herkunft, gesperrt)
     for name in _LISTEN:
-        _liste(name, regel.get(name) or [], mistral.get(name) or [], felder, herkunft, widerspruch)
+        _liste(name, regel.get(name) or [], mistral.get(name) or [], felder, herkunft, gesperrt)
     for name in _JANE:
-        _janein(name, bool(regel.get(name)), bool(mistral.get(name)), felder, herkunft, widerspruch)
+        _janein(name, bool(regel.get(name)), bool(mistral.get(name)), felder, herkunft)
     for name in SUMMEN:
         _skalar(
             "summen." + name,
@@ -30,24 +42,15 @@ def kombiniere(regel: dict, mistral: dict) -> dict:
             (mistral.get("summen") or {}).get(name, ""),
             felder["summen"],
             herkunft,
-            widerspruch,
+            gesperrt,
         )
-    _positionen(regel.get("positionen") or [], mistral.get("positionen") or [], felder, herkunft, widerspruch)
+    _positionen(regel.get("positionen") or [], mistral.get("positionen") or [], felder, herkunft, gesperrt)
     felder["herkunft"] = herkunft
-    felder["leser_widerspruch"] = widerspruch
-    felder["abgeleitet"] = list(dict.fromkeys(list(regel.get("abgeleitet") or []) + list(mistral.get("abgeleitet") or [])))
+    felder["leser_widerspruch"] = []
+    felder["abgeleitet"] = list(dict.fromkeys(list(regel.get("abgeleitet") or []) + list(gesperrt)))
     felder["kosten"] = list(mistral.get("kosten") or [])
     felder["modelle"] = list(dict.fromkeys(list(regel.get("modelle") or []) + list(mistral.get("modelle") or [])))
     return felder
-
-
-def _gleich(links, rechts) -> bool:
-    if isinstance(links, list) and isinstance(rechts, list):
-        return sorted(_kanon_wert(str(teil)).lower() for teil in links) == sorted(_kanon_wert(str(teil)).lower() for teil in rechts)
-    a, b = _kanon_wert(links), _kanon_wert(rechts)
-    if isinstance(a, str) and isinstance(b, str):
-        return a.lower() == b.lower()
-    return a == b
 
 
 def _gesetzt(wert) -> bool:
@@ -60,72 +63,63 @@ def _gesetzt(wert) -> bool:
     return wert not in (None, "")
 
 
-def _skalar(name, links, rechts, ziel, herkunft, widerspruch):
-    links_da = _gesetzt(links)
-    rechts_da = _gesetzt(rechts)
-    if links_da and rechts_da and not _gleich(links, rechts):
-        widerspruch.append(name)
-        return
-    if links_da and rechts_da:
-        ziel[name.split(".")[-1] if name.startswith("summen.") else name] = links
-        herkunft[name] = "beide"
-    elif links_da:
-        ziel[name.split(".")[-1] if name.startswith("summen.") else name] = links
+def _schluessel(name: str) -> str:
+    return name.split(".")[-1] if name.startswith("summen.") else name
+
+
+def _ergaenzen(name: str, gesperrt: set) -> bool:
+    if name in _PROBE or name.startswith("positionen"):
+        return name not in gesperrt
+    return True
+
+
+def _skalar(name, links, rechts, ziel, herkunft, gesperrt):
+    schluessel = _schluessel(name)
+    if _gesetzt(links):
+        ziel[schluessel] = links
         herkunft[name] = "regel"
-    elif rechts_da:
-        ziel[name.split(".")[-1] if name.startswith("summen.") else name] = rechts
+        return
+    if _gesetzt(rechts) and _ergaenzen(name, gesperrt):
+        ziel[schluessel] = rechts
         herkunft[name] = "mistral"
 
 
-def _liste(name, links, rechts, felder, herkunft, widerspruch):
+def _liste(name, links, rechts, felder, herkunft, gesperrt):
     links_werte = [str(teil).strip() for teil in links if str(teil).strip()]
     rechts_werte = [str(teil).strip() for teil in rechts if str(teil).strip()]
-    if links_werte and rechts_werte and not _gleich(links_werte, rechts_werte):
-        widerspruch.append(name)
-        return
-    if links_werte and rechts_werte:
-        felder[name] = links_werte
-        herkunft[name] = "beide"
-    elif links_werte:
+    if links_werte:
         felder[name] = links_werte
         herkunft[name] = "regel"
-    elif rechts_werte:
+        return
+    if rechts_werte and _ergaenzen(name, gesperrt):
         felder[name] = rechts_werte
         herkunft[name] = "mistral"
 
 
-def _janein(name, links, rechts, felder, herkunft, widerspruch):
-    if links and rechts and links != rechts:
-        widerspruch.append(name)
-        return
-    if links and rechts:
+def _janein(name, links, rechts, felder, herkunft):
+    if links:
         felder[name] = True
-        herkunft[name] = "beide"
-    elif links or rechts:
+        herkunft[name] = "regel"
+    elif rechts:
         felder[name] = True
-        herkunft[name] = "regel" if links else "mistral"
+        herkunft[name] = "mistral"
 
 
-def _positionen(links, rechts, felder, herkunft, widerspruch):
-    if not links and not rechts:
+def _positionen(links, rechts, felder, herkunft, gesperrt):
+    if links:
+        felder["positionen"] = [{name: zeile.get(name) for name in _ZEILE} for zeile in links]
+        herkunft["positionen"] = "regel"
         return
-    if links and rechts and _pos_kern(links) != _pos_kern(rechts):
-        widerspruch.append("positionen")
+    if not rechts or not _ergaenzen("positionen", gesperrt):
         return
-    quelle = links or rechts
-    beide = bool(links and rechts)
     zeilen = []
-    for zeile in quelle:
+    for index, zeile in enumerate(rechts):
         kopie = {name: zeile.get(name) for name in _ZEILE}
-        if not beide:
-            kopie["betragswiderspruch"] = False
-        zeilen.append(kopie)
-    felder["positionen"] = zeilen
-    herkunft["positionen"] = "beide" if beide else ("regel" if links else "mistral")
-
-
-def _pos_kern(liste) -> list:
-    return [
-        {name: _kanon_wert(zeile.get(name)) for name in ("nr", "betrag", "netto", "ust", "satz", "betragswiderspruch")}
-        for zeile in liste
-    ]
+        if f"positionen[{index}].nr" in gesperrt:
+            kopie["nr"] = ""
+        kopie["betragswiderspruch"] = False
+        if any(kopie.get(name) not in ("", False, None) for name in _ZEILE):
+            zeilen.append(kopie)
+    if zeilen:
+        felder["positionen"] = zeilen
+        herkunft["positionen"] = "mistral"

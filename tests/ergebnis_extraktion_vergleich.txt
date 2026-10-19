@@ -47,30 +47,30 @@ Sperre-Ausbreitung
 
 Hybrid Regel + Small
 
-  K1-prio                16/20
-  K2-kaskade             12/22
-  K3-widerspruch         11/15
-  K4-varianten           16/19
+  K1-prio                19/20
+  K2-kaskade             13/22
+  K3-widerspruch         12/15
+  K4-varianten           15/19
   K5-erwahnung           2/13
   K6-register            11/15
-  K7-grenzen             8/13
+  K7-grenzen             9/13
   K8-mengen              12/13
-Gesamt 88/130
+Gesamt 93/130
 
 Paar-Check
   V-119/V-120: FEHLER
   V-123/V-124: FEHLER
-  V-092/V-093: FEHLER
+  V-092/V-093: beide richtig
   V-082/V-083: beide richtig
   V-061/V-101: beide richtig
 Sperre-Ausbreitung
-  V-122: sperrt nicht
+  V-122: sperrt das Dokument
   V-125: sperrt das Dokument
 
 Feld-Diagnose je Abweichung
 V-004 | K1-prio | erwartet SPERRE | Regel SPERRE | Mistral OFFEN | Extraktion | positionen[].nr nicht gelesen | Regel: gefüllt | Mistral: leer
-V-008 | K1-prio | erwartet OFFEN | Regel OFFEN | Mistral SPERRE | Kern | leistungsart nicht von der Erwaehnung getrennt | Regel: leer | Mistral: gefüllt
-V-014 | K2-kaskade | erwartet AUSGESCHLOSSEN | Regel OFFEN | Mistral OFFEN | Extraktion | beschaeftigung nicht gelesen | Regel: leer | Mistral: leer
+V-008 | K1-prio | erwartet OFFEN | Regel OFFEN | Mistral SPERRE | Kern | leistungsart nicht von der Erwaehnung getrennt | Regel: leer | Mistral: leer
+V-014 | K2-kaskade | erwartet AUSGESCHLOSSEN | Regel OFFEN | Mistral OFFEN | Extraktion | beschaeftigung nicht gelesen | Regel: leer | Mistral: gefüllt
 V-016 | K2-kaskade | erwartet OFFEN | Regel ZAEHLT | Mistral ZAEHLT | Extraktion | jahresaggregat nicht gelesen | Regel: leer | Mistral: leer
 V-020 | K2-kaskade | erwartet OFFEN | Regel AUSGESCHLOSSEN | Mistral AUSGESCHLOSSEN | Extraktion | veranstaltungszahl nicht gelesen | Regel: leer | Mistral: leer
 V-021 | K2-kaskade | erwartet OFFEN | Regel AUSGESCHLOSSEN | Mistral AUSGESCHLOSSEN | Extraktion | schuelerzahl nicht gelesen | Regel: leer | Mistral: leer
@@ -83,33 +83,33 @@ V-038 | K4-varianten | erwartet OFFEN | Regel ZAEHLT | Mistral ZAEHLT | Extrakti
 V-043 | K4-varianten | erwartet OFFEN | Regel ZAEHLT | Mistral ZAEHLT | Extraktion | taetigkeit nicht gelesen | Regel: leer | Mistral: leer
 V-049 | K4-varianten | erwartet OFFEN | Regel ZAEHLT | Mistral ZAEHLT | Extraktion | taetigkeit nicht gelesen | Regel: leer | Mistral: leer
 V-051 | K5-erwahnung | erwartet AUSGESCHLOSSEN | Regel OFFEN | Mistral OFFEN | Extraktion | leistungsart nicht von der Erwaehnung getrennt | Regel: leer | Mistral: leer
-V-052 | K5-erwahnung | erwartet AUSGESCHLOSSEN | Regel OFFEN | Mistral OFFEN | Extraktion | leistungsart nicht von der Erwaehnung getrennt | Regel: leer | Mistral: leer
+V-052 | K5-erwahnung | erwartet AUSGESCHLOSSEN | Regel OFFEN | Mistral OFFEN | Extraktion | leistungsart nicht von der Erwaehnung getrennt | Regel: leer | Mistral: gefüllt
 V-053 | K5-erwahnung | erwartet AUSGESCHLOSSEN | Regel OFFEN | Mistral OFFEN | Extraktion | leistungsart nicht von der Erwaehnung getrennt | Regel: leer | Mistral: gefüllt
 V-054 | K5-erwahnung | erwartet AUSGESCHLOSSEN | Regel OFFEN | Mistral OFFEN | Extraktion | leistungsart nicht von der Erwaehnung getrennt | Regel: leer | Mistral: gefüllt
-V-055 | K5-erwahnung | erwartet AUSGESCHLOSSEN | Regel OFFEN | Mistral OFFEN | Extraktion | leistungsart nicht von der Erwaehnung getrennt | Regel: leer | Mistral: leer
+V-055 | K5-erwahnung | erwartet AUSGESCHLOSSEN | Regel OFFEN | Mistral OFFEN | Extraktion | leistungsart nicht von der Erwaehnung getrennt | Regel: leer | Mistral: gefüllt
 V-056 | K5-erwahnung | erwartet AUSGESCHLOSSEN | Regel OFFEN | Mistral OFFEN | Extraktion | leistungsart nicht von der Erwaehnung getrennt | Regel: leer | Mistral: gefüllt
 V-057 | K5-erwahnung | erwartet ZAEHLT | Regel AUSGESCHLOSSEN | Mistral AUSGESCHLOSSEN | Extraktion | taetigkeit nicht gelesen | Regel: leer | Mistral: leer
-V-059 | K5-erwahnung | erwartet AUSGESCHLOSSEN | Regel OFFEN | Mistral OFFEN | Extraktion | leistungsart nicht von der Erwaehnung getrennt | Regel: leer | Mistral: leer
+V-059 | K5-erwahnung | erwartet AUSGESCHLOSSEN | Regel OFFEN | Mistral OFFEN | Extraktion | leistungsart nicht von der Erwaehnung getrennt | Regel: leer | Mistral: gefüllt
 V-062 | K6-register | erwartet OFFEN | Regel ZAEHLT | Mistral ZAEHLT | Kern | jahr nicht als Fassung gelesen | Regel: gefüllt | Mistral: gefüllt
 V-068 | K6-register | erwartet AUSGENOMMEN | Regel OFFEN | Mistral OFFEN | Extraktion | fahrtkosten_beleg nicht gelesen | Regel: leer | Mistral: leer
 V-070 | K6-register | erwartet AUSGENOMMEN | Regel OFFEN | Mistral OFFEN | Extraktion | ust_zeile nicht erkannt | Regel: leer | Mistral: gefüllt
-V-072 | K7-grenzen | erwartet ZAEHLT | Regel OFFEN | Mistral OFFEN | Extraktion | jahresaggregat nicht gelesen | Regel: leer | Mistral: leer
+V-072 | K7-grenzen | erwartet ZAEHLT | Regel OFFEN | Mistral OFFEN | Extraktion | jahresaggregat nicht gelesen | Regel: leer | Mistral: gefüllt
 V-074 | K7-grenzen | erwartet ZAEHLT | Regel OFFEN | Mistral OFFEN | Extraktion | jahresaggregat nicht gelesen | Regel: leer | Mistral: leer
 V-075 | K7-grenzen | erwartet OFFEN | Regel ZAEHLT | Mistral ZAEHLT | Extraktion | empfaenger nicht getrennt | Regel: leer | Mistral: leer
 V-076 | K7-grenzen | erwartet ZAEHLT | Regel OFFEN | Mistral OFFEN | Extraktion | jahresaggregat nicht gelesen | Regel: leer | Mistral: leer
-V-092 | K1-prio | erwartet AUSGESCHLOSSEN | Regel AUSGESCHLOSSEN | Mistral OFFEN | Kern | leistungsart nicht von der Erwaehnung getrennt | Regel: leer | Mistral: gefüllt
+V-092 | K1-prio | erwartet AUSGESCHLOSSEN | Regel AUSGESCHLOSSEN | Mistral OFFEN | Extraktion | leistungsart nicht von der Erwaehnung getrennt | Regel: leer | Mistral: leer
 V-094 | K3-widerspruch | erwartet OFFEN | Regel AUSGESCHLOSSEN | Mistral AUSGESCHLOSSEN | Extraktion | personal nicht gelesen | Regel: leer | Mistral: leer
 V-097 | K2-kaskade | erwartet OFFEN | Regel AUSGENOMMEN | Mistral SPERRE | Extraktion | uebungsleiter_anteil nicht gelesen | Regel: leer | Mistral: leer
-V-098 | K4-varianten | erwartet OFFEN | Regel ZAEHLT | Mistral OFFEN | Extraktion | taetigkeit nicht gelesen | Regel: leer | Mistral: leer
+V-098 | K4-varianten | erwartet OFFEN | Regel ZAEHLT | Mistral OFFEN | Extraktion | taetigkeit nicht gelesen | Regel: leer | Mistral: gefüllt
 V-100 | K5-erwahnung | erwartet AUSGESCHLOSSEN | Regel OFFEN | Mistral OFFEN | Extraktion | leistungsart nicht von der Erwaehnung getrennt | Regel: leer | Mistral: gefüllt
 V-105 | K8-mengen | erwartet ZAEHLT | Regel OFFEN | Mistral OFFEN | Extraktion | positionen[] nicht gesplittet | Regel: leer | Mistral: gefüllt
-V-107 | K2-kaskade | erwartet ZAEHLT | Regel OFFEN | Mistral OFFEN | Extraktion | verwerter nicht gelesen | Regel: leer | Mistral: leer
+V-107 | K2-kaskade | erwartet ZAEHLT | Regel OFFEN | Mistral OFFEN | Extraktion | verwerter nicht gelesen | Regel: leer | Mistral: gefüllt
 V-108 | K2-kaskade | erwartet OFFEN | Regel ZAEHLT | Mistral ZAEHLT | Extraktion | positionen[] nicht gesplittet | Regel: leer | Mistral: gefüllt
-V-112 | K5-erwahnung | erwartet AUSGESCHLOSSEN | Regel OFFEN | Mistral OFFEN | Extraktion | leistungsart nicht von der Erwaehnung getrennt | Regel: leer | Mistral: leer
+V-112 | K5-erwahnung | erwartet AUSGESCHLOSSEN | Regel OFFEN | Mistral OFFEN | Extraktion | leistungsart nicht von der Erwaehnung getrennt | Regel: leer | Mistral: gefüllt
 V-116 | K2-kaskade | erwartet OFFEN | Regel OFFEN | Mistral AUSGESCHLOSSEN | Extraktion | leistungsart nicht von der Erwaehnung getrennt | Regel: leer | Mistral: leer
 V-118 | K5-erwahnung | erwartet OFFEN | Regel ZAEHLT | Mistral ZAEHLT | Extraktion | taetigkeit nicht gelesen | Regel: leer | Mistral: leer
 V-119 | K6-register | erwartet AUSGENOMMEN | Regel OFFEN | Mistral OFFEN | Extraktion | beleg_vorhanden nicht gelesen | Regel: leer | Mistral: leer
-V-123 | K2-kaskade | erwartet ZAEHLT | Regel OFFEN | Mistral OFFEN | Extraktion | veranlassung nicht gelesen | Regel: leer | Mistral: leer
-V-128 | K2-kaskade | erwartet ZAEHLT | Regel OFFEN | Mistral OFFEN | Extraktion | verwerter nicht gelesen | Regel: leer | Mistral: leer
+V-123 | K2-kaskade | erwartet ZAEHLT | Regel OFFEN | Mistral OFFEN | Extraktion | veranlassung nicht gelesen | Regel: leer | Mistral: gefüllt
+V-128 | K2-kaskade | erwartet ZAEHLT | Regel OFFEN | Mistral OFFEN | Extraktion | verwerter nicht gelesen | Regel: leer | Mistral: gefüllt
 V-129 | K3-widerspruch | erwartet SPERRE | Regel SPERRE | Mistral AUSGESCHLOSSEN | Kern | rechtsform_angaben nicht gelesen | Regel: gefüllt | Mistral: gefüllt
 V-130 | K1-prio | erwartet ZAEHLT | Regel OFFEN | Mistral OFFEN | Extraktion | vermerk nicht vom Zahlungsjahr getrennt | Regel: leer | Mistral: leer

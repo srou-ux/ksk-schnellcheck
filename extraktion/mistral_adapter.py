@@ -23,8 +23,18 @@ _SYSTEM = (
     "Prozentzahlen der Umsatzsteuer stehen in ust_saetze. "
     "netto, ust und satz nur, wenn sie auf der Zeile stehen. "
     "summe_ohne_einheitlichen_satz nur, wenn das Dokument selbst sagt, dass die Summe zu keinem Satz passt. "
-    "leistungsart ist nur die Leistung, die Rechnungsgegenstand ist. "
-    "Bloße Erwähnungen, Namen, Fußnoten und Kontext gehören in erwahnungen, nicht in leistungsart."
+    "leistungsart = nur die Leistung, die Rechnungsgegenstand ist, also die Positionszeile. "
+    "Beispiel: Reinigung der Konzerthalle, leistungsart Reinigung, erwahnungen Konzert. "
+    "taetigkeit = die Tätigkeit nur, wenn der Text sie als solche nennt. "
+    "Beispiel: Tätigkeit Gesang. Eine Erwähnung im Betreff bleibt leer. "
+    "verwerter = der Empfänger nur, wenn er als Verlag, Theater oder anderer typischer Verwerter bezeichnet ist. "
+    "Beispiel: Theaterunternehmen. Ein gewöhnlicher Kunde bleibt leer. "
+    "jahresaggregat = nur eine im Text genannte Summe mehrerer Rechnungen. "
+    "Beispiel: drei Rechnungen zusammen. Eine einzelne Rechnung bleibt leer. "
+    "veranlassung = nur, wenn die Leistung auf Anweisung eines anderen erfolgte. "
+    "Beispiel: auf Anweisung des Verlags. Sonst leer. "
+    "beschaeftigung = nur das genannte Beschäftigungsverhältnis. "
+    "Beispiel: fest angestellt. Fehlt die Angabe, bleibt das Feld leer."
 )
 
 

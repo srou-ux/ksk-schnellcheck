@@ -11,6 +11,7 @@ from extraktion.felder import an_kern, aus_modell, dezimal
 from extraktion.konfidenz import bloecke_filtern, einigung
 from extraktion.schluessel import ablage, schluessel
 from extraktion.hybrid import kombiniere
+from extraktion.messung import entscheide
 from extraktion.mistral_adapter import _SYSTEM, ocr_kosten
 from extraktion.schnittstelle import extrahiere_dokument
 from extraktion.verbatim import nur_woertlich, steht
@@ -222,22 +223,58 @@ class AnKern(unittest.TestCase):
         self.assertEqual(entscheid.klasse, K.ABGABEPFLICHTIG)
         self.assertEqual(entscheid.abgabe, Decimal("121.03"))
 
-    def test_hybrid_fuellt_leeres_feld_und_sperrt_widerspruch(self):
+    def test_hybrid_regel_behaelt_ihr_feld(self):
         regel = extrahiere_dokument("leer", "rule")
         modell = extrahiere_dokument("leer", "rule")
         regel["summen"]["netto"] = "2470.00"
+        regel["positionen"] = [{
+            "nr": "4", "betrag": "10", "text": "", "betragswiderspruch": True, "unsicher": False,
+            "netto": "", "ust": "", "satz": "",
+        }]
         modell["summen"]["ust"] = "469.30"
+        modell["summen"]["netto"] = "1000.00"
+        modell["positionen"] = []
+        modell["rechtsform_angaben"] = ["GmbH"]
+        modell["abgeleitet"] = ["rechtsform_angaben"]
         felder = kombiniere(regel, modell)
+        self.assertEqual(felder["summen"]["netto"], "2470.00")
         self.assertEqual(felder["herkunft"]["summen.netto"], "regel")
         self.assertEqual(felder["herkunft"]["summen.ust"], "mistral")
+        self.assertEqual(felder["positionen"][0]["nr"], "4")
+        self.assertTrue(felder["positionen"][0]["betragswiderspruch"])
+        self.assertEqual(felder["rechtsform_angaben"], [])
         self.assertEqual(felder["leser_widerspruch"], [])
-        modell["summen"]["netto"] = "1000.00"
+        self.assertIn("taetigkeit", _SYSTEM)
+        self.assertIn("beschaeftigung", _SYSTEM)
+
+    def test_hybrid_name_verdraengt_regel_rechtsform_nicht(self):
+        regel = extrahiere_dokument("leer", "rule")
+        modell = extrahiere_dokument("leer", "rule")
+        regel["rechtsform_angaben"] = ["gmbh"]
+        modell["empfaenger"] = "Agentur GmbH"
+        modell["empfaenger_name"] = "Agentur GmbH"
+        modell["rechtsform_angaben"] = ["gmbh"]
         felder = kombiniere(regel, modell)
-        self.assertIn("summen.netto", felder["leser_widerspruch"])
-        self.assertEqual(felder["summen"]["netto"], "")
+        self.assertEqual(felder["empfaenger"], "")
+        self.assertEqual(felder["empfaenger_name"], "")
         dokument = an_kern(felder, 2026)
-        sperre = K.pruefe_dokument(dokument, 2026)
-        self.assertEqual(sperre.klasse, K.RUECKFRAGE)
+        self.assertEqual(dokument.get("empfaenger"), "gmbh")
+        text = "Taetigkeit 'webdesign' (Register: kuenstlerisch nach BSG), aber Rechnung von einer Agentur GmbH im eigenen Namen"
+        status, _, _ = entscheide({"txt": text, "kat": "K1-prio", "status": "AUSGESCHLOSSEN"}, felder)
+        self.assertEqual(status, "AUSGESCHLOSSEN")
+
+        regel = extrahiere_dokument("leer", "rule")
+        modell = extrahiere_dokument("leer", "rule")
+        regel["rechtsform_angaben"] = ["oeffentlich"]
+        modell["empfaenger_name"] = "freie Musiklehrkraft"
+        modell["summen"]["brutto"] = "600.00"
+        felder = kombiniere(regel, modell)
+        self.assertEqual(felder["empfaenger_name"], "")
+        dokument = an_kern(felder, 2026)
+        self.assertEqual(dokument.get("empfaenger"), "oeffentlich")
+        text = "Oeffentliche Musikschule vermietet an freie Musiklehrkraft, Zahlung 600 EUR"
+        status, _, _ = entscheide({"txt": text, "kat": "K2-kaskade", "status": "OFFEN"}, felder)
+        self.assertEqual(status, "OFFEN")
 
     def test_leistungsart_ist_nicht_die_erwaehnung(self):
         self.assertIn("erwahnungen", _SYSTEM)
